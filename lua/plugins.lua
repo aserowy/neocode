@@ -13,6 +13,7 @@ function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- common
+	use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
 	use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
 	use 'karb94/neoscroll.nvim'
 	use 'norcalli/nvim-base16.lua'
@@ -20,11 +21,7 @@ function(use)
 
         -- navigation
 	use 'kyazdani42/nvim-tree.lua'
-
-	use 'nvim-lua/plenary.nvim'
-	use 'nvim-lua/popup.nvim'
-	use 'nvim-telescope/telescope.nvim'
-
+	use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/popup.nvim'}
 	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
 	-- lsp
@@ -47,6 +44,7 @@ function(use)
 end)
 
 -- common
+require'configs.gitsignsnvim'
 require'configs.indentblanklinenvim'
 require'configs.neoscrollnvim'
 require'configs.nvimbase16'
