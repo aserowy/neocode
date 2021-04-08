@@ -1,3 +1,3 @@
-require'general'
+require'settings'
 require'plugins'
-require'keybindings'
+require'keymaps'
