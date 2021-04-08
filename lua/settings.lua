@@ -1,20 +1,23 @@
 local vim = vim
 
+local options = require'nvim.options'
+local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
+
 vim.g.mapleader = ' '
 
-vim.o.completeopt = 'menuone,noselect'
-vim.o.hidden = true
-vim.o.ignorecase = true
-vim.o.mouse = 'a'
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.termguicolors = true
+options.set(option, 'completeopt', 'menuone,noselect')
+options.set(option, 'hidden', true)
+options.set(option, 'ignorecase', true)
+options.set(option, 'mouse', 'a')
+options.set(option, 'splitbelow', true)
+options.set(option, 'splitright', true)
+options.set(option, 'termguicolors', true)
 
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.signcolumn = 'yes'
+options.set(window, 'number', true)
+options.set(window, 'relativenumber', true)
+options.set(window, 'signcolumn', 'yes')
 
-vim.bo.expandtab = true
-vim.bo.shiftwidth = 4
-vim.bo.softtabstop = 4
-vim.bo.tabstop = 4
+options.set(buffer, 'expandtab', true)
+options.set(buffer, 'shiftwidth', 4)
+options.set(buffer, 'softtabstop', 4)
+options.set(buffer, 'tabstop', 4)

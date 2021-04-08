@@ -12,11 +12,11 @@ a.nvim_set_keymap('n', '<Leader>ft', ':NvimTreeOpen<CR>', opt)
 a.nvim_set_keymap('n', '<Leader>fm', [[<Cmd>Neoformat<CR>]], opt)
 
 -- file tree
-function kb.file_tree(tree_cb)
-	return {
-		["l"] = tree_cb("edit"),
-		["h"] = tree_cb("close_node"),
-	}
+kb.file_tree = function(tree_cb)
+    return {
+        ["l"] = tree_cb("edit"),
+        ["h"] = tree_cb("close_node"),
+    }
 end
 
 -- buffer
