@@ -4,48 +4,48 @@ local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-    execute 'packadd packer.nvim'
+        execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+        execute 'packadd packer.nvim'
 end
 
 require'packer'.startup(
-function(use)
-    use 'wbthomason/packer.nvim'
+        function(use)
+                use 'wbthomason/packer.nvim'
 
-    -- common
-    use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
-    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
-    use 'karb94/neoscroll.nvim'
-    use 'norcalli/nvim-base16.lua'
-    use '907th/vim-auto-save'
+                -- common
+                use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
+                use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+                use 'karb94/neoscroll.nvim'
+                use 'norcalli/nvim-base16.lua'
+                use '907th/vim-auto-save'
 
-    -- navigation
-    use 'kyazdani42/nvim-tree.lua'
-    use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/popup.nvim'}
-    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+                -- navigation
+                use 'kyazdani42/nvim-tree.lua'
+                use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/popup.nvim'}
+                use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
-    -- lsp
-    use 'neovim/nvim-lspconfig'
-    use 'kabouzeid/nvim-lspinstall'
+                -- lsp
+                use 'neovim/nvim-lspconfig'
+                use 'kabouzeid/nvim-lspinstall'
 
-    use 'onsails/lspkind-nvim'
+                use 'onsails/lspkind-nvim'
 
-    -- linting
-    use 'norcalli/nvim-colorizer.lua'
+                -- linting
+                use 'norcalli/nvim-colorizer.lua'
 
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'p00f/nvim-ts-rainbow'
-    use 'romgrk/nvim-treesitter-context'
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
+                use 'nvim-treesitter/nvim-treesitter'
+                use 'p00f/nvim-ts-rainbow'
+                use 'romgrk/nvim-treesitter-context'
+                use 'nvim-treesitter/nvim-treesitter-textobjects'
 
-    -- formatting
-    use 'sbdchd/neoformat'
+                -- formatting
+                use 'sbdchd/neoformat'
 
-    -- autocompletion
-    use 'windwp/nvim-autopairs'
-    use 'hrsh7th/nvim-compe'
-    use 'norcalli/snippets.nvim'
-end)
+                -- autocompletion
+                use 'windwp/nvim-autopairs'
+                use 'hrsh7th/nvim-compe'
+                use 'norcalli/snippets.nvim'
+        end)
 
 -- common
 require'configs.gitsignsnvim'

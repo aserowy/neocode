@@ -1,6 +1,5 @@
 local vim = vim
 
--- config
 vim.g.mapleader = ' '
 
 vim.o.completeopt = 'menuone,noselect'
