@@ -1,22 +1,20 @@
 local vim = vim
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
-
-local function opt(scope, key, value)
-    scopes[scope][key] = value
-    if scope ~= 'o' then
-        scopes['o'][key] = value
-    end
-end
 
 -- config
-vim.o.completeopt = 'menuone,noselect'
-vim.o.termguicolors = true
-
 vim.g.mapleader = ' '
 
-opt('w', 'number', true)
-opt('w', 'relativenumber', true)
+vim.o.completeopt = 'menuone,noselect'
+vim.o.hidden = true
+vim.o.ignorecase = true
+vim.o.mouse = 'a'
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.termguicolors = true
 
-opt('b', 'expandtab', true)
-opt('b', 'shiftwidth', 4)
-opt('b', 'tabstop', 4)
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.signcolumn = 'yes'
+
+vim.bo.expandtab = true
+vim.bo.shiftwidth = 4
+vim.bo.tabstop = 4
