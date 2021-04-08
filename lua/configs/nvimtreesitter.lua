@@ -1,4 +1,5 @@
-local ts_config = require("nvim-treesitter.configs")
+local ts_config = require'nvim-treesitter.configs'
+local keymaps = require'keymaps'
 
 ts_config.setup {
     ensure_installed = "maintained",
@@ -8,12 +9,7 @@ ts_config.setup {
     },
     incremental_selection = {
         enable = true,
-        keymaps = {
-            init_selection = "gnn",
-            node_incremental = "grn",
-            scope_incremental = "grc",
-            node_decremental = "grm",
-        },
+        keymaps = keymaps.tree_sitter_incremental(),
     },
     indent = {
         enable = true
@@ -26,12 +22,7 @@ ts_config.setup {
     textobjects = {
         select = {
             enable = true,
-            keymaps = {
-                ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
-            }
+            keymaps = keymaps.tree_sitter_textobjects() 
         }
     }
 }
