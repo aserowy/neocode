@@ -1,5 +1,7 @@
 local vim = vim
 local gl = require('galaxyline')
+local gls = gl.section
+local condition = require('galaxyline.condition')
 
 local colors = {
     bg = 'NONE',
@@ -21,8 +23,13 @@ local colors = {
     info_yellow = '#FFCC66'
 }
 
-local condition = require('galaxyline.condition')
-local gls = gl.section
+local border = {
+    provider = function() return '' end,
+    highlight = {colors.orange, colors.bg},
+    separator = '| ',
+    separator_highlight = {colors.grey, colors.bg},
+}
+
 gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.left[1] = {
@@ -73,7 +80,7 @@ gls.left[3] = {
     FileName = {
         provider = 'FileName',
         condition = condition.buffer_not_empty,
-        highlight = {colors.magenta,colors.bg,'bold'},
+        highlight = {colors.magenta, colors.bg, 'bold'},
         separator = '| ',
         separator_highlight = {colors.grey, colors.bg},
     }
@@ -122,12 +129,14 @@ gls.left[8] = {
         condition = condition.hide_in_width,
         icon = ' ',
         highlight = {colors.red, colors.bg},
-        separator = '| ',
-        separator_highlight = {colors.grey, colors.bg},
     }
 }
 
 gls.left[9] = {
+    Border = border,
+}
+
+gls.left[10] = {
     DiagnosticError = {
         provider = 'DiagnosticError',
         icon = ' ',
@@ -135,7 +144,7 @@ gls.left[9] = {
     }
 }
 
-gls.left[10] = {
+gls.left[11] = {
     DiagnosticWarn = {
         provider = 'DiagnosticWarn',
         icon = ' ',
@@ -143,7 +152,7 @@ gls.left[10] = {
     }
 }
 
-gls.left[11] = {
+gls.left[12] = {
     DiagnosticHint = {
         provider = 'DiagnosticHint',
         icon = ' ',
@@ -151,7 +160,7 @@ gls.left[11] = {
     }
 }
 
-gls.left[12] = {
+gls.left[13] = {
     DiagnosticInfo = {
         provider = 'DiagnosticInfo',
         icon = ' ',
@@ -159,7 +168,7 @@ gls.left[12] = {
     }
 }
 
-gls.left[13] = {
+gls.left[14] = {
     ShowLspClient = {
         provider = 'GetLspClient',
         condition = function()
@@ -198,17 +207,25 @@ gls.right[3] = {
 
 -- short line
 gls.short_line_left[1] = {
-    BufferType = {
-        provider = 'FileTypeName',
-        highlight = {colors.grey, colors.bg}
-    }
+    Init = {
+        provider = function() return '▊ ' end,
+        highlight = {colors.grey, colors.bg},
+    },
 }
 
-gls.short_line_left[2] = {
-    SFileName = {
-        provider = 'SFileName',
+gls.short_line_left[2] ={
+    ShortFileIcon = {
+        provider = 'FileIcon',
         condition = condition.buffer_not_empty,
-        highlight = {colors.grey, colors.bg}
+        highlight = colors.grey, colors.bg,
+    },
+}
+
+gls.short_line_left[3] = {
+    ShortFileName = {
+        provider = 'FileName',
+        condition = condition.buffer_not_empty,
+        highlight = {colors.grey, colors.bg, 'bold'},
     }
 }
 
