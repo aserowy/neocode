@@ -10,7 +10,7 @@ Minimal nvim configuration in lua. All used plugins are mostly untouched.
 
 ## keymaps
 
-All standard keymaps of nvim are untouched. The leader key is `space`.
+All standard keymaps of nvim are untouched. The leader key is `space`. To open files in vertical or horizontal split use `<C-v>` or `<C-x>`. To create new tabs while opening a file use `<C-t>`.
 
 ### window movement
 

@@ -13,6 +13,7 @@ require'packer'.startup(
         use 'wbthomason/packer.nvim'
 
         -- common
+        use 'glepnir/galaxyline.nvim'
         use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
         use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
         use 'karb94/neoscroll.nvim'
@@ -48,6 +49,7 @@ require'packer'.startup(
     end)
 
 -- common
+require'configs.galaxylinenvim'
 require'configs.gitsignsnvim'
 require'configs.indentblanklinenvim'
 require'configs.neoscrollnvim'
