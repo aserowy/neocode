@@ -31,6 +31,11 @@ a.nvim_set_keymap('n', '<C-k>', '<C-w><C-k>', opt)
 a.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', opt)
 a.nvim_set_keymap('n', '<C-h>', '<C-w><C-h>', opt)
 
+-- terminal
+a.nvim_set_keymap('n', '<Leader>tv', ':vsplit term://zsh<CR>', opt)
+a.nvim_set_keymap('n', '<Leader>tx', ':split term://zsh<CR>', opt)
+a.nvim_set_keymap('t', '<Leader>td', '<C-\\><C-N>:bd!<CR>', opt)
+
 -- navigation
 keymap.lsp_on_attach = function(bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
