@@ -104,8 +104,6 @@ gls.left[6] = {
         condition = condition.hide_in_width,
         icon = ' ',
         highlight = {colors.green, colors.bg},
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
     }
 }
 
@@ -114,7 +112,7 @@ gls.left[7] = {
         provider = 'DiffModified',
         condition = condition.hide_in_width,
         icon = '柳 ',
-        highlight = {colors.blue, colors.bg}
+        highlight = {colors.blue, colors.bg},
     }
 }
 
@@ -181,17 +179,15 @@ gls.right[1] = {
     }
 }
 
-gls.right[3] = {
+gls.right[2] = {
     FileEncode = {
         provider = 'FileEncode',
         condition = condition.hide_in_width,
         highlight = {colors.vivid_blue, colors.bg},
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
     }
 }
 
-gls.right[4] = {
+gls.right[3] = {
     Space = {
         provider = function() return ' ' end,
         highlight = {colors.orange, colors.bg},
