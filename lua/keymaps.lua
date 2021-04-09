@@ -9,6 +9,8 @@ local keymap = {}
 a.nvim_set_keymap('n', '<Leader>fs', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], opt)
 a.nvim_set_keymap('n', '<Leader>fo', [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]], opt)
 a.nvim_set_keymap('n', '<Leader>ft', ':NvimTreeToggle<CR>', opt)
+
+a.nvim_set_keymap('n', '<Leader>fi', 'gg=G', opt)
 a.nvim_set_keymap('n', '<Leader>fm', [[<Cmd>Neoformat<CR>]], opt)
 
 -- file tree
@@ -46,14 +48,14 @@ a.nvim_set_keymap('t', '<C-k>', '<C-\\><C-N><C-w><C-k>', opt)
 a.nvim_set_keymap('t', '<C-l>', '<C-\\><C-N><C-w><C-l>', opt)
 a.nvim_set_keymap('t', '<C-h>', '<C-\\><C-N><C-w><C-h>', opt)
 
--- navigation
+-- lsp
 keymap.lsp_on_attach = function(bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opt)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opt)
-    buf_set_keymap('n', '<space>sh', '<Cmd>lua vim.lsp.buf.hover()<CR>', opt)
+    buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opt)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-    buf_set_keymap('n', '<space>ss', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
+    buf_set_keymap('n', '<space>sh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
     buf_set_keymap('n', '<space>sd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
     buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
@@ -64,15 +66,6 @@ keymap.lsp_on_attach = function(bufnr)
 end
 
 -- selection
-keymap.tree_sitter_incremental = function()
-    return {
-        init_selection = 'gnn',
-        node_incremental = 'grn',
-        scope_incremental = 'grc',
-        node_decremental = 'grm',
-    }
-end
-
 keymap.tree_sitter_textobjects = function()
     return {
         ['af'] = '@function.outer',

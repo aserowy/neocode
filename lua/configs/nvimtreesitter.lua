@@ -7,10 +7,6 @@ ts_config.setup {
         enable = true,
         use_languagetree = true
     },
-    incremental_selection = {
-        enable = true,
-        keymaps = keymaps.tree_sitter_incremental(),
-    },
     indent = {
         enable = true
     },
