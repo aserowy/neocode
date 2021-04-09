@@ -36,19 +36,25 @@ a.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', opt)
 a.nvim_set_keymap('n', '<C-h>', '<C-w><C-h>', opt)
 
 -- terminal
+a.nvim_set_keymap('n', '<Leader>tt', ':edit term://zsh<CR>', opt)
 a.nvim_set_keymap('n', '<Leader>tv', ':vsplit term://zsh<CR>', opt)
 a.nvim_set_keymap('n', '<Leader>tx', ':split term://zsh<CR>', opt)
 a.nvim_set_keymap('t', '<Leader>td', '<C-\\><C-N>:bd!<CR>', opt)
+
+a.nvim_set_keymap('t', '<C-j>', '<C-\\><C-N><C-w><C-j>', opt)
+a.nvim_set_keymap('t', '<C-k>', '<C-\\><C-N><C-w><C-k>', opt)
+a.nvim_set_keymap('t', '<C-l>', '<C-\\><C-N><C-w><C-l>', opt)
+a.nvim_set_keymap('t', '<C-h>', '<C-\\><C-N><C-w><C-h>', opt)
 
 -- navigation
 keymap.lsp_on_attach = function(bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opt)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opt)
-    buf_set_keymap('n', '<space>hh', '<Cmd>lua vim.lsp.buf.hover()<CR>', opt)
+    buf_set_keymap('n', '<space>sh', '<Cmd>lua vim.lsp.buf.hover()<CR>', opt)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-    buf_set_keymap('n', '<space>hs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
-    buf_set_keymap('n', '<space>hd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
+    buf_set_keymap('n', '<space>ss', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
+    buf_set_keymap('n', '<space>sd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
     buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
     buf_set_keymap('n', '<space>dd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opt)
