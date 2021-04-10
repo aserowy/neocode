@@ -53,7 +53,7 @@ require'configs.galaxylinenvim'
 require'configs.gitsignsnvim'
 require'configs.indentblanklinenvim'
 require'configs.neoscrollnvim'
-require'configs.nvimbase16'
+require'configs.nvimbase16'.init()
 require'configs.vimautosave'
 
 -- navigation

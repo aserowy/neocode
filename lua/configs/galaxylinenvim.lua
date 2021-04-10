@@ -3,68 +3,48 @@ local gl = require('galaxyline')
 local gls = gl.section
 local condition = require('galaxyline.condition')
 
-local colors = {
-    bg = 'NONE',
-    yellow = '#DCDCAA',
-    dark_yellow = '#D7BA7D',
-    cyan = '#4EC9B0',
-    green = '#608B4E',
-    light_green = '#B5CEA8',
-    string_orange = '#CE9178',
-    orange = '#FF8800',
-    purple = '#C586C0',
-    magenta = '#D16D9E',
-    grey = '#858585',
-    blue = '#569CD6',
-    vivid_blue = '#4FC1FF',
-    light_blue = '#9CDCFE',
-    red = '#D16969',
-    error_red = '#F44747',
-    info_yellow = '#FFCC66'
-}
+local colors = require'colors'
 
 local border = {
     provider = function() return '' end,
-    highlight = {colors.orange, colors.bg},
     separator = '| ',
-    separator_highlight = {colors.grey, colors.bg},
+    separator_highlight = {colors.inactive, colors.bg},
 }
-
-gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.left[1] = {
     ViMode = {
         provider = function()
             local mode_color = {
-                n = colors.blue,
-                i = colors.green,
-                v = colors.purple,
-                [''] = colors.purple,
-                V = colors.purple,
-                c = colors.magenta,
-                no = colors.blue,
-                s = colors.orange,
-                S = colors.orange,
-                [''] = colors.orange,
-                ic = colors.yellow,
-                R = colors.red,
-                Rv = colors.red,
-                cv = colors.blue,
-                ce = colors.blue,
-                r = colors.cyan,
-                rm = colors.cyan,
-                ['r?'] = colors.cyan,
-                ['!'] = colors.blue,
-                t = colors.blue
+                n = colors.highlight01,
+                i = colors.ok,
+                v = colors.highlight02,
+                [''] = colors.highlight02,
+                V = colors.highlight02,
+                [''] = colors.highlight02,
+                c = colors.highlight03,
+                no = colors.highlight01,
+                s = colors.warning,
+                S = colors.warning,
+                [''] = colors.warning,
+                ic = colors.ok,
+                R = colors.error,
+                Rv = colors.error,
+                cv = colors.highlight01,
+                ce = colors.highlight01,
+                r = colors.information,
+                rm = colors.information,
+                ['r?'] = colors.information,
+                ['!'] = colors.highlight01,
+                t = colors.highlight01
             }
 
             local color = mode_color[vim.fn.mode()]
-            if color == nil then color = colors.vivid_blue end
+            if color == nil then color = colors.information end
 
             vim.api.nvim_command('hi GalaxyViMode guifg=' .. color)
             return '▊ '
         end,
-        highlight = {colors.red, colors.bg}
+        highlight = {colors.error, colors.bg}
     }
 }
 
@@ -80,9 +60,9 @@ gls.left[3] = {
     FileName = {
         provider = 'FileName',
         condition = condition.buffer_not_empty,
-        highlight = {colors.magenta, colors.bg, 'bold'},
+        highlight = {colors.active, colors.bg, 'bold'},
         separator = '| ',
-        separator_highlight = {colors.grey, colors.bg},
+        separator_highlight = {colors.inactive, colors.bg},
     }
 }
 
@@ -91,7 +71,7 @@ gls.left[4] = {
         provider = function() return ' ' end,
         condition = condition.check_git_workspace,
         icon = '',
-        highlight = {colors.orange, colors.bg},
+        highlight = {colors.warning, colors.bg},
     }
 }
 
@@ -99,18 +79,18 @@ gls.left[5] = {
     GitBranch = {
         provider = 'GitBranch',
         condition = condition.check_git_workspace,
-        highlight = {colors.grey, colors.bg},
+        highlight = {colors.active, colors.bg},
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
     }
 }
 
 gls.left[6] = {
-    DiffAdd = {
-        provider = 'DiffAdd',
+    DiffRemove = {
+        provider = 'DiffRemove',
         condition = condition.hide_in_width,
-        icon = ' ',
-        highlight = {colors.green, colors.bg},
+        icon = ' ',
+        highlight = {colors.error, colors.bg},
     }
 }
 
@@ -119,16 +99,16 @@ gls.left[7] = {
         provider = 'DiffModified',
         condition = condition.hide_in_width,
         icon = '柳 ',
-        highlight = {colors.blue, colors.bg},
+        highlight = {colors.highlight01, colors.bg},
     }
 }
 
 gls.left[8] = {
-    DiffRemove = {
-        provider = 'DiffRemove',
+    DiffAdd = {
+        provider = 'DiffAdd',
         condition = condition.hide_in_width,
-        icon = ' ',
-        highlight = {colors.red, colors.bg},
+        icon = ' ',
+        highlight = {colors.ok, colors.bg},
     }
 }
 
@@ -140,7 +120,7 @@ gls.left[10] = {
     DiagnosticError = {
         provider = 'DiagnosticError',
         icon = ' ',
-        highlight = {colors.error_red, colors.bg},
+        highlight = {colors.error, colors.bg},
     }
 }
 
@@ -148,7 +128,7 @@ gls.left[11] = {
     DiagnosticWarn = {
         provider = 'DiagnosticWarn',
         icon = ' ',
-        highlight = {colors.orange, colors.bg}
+        highlight = {colors.warning, colors.bg}
     }
 }
 
@@ -156,7 +136,7 @@ gls.left[12] = {
     DiagnosticHint = {
         provider = 'DiagnosticHint',
         icon = ' ',
-        highlight = {colors.vivid_blue, colors.bg}
+        highlight = {colors.information, colors.bg}
     }
 }
 
@@ -164,7 +144,7 @@ gls.left[13] = {
     DiagnosticInfo = {
         provider = 'DiagnosticInfo',
         icon = ' ',
-        highlight = {colors.info_yellow, colors.bg}
+        highlight = {colors.ok, colors.bg}
     }
 }
 
@@ -177,14 +157,14 @@ gls.left[14] = {
             return true
         end,
         icon = ' ',
-        highlight = {colors.grey, colors.bg},
+        highlight = {colors.active, colors.bg},
     }
 }
 
 gls.right[1] = {
     PerCent = {
         provider = 'LinePercent',
-        highlight = {colors.vivid_blue, colors.bg},
+        highlight = {colors.information, colors.bg},
     }
 }
 
@@ -192,24 +172,26 @@ gls.right[2] = {
     FileEncode = {
         provider = 'FileEncode',
         condition = condition.hide_in_width,
-        highlight = {colors.vivid_blue, colors.bg},
+        highlight = {colors.information, colors.bg},
     }
 }
 
 gls.right[3] = {
     Space = {
         provider = function() return ' ' end,
-        highlight = {colors.orange, colors.bg},
+        highlight = {colors.inactive, colors.bg},
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
     }
 }
 
 -- short line
+gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
+
 gls.short_line_left[1] = {
     Init = {
         provider = function() return '▊ ' end,
-        highlight = {colors.grey, colors.bg},
+        highlight = {colors.inactive, colors.bg},
     },
 }
 
@@ -217,7 +199,7 @@ gls.short_line_left[2] ={
     ShortFileIcon = {
         provider = 'FileIcon',
         condition = condition.buffer_not_empty,
-        highlight = colors.grey, colors.bg,
+        highlight = {colors.inactive, colors.bg},
     },
 }
 
@@ -225,14 +207,14 @@ gls.short_line_left[3] = {
     ShortFileName = {
         provider = 'FileName',
         condition = condition.buffer_not_empty,
-        highlight = {colors.grey, colors.bg, 'bold'},
+        highlight = {colors.inactive, colors.bg, 'bold'},
     }
 }
 
 gls.short_line_right[1] = {
     BufferIcon = {
         provider = 'BufferIcon',
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.inactive, colors.bg}
     }
 }
 
