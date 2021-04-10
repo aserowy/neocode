@@ -1,78 +1,87 @@
-local vim = vim
+local keymaps = require'nvim.keymaps'
 
-local a = vim.api
-local opt = {noremap = true, silent = true}
-
-local keymap = {}
+local mappings = {}
 
 -- file
-a.nvim_set_keymap('n', '<Leader>fs', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], opt)
-a.nvim_set_keymap('n', '<Leader>fo', [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]], opt)
-a.nvim_set_keymap('n', '<Leader>ft', ':NvimTreeToggle<CR>', opt)
+keymaps.register('n', {
+    ['<Leader>fs'] = [[<Cmd>lua require('telescope.builtin').find_files()<CR>]],
+    ['<Leader>fo'] = [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]],
+    ['<Leader>ft'] = ':NvimTreeToggle<CR>',
 
-a.nvim_set_keymap('n', '<Leader>fi', 'gg=G', opt)
-a.nvim_set_keymap('n', '<Leader>fm', [[<Cmd>Neoformat<CR>]], opt)
+    ['<Leader>fi'] = 'gg=G',
+    ['<Leader>fm'] = [[<Cmd>Neoformat<CR>]],
+})
 
 -- file tree
-keymap.file_tree = function(tree_cb)
-    return {
-        ['l'] = tree_cb('edit'),
-        ['h'] = tree_cb('close_node'),
-        ['<space>rn'] = tree_cb('full_rename'),
-        ['cc'] = tree_cb('cut'),
-        ['dd'] = tree_cb('remove'),
-        ['yy'] = tree_cb('copy'),
-    }
-end
+mappings.file_tree = {
+    ['l'] = 'edit',
+    ['h'] = 'close_node',
+    ['<space>rn'] = 'full_rename',
+    ['cc'] = 'cut',
+    ['dd'] = 'remove',
+    ['yy'] = 'copy',
+}
 
 -- buffer
-a.nvim_set_keymap('n', '<Leader>bs', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opt)
-a.nvim_set_keymap('n', '<Leader>bd', [[<Cmd>bdelete<CR>]], opt)
-a.nvim_set_keymap('n', '<Leader>bn', [[<Cmd>BufferLineCycleNext<CR>]], opt)
-a.nvim_set_keymap('n', '<Leader>bp', [[<Cmd>BufferLineCyclePrev<CR>]], opt)
+keymaps.register('n', {
+    ['<Leader>bs'] = [[<Cmd>lua require('telescope.builtin').buffers()<CR>]],
+    ['<Leader>bd'] = [[<Cmd>bdelete<CR>]],
+    ['<Leader>bn'] = [[<Cmd>BufferLineCycleNext<CR>]],
+    ['<Leader>bp'] = [[<Cmd>BufferLineCyclePrev<CR>]],
+})
 
 -- window
-a.nvim_set_keymap('n', '<C-j>', '<C-w><C-j>', opt)
-a.nvim_set_keymap('n', '<C-k>', '<C-w><C-k>', opt)
-a.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', opt)
-a.nvim_set_keymap('n', '<C-h>', '<C-w><C-h>', opt)
+keymaps.register('n', {
+    ['<C-j>'] = '<C-w><C-j>',
+    ['<C-k>'] = '<C-w><C-k>',
+    ['<C-l>'] = '<C-w><C-l>',
+    ['<C-h>'] = '<C-w><C-h>',
+})
 
 -- terminal
-a.nvim_set_keymap('n', '<Leader>tt', ':edit term://zsh<CR>', opt)
-a.nvim_set_keymap('n', '<Leader>tv', ':vsplit term://zsh<CR>', opt)
-a.nvim_set_keymap('n', '<Leader>tx', ':split term://zsh<CR>', opt)
-a.nvim_set_keymap('t', '<Leader>td', '<C-\\><C-N>:bd!<CR>', opt)
+keymaps.register('n', {
+    ['<Leader>tt'] = ':edit term://zsh<CR>',
+    ['<Leader>tv'] = ':vsplit term://zsh<CR>',
+    ['<Leader>tx'] = ':split term://zsh<CR>',
+})
 
-a.nvim_set_keymap('t', '<C-j>', '<C-\\><C-N><C-w><C-j>', opt)
-a.nvim_set_keymap('t', '<C-k>', '<C-\\><C-N><C-w><C-k>', opt)
-a.nvim_set_keymap('t', '<C-l>', '<C-\\><C-N><C-w><C-l>', opt)
-a.nvim_set_keymap('t', '<C-h>', '<C-\\><C-N><C-w><C-h>', opt)
+keymaps.register('t', {
+    ['<Leader>td'] = '<C-\\><C-N>:bd!<CR>',
+
+    ['<C-j>'] = '<C-\\><C-N><C-w><C-j>',
+    ['<C-k>'] = '<C-\\><C-N><C-w><C-k>',
+    ['<C-l>'] = '<C-\\><C-N><C-w><C-l>',
+    ['<C-h>'] = '<C-\\><C-N><C-w><C-h>',
+})
+
+-- snippets
+keymaps.register('i', {
+    ['<C-h>'] = '<cmd>lua return require"snippets".advance_snippet(-1)<CR>',
+    ['<C-l>'] = '<cmd>lua return require"snippets".expand_or_advance(1)<CR>',
+})
 
 -- lsp
-keymap.lsp_on_attach = function(bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opt)
-    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opt)
-    buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opt)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-    buf_set_keymap('n', '<space>sh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
-    buf_set_keymap('n', '<space>sd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
-    buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
-    buf_set_keymap('n', '<space>dd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opt)
-    buf_set_keymap('n', '<space>dp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opt)
-    buf_set_keymap('n', '<space>dn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opt)
-    buf_set_keymap('n', '<space>dl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opt)
-end
+mappings.lsp_on_attach = {
+    ['gD'] = '<Cmd>lua vim.lsp.buf.declaration()<CR>',
+    ['gd'] = '<Cmd>lua vim.lsp.buf.definition()<CR>',
+    ['K'] = '<Cmd>lua vim.lsp.buf.hover()<CR>',
+    ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<CR>',
+    ['<space>sh'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>',
+    ['<space>sd'] = '<cmd>lua vim.lsp.buf.type_definition()<CR>',
+    ['<space>rn'] = '<cmd>lua vim.lsp.buf.rename()<CR>',
+    ['gr'] = '<cmd>lua vim.lsp.buf.references()<CR>',
+    ['<space>dd'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
+    ['<space>dp'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
+    ['<space>dn'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
+    ['<space>dl'] = '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
+}
 
 -- selection
-keymap.tree_sitter_textobjects = function()
-    return {
-        ['af'] = '@function.outer',
-        ['if'] = '@function.inner',
-        ['ac'] = '@class.outer',
-        ['ic'] = '@class.inner',
-    }
-end
+mappings.tree_sitter_textobjects = {
+    ['af'] = '@function.outer',
+    ['if'] = '@function.inner',
+    ['ac'] = '@class.outer',
+    ['ic'] = '@class.inner',
+}
 
-return keymap
+return mappings
