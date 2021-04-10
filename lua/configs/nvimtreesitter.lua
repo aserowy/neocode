@@ -1,5 +1,5 @@
 local ts_config = require'nvim-treesitter.configs'
-local keymaps = require'keymaps'
+local mappings = require'mappings'
 
 ts_config.setup {
     ensure_installed = "maintained",
@@ -18,7 +18,7 @@ ts_config.setup {
     textobjects = {
         select = {
             enable = true,
-            keymaps = keymaps.tree_sitter_textobjects()
+            keymaps = mappings.tree_sitter_textobjects()
         }
     }
 }

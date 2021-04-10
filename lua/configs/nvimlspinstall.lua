@@ -1,12 +1,12 @@
 local vim = vim
 
-local keymap = require'keymaps'
+local mappings = require'mappings'
 
 local function on_attach(_, bufnr)
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
     buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
-    keymap.lsp_on_attach(bufnr)
+    mappings.lsp_on_attach(bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
