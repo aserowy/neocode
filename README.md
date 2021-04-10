@@ -2,6 +2,12 @@
 
 Minimal nvim configuration in lua. All used plugins are mostly untouched.
 
+## setup
+
+Clone or copy the repo into your `.config/nvim` folder and start nvim. The package manager will get installed automatically. After the first error `<CR\>` install all packages with `:PackerInstall` and restart nvim.
+
+Default theme is `solarized-dark` currently. You can change the theme in `lua/configs/nvimbase16.lua`. Just look up themes e.g. here <http://chriskempson.com/projects/base16/>.
+
 ## plugins
 
 | plugin |     |
@@ -14,12 +20,12 @@ All standard keymaps of nvim are untouched. The leader key is `space`. To open f
 
 ### window movement
 
-| map   | function |
-| ----- | -------- |
-| <C-j> |          |
-| <C-k> |          |
-| <C-l> |          |
-| <C-h> |          |
+| map    | function |
+| ------ | -------- |
+| <C-j\> |          |
+| <C-k\> |          |
+| <C-l\> |          |
+| <C-h\> |          |
 
 ### buffer
 

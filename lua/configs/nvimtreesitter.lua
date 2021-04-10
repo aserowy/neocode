@@ -18,7 +18,7 @@ ts_config.setup {
     textobjects = {
         select = {
             enable = true,
-            keymaps = keymaps.tree_sitter_textobjects() 
+            keymaps = keymaps.tree_sitter_textobjects()
         }
     }
 }
