@@ -25,7 +25,7 @@ require'packer'.startup(
         -- navigation
         use 'kyazdani42/nvim-tree.lua'
         use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/popup.nvim'}
-        use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+        use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
         -- lsp
         use 'neovim/nvim-lspconfig'
@@ -65,7 +65,6 @@ require'configs.vimautosave'
 
 -- navigation
 require'configs.nvimtree'
-require'configs.nvimbufferline'
 
 -- lsp
 require'configs.nvimlspinstall'

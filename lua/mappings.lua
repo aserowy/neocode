@@ -26,9 +26,10 @@ mappings.file_tree = {
 -- buffer
 keymaps.register('n', {
     ['<Leader>bs'] = [[<Cmd>lua require('telescope.builtin').buffers()<CR>]],
-    ['<Leader>bd'] = [[<Cmd>bdelete<CR>]],
-    ['<Leader>bn'] = [[<Cmd>BufferLineCycleNext<CR>]],
-    ['<Leader>bp'] = [[<Cmd>BufferLineCyclePrev<CR>]],
+    ['<Leader>bd'] = [[<Cmd>BufferClose<CR>]],
+    ['<Leader>bn'] = [[<Cmd>BufferNext<CR>]],
+    ['<Leader>bp'] = [[<Cmd>BufferPrevious<CR>]],
+    ['<Leader>bm'] = [[<Cmd>BufferOrderByDirectory<CR>]],
 })
 
 -- window
