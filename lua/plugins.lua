@@ -42,12 +42,17 @@ require'packer'.startup(
         use 'nvim-treesitter/nvim-treesitter-textobjects'
 
         -- formatting
+        vim.g.kommentary_create_default_mappings = false
+        use 'b3nj5m1n/kommentary'
         use 'sbdchd/neoformat'
 
         -- autocompletion
         use 'windwp/nvim-autopairs'
         use 'hrsh7th/nvim-compe'
         use 'L3MON4D3/LuaSnip'
+
+        -- registers
+        use 'tversteeg/registers.nvim'
     end)
 
 -- common
@@ -69,6 +74,9 @@ require'configs.lspkindnvim'
 -- linting
 require'configs.nvimcolorizer'
 require'configs.nvimtreesitter'
+
+-- formatting
+require'kommentary.config'.use_extended_mappings()
 
 -- autocompletion
 require'configs.nvimautopair'
