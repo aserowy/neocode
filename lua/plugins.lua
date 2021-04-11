@@ -23,6 +23,7 @@ require'packer'.startup(
 
         -- scrolling
         use 'karb94/neoscroll.nvim'
+        use 'nacro90/numb.nvim'
         use 'dstein64/nvim-scrollview'
 
         -- navigation
@@ -62,9 +63,12 @@ require'packer'.startup(
 require'configs.galaxylinenvim'
 require'configs.gitsignsnvim'
 require'configs.indentblanklinenvim'
-require'configs.neoscrollnvim'
 require'configs.nvimbase16'.init()
 require'configs.vimautosave'
+
+-- scrolling
+require'configs.neoscrollnvim'
+require'numb'.setup()
 
 -- navigation
 require'configs.nvimtree'
