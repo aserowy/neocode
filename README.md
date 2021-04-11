@@ -10,13 +10,13 @@ Default theme is `solarized-dark` currently. You can change the theme in `lua/co
 
 ## todo
 
-- [-] complete documentation
-- [-] save on file open to trigger lsp hints
-- [-] adding automated imports
-- [-] add theme management
-- [-] pr omnisharp to used lspinstall
-- [-] add releases to stabilize while working on trunk
-- [-] add install scripts for ubuntu and win
+- [ ] complete documentation
+- [ ] save on file open to trigger lsp hints
+- [ ] adding automated imports
+- [ ] add theme management
+- [ ] pr omnisharp to used lspinstall
+- [ ] add releases to stabilize while working on trunk
+- [ ] add install scripts for ubuntu and win
 
 ## plugins
 
