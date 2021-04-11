@@ -1,3 +1,5 @@
+local vim = vim
+
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
@@ -45,7 +47,7 @@ require'packer'.startup(
         -- autocompletion
         use 'windwp/nvim-autopairs'
         use 'hrsh7th/nvim-compe'
-        use 'norcalli/snippets.nvim'
+        use 'L3MON4D3/LuaSnip'
     end)
 
 -- common
@@ -71,4 +73,4 @@ require'configs.nvimtreesitter'
 -- autocompletion
 require'configs.nvimautopair'
 require'configs.nvimcompe'
-require'configs.snippetsnvim'
+require'luasnip'

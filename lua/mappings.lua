@@ -1,3 +1,4 @@
+local vim = vim
 local keymaps = require'nvim.keymaps'
 
 local mappings = {}
@@ -54,10 +55,39 @@ keymaps.register('t', {
     ['<C-h>'] = '<C-\\><C-N><C-w><C-h>',
 })
 
--- snippets
+-- completion & snippets
+_G.snippet_jump = function()
+    require'luasnip'.jump(1)
+end
+
+_G.completions = function()
+    local ap = require('nvim-autopairs')
+    if vim.fn.pumvisible() == 1 then
+        if vim.fn.complete_info()['selected'] ~= -1 then
+            return vim.fn['compe#confirm']('<CR>')
+        end
+    end
+    return ap.check_break_line_char()
+end
+
 keymaps.register('i', {
-    ['<C-h>'] = '<cmd>lua return require"snippets".advance_snippet(-1)<CR>',
-    ['<C-l>'] = '<cmd>lua return require"snippets".expand_or_advance(1)<CR>',
+    ['<C-j>'] = 'pumvisible() ? "<C-n>" : "C-j"',
+    ['<C-k>'] = 'pumvisible() ? "<C-p>" : "C-k"',
+    ['<C-l>'] = 'pumvisible() ? v:lua.completions() : v:lua.snippet_jump()',
+}, {expr = true})
+
+keymaps.register('s', {
+    ['<C-j>'] = 'pumvisible() ? "<C-n>" : "C-j"',
+    ['<C-k>'] = 'pumvisible() ? "<C-p>" : "C-k"',
+}, {expr = true})
+
+keymaps.register('i', {
+    ['<C-h>'] = '<cmd>lua require"luasnip".jump(-1)<CR>',
+})
+
+keymaps.register('s', {
+    ['<C-h>'] = '<cmd>lua require"luasnip".jump(-1)<CR>',
+    ['<C-l>'] = '<cmd>lua require"luasnip".jump(1)<CR>',
 })
 
 -- lsp
