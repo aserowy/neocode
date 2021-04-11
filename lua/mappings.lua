@@ -57,7 +57,11 @@ keymaps.register('t', {
 
 -- completion & snippets
 _G.snippet_jump = function()
-    require'luasnip'.jump(1)
+    local ls = require'luasnip'
+    if ls.jumpable(1) then
+        ls.jump(1)
+    end
+    return ''
 end
 
 _G.completions = function()
@@ -71,14 +75,14 @@ _G.completions = function()
 end
 
 keymaps.register('i', {
-    ['<C-j>'] = 'pumvisible() ? "<C-n>" : "C-j"',
-    ['<C-k>'] = 'pumvisible() ? "<C-p>" : "C-k"',
+    ['<C-j>'] = 'pumvisible() ? "<C-n>" : "<C-j>"',
+    ['<C-k>'] = 'pumvisible() ? "<C-p>" : "<C-k>"',
     ['<C-l>'] = 'pumvisible() ? v:lua.completions() : v:lua.snippet_jump()',
 }, {expr = true})
 
 keymaps.register('s', {
-    ['<C-j>'] = 'pumvisible() ? "<C-n>" : "C-j"',
-    ['<C-k>'] = 'pumvisible() ? "<C-p>" : "C-k"',
+    ['<C-j>'] = 'pumvisible() ? "<C-n>" : "<C-j>"',
+    ['<C-k>'] = 'pumvisible() ? "<C-p>" : "<C-k>"',
 }, {expr = true})
 
 keymaps.register('i', {
