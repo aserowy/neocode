@@ -18,9 +18,12 @@ require'packer'.startup(
         use 'glepnir/galaxyline.nvim'
         use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
         use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
-        use 'karb94/neoscroll.nvim'
         use 'norcalli/nvim-base16.lua'
         use '907th/vim-auto-save'
+
+        -- scrolling
+        use 'karb94/neoscroll.nvim'
+        use 'dstein64/nvim-scrollview'
 
         -- navigation
         use 'kyazdani42/nvim-tree.lua'
