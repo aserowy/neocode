@@ -5,8 +5,9 @@ local mappings = {}
 
 -- file
 keymaps.register('n', {
-    ['<Leader>fs'] = [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
+    ['<Leader>ff'] = [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
     ['<Leader>fo'] = [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]],
+    ['<Leader>fs'] = [[<cmd>lua require('telescope.builtin').grep_string()<CR>]],
     ['<Leader>ft'] = ':NvimTreeToggle<CR>',
 
     ['<Leader>fi'] = 'gg=G',
@@ -98,7 +99,7 @@ keymaps.register('s', {
 -- lsp
 mappings.lsp_on_attach = {
     ['gD'] = '<cmd>lua vim.lsp.buf.declaration()<CR>',
-    ['gd'] = '<cmd>lua vim.lsp.buf.definition()<CR>',
+    ['gd'] = [[<cmd>lua require('telescope.builtin').lsp_definitions()<CR>]],
     ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
     ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<CR>',
     ['<space>sh'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>',
