@@ -1,24 +1,33 @@
 local vim = vim
 
-local options = require'nvim.options'
-local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
+local settings = {
+    theme = 'solarized-dark'
+}
 
-vim.g.mapleader = ' '
+settings.setup = function ()
+    local options = require'nvim.options'
+    local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
-options.set(option, 'completeopt', 'menuone,noselect')
-options.set(option, 'hidden', true)
-options.set(option, 'ignorecase', true)
-options.set(option, 'mouse', 'a')
-options.set(option, 'smartcase', true)
-options.set(option, 'splitbelow', true)
-options.set(option, 'splitright', true)
-options.set(option, 'termguicolors', true)
+    vim.g.mapleader = ' '
 
-options.set(window, 'number', true)
-options.set(window, 'relativenumber', true)
-options.set(window, 'signcolumn', 'yes')
+    -- options
+    options.set(option, 'completeopt', 'menuone,noselect')
+    options.set(option, 'hidden', true)
+    options.set(option, 'ignorecase', true)
+    options.set(option, 'mouse', 'a')
+    options.set(option, 'smartcase', true)
+    options.set(option, 'splitbelow', true)
+    options.set(option, 'splitright', true)
+    options.set(option, 'termguicolors', true)
 
-options.set(buffer, 'expandtab', true)
-options.set(buffer, 'shiftwidth', 4)
-options.set(buffer, 'softtabstop', 4)
-options.set(buffer, 'tabstop', 4)
+    options.set(window, 'number', true)
+    options.set(window, 'relativenumber', true)
+    options.set(window, 'signcolumn', 'yes')
+
+    options.set(buffer, 'expandtab', true)
+    options.set(buffer, 'shiftwidth', 4)
+    options.set(buffer, 'softtabstop', 4)
+    options.set(buffer, 'tabstop', 4)
+end
+
+return settings

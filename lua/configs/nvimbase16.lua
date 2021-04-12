@@ -1,10 +1,10 @@
+local settings = require'settings'
+
 -- themes at http://chriskempson.com/projects/base16/
-local theme = {
-    name = 'solarized-dark'
-}
+local theme = {}
 
 theme.init = function()
-    theme.set(theme.name)
+    theme.set(settings.theme)
 end
 
 theme.set = function(name)
@@ -14,7 +14,7 @@ end
 
 theme.get_theme = function()
     local base16 = require'base16'
-    return base16.themes[theme.name]
+    return base16.themes[settings.theme]
 end
 
 return theme

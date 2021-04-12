@@ -9,7 +9,7 @@ local create_border = function (condition)
     local result = {
         provider = function() return '' end,
         separator = '| ',
-        separator_highlight = {colors.inactive, colors.bg},
+        separator_highlight = {colors.inactive, colors.bg_accent},
     }
     if condition ~= nil then
         result.condition = condition
@@ -50,7 +50,7 @@ gls.left[1] = {
             vim.api.nvim_command('hi GalaxyViMode guifg=' .. color)
             return '▊ '
         end,
-        highlight = {colors.error, colors.bg}
+        highlight = {colors.error, colors.bg_accent}
     }
 }
 
@@ -58,7 +58,7 @@ gls.left[2] ={
     FileIcon = {
         provider = 'FileIcon',
         condition = conditions.buffer_not_empty,
-        highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg},
+        highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg_accent},
     },
 }
 
@@ -66,9 +66,9 @@ gls.left[3] = {
     FileName = {
         provider = 'FileName',
         condition = conditions.buffer_not_empty,
-        highlight = {colors.active, colors.bg, 'bold'},
+        highlight = {colors.active, colors.bg_accent, 'bold'},
         separator = '| ',
-        separator_highlight = {colors.inactive, colors.bg},
+        separator_highlight = {colors.inactive, colors.bg_accent},
     }
 }
 
@@ -77,7 +77,7 @@ gls.left[4] = {
         provider = function() return ' ' end,
         condition = conditions.check_git_workspace,
         icon = '',
-        highlight = {colors.warning, colors.bg},
+        highlight = {colors.hint, colors.bg_accent},
     }
 }
 
@@ -85,9 +85,9 @@ gls.left[5] = {
     GitBranch = {
         provider = 'GitBranch',
         condition = conditions.check_git_workspace,
-        highlight = {colors.active, colors.bg},
+        highlight = {colors.active, colors.bg_accent},
         separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
+        separator_highlight = {'NONE', colors.bg_accent},
     }
 }
 
@@ -96,7 +96,7 @@ gls.left[6] = {
         provider = 'DiffRemove',
         condition = conditions.hide_in_width,
         icon = ' ',
-        highlight = {colors.error, colors.bg},
+        highlight = {colors.error, colors.bg_accent},
     }
 }
 
@@ -105,7 +105,7 @@ gls.left[7] = {
         provider = 'DiffModified',
         condition = conditions.hide_in_width,
         icon = '柳 ',
-        highlight = {colors.highlight01, colors.bg},
+        highlight = {colors.highlight01, colors.bg_accent},
     }
 }
 
@@ -114,7 +114,7 @@ gls.left[8] = {
         provider = 'DiffAdd',
         condition = conditions.hide_in_width,
         icon = ' ',
-        highlight = {colors.ok, colors.bg},
+        highlight = {colors.ok, colors.bg_accent},
     }
 }
 
@@ -126,7 +126,7 @@ gls.left[10] = {
     DiagnosticError = {
         provider = 'DiagnosticError',
         icon = ' ',
-        highlight = {colors.error, colors.bg},
+        highlight = {colors.error, colors.bg_accent},
     }
 }
 
@@ -134,7 +134,7 @@ gls.left[11] = {
     DiagnosticWarn = {
         provider = 'DiagnosticWarn',
         icon = ' ',
-        highlight = {colors.warning, colors.bg}
+        highlight = {colors.warning, colors.bg_accent}
     }
 }
 
@@ -142,7 +142,7 @@ gls.left[12] = {
     DiagnosticHint = {
         provider = 'DiagnosticHint',
         icon = ' ',
-        highlight = {colors.information, colors.bg}
+        highlight = {colors.information, colors.bg_accent}
     }
 }
 
@@ -150,7 +150,7 @@ gls.left[13] = {
     DiagnosticInfo = {
         provider = 'DiagnosticInfo',
         icon = ' ',
-        highlight = {colors.ok, colors.bg}
+        highlight = {colors.ok, colors.bg_accent}
     }
 }
 
@@ -163,14 +163,14 @@ gls.left[14] = {
             return true
         end,
         icon = ' ',
-        highlight = {colors.active, colors.bg},
+        highlight = {colors.active, colors.bg_accent},
     }
 }
 
 gls.right[1] = {
     PerCent = {
         provider = 'LinePercent',
-        highlight = {colors.information, colors.bg},
+        highlight = {colors.information, colors.bg_accent},
     }
 }
 
@@ -178,16 +178,16 @@ gls.right[2] = {
     FileEncode = {
         provider = 'FileEncode',
         condition = conditions.hide_in_width,
-        highlight = {colors.information, colors.bg},
+        highlight = {colors.information, colors.bg_accent},
     }
 }
 
 gls.right[3] = {
     Space = {
         provider = function() return ' ' end,
-        highlight = {colors.inactive, colors.bg},
+        highlight = {colors.inactive, colors.bg_accent},
         separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
+        separator_highlight = {'NONE', colors.bg_accent},
     }
 }
 
@@ -196,8 +196,8 @@ gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.short_line_left[1] = {
     Init = {
-        provider = function() return '▊ ' end,
-        highlight = {colors.inactive, colors.bg},
+        provider = function() return ' ' end,
+        highlight = {colors.inactive, colors.bg_accent},
     },
 }
 
@@ -205,7 +205,7 @@ gls.short_line_left[2] ={
     ShortFileIcon = {
         provider = 'FileIcon',
         condition = conditions.buffer_not_empty,
-        highlight = {colors.inactive, colors.bg},
+        highlight = {colors.inactive, colors.bg_accent},
     },
 }
 
@@ -213,14 +213,14 @@ gls.short_line_left[3] = {
     ShortFileName = {
         provider = 'FileName',
         condition = conditions.buffer_not_empty,
-        highlight = {colors.inactive, colors.bg, 'bold'},
+        highlight = {colors.inactive, colors.bg_accent, 'bold'},
     }
 }
 
 gls.short_line_right[1] = {
     BufferIcon = {
         provider = 'BufferIcon',
-        highlight = {colors.inactive, colors.bg}
+        highlight = {colors.inactive, colors.bg_accent}
     }
 }
 

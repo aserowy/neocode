@@ -87,5 +87,5 @@ require'kommentary.config'.use_extended_mappings()
 -- autocompletion
 require'configs.nvimautopair'
 require'configs.nvimcompe'
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+require'configs.nvimlightbulb'
 require'luasnip'
