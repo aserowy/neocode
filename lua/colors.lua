@@ -4,14 +4,14 @@ return {
     bg = '#'..theme.base00,
     bg_accent = '#'..theme.base01,
     inactive = '#'..theme.base02,
-    active = '#'..theme.base04,
+    active = '#'..theme.base05,
     error = '#'..theme.base08,
-    warning = '#'..theme.base09,
-    hint = '#'..theme.base0A,
+    critical = '#'..theme.base09,
+    warning = '#'..theme.base0A,
     ok = '#'..theme.base0B,
     information = '#'..theme.base0C,
+    hint = '#'..theme.base0D,
 
-    highlight01 = '#'..theme.base0D,
     highlight02 = '#'..theme.base0E,
     highlight03 = '#'..theme.base0F,
 }

@@ -21,27 +21,27 @@ gls.left[1] = {
     ViMode = {
         provider = function()
             local mode_color = {
-                n = colors.highlight01,
+                n = colors.hint,
                 i = colors.ok,
                 v = colors.highlight02,
                 [''] = colors.highlight02,
                 V = colors.highlight02,
                 [''] = colors.highlight02,
                 c = colors.highlight03,
-                no = colors.highlight01,
+                no = colors.hint,
                 s = colors.warning,
                 S = colors.warning,
                 [''] = colors.warning,
                 ic = colors.ok,
                 R = colors.error,
                 Rv = colors.error,
-                cv = colors.highlight01,
-                ce = colors.highlight01,
+                cv = colors.hint,
+                ce = colors.hint,
                 r = colors.information,
                 rm = colors.information,
                 ['r?'] = colors.information,
-                ['!'] = colors.highlight01,
-                t = colors.highlight01
+                ['!'] = colors.hint,
+                t = colors.hint
             }
 
             local color = mode_color[vim.fn.mode()]
@@ -77,7 +77,7 @@ gls.left[4] = {
         provider = function() return ' ' end,
         condition = conditions.check_git_workspace,
         icon = '',
-        highlight = {colors.hint, colors.bg_accent},
+        highlight = {colors.error, colors.bg_accent},
     }
 }
 
@@ -105,7 +105,7 @@ gls.left[7] = {
         provider = 'DiffModified',
         condition = conditions.hide_in_width,
         icon = '柳 ',
-        highlight = {colors.highlight01, colors.bg_accent},
+        highlight = {colors.hint, colors.bg_accent},
     }
 }
 

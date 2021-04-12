@@ -74,6 +74,7 @@ require'numb'.setup()
 require'configs.nvimtree'
 
 -- lsp
+require'configs.nvimlspconfig'
 require'configs.nvimlspinstall'
 require'configs.lspkindnvim'
 
