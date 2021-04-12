@@ -5,12 +5,12 @@ local mappings = {}
 
 -- file
 keymaps.register('n', {
-    ['<Leader>fs'] = [[<Cmd>lua require('telescope.builtin').find_files()<CR>]],
-    ['<Leader>fo'] = [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]],
+    ['<Leader>fs'] = [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
+    ['<Leader>fo'] = [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]],
     ['<Leader>ft'] = ':NvimTreeToggle<CR>',
 
     ['<Leader>fi'] = 'gg=G',
-    ['<Leader>fm'] = [[<Cmd>Neoformat<CR>]],
+    ['<Leader>fm'] = [[<cmd>Neoformat<CR>]],
 })
 
 -- file tree
@@ -25,11 +25,11 @@ mappings.file_tree = {
 
 -- buffer
 keymaps.register('n', {
-    ['<Leader>bs'] = [[<Cmd>lua require('telescope.builtin').buffers()<CR>]],
-    ['<Leader>bd'] = [[<Cmd>BufferClose<CR>]],
-    ['<Leader>bn'] = [[<Cmd>BufferNext<CR>]],
-    ['<Leader>bp'] = [[<Cmd>BufferPrevious<CR>]],
-    ['<Leader>bm'] = [[<Cmd>BufferOrderByDirectory<CR>]],
+    ['<Leader>bs'] = [[<cmd>lua require('telescope.builtin').buffers()<CR>]],
+    ['<Leader>bd'] = [[<cmd>BufferClose<CR>]],
+    ['<Leader>bn'] = [[<cmd>BufferNext<CR>]],
+    ['<Leader>bp'] = [[<cmd>BufferPrevious<CR>]],
+    ['<Leader>bm'] = [[<cmd>BufferOrderByDirectory<CR>]],
 })
 
 -- window
@@ -75,10 +75,6 @@ _G.completions = function()
     return ap.check_break_line_char()
 end
 
-keymaps.register('n', {
-    ['<Leader>ca'] = [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]],
-})
-
 keymaps.register('i', {
     ['<C-j>'] = 'pumvisible() ? "<C-n>" : "<C-j>"',
     ['<C-k>'] = 'pumvisible() ? "<C-p>" : "<C-k>"',
@@ -101,18 +97,20 @@ keymaps.register('s', {
 
 -- lsp
 mappings.lsp_on_attach = {
-    ['gD'] = '<Cmd>lua vim.lsp.buf.declaration()<CR>',
-    ['gd'] = '<Cmd>lua vim.lsp.buf.definition()<CR>',
-    ['K'] = '<Cmd>lua vim.lsp.buf.hover()<CR>',
+    ['gD'] = '<cmd>lua vim.lsp.buf.declaration()<CR>',
+    ['gd'] = '<cmd>lua vim.lsp.buf.definition()<CR>',
+    ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
     ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<CR>',
     ['<space>sh'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>',
     ['<space>sd'] = '<cmd>lua vim.lsp.buf.type_definition()<CR>',
     ['<space>rn'] = '<cmd>lua vim.lsp.buf.rename()<CR>',
-    ['gr'] = '<cmd>lua vim.lsp.buf.references()<CR>',
-    ['<space>dd'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
+    ['gr'] = [[<cmd>lua require('telescope.builtin').lsp_references()<CR>]],
+    ['<space>ca'] = [[<cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]],
+    ['<space>dl'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
     ['<space>dp'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
     ['<space>dn'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
-    ['<space>dl'] = '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
+    ['<space>df'] = [[<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<CR>]],
+    ['<space>dd'] = [[<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>]],
 }
 
 -- selection
