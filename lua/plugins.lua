@@ -34,7 +34,6 @@ require'packer'.startup(
         -- lsp
         use 'neovim/nvim-lspconfig'
         use 'kabouzeid/nvim-lspinstall'
-
         use 'onsails/lspkind-nvim'
 
         -- linting
@@ -53,6 +52,7 @@ require'packer'.startup(
         -- autocompletion
         use 'windwp/nvim-autopairs'
         use 'hrsh7th/nvim-compe'
+        use 'kosayoda/nvim-lightbulb'
         use 'L3MON4D3/LuaSnip'
 
         -- registers
@@ -87,4 +87,5 @@ require'kommentary.config'.use_extended_mappings()
 -- autocompletion
 require'configs.nvimautopair'
 require'configs.nvimcompe'
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 require'luasnip'

@@ -4,8 +4,7 @@ local keymaps = require'nvim.keymaps'
 local mappings = require'mappings'
 
 local function on_attach(_, bufnr)
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     keymaps.register_bufnr(bufnr, 'n', mappings.lsp_on_attach)
 end
@@ -19,7 +18,7 @@ local function setup_servers()
     for _, server in pairs(servers) do
         require'lspconfig'[server].setup{
             capabilities = capabilities,
-            on_attach = on_attach
+            on_attach = on_attach,
         }
     end
 end

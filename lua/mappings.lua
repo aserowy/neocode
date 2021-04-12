@@ -75,6 +75,10 @@ _G.completions = function()
     return ap.check_break_line_char()
 end
 
+keymaps.register('n', {
+    ['<Leader>ca'] = [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]],
+})
+
 keymaps.register('i', {
     ['<C-j>'] = 'pumvisible() ? "<C-n>" : "<C-j>"',
     ['<C-k>'] = 'pumvisible() ? "<C-p>" : "<C-k>"',

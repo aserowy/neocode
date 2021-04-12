@@ -1,15 +1,21 @@
 local vim = vim
 local gl = require('galaxyline')
 local gls = gl.section
-local condition = require('galaxyline.condition')
+local conditions = require('galaxyline.condition')
 
 local colors = require'colors'
 
-local border = {
-    provider = function() return '' end,
-    separator = '| ',
-    separator_highlight = {colors.inactive, colors.bg},
-}
+local create_border = function (condition)
+    local result = {
+        provider = function() return '' end,
+        separator = '| ',
+        separator_highlight = {colors.inactive, colors.bg},
+    }
+    if condition ~= nil then
+        result.condition = condition
+    end
+    return result
+end
 
 gls.left[1] = {
     ViMode = {
@@ -51,7 +57,7 @@ gls.left[1] = {
 gls.left[2] ={
     FileIcon = {
         provider = 'FileIcon',
-        condition = condition.buffer_not_empty,
+        condition = conditions.buffer_not_empty,
         highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg},
     },
 }
@@ -59,7 +65,7 @@ gls.left[2] ={
 gls.left[3] = {
     FileName = {
         provider = 'FileName',
-        condition = condition.buffer_not_empty,
+        condition = conditions.buffer_not_empty,
         highlight = {colors.active, colors.bg, 'bold'},
         separator = '| ',
         separator_highlight = {colors.inactive, colors.bg},
@@ -69,7 +75,7 @@ gls.left[3] = {
 gls.left[4] = {
     GitIcon = {
         provider = function() return ' ' end,
-        condition = condition.check_git_workspace,
+        condition = conditions.check_git_workspace,
         icon = '',
         highlight = {colors.warning, colors.bg},
     }
@@ -78,7 +84,7 @@ gls.left[4] = {
 gls.left[5] = {
     GitBranch = {
         provider = 'GitBranch',
-        condition = condition.check_git_workspace,
+        condition = conditions.check_git_workspace,
         highlight = {colors.active, colors.bg},
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
@@ -88,7 +94,7 @@ gls.left[5] = {
 gls.left[6] = {
     DiffRemove = {
         provider = 'DiffRemove',
-        condition = condition.hide_in_width,
+        condition = conditions.hide_in_width,
         icon = ' ',
         highlight = {colors.error, colors.bg},
     }
@@ -97,7 +103,7 @@ gls.left[6] = {
 gls.left[7] = {
     DiffModified = {
         provider = 'DiffModified',
-        condition = condition.hide_in_width,
+        condition = conditions.hide_in_width,
         icon = '柳 ',
         highlight = {colors.highlight01, colors.bg},
     }
@@ -106,14 +112,14 @@ gls.left[7] = {
 gls.left[8] = {
     DiffAdd = {
         provider = 'DiffAdd',
-        condition = condition.hide_in_width,
+        condition = conditions.hide_in_width,
         icon = ' ',
         highlight = {colors.ok, colors.bg},
     }
 }
 
 gls.left[9] = {
-    Border = border,
+    Border = create_border(conditions.check_git_workspace),
 }
 
 gls.left[10] = {
@@ -171,7 +177,7 @@ gls.right[1] = {
 gls.right[2] = {
     FileEncode = {
         provider = 'FileEncode',
-        condition = condition.hide_in_width,
+        condition = conditions.hide_in_width,
         highlight = {colors.information, colors.bg},
     }
 }
@@ -198,7 +204,7 @@ gls.short_line_left[1] = {
 gls.short_line_left[2] ={
     ShortFileIcon = {
         provider = 'FileIcon',
-        condition = condition.buffer_not_empty,
+        condition = conditions.buffer_not_empty,
         highlight = {colors.inactive, colors.bg},
     },
 }
@@ -206,7 +212,7 @@ gls.short_line_left[2] ={
 gls.short_line_left[3] = {
     ShortFileName = {
         provider = 'FileName',
-        condition = condition.buffer_not_empty,
+        condition = conditions.buffer_not_empty,
         highlight = {colors.inactive, colors.bg, 'bold'},
     }
 }
