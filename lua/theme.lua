@@ -10,9 +10,6 @@ vim.cmd('hi VertSplit guibg='..colors.bg)
 
 -- dashboard
 vim.cmd('hi DashboardHeader guifg='..colors.hint)
--- DashboardCenter
--- DashboardShortcut
--- DashboardFooter
 
 -- gitsigns
 vim.cmd('hi DiffAdd guibg='..colors.bg)

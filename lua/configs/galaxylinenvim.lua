@@ -17,40 +17,55 @@ local create_border = function (condition)
     return result
 end
 
+local create_mode = function (text, bg)
+    return {
+        text = text,
+        bg = bg,
+    }
+end
+
+local mode_normal = create_mode('  ', colors.hint)
+local mode_insert = create_mode('  ', colors.ok)
+local mode_visual = create_mode(' ﯎ ', colors.highlight02)
+local mode_visual_block = create_mode('  ', colors.highlight02)
+local mode_terminal = create_mode('  ', colors.highlight03)
+local mode_undefined = create_mode('  ', colors.error)
+
 gls.left[1] = {
     ViMode = {
         provider = function()
-            local mode_color = {
-                n = colors.hint,
-                i = colors.ok,
-                v = colors.highlight02,
-                [''] = colors.highlight02,
-                V = colors.highlight02,
-                [''] = colors.highlight02,
-                c = colors.highlight03,
-                no = colors.hint,
-                s = colors.warning,
-                S = colors.warning,
-                [''] = colors.warning,
-                ic = colors.ok,
-                R = colors.error,
-                Rv = colors.error,
-                cv = colors.hint,
-                ce = colors.hint,
-                r = colors.information,
-                rm = colors.information,
-                ['r?'] = colors.information,
-                ['!'] = colors.hint,
-                t = colors.hint
+            local modes = {
+                n = mode_normal,
+                i = mode_insert,
+                v = mode_visual,
+                [''] = mode_visual,
+                V = mode_visual,
+                [''] = mode_visual_block,
+                c = mode_undefined,
+                no = mode_normal,
+                s = mode_undefined,
+                S = mode_undefined,
+                [''] = mode_undefined,
+                ic = mode_insert,
+                R = mode_undefined,
+                Rv = mode_undefined,
+                cv = mode_normal,
+                ce = mode_normal,
+                r = mode_undefined,
+                rm = mode_undefined,
+                ['r?'] = mode_undefined,
+                ['!'] = mode_normal,
+                t = mode_terminal
             }
 
-            local color = mode_color[vim.fn.mode()]
-            if color == nil then color = colors.information end
+            local mode = modes[vim.fn.mode()]
+            if mode == nil then mode = mode_undefined end
 
-            vim.api.nvim_command('hi GalaxyViMode guifg=' .. color)
-            return '▊ '
+            vim.api.nvim_command('hi GalaxyViMode guifg='..colors.active..' guibg='..mode.bg)
+            return mode.text
         end,
-        highlight = {colors.error, colors.bg_accent}
+        separator = ' ',
+        separator_highlight = {colors.inactive, colors.bg_accent},
     }
 }
 
@@ -77,7 +92,7 @@ gls.left[4] = {
         provider = function() return ' ' end,
         condition = conditions.check_git_workspace,
         icon = '',
-        highlight = {colors.error, colors.bg_accent},
+        highlight = {colors.critical, colors.bg_accent},
     }
 }
 
@@ -104,7 +119,7 @@ gls.left[7] = {
     DiffModified = {
         provider = 'DiffModified',
         condition = conditions.hide_in_width,
-        icon = '柳 ',
+        icon = ' ',
         highlight = {colors.hint, colors.bg_accent},
     }
 }
@@ -142,7 +157,7 @@ gls.left[12] = {
     DiagnosticHint = {
         provider = 'DiagnosticHint',
         icon = ' ',
-        highlight = {colors.information, colors.bg_accent}
+        highlight = {colors.hint, colors.bg_accent}
     }
 }
 
@@ -150,7 +165,7 @@ gls.left[13] = {
     DiagnosticInfo = {
         provider = 'DiagnosticInfo',
         icon = ' ',
-        highlight = {colors.ok, colors.bg_accent}
+        highlight = {colors.information, colors.bg_accent}
     }
 }
 
@@ -170,7 +185,7 @@ gls.left[14] = {
 gls.right[1] = {
     PerCent = {
         provider = 'LinePercent',
-        highlight = {colors.information, colors.bg_accent},
+        highlight = {colors.hint, colors.bg_accent},
     }
 }
 
@@ -178,7 +193,7 @@ gls.right[2] = {
     FileEncode = {
         provider = 'FileEncode',
         condition = conditions.hide_in_width,
-        highlight = {colors.information, colors.bg_accent},
+        highlight = {colors.hint, colors.bg_accent},
     }
 }
 
