@@ -11,6 +11,7 @@ settings.setup = function ()
     vim.g.mapleader = ' '
 
     -- options
+    options.set(option, 'clipboard', 'unnamedplus')
     options.set(option, 'completeopt', 'menuone,noselect')
     options.set(option, 'hidden', true)
     options.set(option, 'ignorecase', true)

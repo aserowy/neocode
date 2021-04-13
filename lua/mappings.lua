@@ -3,10 +3,16 @@ local keymaps = require'nvim.keymaps'
 
 local mappings = {}
 
+-- session
+keymaps.register('n', {
+    ['<Leader>sl'] = '<cmd>SessionLoad<CR>',
+    ['<Leader>ss'] = '<cmd>SessionSave<CR>',
+})
+
 -- file
 keymaps.register('n', {
     ['<Leader>ff'] = [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
-    ['<Leader>fo'] = [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]],
+    ['<Leader>fh'] = [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]],
     ['<Leader>fs'] = [[<cmd>lua require('telescope.builtin').grep_string()<CR>]],
     ['<Leader>ft'] = ':NvimTreeToggle<CR>',
 
@@ -26,7 +32,7 @@ mappings.file_tree = {
 
 -- buffer
 keymaps.register('n', {
-    ['<Leader>bs'] = [[<cmd>lua require('telescope.builtin').buffers()<CR>]],
+    ['<Leader>bb'] = [[<cmd>lua require('telescope.builtin').buffers()<CR>]],
     ['<Leader>bd'] = [[<cmd>BufferClose<CR>]],
     ['<Leader>bn'] = [[<cmd>BufferNext<CR>]],
     ['<Leader>bp'] = [[<cmd>BufferPrevious<CR>]],

@@ -13,7 +13,7 @@ require'compe'.setup {
     documentation = true;
 
     source = {
-        buffer = true;
+        -- buffer = true;
         luasnip = true;
         nvim_lsp = true;
         nvim_treesitter = true;
