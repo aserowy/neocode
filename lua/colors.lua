@@ -4,7 +4,7 @@ return {
     bg = '#'..theme.base00,
     bg_accent = '#'..theme.base01,
     inactive = '#'..theme.base02,
-    active = '#'..theme.base05,
+    active = '#'..theme.base06,
     error = '#'..theme.base08,
     critical = '#'..theme.base09,
     warning = '#'..theme.base0A,

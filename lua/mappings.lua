@@ -13,7 +13,7 @@ keymaps.register('n', {
 keymaps.register('n', {
     ['<Leader>ff'] = [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
     ['<Leader>fh'] = [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]],
-    ['<Leader>fs'] = [[<cmd>lua require('telescope.builtin').grep_string()<CR>]],
+    ['<Leader>fs'] = [[<cmd>lua require('telescope.builtin').live_grep()<CR>]],
     ['<Leader>ft'] = ':NvimTreeToggle<CR>',
 
     ['<Leader>fi'] = 'gg=G',

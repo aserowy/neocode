@@ -2,10 +2,17 @@ local vim = vim
 
 local colors = require'colors'
 
+-- common
 vim.cmd('hi EndOfBuffer guifg='..colors.bg)
 vim.cmd('hi LineNr guibg='..colors.bg)
 vim.cmd('hi SignColumn guibg='..colors.bg)
 vim.cmd('hi VertSplit guibg='..colors.bg)
+
+-- dashboard
+vim.cmd('hi DashboardHeader guifg='..colors.hint)
+-- DashboardCenter
+-- DashboardShortcut
+-- DashboardFooter
 
 -- gitsigns
 vim.cmd('hi DiffAdd guibg='..colors.bg)

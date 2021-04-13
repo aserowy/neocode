@@ -2,7 +2,7 @@ local ts_config = require'nvim-treesitter.configs'
 local mappings = require'mappings'
 
 ts_config.setup {
-    ensure_installed = "maintained",
+    ensure_installed = 'maintained',
     highlight = {
         enable = true,
         use_languagetree = true

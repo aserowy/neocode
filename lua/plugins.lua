@@ -73,6 +73,7 @@ require'numb'.setup()
 
 -- navigation
 require'configs.nvimtree'
+require'configs.telescopenvim'
 
 -- lsp
 require'configs.nvimlspconfig'
