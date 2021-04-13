@@ -25,7 +25,6 @@ require'packer'.startup(
         -- scrolling
         use 'karb94/neoscroll.nvim'
         use 'nacro90/numb.nvim'
-        use 'dstein64/nvim-scrollview'
 
         -- navigation
         use 'kyazdani42/nvim-tree.lua'
