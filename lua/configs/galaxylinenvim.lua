@@ -185,60 +185,58 @@ gls.left = {
     }
 }
 
-gls.right[1] = {
-    PerCent = {
-        provider = 'LinePercent',
-        highlight = {colors.hint, colors.bg_accent},
-    }
-}
-
-gls.right[2] = {
-    FileEncode = {
-        provider = 'FileEncode',
-        condition = conditions.hide_in_width,
-        highlight = {colors.hint, colors.bg_accent},
-    }
-}
-
-gls.right[3] = {
-    Space = {
-        provider = function() return ' ' end,
-        highlight = {colors.inactive, colors.bg_accent},
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg_accent},
-    }
+gls.right = {
+    {
+        PerCent = {
+            provider = 'LinePercent',
+            highlight = {colors.hint, colors.bg_accent},
+        }
+    },
+    {
+        FileEncode = {
+            provider = 'FileEncode',
+            condition = conditions.hide_in_width,
+            highlight = {colors.hint, colors.bg_accent},
+        }
+    },
+    {
+        Space = {
+            provider = function() return ' ' end,
+            highlight = {colors.inactive, colors.bg_accent},
+            separator = ' ',
+            separator_highlight = {'NONE', colors.bg_accent},
+        }
+    },
 }
 
 -- short line
 gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
-gls.short_line_left[1] = {
-    Init = {
-        provider = function() return ' ' end,
-        highlight = {colors.inactive, colors.bg_accent},
+gls.short_line_left = {
+    {
+        Init = {
+            provider = function() return ' ' end,
+            highlight = {colors.inactive, colors.bg_accent},
+        },
+    },
+    {
+        ShortFileIcon = {
+            provider = 'FileIcon',
+            condition = conditions.buffer_not_empty,
+            highlight = {colors.inactive, colors.bg_accent},
+        },
+    },
+    {
+        ShortFileName = {
+            provider = 'FileName',
+            condition = conditions.buffer_not_empty,
+            highlight = {colors.inactive, colors.bg_accent, 'bold'},
+        }
+    },
+    {
+        BufferIcon = {
+            provider = 'BufferIcon',
+            highlight = {colors.inactive, colors.bg_accent}
+        }
     },
 }
-
-gls.short_line_left[2] ={
-    ShortFileIcon = {
-        provider = 'FileIcon',
-        condition = conditions.buffer_not_empty,
-        highlight = {colors.inactive, colors.bg_accent},
-    },
-}
-
-gls.short_line_left[3] = {
-    ShortFileName = {
-        provider = 'FileName',
-        condition = conditions.buffer_not_empty,
-        highlight = {colors.inactive, colors.bg_accent, 'bold'},
-    }
-}
-
-gls.short_line_right[1] = {
-    BufferIcon = {
-        provider = 'BufferIcon',
-        highlight = {colors.inactive, colors.bg_accent}
-    }
-}
-
