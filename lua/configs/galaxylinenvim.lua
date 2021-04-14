@@ -24,12 +24,12 @@ local create_mode = function (text, bg)
     }
 end
 
-local mode_normal = create_mode('  ', colors.hint)
-local mode_insert = create_mode('  ', colors.ok)
-local mode_visual = create_mode(' ﯎ ', colors.highlight02)
-local mode_visual_block = create_mode('  ', colors.highlight02)
-local mode_terminal = create_mode('  ', colors.highlight03)
-local mode_undefined = create_mode('  ', colors.error)
+local mode_normal = create_mode(' ', colors.hint)
+local mode_insert = create_mode(' ', colors.ok)
+local mode_visual = create_mode('﯎ ', colors.highlight02)
+local mode_visual_block = create_mode(' ', colors.highlight02)
+local mode_terminal = create_mode(' ', colors.highlight03)
+local mode_undefined = create_mode(' ', colors.error)
 
 local get_mode = function (mode)
     local modes = {
@@ -214,6 +214,13 @@ gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.short_line_left = {
     {
+        InactiveViMode = {
+            provider = function() return '' end,
+            separator = '   ',
+            separator_highlight = {colors.inactive, colors.inactive},
+        }
+    },
+    {
         Init = {
             provider = function() return ' ' end,
             highlight = {colors.inactive, colors.bg_accent},
@@ -240,3 +247,28 @@ gls.short_line_left = {
         }
     },
 }
+
+gls.short_line_right = {
+    {
+        ShortPerCent = {
+            provider = 'LinePercent',
+            highlight = {colors.inactive, colors.bg_accent},
+        }
+    },
+    {
+        ShortFileEncode = {
+            provider = 'FileEncode',
+            condition = conditions.hide_in_width,
+            highlight = {colors.inactive, colors.bg_accent},
+        }
+    },
+    {
+        Space = {
+            provider = function() return ' ' end,
+            highlight = {colors.inactive, colors.bg_accent},
+            separator = ' ',
+            separator_highlight = {'NONE', colors.bg_accent},
+        }
+    },
+}
+
