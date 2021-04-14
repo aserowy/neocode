@@ -1,3 +1,7 @@
+local vim = vim
+
+vim.cmd [[set shortmess+=c]]
+
 require'compe'.setup {
     enabled = true;
     autocomplete = true;
