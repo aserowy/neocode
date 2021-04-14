@@ -31,154 +31,157 @@ local mode_visual_block = create_mode('  ', colors.highlight02)
 local mode_terminal = create_mode('  ', colors.highlight03)
 local mode_undefined = create_mode('  ', colors.error)
 
-gls.left[1] = {
-    ViMode = {
-        provider = function()
-            local modes = {
-                n = mode_normal,
-                i = mode_insert,
-                v = mode_visual,
-                [''] = mode_visual,
-                V = mode_visual,
-                [''] = mode_visual_block,
-                c = mode_undefined,
-                no = mode_normal,
-                s = mode_undefined,
-                S = mode_undefined,
-                [''] = mode_undefined,
-                ic = mode_insert,
-                R = mode_undefined,
-                Rv = mode_undefined,
-                cv = mode_normal,
-                ce = mode_normal,
-                r = mode_undefined,
-                rm = mode_undefined,
-                ['r?'] = mode_undefined,
-                ['!'] = mode_normal,
-                t = mode_terminal
-            }
-
-            local mode = modes[vim.fn.mode()]
-            if mode == nil then mode = mode_undefined end
-
-            vim.api.nvim_command('hi GalaxyViMode guifg='..colors.active..' guibg='..mode.bg)
-            return mode.text
-        end,
-        separator = ' ',
-        separator_highlight = {colors.inactive, colors.bg_accent},
+local get_mode = function (mode)
+    local modes = {
+        n = mode_normal,
+        i = mode_insert,
+        v = mode_visual,
+        [''] = mode_visual,
+        V = mode_visual,
+        [''] = mode_visual_block,
+        c = mode_undefined,
+        no = mode_normal,
+        s = mode_undefined,
+        S = mode_undefined,
+        [''] = mode_undefined,
+        ic = mode_insert,
+        R = mode_undefined,
+        Rv = mode_undefined,
+        cv = mode_normal,
+        ce = mode_normal,
+        r = mode_undefined,
+        rm = mode_undefined,
+        ['r?'] = mode_undefined,
+        ['!'] = mode_normal,
+        t = mode_terminal
     }
-}
 
-gls.left[2] ={
-    FileIcon = {
-        provider = 'FileIcon',
-        condition = conditions.buffer_not_empty,
-        highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg_accent},
+    local result = modes[mode]
+    if result == nil then result = mode_undefined end
+
+    return result
+end
+
+gls.left = {
+    {
+        ViModeSpace = {
+            provider = function()
+                local mode = get_mode(vim.fn.mode())
+                vim.api.nvim_command('hi GalaxyViModeSpace guibg='..mode.bg)
+                return ' '
+            end,
+        }
     },
-}
-
-gls.left[3] = {
-    FileName = {
-        provider = 'FileName',
-        condition = conditions.buffer_not_empty,
-        highlight = {colors.active, colors.bg_accent, 'bold'},
-        separator = '| ',
-        separator_highlight = {colors.inactive, colors.bg_accent},
-    }
-}
-
-gls.left[4] = {
-    GitIcon = {
-        provider = function() return ' ' end,
-        condition = conditions.check_git_workspace,
-        icon = '',
-        highlight = {colors.critical, colors.bg_accent},
-    }
-}
-
-gls.left[5] = {
-    GitBranch = {
-        provider = 'GitBranch',
-        condition = conditions.check_git_workspace,
-        highlight = {colors.active, colors.bg_accent},
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg_accent},
-    }
-}
-
-gls.left[6] = {
-    DiffRemove = {
-        provider = 'DiffRemove',
-        condition = conditions.hide_in_width,
-        icon = ' ',
-        highlight = {colors.error, colors.bg_accent},
-    }
-}
-
-gls.left[7] = {
-    DiffModified = {
-        provider = 'DiffModified',
-        condition = conditions.hide_in_width,
-        icon = ' ',
-        highlight = {colors.hint, colors.bg_accent},
-    }
-}
-
-gls.left[8] = {
-    DiffAdd = {
-        provider = 'DiffAdd',
-        condition = conditions.hide_in_width,
-        icon = ' ',
-        highlight = {colors.ok, colors.bg_accent},
-    }
-}
-
-gls.left[9] = {
-    Border = create_border(conditions.check_git_workspace),
-}
-
-gls.left[10] = {
-    DiagnosticError = {
-        provider = 'DiagnosticError',
-        icon = ' ',
-        highlight = {colors.error, colors.bg_accent},
-    }
-}
-
-gls.left[11] = {
-    DiagnosticWarn = {
-        provider = 'DiagnosticWarn',
-        icon = ' ',
-        highlight = {colors.warning, colors.bg_accent}
-    }
-}
-
-gls.left[12] = {
-    DiagnosticHint = {
-        provider = 'DiagnosticHint',
-        icon = ' ',
-        highlight = {colors.hint, colors.bg_accent}
-    }
-}
-
-gls.left[13] = {
-    DiagnosticInfo = {
-        provider = 'DiagnosticInfo',
-        icon = ' ',
-        highlight = {colors.information, colors.bg_accent}
-    }
-}
-
-gls.left[14] = {
-    ShowLspClient = {
-        provider = 'GetLspClient',
-        condition = function()
-            local tbl = {['dashboard'] = true, [' '] = true}
-            if tbl[vim.bo.filetype] then return false end
-            return true
-        end,
-        icon = ' ',
-        highlight = {colors.active, colors.bg_accent},
+    {
+        ViMode = {
+            provider = function()
+                local mode = get_mode(vim.fn.mode())
+                vim.api.nvim_command('hi GalaxyViMode guifg='..colors.active..' guibg='..mode.bg)
+                return mode.text
+            end,
+            separator = ' ',
+            separator_highlight = {colors.inactive, colors.bg_accent},
+        }
+    },
+    {
+        FileIcon = {
+            provider = 'FileIcon',
+            condition = conditions.buffer_not_empty,
+            highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg_accent},
+        },
+    },
+    {
+        FileName = {
+            provider = 'FileName',
+            condition = conditions.buffer_not_empty,
+            highlight = {colors.active, colors.bg_accent, 'bold'},
+            separator = '| ',
+            separator_highlight = {colors.inactive, colors.bg_accent},
+        }
+    },
+    {
+        GitIcon = {
+            provider = function() return ' ' end,
+            condition = conditions.check_git_workspace,
+            icon = '',
+            highlight = {colors.critical, colors.bg_accent},
+        }
+    },
+    {
+        GitBranch = {
+            provider = 'GitBranch',
+            condition = conditions.check_git_workspace,
+            highlight = {colors.active, colors.bg_accent},
+            separator = ' ',
+            separator_highlight = {'NONE', colors.bg_accent},
+        }
+    },
+    {
+        DiffRemove = {
+            provider = 'DiffRemove',
+            condition = conditions.hide_in_width,
+            icon = ' ',
+            highlight = {colors.error, colors.bg_accent},
+        }
+    },
+    {
+        DiffModified = {
+            provider = 'DiffModified',
+            condition = conditions.hide_in_width,
+            icon = ' ',
+            highlight = {colors.hint, colors.bg_accent},
+        }
+    },
+    {
+        DiffAdd = {
+            provider = 'DiffAdd',
+            condition = conditions.hide_in_width,
+            icon = ' ',
+            highlight = {colors.ok, colors.bg_accent},
+        }
+    },
+    {
+        Border = create_border(conditions.check_git_workspace),
+    },
+    {
+        DiagnosticError = {
+            provider = 'DiagnosticError',
+            icon = ' ',
+            highlight = {colors.error, colors.bg_accent},
+        }
+    },
+    {
+        DiagnosticWarn = {
+            provider = 'DiagnosticWarn',
+            icon = ' ',
+            highlight = {colors.warning, colors.bg_accent}
+        }
+    },
+    {
+        DiagnosticHint = {
+            provider = 'DiagnosticHint',
+            icon = ' ',
+            highlight = {colors.hint, colors.bg_accent}
+        }
+    },
+    {
+        DiagnosticInfo = {
+            provider = 'DiagnosticInfo',
+            icon = ' ',
+            highlight = {colors.information, colors.bg_accent}
+        }
+    },
+    {
+        ShowLspClient = {
+            provider = 'GetLspClient',
+            condition = function()
+                local tbl = {['dashboard'] = true, [' '] = true}
+                if tbl[vim.bo.filetype] then return false end
+                return true
+            end,
+            icon = ' ',
+            highlight = {colors.active, colors.bg_accent},
+        }
     }
 }
 
