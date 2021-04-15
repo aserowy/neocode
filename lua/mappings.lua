@@ -49,13 +49,11 @@ keymaps.register('n', {
 
 -- terminal
 keymaps.register('n', {
-    ['<Leader>tt'] = ':edit term://zsh<CR>',
-    ['<Leader>tv'] = ':vsplit term://zsh<CR>',
-    ['<Leader>tx'] = ':split term://zsh<CR>',
+    ['<Leader>tt'] = [[<cmd>lua require'FTerm'.open()<CR>]],
 })
 
 keymaps.register('t', {
-    ['<Leader>td'] = '<C-\\><C-N>:bd!<CR>',
+    ['<Leader>td'] = [[<C-\\><C-N><cmd>lua require'FTerm'.close()<CR>]],
 
     ['<C-j>'] = '<C-\\><C-N><C-w><C-j>',
     ['<C-k>'] = '<C-\\><C-N><C-w><C-k>',
