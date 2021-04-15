@@ -49,10 +49,11 @@ keymaps.register('n', {
 
 -- terminal
 keymaps.register('n', {
-    ['<Leader>tt'] = [[<cmd>lua require'FTerm'.open()<CR>]],
+    ['<Leader>tt'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
 })
 
 keymaps.register('t', {
+    ['<Leader>tt'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
     ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
 
     ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<CR><C-w><C-j>]],
