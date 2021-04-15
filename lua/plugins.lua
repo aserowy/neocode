@@ -49,7 +49,7 @@ require'packer'.startup(
         vim.g.kommentary_create_default_mappings = false
         use 'b3nj5m1n/kommentary'
         use 'sbdchd/neoformat'
-        vim.g.neoformat_verbose = 1
+        -- vim.g.neoformat_verbose = 1
 
         -- autocompletion
         use 'windwp/nvim-autopairs'
