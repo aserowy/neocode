@@ -55,10 +55,10 @@ keymaps.register('n', {
 keymaps.register('t', {
     ['<Leader>td'] = [[<C-\\><C-N><cmd>lua require'FTerm'.close()<CR>]],
 
-    ['<C-j>'] = '<C-\\><C-N><C-w><C-j>',
-    ['<C-k>'] = '<C-\\><C-N><C-w><C-k>',
-    ['<C-l>'] = '<C-\\><C-N><C-w><C-l>',
-    ['<C-h>'] = '<C-\\><C-N><C-w><C-h>',
+    ['<C-j>'] = [[<C-\\><C-N><cmd>lua require'FTerm'.close()<CR><C-w><C-j>]],
+    ['<C-k>'] = [[<C-\\><C-N><cmd>lua require'FTerm'.close()<CR><C-w><C-k>]],
+    ['<C-l>'] = [[<C-\\><C-N><cmd>lua require'FTerm'.close()<CR><C-w><C-l>]],
+    ['<C-h>'] = [[<C-\\><C-N><cmd>lua require'FTerm'.close()<CR><C-w><C-h>]],
 })
 
 -- completion & snippets
