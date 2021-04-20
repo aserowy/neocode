@@ -55,7 +55,8 @@ require'packer'.startup(
         use 'windwp/nvim-autopairs'
         use 'hrsh7th/nvim-compe'
         use 'kosayoda/nvim-lightbulb'
-        use 'L3MON4D3/LuaSnip'
+        -- use 'L3MON4D3/LuaSnip'
+        use 'hrsh7th/vim-vsnip'
 
         -- registers
         use 'tversteeg/registers.nvim'
@@ -97,7 +98,7 @@ require'kommentary.config'.use_extended_mappings()
 require'configs.nvimautopair'
 require'configs.nvimcompe'
 require'configs.nvimlightbulb'
-require'luasnip'
+-- require'luasnip'
 
 -- terminal
 require'FTerm'.setup()

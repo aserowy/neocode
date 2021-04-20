@@ -3,11 +3,16 @@ local api = vim.api
 
 local keymaps = {}
 keymaps.register = function (scope, mappings, options)
-    local opts = vim.tbl_extend('keep', options or {}, {
-        nowait = true,
-        silent = true,
-        noremap = true,
-    })
+    local opts
+    if options == nil then
+        opts = {
+            nowait = true,
+            silent = true,
+            noremap = true,
+        }
+    else
+        opts = options
+    end
 
     for key, value in pairs(mappings) do
         api.nvim_set_keymap(scope, key, value, opts)

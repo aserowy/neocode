@@ -1,3 +1,5 @@
+require'custom.completion'
+
 local keymaps = require'nvim.keymaps'
 
 local mappings = {}
@@ -63,14 +65,16 @@ keymaps.register('t', {
 
 -- completion & snippets
 keymaps.register('i', {
-    ['<C-h>'] = '<cmd>lua require"luasnip".jump(-1)<CR>',
-    ['<C-l>'] = [[<cmd>lua require'custom.completion'.complete_or_jump('<C-l>')<CR>]],
-})
+    ['<CR>'] = [[v:lua.completion.complete('<CR>')]],
+    ['<S-tab>'] = [[v:lua.completion.completion_or_jump_up('<S-tab>')]],
+    ['<tab>'] = [[v:lua.completion.completion_or_jump_down('<tab>')]],
+}, {expr = true})
 
 keymaps.register('s', {
-    ['<C-h>'] = '<cmd>lua require"luasnip".jump(-1)<CR>',
-    ['<C-l>'] = '<cmd>lua require"luasnip".jump(1)<CR>',
-})
+    ['<CR>'] = [[v:lua.completion.complete('<CR>')]],
+    ['<S-tab>'] = [[v:lua.completion.completion_or_jump_up('<S-tab>')]],
+    ['<tab>'] = [[v:lua.completion.completion_or_jump_down('<tab>')]],
+}, {expr = true})
 
 -- lsp
 mappings.lsp_on_attach = {

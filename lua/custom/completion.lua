@@ -1,19 +1,46 @@
 local vim = vim
 
-local try_complete = function(keys)
-    if vim.fn.complete_info()['selected'] ~= -1 then
-        return vim.fn['compe#confirm']('<CR>')
+local rtc = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        return true
+    else
+        return false
     end
-    return vim.api.nvim_replace_termcodes(keys, true, false, true)
 end
 
 local completion = {}
-completion.complete_or_jump = function(keys)
-    if vim.fn.pumvisible() > 0 then
-        return try_complete(keys)
+completion.complete = function(keys)
+    if vim.fn.complete_info()['selected'] ~= -1 then
+        return vim.fn.call('compe#confirm', {'<CR>'})
     end
-    require'luasnip'.jump(1)
-    return true
+    return rtc(keys)
 end
 
-return completion
+completion.completion_or_jump_down = function(keys)
+    if vim.fn.pumvisible() == 1 then
+        return rtc('<C-n>')
+    elseif vim.fn.call('vsnip#available', {1}) == 1 then
+        return rtc('<plug>(vsnip-jump-next)')
+    elseif check_back_space() then
+        return rtc(keys)
+    else
+        return vim.fn['compe#complete']()
+    end
+end
+
+completion.completion_or_jump_up = function(keys)
+    if vim.fn.pumvisible() == 1 then
+        return rtc('<C-p>')
+    elseif vim.fn.call('vsnip#jumpable', {-1}) == 1 then
+        return rtc('<plug>(vsnip-jump-prev)')
+    else
+        return rtc(keys)
+    end
+end
+
+_G.completion = completion

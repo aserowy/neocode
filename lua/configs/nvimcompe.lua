@@ -18,9 +18,10 @@ require'compe'.setup {
 
     source = {
         -- buffer = true;
-        luasnip = true;
+        -- luasnip = true;
         nvim_lsp = true;
         nvim_treesitter = true;
         path = true;
+        vsnip = true;
     };
 }
