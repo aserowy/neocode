@@ -45,17 +45,17 @@ require'packer'.startup(
         use 'romgrk/nvim-treesitter-context'
         use 'nvim-treesitter/nvim-treesitter-textobjects'
 
+        use 'unblevable/quick-scope'
+
         -- formatting
         vim.g.kommentary_create_default_mappings = false
         use 'b3nj5m1n/kommentary'
         use 'sbdchd/neoformat'
-        -- vim.g.neoformat_verbose = 1
 
         -- autocompletion
         use 'windwp/nvim-autopairs'
         use 'hrsh7th/nvim-compe'
         use 'kosayoda/nvim-lightbulb'
-        -- use 'L3MON4D3/LuaSnip'
         use 'hrsh7th/vim-vsnip'
 
         -- registers
