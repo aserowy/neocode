@@ -12,32 +12,33 @@ keymaps.register('n', {
 
 -- file
 keymaps.register('n', {
-    ['<Leader>ff'] = [[<cmd>lua require'custom.search'.git_or_local()<CR>]],
-    ['<Leader>fh'] = [[<cmd>lua require'telescope.builtin'.oldfiles()<CR>]],
-    ['<Leader>fs'] = [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]],
-    ['<Leader>ft'] = ':NvimTreeToggle<CR>',
+    ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<CR>]],
+    ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]],
+    ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
+    ['<C-e>'] = ':NvimTreeToggle<CR>',
 
-    ['<Leader>fi'] = 'gg=G',
-    ['<Leader>fm'] = [[<cmd>Neoformat<CR>]],
+    -- TODO format or indent if no formater available
+    -- ['<Leader>fi'] = 'gg=G',
+    ['<Leader>f'] = [[<cmd>Neoformat<CR>]],
 })
 
 -- file tree
 mappings.file_tree = {
     ['l'] = 'edit',
     ['h'] = 'close_node',
-    ['<space>rn'] = 'full_rename',
-    ['cc'] = 'cut',
-    ['dd'] = 'remove',
-    ['yy'] = 'copy',
+    ['r'] = 'full_rename',
+    ['m'] = 'cut',
+    ['d'] = 'remove',
+    ['y'] = 'copy',
+    ['<C-c>'] = 'close',
+    ['<C-[>'] = 'close',
 }
 
 -- buffer
 keymaps.register('n', {
-    ['<Leader>bb'] = [[<cmd>lua require'telescope.builtin'.buffers()<CR>]],
-    ['<Leader>bd'] = [[<cmd>BufferClose<CR>]],
-    ['<Leader>bn'] = [[<cmd>BufferNext<CR>]],
-    ['<Leader>bp'] = [[<cmd>BufferPrevious<CR>]],
-    ['<Leader>bm'] = [[<cmd>BufferOrderByDirectory<CR>]],
+    ['<C-w><C-c>'] = [[<cmd>BufferClose<CR>]],
+    ['<C-n>'] = [[<cmd>BufferNext<CR>]],
+    ['<C-p>'] = [[<cmd>BufferPrevious<CR>]],
 })
 
 -- window
@@ -50,11 +51,11 @@ keymaps.register('n', {
 
 -- terminal
 keymaps.register('n', {
-    ['<Leader>tt'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
+    ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
 })
 
 keymaps.register('t', {
-    ['<Leader>tt'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
+    ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
     ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
 
     ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<CR><C-w><C-j>]],
@@ -82,16 +83,15 @@ mappings.lsp_on_attach = {
     ['gd'] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>]],
     ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
     ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<CR>',
-    ['<space>sh'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-    ['<space>sd'] = '<cmd>lua vim.lsp.buf.type_definition()<CR>',
-    ['<space>rn'] = '<cmd>lua vim.lsp.buf.rename()<CR>',
+    ['<space>h'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>',
+    ['<space>d'] = '<cmd>lua vim.lsp.buf.type_definition()<CR>',
+    ['<space>r'] = '<cmd>lua vim.lsp.buf.rename()<CR>',
     ['gr'] = [[<cmd>lua require'telescope.builtin'.lsp_references()<CR>]],
-    ['<space>ca'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>]],
-    ['<space>dl'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-    ['<space>dp'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
-    ['<space>dn'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
-    ['<space>df'] = [[<cmd>lua require'telescope.builtin'.lsp_document_diagnostics()<CR>]],
-    ['<space>dd'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<CR>]],
+    ['<space>q'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>]],
+    ['<space>l'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
+    ['<space>p'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
+    ['<space>n'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
+    ['<C-q>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<CR>]],
 }
 
 -- selection
