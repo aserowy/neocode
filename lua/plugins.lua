@@ -14,6 +14,9 @@ require'packer'.startup(
     function(use)
         use 'wbthomason/packer.nvim'
 
+        -- zen
+        use 'kdav5758/TrueZen.nvim'
+
         -- common
         use 'glepnir/dashboard-nvim'
         use 'glepnir/galaxyline.nvim'
@@ -64,6 +67,9 @@ require'packer'.startup(
         -- terminal
         use 'numtostr/FTerm.nvim'
     end)
+
+-- zen
+require'true-zen'
 
 -- common
 require'configs.dashboardnvim'

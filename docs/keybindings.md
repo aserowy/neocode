@@ -15,7 +15,7 @@ The bindings can have the following status:
 
 | status | key                 | effect           | notes |
 | ------ | ------------------- | ---------------- | ----- |
-| c      | <kbd>ctrl + z</kbd> | enables zen mode |       |
+| b      | <kbd>ctrl + z</kbd> | enables zen mode |       |
 
 ## Functions
 

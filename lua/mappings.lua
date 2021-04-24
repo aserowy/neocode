@@ -10,6 +10,11 @@ keymaps.register('n', {
     ['<Leader>ss'] = '<cmd>SessionSave<CR>',
 })
 
+-- zen
+keymaps.register('n', {
+    ['<C-z>'] = [[<cmd>TZMinimalist<CR>]]
+})
+
 -- file
 keymaps.register('n', {
     ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<CR>]],
