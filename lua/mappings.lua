@@ -36,7 +36,7 @@ mappings.file_tree = {
 
 -- buffer
 keymaps.register('n', {
-    ['<C-w><C-c>'] = [[<cmd>BufferClose<CR>]],
+    ['<C-c>'] = [[<cmd>BufferClose<CR>]],
     ['<C-n>'] = [[<cmd>BufferNext<CR>]],
     ['<C-p>'] = [[<cmd>BufferPrevious<CR>]],
 })
@@ -79,14 +79,14 @@ keymaps.register('s', {
 
 -- lsp
 mappings.lsp_on_attach = {
-    ['gD'] = '<cmd>lua vim.lsp.buf.declaration()<CR>',
     ['gd'] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>]],
-    ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
+    ['gf'] = '<cmd>lua vim.lsp.buf.declaration()<CR>',
+    ['gH'] = [[<cmd>lua require'telescope.builtin'.lsp_references()<CR>]],
     ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<CR>',
+    ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
     ['<space>h'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>',
     ['<space>d'] = '<cmd>lua vim.lsp.buf.type_definition()<CR>',
     ['<space>r'] = '<cmd>lua vim.lsp.buf.rename()<CR>',
-    ['gr'] = [[<cmd>lua require'telescope.builtin'.lsp_references()<CR>]],
     ['<space>q'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>]],
     ['<space>l'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
     ['<space>p'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
