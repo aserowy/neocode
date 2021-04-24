@@ -17,7 +17,7 @@ The bindings can have the following status:
 | ------ | ------------------- | ---------------- | ----- |
 | c      | <kbd>ctrl + z</kbd> | enables zen mode |       |
 
-## Navigation
+## Functions
 
 > all keys are configured for normal mode
 
@@ -33,6 +33,18 @@ The bindings can have the following status:
 ## Windows
 
 > all keys are configured for normal mode
+
+### Splits & closes
+
+| status | key                              | effect                          | notes |
+| ------ | -------------------------------- | ------------------------------- | ----- |
+| b      | <kbd>ctrl + w</kbd> <kbd>n</kbd> | creates new file                |       |
+| b      | <kbd>ctrl + w</kbd> <kbd>v</kbd> | splits editor vertically        |       |
+| b      | <kbd>ctrl + w</kbd> <kbd>s</kbd> | splits editor horizontally      |       |
+| b      | <kbd>ctrl + w</kbd> <kbd>q</kbd> | closes window and buffer        |       |
+| b      | <kbd>ctrl + w</kbd> <kbd>o</kbd> | closes window and merges buffer |       |
+
+### Focus
 
 | status | key                 | effect                       | notes |
 | ------ | ------------------- | ---------------------------- | ----- |
@@ -52,6 +64,14 @@ The bindings can have the following status:
 | b      | <kbd>ctrl + c</kbd> | closes the current buffer |       |
 
 ## Editor
+
+| status | key                       | effect          | notes |
+| ------ | ------------------------- | --------------- | ----- |
+| b      | <kbd>g</kbd> <kbd>d</kbd> | definitions     |       |
+| b      | <kbd>g</kbd> <kbd>f</kbd> | declarations    |       |
+| b      | <kbd>g</kbd> <kbd>H</kbd> | references      |       |
+| b      | <kbd>g</kbd> <kbd>i</kbd> | implementations |       |
+| b      | <kbd></kbd> <kbd></kbd>   |                 |       |
 
 ## Explorer
 
