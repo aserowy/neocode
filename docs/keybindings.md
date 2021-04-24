@@ -11,6 +11,12 @@ The bindings can have the following status:
 - c for currently in vscode only
 - m for missing in both
 
+## Zen
+
+| status | key                 | effect           | notes |
+| ------ | ------------------- | ---------------- | ----- |
+| c      | <kbd>ctrl + z</kbd> | enables zen mode |       |
+
 ## Navigation
 
 > all keys are configured for normal mode
