@@ -114,10 +114,18 @@ The bindings can have the following status:
 | b      | <kbd>enter</kbd>    | opens file                     |                                  |
 | b      | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
-## File search
+## File/grep/symbol search
 
-## Grep search
-
-## Symbol search
+| status | key                 | effect                       | notes                            |
+| ------ | ------------------- | ---------------------------- | -------------------------------- |
+| b      | <kbd>ctrl + c</kbd> | closes the search            |                                  |
+| v      | <kbd>ctrl + p</kbd> | select previous search entry |                                  |
+| v      | <kbd>ctrl + n</kbd> | select next search entry     |                                  |
+| b      | <kbd>enter</kbd>    | opens file                   |                                  |
+| b      | <kbd>ctrl + v</kbd> | opens file in vertical split | in vscode currently ctrl + enter |
 
 ## Terminal
+
+| status | key                 | effect              | notes |
+| ------ | ------------------- | ------------------- | ----- |
+| v      | <kbd>ctrl + c</kbd> | closes the terminal |       |
