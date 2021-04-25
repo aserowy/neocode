@@ -20,7 +20,7 @@ keymaps.register('n', {
     ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<CR>]],
     ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]],
     ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
-    ['<C-e>'] = ':NvimTreeToggle<CR>',
+    ['<C-e>'] = ':NvimTreeFindFile<CR>',
 
     -- TODO format or indent if no formater available
     -- ['<Leader>fi'] = 'gg=G',
@@ -36,7 +36,6 @@ mappings.file_tree = {
     ['d'] = 'remove',
     ['y'] = 'copy',
     ['<C-c>'] = 'close',
-    ['<C-[>'] = 'close',
 }
 
 -- buffer

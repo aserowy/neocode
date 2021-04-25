@@ -94,9 +94,25 @@ The bindings can have the following status:
 
 ## Explorer
 
-| status | key         | effect | notes |
-| ------ | ----------- | ------ | ----- |
-| b      | <kbd></kbd> |        |       |
+> works only while explorer is focused
+
+| status | key                 | effect                         | notes                            |
+| ------ | ------------------- | ------------------------------ | -------------------------------- |
+| b      | <kbd>ctrl + c</kbd> | closes the explorer            |                                  |
+| b      | <kbd>j</kbd>        | move one line down             |                                  |
+| b      | <kbd>k</kbd>        | move one line up               |                                  |
+| b      | <kbd>h</kbd>        | collapse folder                |                                  |
+| b      | <kbd>l</kbd>        | expand folder                  | opens the file in vim only       |
+| c      | <kbd>f</kbd>        | grep in current folder         |                                  |
+| v      | <kbd>H</kbd>        | show/hide hidden files         |                                  |
+| b      | <kbd>y</kbd>        | yanks file/folder under cursor |                                  |
+| b      | <kbd>m</kbd>        | moves file/folder              | paste file to finish the move    |
+| b      | <kbd>p</kbd>        | paste file/folder              |                                  |
+| b      | <kbd>d</kbd>        | deletes file/folder            |                                  |
+| b      | <kbd>r</kbd>        | renames file/foler             |                                  |
+| v      | <kbd>a</kbd>        | adds file/foler                |                                  |
+| b      | <kbd>enter</kbd>    | opens file                     |                                  |
+| b      | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
 ## File search
 
