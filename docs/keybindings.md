@@ -11,6 +11,13 @@ The bindings can have the following status:
 - c for currently in vscode only
 - m for missing in both
 
+## General
+
+| status | key                         | effect               | notes |
+| ------ | --------------------------- | -------------------- | ----- |
+| b      | <kbd>ctrl + shift + c</kbd> | copy to clipboard    |       |
+| b      | <kbd>ctrl + shift + v</kbd> | paste from clipboard |       |
+
 ## Zen
 
 | status | key                 | effect           | notes |
@@ -65,15 +72,31 @@ The bindings can have the following status:
 
 ## Editor
 
-| status | key                       | effect          | notes |
-| ------ | ------------------------- | --------------- | ----- |
-| b      | <kbd>g</kbd> <kbd>d</kbd> | definitions     |       |
-| b      | <kbd>g</kbd> <kbd>f</kbd> | declarations    |       |
-| b      | <kbd>g</kbd> <kbd>H</kbd> | references      |       |
-| b      | <kbd>g</kbd> <kbd>i</kbd> | implementations |       |
-| b      | <kbd></kbd> <kbd></kbd>   |                 |       |
+| status | key                                          | effect                                                      | notes                                                                  |
+| ------ | -------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------- |
+| b      | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                        |
+| b      | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside                                      |                                                                        |
+| b      | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                                                |                                                                        |
+| b      | <kbd>g</kbd> <kbd>H</kbd>                    | references                                                  |                                                                        |
+| b      | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                                             |                                                                        |
+| b      | <kbd>space</kbd> <kbd>r</kbd>                | rename symbol                                               |                                                                        |
+| b      | <kbd>space</kbd> <kbd>f</kbd>                | format document                                             |                                                                        |
+| b      | <kbd>space</kbd> <kbd>p</kbd>                | show previous diagnostic                                    |                                                                        |
+| b      | <kbd>space</kbd> <kbd>n</kbd>                | show next diagnostic                                        |                                                                        |
+| v      | <kbd>space</kbd> <kbd>l</kbd>                | show diagnostic in current line                             | Is only needed in vim, because space p/n triggers not in current line. |
+| b      | <kbd>space</kbd> <kbd>q</kbd>                | show quick fixes                                            |                                                                        |
+| v      | <kbd>space</kbd> <kbd>h</kbd>                | show signature help                                         |                                                                        |
+| v      | <kbd>space</kbd> <kbd>d</kbd>                | show type definition                                        |                                                                        |
+| c      | <kbd>ctrl + space</kbd>                      | show completion menu                                        | is shown automatically                                                 |
+| b      | <kbd>shift + tab</kbd>                       | navigate to previous in completion menu/snippet placeholder |                                                                        |
+| b      | <kbd>tab</kbd>                               | navigate to next in completion menu/snippet placeholder     |                                                                        |
+| b      | <kbd>enter</kbd>                             | use marked completion                                       |                                                                        |
 
 ## Explorer
+
+| status | key         | effect | notes |
+| ------ | ----------- | ------ | ----- |
+| b      | <kbd></kbd> |        |       |
 
 ## File search
 
