@@ -2,7 +2,7 @@
 
 ## Introduction
 
-To enable fluent developement in nvim and vscode (with neovim integration) all keybindings are equal. Small differences caused by different ui concepts are marked under the note column.
+To enable fluent developement in nvim and vscode (with neovim integration) all keybindings are equal. Small differences caused by different ui concepts are marked under the note column. All standard vim keybindings are supported in both environments (i didnt got any troubles in my workflows).
 
 The bindings can have the following status:
 
@@ -72,6 +72,8 @@ The bindings can have the following status:
 
 ## Editor
 
+### on text
+
 | status | key                                          | effect                                                      | notes                                                                  |
 | ------ | -------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------- |
 | b      | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                        |
@@ -91,6 +93,14 @@ The bindings can have the following status:
 | b      | <kbd>shift + tab</kbd>                       | navigate to previous in completion menu/snippet placeholder |                                                                        |
 | b      | <kbd>tab</kbd>                               | navigate to next in completion menu/snippet placeholder     |                                                                        |
 | b      | <kbd>enter</kbd>                             | use marked completion                                       |                                                                        |
+
+### completion
+
+| status | key                    | effect                                          | notes |
+| ------ | ---------------------- | ----------------------------------------------- | ----- |
+| b      | <kbd>shift + tab</kbd> | jump to previous completion/snippet placeholder |       |
+| b      | <kbd>tab</kbd>         | jump to next completion/snippet placeholder     |       |
+| b      | <kbd>enter</kbd>       | insert completion/snippet                       |       |
 
 ## Explorer
 
@@ -114,15 +124,16 @@ The bindings can have the following status:
 | b      | <kbd>enter</kbd>    | opens file                     |                                  |
 | b      | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
-## File/grep/symbol search
+## Diagnostics/file/grep/symbol search
 
-| status | key                 | effect                       | notes                            |
-| ------ | ------------------- | ---------------------------- | -------------------------------- |
-| b      | <kbd>ctrl + c</kbd> | closes the search            |                                  |
-| v      | <kbd>ctrl + p</kbd> | select previous search entry |                                  |
-| v      | <kbd>ctrl + n</kbd> | select next search entry     |                                  |
-| b      | <kbd>enter</kbd>    | opens file                   |                                  |
-| b      | <kbd>ctrl + v</kbd> | opens file in vertical split | in vscode currently ctrl + enter |
+| status | key                 | effect                        | notes                                                |
+| ------ | ------------------- | ----------------------------- | ---------------------------------------------------- |
+| b      | <kbd>ctrl + c</kbd> | closes the search             |                                                      |
+| v      | <kbd>ctrl + q</kbd> | transfere results to quickfix | quickfix and local lists are not supported in vscode |
+| v      | <kbd>ctrl + p</kbd> | select previous search entry  |                                                      |
+| v      | <kbd>ctrl + n</kbd> | select next search entry      |                                                      |
+| b      | <kbd>enter</kbd>    | opens file                    |                                                      |
+| b      | <kbd>ctrl + v</kbd> | opens file in vertical split  | in vscode currently ctrl + enter                     |
 
 ## Terminal
 
