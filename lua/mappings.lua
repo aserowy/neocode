@@ -59,7 +59,6 @@ keymaps.register('n', {
 })
 
 keymaps.register('t', {
-    ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
     ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
 
     ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<CR><C-w><C-j>]],
