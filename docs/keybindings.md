@@ -2,40 +2,35 @@
 
 ## Introduction
 
-To enable fluent developement in nvim and vscode (with neovim integration) all keybindings are equal. Small differences caused by different ui concepts are marked under the note column. All standard vim keybindings are supported in both environments (i didnt got any troubles in my workflows).
+To enable fluent developement in nvim and vscode (with neovim integration) all keybindings are equal. Small differences caused by different ui concepts are marked under the note column. All standard vim keybindings are supported in both environments.
 
-The bindings can have the following status:
-
-- b for implemented in both environments
-- v for currently in nvim only
-- c for currently in vscode only
-- m for missing in both
+Got any troubles in your workflows? Issues are welcome!
 
 ## General
 
-| status | key                         | effect               | notes |
-| ------ | --------------------------- | -------------------- | ----- |
-| b      | <kbd>ctrl + shift + c</kbd> | copy to clipboard    |       |
-| b      | <kbd>ctrl + shift + v</kbd> | paste from clipboard |       |
+| only? | key                         | effect               | notes |
+| ----- | --------------------------- | -------------------- | ----- |
+|       | <kbd>ctrl + shift + c</kbd> | copy to clipboard    |       |
+|       | <kbd>ctrl + shift + v</kbd> | paste from clipboard |       |
 
 ## Zen
 
-| status | key                 | effect           | notes |
-| ------ | ------------------- | ---------------- | ----- |
-| b      | <kbd>ctrl + z</kbd> | enables zen mode |       |
+| only? | key                 | effect           | notes |
+| ----- | ------------------- | ---------------- | ----- |
+|       | <kbd>ctrl + z</kbd> | enables zen mode |       |
 
 ## Functions
 
 > all keys are configured for normal mode
 
-| status | key                 | effect                     | notes |
-| ------ | ------------------- | -------------------------- | ----- |
-| b      | <kbd>ctrl + e</kbd> | focus explorer (file tree) |       |
-| b      | <kbd>ctrl + q</kbd> | focus diagnostics          |       |
-| b      | <kbd>ctrl + f</kbd> | focus file search          |       |
-| b      | <kbd>ctrl + g</kbd> | focus grep search          |       |
-| b      | <kbd>ctrl + s</kbd> | focus symbol search        |       |
-| v      | <kbd>ctrl + t</kbd> | focus integrated terminal  |       |
+| only? | key                 | effect                     | notes |
+| ----- | ------------------- | -------------------------- | ----- |
+|       | <kbd>ctrl + e</kbd> | focus explorer (file tree) |       |
+|       | <kbd>ctrl + q</kbd> | focus diagnostics          |       |
+|       | <kbd>ctrl + f</kbd> | focus file search          |       |
+|       | <kbd>ctrl + g</kbd> | focus grep search          |       |
+|       | <kbd>ctrl + s</kbd> | focus symbol search        |       |
+| vim   | <kbd>ctrl + t</kbd> | focus integrated terminal  |       |
 
 ## Windows
 
@@ -43,100 +38,107 @@ The bindings can have the following status:
 
 ### Splits & closes
 
-| status | key                              | effect                          | notes |
-| ------ | -------------------------------- | ------------------------------- | ----- |
-| b      | <kbd>ctrl + w</kbd> <kbd>n</kbd> | creates new file                |       |
-| b      | <kbd>ctrl + w</kbd> <kbd>v</kbd> | splits editor vertically        |       |
-| b      | <kbd>ctrl + w</kbd> <kbd>s</kbd> | splits editor horizontally      |       |
-| b      | <kbd>ctrl + w</kbd> <kbd>q</kbd> | closes window and buffer        |       |
-| b      | <kbd>ctrl + w</kbd> <kbd>o</kbd> | closes window and merges buffer |       |
+| only? | key                              | effect                          | notes |
+| ----- | -------------------------------- | ------------------------------- | ----- |
+|       | <kbd>ctrl + w</kbd> <kbd>n</kbd> | creates new file                |       |
+|       | <kbd>ctrl + w</kbd> <kbd>v</kbd> | splits editor vertically        |       |
+|       | <kbd>ctrl + w</kbd> <kbd>s</kbd> | splits editor horizontally      |       |
+|       | <kbd>ctrl + w</kbd> <kbd>q</kbd> | closes window and buffer        |       |
+|       | <kbd>ctrl + w</kbd> <kbd>o</kbd> | closes window and merges buffer |       |
 
 ### Focus
 
-| status | key                 | effect                       | notes |
-| ------ | ------------------- | ---------------------------- | ----- |
-| b      | <kbd>ctrl + h</kbd> | moves window focus to left   |       |
-| b      | <kbd>ctrl + l</kbd> | moves window focus to right  |       |
-| b      | <kbd>ctrl + k</kbd> | moves window focus to top    |       |
-| b      | <kbd>ctrl + j</kbd> | moves window focus to bottom |       |
+| only? | key                 | effect                       | notes |
+| ----- | ------------------- | ---------------------------- | ----- |
+|       | <kbd>ctrl + h</kbd> | moves window focus to left   |       |
+|       | <kbd>ctrl + l</kbd> | moves window focus to right  |       |
+|       | <kbd>ctrl + k</kbd> | moves window focus to top    |       |
+|       | <kbd>ctrl + j</kbd> | moves window focus to bottom |       |
 
 ## Buffer
 
 > all keys are configured for normal mode and are working only while in a buffer
 
-| status | key                 | effect                    | notes |
-| ------ | ------------------- | ------------------------- | ----- |
-| b      | <kbd>ctrl + p</kbd> | move to previous buffer   |       |
-| b      | <kbd>ctrl + n</kbd> | move to next buffer       |       |
-| b      | <kbd>ctrl + c</kbd> | closes the current buffer |       |
+| only? | key                 | effect                    | notes |
+| ----- | ------------------- | ------------------------- | ----- |
+|       | <kbd>ctrl + p</kbd> | move to previous buffer   |       |
+|       | <kbd>ctrl + n</kbd> | move to next buffer       |       |
+|       | <kbd>ctrl + c</kbd> | closes the current buffer |       |
 
 ## Editor
 
 ### on text
 
-| status | key                                          | effect                                                      | notes                                                                  |
+| only?  | key                                          | effect                                                      | notes                                                                  |
 | ------ | -------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------- |
-| b      | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                        |
-| b      | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside                                      |                                                                        |
-| b      | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                                                |                                                                        |
-| b      | <kbd>g</kbd> <kbd>H</kbd>                    | references                                                  |                                                                        |
-| b      | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                                             |                                                                        |
-| b      | <kbd>space</kbd> <kbd>r</kbd>                | rename symbol                                               |                                                                        |
-| b      | <kbd>space</kbd> <kbd>f</kbd>                | format document                                             |                                                                        |
-| b      | <kbd>space</kbd> <kbd>p</kbd>                | show previous diagnostic                                    |                                                                        |
-| b      | <kbd>space</kbd> <kbd>n</kbd>                | show next diagnostic                                        |                                                                        |
-| v      | <kbd>space</kbd> <kbd>l</kbd>                | show diagnostic in current line                             | Is only needed in vim, because space p/n triggers not in current line. |
-| b      | <kbd>space</kbd> <kbd>q</kbd>                | show quick fixes                                            |                                                                        |
-| v      | <kbd>space</kbd> <kbd>h</kbd>                | show signature help                                         |                                                                        |
-| v      | <kbd>space</kbd> <kbd>d</kbd>                | show type definition                                        |                                                                        |
-| c      | <kbd>ctrl + space</kbd>                      | show completion menu                                        | is shown automatically                                                 |
-| b      | <kbd>shift + tab</kbd>                       | navigate to previous in completion menu/snippet placeholder |                                                                        |
-| b      | <kbd>tab</kbd>                               | navigate to next in completion menu/snippet placeholder     |                                                                        |
-| b      | <kbd>enter</kbd>                             | use marked completion                                       |                                                                        |
+|        | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                        |
+|        | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside                                      |                                                                        |
+|        | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                                                |                                                                        |
+|        | <kbd>g</kbd> <kbd>H</kbd>                    | references                                                  |                                                                        |
+|        | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                                             |                                                                        |
+|        | <kbd>space</kbd> <kbd>r</kbd>                | rename symbol                                               |                                                                        |
+|        | <kbd>space</kbd> <kbd>f</kbd>                | format document                                             |                                                                        |
+|        | <kbd>space</kbd> <kbd>p</kbd>                | show previous diagnostic                                    |                                                                        |
+|        | <kbd>space</kbd> <kbd>n</kbd>                | show next diagnostic                                        |                                                                        |
+| vim    | <kbd>space</kbd> <kbd>l</kbd>                | show diagnostic in current line                             | Is only needed in vim, because space p/n triggers not in current line. |
+|        | <kbd>space</kbd> <kbd>q</kbd>                | show quick fixes                                            |                                                                        |
+| vim    | <kbd>space</kbd> <kbd>h</kbd>                | show signature help                                         |                                                                        |
+| vim    | <kbd>space</kbd> <kbd>d</kbd>                | show type definition                                        |                                                                        |
+| vscode | <kbd>ctrl + space</kbd>                      | show completion menu                                        | is shown automatically                                                 |
+|        | <kbd>shift + tab</kbd>                       | navigate to previous in completion menu/snippet placeholder |                                                                        |
+|        | <kbd>tab</kbd>                               | navigate to next in completion menu/snippet placeholder     |                                                                        |
+|        | <kbd>enter</kbd>                             | use marked completion                                       |                                                                        |
 
 ### completion
 
-| status | key                    | effect                                          | notes |
-| ------ | ---------------------- | ----------------------------------------------- | ----- |
-| b      | <kbd>shift + tab</kbd> | jump to previous completion/snippet placeholder |       |
-| b      | <kbd>tab</kbd>         | jump to next completion/snippet placeholder     |       |
-| b      | <kbd>enter</kbd>       | insert completion/snippet                       |       |
+| only? | key                    | effect                                          | notes |
+| ----- | ---------------------- | ----------------------------------------------- | ----- |
+|       | <kbd>shift + tab</kbd> | jump to previous completion/snippet placeholder |       |
+|       | <kbd>tab</kbd>         | jump to next completion/snippet placeholder     |       |
+|       | <kbd>enter</kbd>       | insert completion/snippet                       |       |
 
 ## Explorer
 
 > works only while explorer is focused
 
-| status | key                 | effect                         | notes                            |
+| only?  | key                 | effect                         | notes                            |
 | ------ | ------------------- | ------------------------------ | -------------------------------- |
-| b      | <kbd>ctrl + c</kbd> | closes the explorer            |                                  |
-| b      | <kbd>j</kbd>        | move one line down             |                                  |
-| b      | <kbd>k</kbd>        | move one line up               |                                  |
-| b      | <kbd>h</kbd>        | collapse folder                |                                  |
-| b      | <kbd>l</kbd>        | expand folder                  | opens the file in vim only       |
-| c      | <kbd>f</kbd>        | grep in current folder         |                                  |
-| v      | <kbd>H</kbd>        | show/hide hidden files         |                                  |
-| b      | <kbd>y</kbd>        | yanks file/folder under cursor |                                  |
-| b      | <kbd>m</kbd>        | moves file/folder              | paste file to finish the move    |
-| b      | <kbd>p</kbd>        | paste file/folder              |                                  |
-| b      | <kbd>d</kbd>        | deletes file/folder            |                                  |
-| b      | <kbd>r</kbd>        | renames file/foler             |                                  |
-| v      | <kbd>a</kbd>        | adds file/foler                |                                  |
-| b      | <kbd>enter</kbd>    | opens file                     |                                  |
-| b      | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
+|        | <kbd>ctrl + c</kbd> | closes the explorer            |                                  |
+|        | <kbd>j</kbd>        | move one line down             |                                  |
+|        | <kbd>k</kbd>        | move one line up               |                                  |
+|        | <kbd>h</kbd>        | collapse folder                |                                  |
+|        | <kbd>l</kbd>        | expand folder                  | opens the file in vim only       |
+| vscode | <kbd>f</kbd>        | grep in current folder         |                                  |
+| vim    | <kbd>H</kbd>        | show/hide hidden files         |                                  |
+|        | <kbd>y</kbd>        | yanks file/folder under cursor |                                  |
+|        | <kbd>m</kbd>        | moves file/folder              | paste file to finish the move    |
+|        | <kbd>p</kbd>        | paste file/folder              |                                  |
+|        | <kbd>d</kbd>        | deletes file/folder            |                                  |
+|        | <kbd>r</kbd>        | renames file/foler             |                                  |
+| vim    | <kbd>a</kbd>        | adds file/foler                |                                  |
+|        | <kbd>enter</kbd>    | opens file                     |                                  |
+|        | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
 ## Diagnostics/file/grep/symbol search
 
-| status | key                 | effect                        | notes                                                |
-| ------ | ------------------- | ----------------------------- | ---------------------------------------------------- |
-| b      | <kbd>ctrl + c</kbd> | closes the search             |                                                      |
-| v      | <kbd>ctrl + q</kbd> | transfere results to quickfix | quickfix and local lists are not supported in vscode |
-| v      | <kbd>ctrl + p</kbd> | select previous search entry  |                                                      |
-| v      | <kbd>ctrl + n</kbd> | select next search entry      |                                                      |
-| b      | <kbd>enter</kbd>    | opens file                    |                                                      |
-| b      | <kbd>ctrl + v</kbd> | opens file in vertical split  | in vscode currently ctrl + enter                     |
+| only? | key                 | effect                        | notes                                                |
+| ----- | ------------------- | ----------------------------- | ---------------------------------------------------- |
+|       | <kbd>ctrl + c</kbd> | closes the search             |                                                      |
+|       | <kbd>ctrl + q</kbd> | transfere results to quickfix | quickfix and local lists are not supported in vscode |
+|       | <kbd>ctrl + p</kbd> | select previous search entry  |                                                      |
+|       | <kbd>ctrl + n</kbd> | select next search entry      |                                                      |
+|       | <kbd>enter</kbd>    | opens file                    |                                                      |
+|       | <kbd>ctrl + v</kbd> | opens file in vertical split  | in vscode currently ctrl + enter                     |
+
+> to research grep in vscode press <kbd>ctrl + g</kbd> again while the search is focused. This resets the search and selects the search input.
 
 ## Terminal
 
-| status | key                 | effect              | notes |
-| ------ | ------------------- | ------------------- | ----- |
-| v      | <kbd>ctrl + c</kbd> | closes the terminal |       |
+| only?  | key                             | effect                      | notes                                               |
+| ------ | ------------------------------- | --------------------------- | --------------------------------------------------- |
+| vim    | <kbd>ctrl + c</kbd>             | closes the terminal         |                                                     |
+| vscode | <kbd>ctrl + j</kbd>             | closes the terminal         | ctrl + c as keybinding in terminal is not supported |
+| vscode | <kbd>ctrl + w</kbd><kbd>n</kbd> | opens new terminal          |                                                     |
+| vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split |                                                     |
+| vscode | <kbd>ctrl + p</kbd>             | focuses previous terminal   |                                                     |
+| vscode | <kbd>ctrl + n</kbd>             | focuses next terminal       |                                                     |
