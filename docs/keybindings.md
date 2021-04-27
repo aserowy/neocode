@@ -134,11 +134,11 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Terminal
 
-| only?  | key                             | effect                      | notes                                               |
-| ------ | ------------------------------- | --------------------------- | --------------------------------------------------- |
-| vim    | <kbd>ctrl + c</kbd>             | closes the terminal         |                                                     |
-| vscode | <kbd>ctrl + j</kbd>             | closes the terminal         | ctrl + c as keybinding in terminal is not supported |
-| vscode | <kbd>ctrl + w</kbd><kbd>n</kbd> | opens new terminal          |                                                     |
-| vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split |                                                     |
-| vscode | <kbd>ctrl + p</kbd>             | focuses previous terminal   |                                                     |
-| vscode | <kbd>ctrl + n</kbd>             | focuses next terminal       |                                                     |
+| only?  | key                             | effect                      | notes                                                         |
+| ------ | ------------------------------- | --------------------------- | ------------------------------------------------------------- |
+| vim    | <kbd>ctrl + c</kbd>             | closes the terminal         |                                                               |
+|        | <kbd>ctrl + j</kbd>             | closes the terminal         | ctrl + c as keybinding in terminal is not supported in vscode |
+| vscode | <kbd>ctrl + w</kbd><kbd>n</kbd> | opens new terminal          |                                                               |
+| vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split |                                                               |
+| vscode | <kbd>ctrl + p</kbd>             | focuses previous terminal   |                                                               |
+| vscode | <kbd>ctrl + n</kbd>             | focuses next terminal       |                                                               |

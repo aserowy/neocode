@@ -22,7 +22,7 @@ keymaps.register('n', {
     ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
     ['<C-e>'] = ':NvimTreeFindFile<CR>',
 
-    ['<Leader>f'] = [[gg=G<cmd>Neoformat<CR>]],
+    ['<Leader>f'] = [[gg=G<C-o><cmd>Neoformat<CR>]],
 })
 
 -- file tree
@@ -58,11 +58,7 @@ keymaps.register('n', {
 
 keymaps.register('t', {
     ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
-
-    ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<CR><C-w><C-j>]],
-    ['<C-k>'] = [[<cmd>lua require'FTerm'.close()<CR><C-w><C-k>]],
-    ['<C-l>'] = [[<cmd>lua require'FTerm'.close()<CR><C-w><C-l>]],
-    ['<C-h>'] = [[<cmd>lua require'FTerm'.close()<CR><C-w><C-h>]],
+    ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
 })
 
 -- completion & snippets
