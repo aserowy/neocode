@@ -22,9 +22,7 @@ keymaps.register('n', {
     ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
     ['<C-e>'] = ':NvimTreeFindFile<CR>',
 
-    -- TODO format or indent if no formater available
-    -- ['<Leader>fi'] = 'gg=G',
-    ['<Leader>f'] = [[<cmd>Neoformat<CR>]],
+    ['<Leader>f'] = [[gg=G<cmd>Neoformat<CR>]],
 })
 
 -- file tree
