@@ -122,7 +122,7 @@ Got any troubles in your workflows? Issues are welcome!
 | only? | key                 | effect                        | notes                                                |
 | ----- | ------------------- | ----------------------------- | ---------------------------------------------------- |
 |       | <kbd>ctrl + c</kbd> | closes the search             |                                                      |
-|       | <kbd>ctrl + q</kbd> | transfere results to quickfix | quickfix and local lists are not supported in vscode |
+| vim   | <kbd>ctrl + q</kbd> | transfere results to quickfix | quickfix and local lists are not supported in vscode |
 |       | <kbd>ctrl + p</kbd> | select previous search entry  |                                                      |
 |       | <kbd>ctrl + n</kbd> | select next search entry      |                                                      |
 |       | <kbd>enter</kbd>    | opens file                    |                                                      |
@@ -140,4 +140,3 @@ Got any troubles in your workflows? Issues are welcome!
 | vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split |                                                               |
 | vscode | <kbd>ctrl + p</kbd>             | focuses previous terminal   |                                                               |
 | vscode | <kbd>ctrl + n</kbd>             | focuses next terminal       |                                                               |
-
