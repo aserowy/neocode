@@ -38,13 +38,13 @@ Got any troubles in your workflows? Issues are welcome!
 
 ### Splits & closes
 
-| only? | key                              | effect                          | notes |
-| ----- | -------------------------------- | ------------------------------- | ----- |
-|       | <kbd>ctrl + w</kbd> <kbd>n</kbd> | creates new file                |       |
-|       | <kbd>ctrl + w</kbd> <kbd>v</kbd> | splits editor vertically        |       |
-|       | <kbd>ctrl + w</kbd> <kbd>s</kbd> | splits editor horizontally      |       |
-|       | <kbd>ctrl + w</kbd> <kbd>q</kbd> | closes window and buffer        |       |
-|       | <kbd>ctrl + w</kbd> <kbd>o</kbd> | closes window and merges buffer |       |
+| only? | key                              | effect                               | notes |
+| ----- | -------------------------------- | ------------------------------------ | ----- |
+|       | <kbd>ctrl + w</kbd> <kbd>n</kbd> | creates new window with empty buffer |       |
+|       | <kbd>ctrl + w</kbd> <kbd>v</kbd> | splits editor vertically             |       |
+|       | <kbd>ctrl + w</kbd> <kbd>s</kbd> | splits editor horizontally           |       |
+|       | <kbd>ctrl + w</kbd> <kbd>q</kbd> | closes window and buffer             |       |
+|       | <kbd>ctrl + w</kbd> <kbd>o</kbd> | closes window and merges buffer      |       |
 
 ### Focus
 
@@ -61,6 +61,7 @@ Got any troubles in your workflows? Issues are welcome!
 
 | only? | key                 | effect                    | notes |
 | ----- | ------------------- | ------------------------- | ----- |
+|       | <kbd>ctrl + a</kbd> | open new empty buffer     |       |
 |       | <kbd>ctrl + p</kbd> | move to previous buffer   |       |
 |       | <kbd>ctrl + n</kbd> | move to next buffer       |       |
 |       | <kbd>ctrl + c</kbd> | closes the current buffer |       |
@@ -71,6 +72,7 @@ Got any troubles in your workflows? Issues are welcome!
 
 | only?  | key                                          | effect                                                      | notes                                                                  |
 | ------ | -------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------- |
+|        | <kbd>space</kbd> <kbd>s</kbd>                | saves file                                                  |                                                                        |
 |        | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                        |
 |        | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside                                      |                                                                        |
 |        | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                                                |                                                                        |

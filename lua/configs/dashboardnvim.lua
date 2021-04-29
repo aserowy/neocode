@@ -3,16 +3,12 @@ local vim = vim
 vim.g.dashboard_default_executive = 'telescope'
 
 vim.g.dashboard_custom_header = {
-'           ,ggg,                 ,ggg,        gg             ',
-'          dP""8I   ,dPYb,       dP""Y8b       88             ',
-'         dP   88   IP\'`Yb       Yb, `88       88             ',
-'        dP    88   I8  8I        `"  88       88             ',
-'       ,8\'    88   I8  8\'            88aaaaaaa88             ',
-'       d88888888   I8 dP  gg      gg 88"""""""88    ,gggg,gg ',
-' __   ,8"     88   I8dP   I8      8I 88       88   dP"  "Y8I ',
-'dP"  ,8P      Y8   I8P    I8,    ,8I 88       88  i8\'    ,8I ',
-'Yb,_,dP       `8b,,d8b,_ ,d8b,  ,d8b,88       Y8,,d8,   ,d8b,',
-' "Y8P"         `Y88P\'"Y888P\'"Y88P"`Y888       `Y8P"Y8888P"`Y8',
+'                  _________     _________     ',
+'____________________  ____/___________  /____ ',
+'__  __ \\  _ \\  __ \\  /    _  __ \\  __  /_  _ \\',
+'_  / / /  __/ /_/ / /___  / /_/ / /_/ / /  __/',
+'/_/ /_/\\___/\\____/\\____/  \\____/\\__,_/  \\___/ ',
+'                                              ',
 }
 
 vim.g.dashboard_custom_section = {
@@ -20,13 +16,13 @@ vim.g.dashboard_custom_section = {
 description = {'  last session                         SPC s l'},
     command = 'SessionLoad'}, ]]
     b_recent_files = {
-        description = {'  recent files                         SPC f h'},
+        description = {'  recent files                                 '},
         command =  'DashboardFindHistory'},
     c_find_files = {
-        description = {'  find file                            SPC f f'},
+        description = {'  find file                            ctrl + f'},
         command = [[lua require'custom.search'.git_or_local()]]},
     d_search = {
-        description = {'  search                               SPC f s'},
+        description = {'  search                               ctrl + g'},
         command = 'Telescope live_grep'},
 }
 

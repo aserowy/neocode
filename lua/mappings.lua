@@ -38,9 +38,12 @@ mappings.file_tree = {
 
 -- buffer
 keymaps.register('n', {
+    ['<C-a>'] = [[<cmd>enew<CR>]],
     ['<C-c>'] = [[<cmd>BufferClose<CR>]],
     ['<C-n>'] = [[<cmd>BufferNext<CR>]],
     ['<C-p>'] = [[<cmd>BufferPrevious<CR>]],
+
+    ['<Leader>s'] = [[<cmd>w<CR>]]
 })
 
 -- window
