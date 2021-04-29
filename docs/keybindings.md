@@ -6,6 +6,8 @@ To enable fluent developement in nvim and vscode (with neovim integration) all k
 
 Got any troubles in your workflows? Issues are welcome!
 
+> all keys are configured for normal mode, except completion and snippet bindings of course :)
+
 ## General
 
 | only? | key                         | effect               | notes |
@@ -21,8 +23,6 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Functions
 
-> all keys are configured for normal mode
-
 | only? | key                 | effect                     | notes |
 | ----- | ------------------- | -------------------------- | ----- |
 |       | <kbd>ctrl + e</kbd> | focus explorer (file tree) |       |
@@ -30,11 +30,9 @@ Got any troubles in your workflows? Issues are welcome!
 |       | <kbd>ctrl + f</kbd> | focus file search          |       |
 |       | <kbd>ctrl + g</kbd> | focus grep search          |       |
 |       | <kbd>ctrl + s</kbd> | focus symbol search        |       |
-| vim   | <kbd>ctrl + t</kbd> | focus integrated terminal  |       |
+|       | <kbd>ctrl + t</kbd> | focus integrated terminal  |       |
 
 ## Windows
-
-> all keys are configured for normal mode
 
 ### Splits & closes
 
@@ -56,8 +54,6 @@ Got any troubles in your workflows? Issues are welcome!
 |       | <kbd>ctrl + j</kbd> | moves window focus to bottom |       |
 
 ## Buffer
-
-> all keys are configured for normal mode and are working only while in a buffer
 
 | only? | key                 | effect                    | notes |
 | ----- | ------------------- | ------------------------- | ----- |
@@ -144,3 +140,4 @@ Got any troubles in your workflows? Issues are welcome!
 | vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split |                                                               |
 | vscode | <kbd>ctrl + p</kbd>             | focuses previous terminal   |                                                               |
 | vscode | <kbd>ctrl + n</kbd>             | focuses next terminal       |                                                               |
+
