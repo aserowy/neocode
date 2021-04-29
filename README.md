@@ -1,26 +1,32 @@
 # NeoCode
 
+In my current workflow I use VSCode more and more, because features like remote containers or developing via SSH are not supported in nvim. To be able to work without interruption and not have to use different key bindings everywhere, NeoCode was born. With this configuration I can work fluently in both environments with a only few exceptions.
+
 ![themes](./docs/preview/themes.png)
 
-In my current workflow I use VSCode more and more, because features like remote containers or developing via SSH are not supported in nvim. To be able to work fluently and not have to use different key bindings everywhere, NeoCode was created. With this configuration I can work fluently in both environments with a few exceptions.
+Beyond the same workflow, you can change themes in a heartbeat. 
 
 Bindings and settings are NOT the best you can get with vim. BUT the ability to switch between both tools without interrupting your flow is worth the trade off imho.
 
 ## look & feel
 
+Introducing a nice dashboard ([dashboard-nvim](https://github.com/glepnir/dashboard-nvim)) and statusline ([galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim)).
+
 ![dashboard](./docs/preview/dashboard.png)
 
-Searching with telescope enables files, grep, quickfixes and more.
+Navigate files, symbols, grep and more with explorer ([nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)) and search ([telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)).
 
 ![telescope](./docs/preview/telescope.png)
 
-Coding with lsp, treesitter, code action highlights, current scopes, buffer bar and more.
+Keep buffers on sight with a buffer bar ([barbar.nvim](https://github.com/romgrk/barbar.nvim)). Handle your code with lsp support ([nvim-lspinstall](https://github.com/kabouzeid/nvim-lspinstall) & [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)).
 
 ![editor](./docs/preview/editor.png)
 
-Complete your thoughts with auto completion and snippets.
+Complete your thoughts with auto completion ([nvim-compe](https://github.com/hrsh7th/nvim-compe)) and snippets ([vim-vsnip](https://github.com/hrsh7th/vim-vsnip)).
 
 ![completion](./docs/preview/completion.png)
+
+Many more plugins are used to round up the experience.
 
 ## keymaps
 
