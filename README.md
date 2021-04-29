@@ -1,8 +1,30 @@
 # NeoCode
 
+![themes](./docs/preview/themes.png)
+
 In my current workflow I use VSCode more and more, because features like remote containers or developing via SSH are not supported in nvim. To be able to work fluently and not have to use different key bindings everywhere, NeoCode was created. With this configuration I can work fluently in both environments with a few exceptions.
 
 Bindings and settings are NOT the best you can get with vim. BUT the ability to switch between both tools without interrupting your flow is worth the trade off imho.
+
+## look & feel
+
+![dashboard](./docs/preview/dashboard.png)
+
+Searching with telescope enables files, grep, quickfixes and more.
+
+![telescope](./docs/preview/telescope.png)
+
+Coding with lsp, treesitter, code action highlights, current scopes, buffer bar and more.
+
+![editor](./docs/preview/editor.png)
+
+Complete your thoughts with auto completion and snippets.
+
+![completion](./docs/preview/completion.png)
+
+## keymaps
+
+Most standard keymaps of nvim are untouched. You can find a list for custom mappings and exceptions between both environments [here](./docs/keybindings.md).
 
 ## setup
 
@@ -19,8 +41,5 @@ To be able to use vscode accordingly, the following plugins must be installed an
 - [Neo Vim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 - [Keyboard Quickfix](https://marketplace.visualstudio.com/items?itemName=pascalsenn.keyboard-quickfix)
 
-Beside these plugins you also have to set keybindings and settings. You can find them [here](./docs/vscode.md)
+Beside these plugins you also have to set keybindings and settings. You can find them [here](./docs/vscode.md).
 
-## keymaps
-
-Most standard keymaps of nvim are untouched. You can find a list for custom mappings and exceptions between both environments [here](./docs/keybindings.md).
