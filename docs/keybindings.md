@@ -145,6 +145,7 @@ Got any troubles in your workflows? Issues are welcome!
 | only?  | key                             | effect                      | notes                                                         |
 | ------ | ------------------------------- | --------------------------- | ------------------------------------------------------------- |
 | vim    | <kbd>ctrl + c</kbd>             | closes the terminal         |                                                               |
+|        | <kbd>ctrl + k</kbd>             | focuses current buffer      | closes the terminal in vim                                    |
 |        | <kbd>ctrl + j</kbd>             | closes the terminal         | ctrl + c as keybinding in terminal is not supported in vscode |
 | vscode | <kbd>ctrl + w</kbd><kbd>n</kbd> | opens new terminal          |                                                               |
 | vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split |                                                               |
