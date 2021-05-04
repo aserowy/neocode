@@ -67,6 +67,9 @@ require'packer'.startup(
 
         -- terminal
         use 'numtostr/FTerm.nvim'
+
+        -- TODO git
+        -- https://github.com/sindrets/diffview.nvim
     end)
 
 -- zen
