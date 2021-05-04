@@ -39,6 +39,7 @@ require'packer'.startup(
         use 'neovim/nvim-lspconfig'
         use 'kabouzeid/nvim-lspinstall'
         use 'onsails/lspkind-nvim'
+        use 'folke/lsp-trouble.nvim'
 
         -- linting
         use 'norcalli/nvim-colorizer.lua'
@@ -92,6 +93,7 @@ require'configs.telescopenvim'
 require'configs.nvimlspconfig'
 require'configs.nvimlspinstall'
 require'configs.lspkindnvim'
+require'configs.lsptroublenvim'
 
 -- linting
 require'configs.nvimcolorizer'
@@ -104,7 +106,6 @@ require'kommentary.config'.use_extended_mappings()
 require'configs.nvimautopair'
 require'configs.nvimcompe'
 require'configs.nvimlightbulb'
--- require'luasnip'
 
 -- terminal
 require'FTerm'.setup()

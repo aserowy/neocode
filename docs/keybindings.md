@@ -19,7 +19,7 @@ Got any troubles in your workflows? Issues are welcome!
 
 | only? | key                 | effect           | notes |
 | ----- | ------------------- | ---------------- | ----- |
-|       | <kbd>ctrl + z</kbd> | enables zen mode |       |
+|       | <kbd>ctrl + z</kbd> | toggles zen mode |       |
 
 ## Functions
 
@@ -66,26 +66,26 @@ Got any troubles in your workflows? Issues are welcome!
 
 ### on text
 
-| only?  | key                                          | effect                                                      | notes                                                                  |
-| ------ | -------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------- |
-|        | <kbd>space</kbd> <kbd>s</kbd>                | saves file                                                  |                                                                        |
-|        | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                        |
-|        | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside                                      |                                                                        |
-|        | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                                                |                                                                        |
-|        | <kbd>g</kbd> <kbd>H</kbd>                    | references                                                  |                                                                        |
-|        | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                                             |                                                                        |
-|        | <kbd>space</kbd> <kbd>r</kbd>                | rename symbol                                               |                                                                        |
-|        | <kbd>space</kbd> <kbd>f</kbd>                | format document                                             |                                                                        |
-|        | <kbd>space</kbd> <kbd>p</kbd>                | show previous diagnostic                                    |                                                                        |
-|        | <kbd>space</kbd> <kbd>n</kbd>                | show next diagnostic                                        |                                                                        |
-| vim    | <kbd>space</kbd> <kbd>l</kbd>                | show diagnostic in current line                             | Is only needed in vim, because space p/n triggers not in current line. |
-|        | <kbd>space</kbd> <kbd>q</kbd>                | show quick fixes                                            |                                                                        |
-| vim    | <kbd>space</kbd> <kbd>h</kbd>                | show signature help                                         |                                                                        |
-| vim    | <kbd>space</kbd> <kbd>d</kbd>                | show type definition                                        |                                                                        |
-| vscode | <kbd>ctrl + space</kbd>                      | show completion menu                                        | is shown automatically                                                 |
-|        | <kbd>shift + tab</kbd>                       | navigate to previous in completion menu/snippet placeholder |                                                                        |
-|        | <kbd>tab</kbd>                               | navigate to next in completion menu/snippet placeholder     |                                                                        |
-|        | <kbd>enter</kbd>                             | use marked completion                                       |                                                                        |
+| only?  | key                                          | effect                                                      | notes                                                              |
+| ------ | -------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------ |
+|        | <kbd>g</kbd> <kbd>s</kbd>                    | saves file                                                  |                                                                    |
+|        | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                    |
+|        | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside                                      |                                                                    |
+|        | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                                                |                                                                    |
+|        | <kbd>g</kbd> <kbd>H</kbd>                    | references                                                  |                                                                    |
+|        | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                                             |                                                                    |
+|        | <kbd>g</kbd> <kbd>r</kbd>                    | rename symbol                                               |                                                                    |
+|        | <kbd>g</kbd> <kbd>c</kbd>                    | format document                                             |                                                                    |
+|        | <kbd>g</kbd> <kbd>p</kbd>                    | show previous diagnostic                                    |                                                                    |
+|        | <kbd>g</kbd> <kbd>n</kbd>                    | show next diagnostic                                        |                                                                    |
+| vim    | <kbd>g</kbd> <kbd>l</kbd>                    | show diagnostic in current line                             | Is only needed in vim, because g p/n triggers not in current line. |
+|        | <kbd>g</kbd> <kbd>q</kbd>                    | show quick fixes                                            |                                                                    |
+| vim    | <kbd>g</kbd> <kbd>h</kbd>                    | show signature help                                         |                                                                    |
+| vim    | <kbd>g</kbd> <kbd>d</kbd>                    | show type definition                                        |                                                                    |
+| vscode | <kbd>ctrl + space</kbd>                      | show completion menu                                        | is shown automatically                                             |
+|        | <kbd>shift + tab</kbd>                       | navigate to previous in completion menu/snippet placeholder |                                                                    |
+|        | <kbd>tab</kbd>                               | navigate to next in completion menu/snippet placeholder     |                                                                    |
+|        | <kbd>enter</kbd>                             | use marked completion                                       |                                                                    |
 
 ### completion
 
@@ -117,7 +117,17 @@ Got any troubles in your workflows? Issues are welcome!
 |        | <kbd>enter</kbd>    | opens file                     |                                  |
 |        | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
-## Diagnostics/file/grep/symbol search
+## Diagnostics search
+
+| only? | key                 | effect                       | notes                            |
+| ----- | ------------------- | ---------------------------- | -------------------------------- |
+|       | <kbd>ctrl + c</kbd> | closes the search            |                                  |
+|       | <kbd>ctrl + p</kbd> | select previous search entry |                                  |
+|       | <kbd>ctrl + n</kbd> | select next search entry     |                                  |
+|       | <kbd>enter</kbd>    | opens file                   |                                  |
+|       | <kbd>ctrl + v</kbd> | opens file in vertical split | in vscode currently ctrl + enter |
+
+## File/grep/symbol search
 
 | only? | key                 | effect                        | notes                                                |
 | ----- | ------------------- | ----------------------------- | ---------------------------------------------------- |
