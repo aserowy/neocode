@@ -5,10 +5,10 @@ local keymaps = require'nvim.keymaps'
 local mappings = {}
 
 -- session
-keymaps.register('n', {
-['<C-s><C-l>'] = '<cmd>SessionLoad<CR>',
-['<C-s><C-s>'] = '<cmd>SessionSave<CR>',
-})
+-- keymaps.register('n', {
+-- ['<C-s><C-l>'] = '<cmd>SessionLoad<CR>',
+-- ['<C-s><C-s>'] = '<cmd>SessionSave<CR>',
+-- })
 
 -- zen
 keymaps.register('n', {
@@ -21,7 +21,8 @@ keymaps.register('n', {
 ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<CR>]],
 ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]],
 ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
-['<C-x>'] = [[<cmd>LspTroubleToggle quickfix<CR>]],
+['<C-q>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<CR>]],
+['<C-x>'] = [[<cmd>LspTrouble quickfix<CR>]],
 })
 
 -- file tree
@@ -94,13 +95,9 @@ mappings.lsp_on_attach = {
 ['gn'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
 }
 
-keymaps.register('n', {
-['<C-q>'] = [[<cmd>LspTroubleOpen<CR>]],
-})
-
 mappings.lsp_trouble = {
 ['close'] = '<C-c>',
-['cancel'] = '<esc>',
+['cancel'] = '<C-k>',
 ['refresh'] = 'r',
 ['jump'] = '<cr>',
 ['hover'] = 'K',

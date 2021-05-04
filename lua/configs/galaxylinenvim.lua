@@ -24,12 +24,12 @@ local create_mode = function (text, bg)
     }
 end
 
-local mode_normal = create_mode(' ', colors.hint)
-local mode_insert = create_mode(' ', colors.ok)
-local mode_visual = create_mode('﯎ ', colors.highlight02)
-local mode_visual_block = create_mode(' ', colors.highlight02)
-local mode_terminal = create_mode(' ', colors.highlight03)
-local mode_undefined = create_mode(' ', colors.error)
+local mode_normal = create_mode('NORMAL ', colors.hint)
+local mode_insert = create_mode('INSERT ', colors.ok)
+local mode_visual = create_mode('VISUAL ', colors.highlight02)
+local mode_visual_block = create_mode('VBLOCK ', colors.highlight02)
+local mode_terminal = create_mode('TERMNL ', colors.highlight03)
+local mode_undefined = create_mode('CMDLNE ', colors.error)
 
 local get_mode = function (mode)
     local modes = {
@@ -213,13 +213,6 @@ gls.right = {
 gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.short_line_left = {
-    {
-        InactiveViMode = {
-            provider = function() return '' end,
-            separator = '   ',
-            separator_highlight = {colors.inactive, colors.inactive},
-        }
-    },
     {
         Init = {
             provider = function() return ' ' end,
