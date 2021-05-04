@@ -26,11 +26,12 @@ Got any troubles in your workflows? Issues are welcome!
 | only? | key                 | effect                     | notes |
 | ----- | ------------------- | -------------------------- | ----- |
 |       | <kbd>ctrl + e</kbd> | focus explorer (file tree) |       |
-|       | <kbd>ctrl + q</kbd> | focus diagnostics          |       |
 |       | <kbd>ctrl + f</kbd> | focus file search          |       |
 |       | <kbd>ctrl + g</kbd> | focus grep search          |       |
+|       | <kbd>ctrl + q</kbd> | focus diagnostics          |       |
 |       | <kbd>ctrl + s</kbd> | focus symbol search        |       |
 |       | <kbd>ctrl + t</kbd> | focus integrated terminal  |       |
+| vim   | <kbd>ctrl + x</kbd> | focus quickfix list        |       |
 
 ## Windows
 

@@ -15,12 +15,13 @@ keymaps.register('n', {
 ['<C-z>'] = [[<cmd>TZMinimalist<CR>]]
 })
 
--- file
+-- functions
 keymaps.register('n', {
+['<C-e>'] = ':NvimTreeFindFile<CR>',
 ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<CR>]],
 ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]],
 ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
-['<C-e>'] = ':NvimTreeFindFile<CR>',
+['<C-x>'] = [[<cmd>LspTroubleToggle quickfix<CR>]],
 })
 
 -- file tree
@@ -110,10 +111,10 @@ mappings.lsp_trouble = {
 
 -- selection
 mappings.tree_sitter_textobjects = {
-    ['af'] = '@function.outer',
-    ['if'] = '@function.inner',
-    ['ac'] = '@class.outer',
-    ['ic'] = '@class.inner',
+['af'] = '@function.outer',
+['if'] = '@function.inner',
+['ac'] = '@class.outer',
+['ic'] = '@class.inner',
 }
 
 return mappings

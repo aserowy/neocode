@@ -1,3 +1,3 @@
 local vim = vim
 
-vim.g.scrollview_current_only = true
+vim.g.scrollview_hide_on_intersect = true
