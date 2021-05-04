@@ -6,8 +6,8 @@ local mappings = {}
 
 -- session
 keymaps.register('n', {
-['<Leader>sl'] = '<cmd>SessionLoad<CR>',
-['<Leader>ss'] = '<cmd>SessionSave<CR>',
+['<C-s><C-l>'] = '<cmd>SessionLoad<CR>',
+['<C-s><C-s>'] = '<cmd>SessionSave<CR>',
 })
 
 -- zen

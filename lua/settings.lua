@@ -8,8 +8,6 @@ settings.setup = function ()
     local options = require'nvim.options'
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
-    vim.g.mapleader = ' '
-
     -- options
     options.set(option, 'clipboard', 'unnamedplus')
     options.set(option, 'completeopt', 'menuone,noselect')
