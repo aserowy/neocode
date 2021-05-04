@@ -210,7 +210,7 @@ gls.right = {
 }
 
 -- short line
-gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
+gl.short_line_list = {'LspTrouble', 'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.short_line_left = {
     {

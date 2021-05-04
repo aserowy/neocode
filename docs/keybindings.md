@@ -118,15 +118,16 @@ Got any troubles in your workflows? Issues are welcome!
 |        | <kbd>enter</kbd>    | opens file                     |                                  |
 |        | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
-## Diagnostics search
+## Diagnostics
 
-| only? | key                 | effect                       | notes                            |
-| ----- | ------------------- | ---------------------------- | -------------------------------- |
-|       | <kbd>ctrl + c</kbd> | closes the search            |                                  |
-|       | <kbd>ctrl + p</kbd> | select previous search entry |                                  |
-|       | <kbd>ctrl + n</kbd> | select next search entry     |                                  |
-|       | <kbd>enter</kbd>    | opens file                   |                                  |
-|       | <kbd>ctrl + v</kbd> | opens file in vertical split | in vscode currently ctrl + enter |
+| only? | key                 | effect                              | notes                            |
+| ----- | ------------------- | ----------------------------------- | -------------------------------- |
+|       | <kbd>ctrl + c</kbd> | closes the diagnostics              |                                  |
+|       | <kbd>ctrl + p</kbd> | select previous entry               |                                  |
+|       | <kbd>ctrl + n</kbd> | select next entry                   |                                  |
+|       | <kbd>enter</kbd>    | opens file                          |                                  |
+|       | <kbd>ctrl + v</kbd> | opens file in vertical split        | in vscode currently ctrl + enter |
+| vim   | <kbd>m</kbd>        | toggles workspace and document mode |                                  |
 
 ## File/grep/symbol search
 
