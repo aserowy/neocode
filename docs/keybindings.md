@@ -82,7 +82,6 @@ Got any troubles in your workflows? Issues are welcome!
 | vim    | <kbd>g</kbd> <kbd>l</kbd>                    | show diagnostic in current line | Is only needed in vim, because g p/n triggers not in current line. |
 |        | <kbd>g</kbd> <kbd>q</kbd>                    | show quick fixes                |                                                                    |
 | vim    | <kbd>g</kbd> <kbd>h</kbd>                    | show signature help             |                                                                    |
-| vim    | <kbd>g</kbd> <kbd>d</kbd>                    | show type definition            |                                                                    |
 | vscode | <kbd>ctrl + space</kbd>                      | show completion menu            | is shown automatically                                             |
 
 ### completion
@@ -92,6 +91,12 @@ Got any troubles in your workflows? Issues are welcome!
 |       | <kbd>shift + tab</kbd> | jump to previous completion/snippet placeholder |       |
 |       | <kbd>tab</kbd>         | jump to next completion/snippet placeholder     |       |
 |       | <kbd>enter</kbd>       | insert completion/snippet                       |       |
+
+### motion
+
+| only? | key                                | effect                              | notes |
+| ----- | ---------------------------------- | ----------------------------------- | ----- |
+|       | <kbd>leader ([)</kbd> <kbd>w</kbd> | trigger hop words (like easymotion) |       |
 
 ## Explorer
 

@@ -10,6 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
+-- TODO rework with config functions and requires
 require'packer'.startup(
     function(use)
         use 'wbthomason/packer.nvim'
@@ -49,6 +50,8 @@ require'packer'.startup(
         use 'romgrk/nvim-treesitter-context'
         use 'nvim-treesitter/nvim-treesitter-textobjects'
 
+        -- motion
+        use {'phaazon/hop.nvim', as = 'hop', config = function () require'hop'.setup() end}
         use 'unblevable/quick-scope'
 
         -- formatting

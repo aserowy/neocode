@@ -5,6 +5,8 @@ local settings = {
 }
 
 settings.setup = function ()
+    vim.g.mapleader = '['
+
     local options = require'nvim.options'
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 

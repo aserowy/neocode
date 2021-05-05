@@ -6,23 +6,23 @@ local mappings = {}
 
 -- session
 -- keymaps.register('n', {
--- ['<C-s><C-l>'] = '<cmd>SessionLoad<CR>',
--- ['<C-s><C-s>'] = '<cmd>SessionSave<CR>',
+-- ['<C-s><C-l>'] = '<cmd>SessionLoad<cr>',
+-- ['<C-s><C-s>'] = '<cmd>SessionSave<cr>',
 -- })
 
 -- zen
 keymaps.register('n', {
-    ['<C-z>'] = [[<cmd>TZMinimalist<CR>]]
+    ['<C-z>'] = [[<cmd>TZMinimalist<cr>]]
 })
 
 -- functions
 keymaps.register('n', {
-    ['<C-e>'] = ':NvimTreeFindFile<CR>',
-    ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<CR>]],
-    ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]],
-    ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>]],
-    ['<C-q>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<CR>]],
-    ['<C-x>'] = [[<cmd>LspTrouble quickfix<CR>]],
+    ['<C-e>'] = ':NvimTreeFindFile<cr>',
+    ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<cr>]],
+    ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
+    ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
+    ['<C-q>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
+    ['<C-x>'] = [[<cmd>LspTrouble quickfix<cr>]],
 })
 
 -- file tree
@@ -38,13 +38,18 @@ mappings.file_tree = {
 
 -- buffer
 keymaps.register('n', {
-    ['<C-a>'] = [[<cmd>enew<CR>]],
-    ['<C-c>'] = [[<cmd>BufferClose<CR>]],
-    ['<C-n>'] = [[<cmd>BufferNext<CR>]],
-    ['<C-p>'] = [[<cmd>BufferPrevious<CR>]],
+    ['<C-a>'] = [[<cmd>enew<cr>]],
+    ['<C-c>'] = [[<cmd>BufferClose<cr>]],
+    ['<C-n>'] = [[<cmd>BufferNext<cr>]],
+    ['<C-p>'] = [[<cmd>BufferPrevious<cr>]],
 
-    ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<CR>]],
-    ['gs'] = [[<cmd>w<CR>]],
+    ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<cr>]],
+    ['gs'] = [[<cmd>w<cr>]],
+})
+
+-- motion
+keymaps.register('n', {
+    ['<leader>w'] = [[<cmd>HopWord<cr>]],
 })
 
 -- window
@@ -64,44 +69,44 @@ end
 
 -- terminal
 keymaps.register('n', {
-    ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<CR>]],
+    ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<cr>]],
 })
 
 keymaps.register('t', {
-    ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
-    ['<C-k>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
-    ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<CR>]],
+    ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<cr>]],
+    ['<C-k>'] = [[<cmd>lua require'FTerm'.close()<cr>]],
+    ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<cr>]],
 })
 
 -- completion & snippets
 keymaps.register('i', {
-    ['<CR>'] = [[v:lua.completion.complete('<CR>')]],
+    ['<cr>'] = [[v:lua.completion.complete('<cr>')]],
     ['<S-tab>'] = [[v:lua.completion.completion_or_jump_up('<S-tab>')]],
     ['<tab>'] = [[v:lua.completion.completion_or_jump_down('<tab>')]],
 }, {expr = true})
 
 keymaps.register('s', {
-    ['<CR>'] = [[v:lua.completion.complete('<CR>')]],
+    ['<cr>'] = [[v:lua.completion.complete('<cr>')]],
     ['<S-tab>'] = [[v:lua.completion.completion_or_jump_up('<S-tab>')]],
     ['<tab>'] = [[v:lua.completion.completion_or_jump_down('<tab>')]],
 }, {expr = true})
 
 -- lsp
 mappings.lsp_on_attach = {
-    ['gd'] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>]],
-    ['gf'] = '<cmd>lua vim.lsp.buf.declaration()<CR>',
-    ['gH'] = [[<cmd>lua require'telescope.builtin'.lsp_references()<CR>]],
-    ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<CR>',
-    ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>',
-    ['gh'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-    ['gy'] = '<cmd>lua vim.lsp.buf.type_definition()<CR>',
-    ['gr'] = '<cmd>lua vim.lsp.buf.rename()<CR>',
-    ['gq'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>]],
-    ['gl'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-    ['gp'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
-    ['gn'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
+    ['gd'] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>]],
+    ['gf'] = '<cmd>lua vim.lsp.buf.declaration()<cr>',
+    ['gH'] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],
+    ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<cr>',
+    ['K'] = '<cmd>lua vim.lsp.buf.hover()<cr>',
+    ['gh'] = '<cmd>lua vim.lsp.buf.signature_help()<cr>',
+    ['gr'] = '<cmd>lua vim.lsp.buf.rename()<cr>',
+    ['gq'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>]],
+    ['gl'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
+    ['gp'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>',
+    ['gn'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>',
 }
 
+-- diagnostic
 mappings.lsp_trouble = {
     ['close'] = '<C-c>',
     ['cancel'] = '<C-k>',
