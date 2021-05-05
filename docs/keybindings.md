@@ -76,7 +76,7 @@ Got any troubles in your workflows? Issues are welcome!
 |        | <kbd>g</kbd> <kbd>H</kbd>                    | references                      |                                                                    |
 |        | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                 |                                                                    |
 |        | <kbd>g</kbd> <kbd>r</kbd>                    | rename symbol                   |                                                                    |
-|        | <kbd>g</kbd> <kbd>c</kbd>                    | format document                 |                                                                    |
+|        | <kbd>g</kbd> <kbd>a</kbd>                    | arrange/format document         |                                                                    |
 |        | <kbd>g</kbd> <kbd>p</kbd>                    | show previous diagnostic        |                                                                    |
 |        | <kbd>g</kbd> <kbd>n</kbd>                    | show next diagnostic            |                                                                    |
 | vim    | <kbd>g</kbd> <kbd>l</kbd>                    | show diagnostic in current line | Is only needed in vim, because g p/n triggers not in current line. |

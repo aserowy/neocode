@@ -43,8 +43,8 @@ keymaps.register('n', {
     ['<C-n>'] = [[<cmd>BufferNext<CR>]],
     ['<C-p>'] = [[<cmd>BufferPrevious<CR>]],
 
+    ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<CR>]],
     ['gs'] = [[<cmd>w<CR>]],
-    ['gc'] = [[gg=G<C-o>zz<cmd>Neoformat<CR>]],
 })
 
 -- window

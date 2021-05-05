@@ -8,7 +8,7 @@ if not vim.g.vscode then
     require'mappings'
 else
     require'nvim.keymaps'.register('n', {
-        ['gc'] = [[<cmd>call VSCodeNotify('editor.action.formatDocument')<cr>]],
+        ['ga'] = [[<cmd>call VSCodeNotify('editor.action.formatDocument')<cr>]],
         ['gn'] = [[<cmd>call VSCodeNotify('editor.action.marker.next')<cr>]],
         ['gp'] = [[<cmd>call VSCodeNotify('editor.action.marker.prev')<cr>]],
         ['gq'] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
