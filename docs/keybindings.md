@@ -67,26 +67,23 @@ Got any troubles in your workflows? Issues are welcome!
 
 ### on text
 
-| only?  | key                                          | effect                                                      | notes                                                              |
-| ------ | -------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------ |
-|        | <kbd>g</kbd> <kbd>s</kbd>                    | saves file                                                  |                                                                    |
-|        | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                                                 |                                                                    |
-|        | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside                                      |                                                                    |
-|        | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                                                |                                                                    |
-|        | <kbd>g</kbd> <kbd>H</kbd>                    | references                                                  |                                                                    |
-|        | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                                             |                                                                    |
-|        | <kbd>g</kbd> <kbd>r</kbd>                    | rename symbol                                               |                                                                    |
-|        | <kbd>g</kbd> <kbd>c</kbd>                    | format document                                             |                                                                    |
-|        | <kbd>g</kbd> <kbd>p</kbd>                    | show previous diagnostic                                    |                                                                    |
-|        | <kbd>g</kbd> <kbd>n</kbd>                    | show next diagnostic                                        |                                                                    |
-| vim    | <kbd>g</kbd> <kbd>l</kbd>                    | show diagnostic in current line                             | Is only needed in vim, because g p/n triggers not in current line. |
-|        | <kbd>g</kbd> <kbd>q</kbd>                    | show quick fixes                                            |                                                                    |
-| vim    | <kbd>g</kbd> <kbd>h</kbd>                    | show signature help                                         |                                                                    |
-| vim    | <kbd>g</kbd> <kbd>d</kbd>                    | show type definition                                        |                                                                    |
-| vscode | <kbd>ctrl + space</kbd>                      | show completion menu                                        | is shown automatically                                             |
-|        | <kbd>shift + tab</kbd>                       | navigate to previous in completion menu/snippet placeholder |                                                                    |
-|        | <kbd>tab</kbd>                               | navigate to next in completion menu/snippet placeholder     |                                                                    |
-|        | <kbd>enter</kbd>                             | use marked completion                                       |                                                                    |
+| only?  | key                                          | effect                          | notes                                                              |
+| ------ | -------------------------------------------- | ------------------------------- | ------------------------------------------------------------------ |
+|        | <kbd>g</kbd> <kbd>s</kbd>                    | saves file                      |                                                                    |
+|        | <kbd>g</kbd> <kbd>d</kbd>                    | definitions                     |                                                                    |
+|        | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd> | opens definition aside          |                                                                    |
+|        | <kbd>g</kbd> <kbd>f</kbd>                    | declarations                    |                                                                    |
+|        | <kbd>g</kbd> <kbd>H</kbd>                    | references                      |                                                                    |
+|        | <kbd>g</kbd> <kbd>i</kbd>                    | implementations                 |                                                                    |
+|        | <kbd>g</kbd> <kbd>r</kbd>                    | rename symbol                   |                                                                    |
+|        | <kbd>g</kbd> <kbd>c</kbd>                    | format document                 |                                                                    |
+|        | <kbd>g</kbd> <kbd>p</kbd>                    | show previous diagnostic        |                                                                    |
+|        | <kbd>g</kbd> <kbd>n</kbd>                    | show next diagnostic            |                                                                    |
+| vim    | <kbd>g</kbd> <kbd>l</kbd>                    | show diagnostic in current line | Is only needed in vim, because g p/n triggers not in current line. |
+|        | <kbd>g</kbd> <kbd>q</kbd>                    | show quick fixes                |                                                                    |
+| vim    | <kbd>g</kbd> <kbd>h</kbd>                    | show signature help             |                                                                    |
+| vim    | <kbd>g</kbd> <kbd>d</kbd>                    | show type definition            |                                                                    |
+| vscode | <kbd>ctrl + space</kbd>                      | show completion menu            | is shown automatically                                             |
 
 ### completion
 
@@ -118,10 +115,11 @@ Got any troubles in your workflows? Issues are welcome!
 |        | <kbd>enter</kbd>    | opens file                     |                                  |
 |        | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
-## Diagnostics
+## Diagnostics (& quickfix in vim)
 
 | only? | key                 | effect                              | notes                            |
 | ----- | ------------------- | ----------------------------------- | -------------------------------- |
+|       | <kbd>space</kbd>    | toggle current fold                 |                                  |
 |       | <kbd>ctrl + c</kbd> | closes the diagnostics              |                                  |
 |       | <kbd>ctrl + p</kbd> | select previous entry               |                                  |
 |       | <kbd>ctrl + n</kbd> | select next entry                   |                                  |

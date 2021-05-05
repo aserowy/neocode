@@ -86,8 +86,6 @@ Copy settings and keybindings into your current configuration.
     "key": "ctrl+shift+v",
     "command": "editor.action.clipboardPasteAction"
   },
-
-  // zen
   {
     "key": "ctrl+z",
     "command": "workbench.action.toggleZenMode"
@@ -172,46 +170,7 @@ Copy settings and keybindings into your current configuration.
     "when": "listFocus || editorFocus && neovim.mode == 'normal'"
   },
 
-  // editor
-  // // on text
-  {
-    "key": "space s",
-    "command": "workbench.action.files.save",
-    "when": "editorFocus && neovim.mode == 'normal'"
-  },
-  {
-    "key": "space f",
-    "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor && neovim.mode == 'normal'"
-  },
-  {
-    "key": "space f",
-    "command": "editor.action.formatDocument.none",
-    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly && neovim.mode == 'normal'"
-  },
-  {
-    "key": "space r",
-    "command": "editor.action.rename",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && neovim.mode == 'normal'"
-  },
-  {
-    "key": "space q",
-    "command": "keyboard-quickfix.openQuickFix",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && neovim.mode == 'normal'"
-  },
-  {
-    "key": "space p",
-    "command": "editor.action.marker.prev",
-    "when": "editorFocus && neovim.mode == 'normal'"
-  },
-  {
-    "key": "space n",
-    "command": "editor.action.marker.next",
-    "when": "editorFocus && neovim.mode == 'normal'"
-  },
-  // TODO space h for signature help? space d for type definition?
-
-  // // completion
+  // editor - completion
   {
     "key": "tab",
     "command": "selectNextSuggestion",
@@ -394,10 +353,6 @@ Copy settings and keybindings into your current configuration.
   {
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
-  },
-  {
-    "key": "ctrl+s",
-    "command": "-workbench.action.files.save"
   },
   {
     "key": "escape",
