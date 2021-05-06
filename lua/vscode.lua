@@ -11,6 +11,7 @@ local function set_settings()
     options.set(option, 'clipboard', 'unnamedplus')
     options.set(option, 'ignorecase', true)
     options.set(option, 'smartcase', true)
+    options.set(option, 'termguicolors', true)
 
     options.set(buffer, 'expandtab', true)
     options.set(buffer, 'shiftwidth', 4)
@@ -24,7 +25,7 @@ local function register_plugins()
             use 'wbthomason/packer.nvim'
 
             use 'unblevable/quick-scope'
-            use 'asvetliakov/vim-easymotion'
+            use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup {} end}
         end)
 end
 
@@ -42,7 +43,7 @@ local function set_mappings()
         ['gr'] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
         ['gs'] = [[<cmd>call VSCodeNotify('workbench.action.files.save')<cr>]],
 
-        ['<leader>w'] = '<Plug>(easymotion-bd-w)',
+        ['<leader>w'] = [[<cmd>HopWord<cr>]],
     })
 end
 
