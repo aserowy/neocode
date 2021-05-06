@@ -1,5 +1,15 @@
 local vim = vim
 
+local execute = vim.api.nvim_command
+local fn = vim.fn
+
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+
+if fn.empty(fn.glob(install_path)) > 0 then
+    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+    execute 'packadd packer.nvim'
+end
+
 if not vim.g.vscode then
     require'settings'.setup()
     require'plugins'
@@ -7,13 +17,6 @@ if not vim.g.vscode then
 
     require'mappings'
 else
-    require'nvim.keymaps'.register('n', {
-        ['ga'] = [[<cmd>call VSCodeNotify('editor.action.formatDocument')<cr>]],
-        ['gn'] = [[<cmd>call VSCodeNotify('editor.action.marker.next')<cr>]],
-        ['gp'] = [[<cmd>call VSCodeNotify('editor.action.marker.prev')<cr>]],
-        ['gq'] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
-        ['gr'] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
-        ['gs'] = [[<cmd>call VSCodeNotify('workbench.action.files.save')<cr>]],
-    })
+    require'vscode'.setup()
 end
 
