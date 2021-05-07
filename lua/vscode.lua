@@ -6,17 +6,12 @@ local function set_settings()
     vim.g.mapleader = '['
 
     local options = require'nvim.options'
-    local option, buffer = options.scope.option, options.scope.buffer
+    local option = options.scope.option
 
     options.set(option, 'clipboard', 'unnamedplus')
     options.set(option, 'ignorecase', true)
     options.set(option, 'smartcase', true)
     options.set(option, 'termguicolors', true)
-
-    options.set(buffer, 'expandtab', true)
-    options.set(buffer, 'shiftwidth', 4)
-    options.set(buffer, 'softtabstop', 4)
-    options.set(buffer, 'tabstop', 4)
 end
 
 local function register_plugins()
