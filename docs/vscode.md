@@ -236,6 +236,16 @@ Copy settings and keybindings into your current configuration.
     "when": "explorerViewletFocus && listFocus && !inputFocus"
   },
   {
+    "key": "a",
+    "command": "workbench.files.action.createFileFromExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "workbench.files.action.createFolderFromExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
     "key": "y",
     "command": "filesExplorer.copy",
     "when": "explorerViewletFocus && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"

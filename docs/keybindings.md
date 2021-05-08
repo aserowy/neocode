@@ -116,7 +116,8 @@ Got any troubles in your workflows? Issues are welcome!
 |        | <kbd>p</kbd>        | paste file/folder              |                                  |
 |        | <kbd>d</kbd>        | deletes file/folder            |                                  |
 |        | <kbd>r</kbd>        | renames file/foler             |                                  |
-| vim    | <kbd>a</kbd>        | adds file/foler                |                                  |
+|        | <kbd>a</kbd>        | adds file/foler                | in vscode only files are added   |
+| vscode | <kbd>A</kbd>        | adds folder                    | is only needed in vscode         |
 |        | <kbd>enter</kbd>    | opens file                     |                                  |
 |        | <kbd>ctrl + v</kbd> | opens file in vertical split   | in vscode currently ctrl + enter |
 
