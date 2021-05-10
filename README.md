@@ -36,7 +36,7 @@ Most standard keymaps of nvim are untouched. You can find a list for custom mapp
 
 ### nvim (> 0.5)
 
-Clone or copy the repo into your `.config/nvim` folder and start nvim. The package manager will get installed automatically. After the first error `<CR>` install all packages with `:PackerInstall` and restart nvim.
+Clone or copy the repo into your `.config/nvim` folder and start nvim. The package manager will get installed automatically. After the first start, install all packages with `:PackerInstall` and restart nvim.
 
 Default theme is `solarized-dark` currently. You can change the theme in `lua/settings.lua`. Just look up themes e.g. here <http://chriskempson.com/projects/base16/>.
 
