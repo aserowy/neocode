@@ -1,69 +1,69 @@
 local vim = vim
 
 -- TODO rework with config functions and requires
-require'packer'.startup(
-    function(use)
-        use 'wbthomason/packer.nvim'
+require'packer'.startup(function(use)
+use 'wbthomason/packer.nvim'
 
-        -- zen
-        use 'kdav5758/TrueZen.nvim'
+-- theme
+use 'norcalli/nvim-base16.lua'
 
-        -- common
-        use 'glepnir/dashboard-nvim'
-        use 'glepnir/galaxyline.nvim'
-        use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
-        use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
-        use 'norcalli/nvim-base16.lua'
-        use '907th/vim-auto-save'
+-- zen
+use 'kdav5758/TrueZen.nvim'
 
-        -- scrolling
-        use 'karb94/neoscroll.nvim'
-        use 'nacro90/numb.nvim'
-        use 'dstein64/nvim-scrollview'
+-- common
+use 'glepnir/dashboard-nvim'
+use 'glepnir/galaxyline.nvim'
+use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+use '907th/vim-auto-save'
+use {'folke/which-key.nvim', config = function() require('which-key').setup {} end}
 
-        -- navigation
-        use 'kyazdani42/nvim-tree.lua'
-        use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/popup.nvim'}
-        use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+-- scrolling
+use 'karb94/neoscroll.nvim'
+use 'nacro90/numb.nvim'
+use 'dstein64/nvim-scrollview'
 
-        -- lsp
-        use 'neovim/nvim-lspconfig'
-        use 'kabouzeid/nvim-lspinstall'
-        use 'onsails/lspkind-nvim'
-        use 'folke/lsp-trouble.nvim'
+-- navigation
+use 'kyazdani42/nvim-tree.lua'
+use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/popup.nvim'}
+use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
-        -- linting
-        use 'norcalli/nvim-colorizer.lua'
+-- lsp
+use 'neovim/nvim-lspconfig'
+use 'kabouzeid/nvim-lspinstall'
+use 'onsails/lspkind-nvim'
+use 'folke/lsp-trouble.nvim'
 
-        use 'nvim-treesitter/nvim-treesitter'
-        use 'p00f/nvim-ts-rainbow'
-        use 'romgrk/nvim-treesitter-context'
-        use 'nvim-treesitter/nvim-treesitter-textobjects'
+-- linting
+use 'norcalli/nvim-colorizer.lua'
 
-        -- motion
-        use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup {} end}
-        use 'unblevable/quick-scope'
+use 'nvim-treesitter/nvim-treesitter'
+use 'p00f/nvim-ts-rainbow'
+use 'romgrk/nvim-treesitter-context'
+use 'nvim-treesitter/nvim-treesitter-textobjects'
 
-        -- formatting
-        vim.g.kommentary_create_default_mappings = false
-        use 'b3nj5m1n/kommentary'
-        use 'sbdchd/neoformat'
+-- motion
+use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup {} end}
+use 'unblevable/quick-scope'
 
-        -- autocompletion
-        use 'windwp/nvim-autopairs'
-        use 'hrsh7th/nvim-compe'
-        use 'kosayoda/nvim-lightbulb'
-        use 'hrsh7th/vim-vsnip'
+-- formatting
+vim.g.kommentary_create_default_mappings = false
+use 'b3nj5m1n/kommentary'
+use 'sbdchd/neoformat'
 
-        -- registers
-        use 'tversteeg/registers.nvim'
+-- autocompletion
+use 'windwp/nvim-autopairs'
+use 'hrsh7th/nvim-compe'
+use 'kosayoda/nvim-lightbulb'
+use 'hrsh7th/vim-vsnip'
 
-        -- terminal
-        use 'numtostr/FTerm.nvim'
+-- terminal
+use 'numtostr/FTerm.nvim'
 
-        -- TODO git
-        -- https://github.com/sindrets/diffview.nvim
-    end)
+-- TODO git
+-- https://github.com/sindrets/diffview.nvim
+use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
+
+end)
 
 -- zen
 require'true-zen'

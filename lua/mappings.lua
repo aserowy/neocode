@@ -5,10 +5,10 @@ local keymaps = require'nvim.keymaps'
 local mappings = {}
 
 -- session
--- keymaps.register('n', {
--- ['<C-s><C-l>'] = '<cmd>SessionLoad<cr>',
--- ['<C-s><C-s>'] = '<cmd>SessionSave<cr>',
--- })
+keymaps.register('n', {
+    ['<leader>sl'] = '<cmd>SessionLoad<cr>',
+    ['<leader>ss'] = '<cmd>SessionSave<cr>',
+})
 
 -- zen
 keymaps.register('n', {
