@@ -13,7 +13,6 @@ end
 if not vim.g.vscode then
     require'settings'.setup()
     require'plugins'
-    require'theme'
 
     require'mappings'
 else
