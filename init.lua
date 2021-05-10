@@ -14,7 +14,7 @@ if not vim.g.vscode then
     require'settings'.setup()
     require'plugins'
 
-    require'mappings'
+    require'mappings'.setup()
 else
     require'vscode'.setup()
 end

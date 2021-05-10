@@ -1,6 +1,3 @@
-local vim = vim
-
--- TODO rework with config functions and requires
 require'packer'.startup(function(use)
     use 'wbthomason/packer.nvim'
 
