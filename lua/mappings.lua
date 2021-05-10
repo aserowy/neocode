@@ -4,6 +4,7 @@ local keymaps = require'nvim.keymaps'
 
 local mappings = {}
 
+-- TODO reorder like documentation
 -- session
 keymaps.register('n', {
     ['<leader>sl'] = '<cmd>SessionLoad<cr>',
