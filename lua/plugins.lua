@@ -15,7 +15,7 @@ require'packer'.startup(function(use)
 
     -- common
     use {'glepnir/dashboard-nvim', config = function() require'configs.dashboardnvim' end}
-    use {'glepnir/galaxyline.nvim', config = function() require'configs.galaxylinenvim' end}
+    use {'glepnir/galaxyline.nvim', config = function() require'configs.galaxylinenvim' end, requires = 'kyazdani42/nvim-web-devicons'}
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua', config = function() require'configs.indentblanklinenvim' end}
     use {'907th/vim-auto-save', config = function() require'configs.vimautosave' end}
     use {'folke/which-key.nvim', config = function() require'which-key'.setup {} end}
@@ -26,20 +26,20 @@ require'packer'.startup(function(use)
     use {'dstein64/nvim-scrollview', config = function() require'configs.nvimscrollview' end}
 
     -- navigation
-    use {'kyazdani42/nvim-tree.lua', config = function() require'configs.nvimtree' end}
-    use {'nvim-telescope/telescope.nvim', config = function() require'configs.telescopenvim' end, requires = 'nvim-lua/popup.nvim'}
+    use {'kyazdani42/nvim-tree.lua', config = function() require'configs.nvimtree' end, requires = 'kyazdani42/nvim-web-devicons'}
+    use {'nvim-telescope/telescope.nvim', config = function() require'configs.telescopenvim' end, requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
     use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- lsp
     use {'neovim/nvim-lspconfig', config = function() require'configs.nvimlspconfig' end}
     use {'kabouzeid/nvim-lspinstall', config = function() require'configs.nvimlspinstall' end}
     use {'onsails/lspkind-nvim', config = function() require'configs.lspkindnvim' end}
-    use {'folke/lsp-trouble.nvim', config = function() require'configs.lsptroublenvim' end}
+    use {'folke/lsp-trouble.nvim', config = function() require'configs.lsptroublenvim' end, requires = 'kyazdani42/nvim-web-devicons'}
 
     -- linting
     use {'norcalli/nvim-colorizer.lua', config = function() require'configs.nvimcolorizer' end}
 
-    use {'nvim-treesitter/nvim-treesitter', config = function() require'configs.nvimtreesitter' end}
+    use {'nvim-treesitter/nvim-treesitter', config = function() require'configs.nvimtreesitter' end, run = ':TSUpdate'}
     use 'p00f/nvim-ts-rainbow'
     use 'romgrk/nvim-treesitter-context'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
