@@ -30,7 +30,7 @@ require'packer'.startup(function(use)
 
     -- lsp
     use {'neovim/nvim-lspconfig', config = function() require'configs.nvimlspconfig' end}
-    use {'kabouzeid/nvim-lspinstall', config = function() require'configs.nvimlspinstall' end}
+    use {'kabouzeid/nvim-lspinstall', config = function() require'configs.nvimlspinstall'.setup() end}
     use {'onsails/lspkind-nvim', config = function() require'configs.lspkindnvim' end}
     use {'folke/lsp-trouble.nvim', config = function() require'configs.lsptroublenvim' end, requires = 'kyazdani42/nvim-web-devicons'}
 
@@ -43,7 +43,7 @@ require'packer'.startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-textobjects'
 
     -- motion
-    use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup() end}
+    use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup {} end}
     use 'unblevable/quick-scope'
 
     -- formatting
