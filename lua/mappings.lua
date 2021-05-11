@@ -14,7 +14,7 @@ mappings.setup = function()
 
     -- functions
     keymaps.register('n', {
-        ['<C-e>'] = [[<cmd>NvimTreeFindFile<cr>]],
+        ['<C-e>'] = [[<cmd>lua require'custom.tree'.open()<cr>]],
         ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<cr>]],
         ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
@@ -79,7 +79,11 @@ mappings.file_tree = {
     ['m'] = 'cut',
     ['d'] = 'remove',
     ['y'] = 'copy',
-    ['<C-c>'] = 'close',
+}
+
+mappings.file_tree_no_cb = {
+    ['<C-c>'] = [[<cmd>lua require'custom.tree'.close()<cr>]],
+    ['q'] = [[<cmd>lua require'custom.tree'.close()<cr>]],
 }
 
 -- File/grep/symbol search
