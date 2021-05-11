@@ -27,6 +27,7 @@ require'packer'.startup(function(use)
     use {'nvim-telescope/telescope.nvim', config = function() require'configs.telescopenvim' end, requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
     -- use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use {'aserowy/barbar.nvim', as = 'barbar.nvim_fork', requires = 'kyazdani42/nvim-web-devicons'}
+    -- use {'~/src/barbar.nvim', as = 'barbar.nvim_local', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- lsp
     use {'neovim/nvim-lspconfig', config = function() require'configs.nvimlspconfig' end}
