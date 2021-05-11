@@ -6,10 +6,17 @@ local colors = require'colors'
 vim.cmd('hi EndOfBuffer guifg='..colors.bg)
 vim.cmd('hi LineNr guibg='..colors.bg)
 vim.cmd('hi SignColumn guibg='..colors.bg)
+vim.cmd('hi StatusLine guibg='..colors.bg)
+vim.cmd('hi StatusLineNC guibg='..colors.bg)
 vim.cmd('hi VertSplit guibg='..colors.bg)
 
 -- dashboard
 vim.cmd('hi DashboardHeader guifg='..colors.hint)
+
+-- tree
+vim.cmd('hi NvimTreeNormal guibg='..colors.bg_accent)
+vim.cmd('hi NvimTreeVertSplit guifg='..colors.bg_accent..' guibg='..colors.bg_accent)
+vim.cmd('hi NvimTreeEndOfBuffer guifg='..colors.bg_accent)
 
 -- gitsigns
 vim.cmd('hi DiffAdd guibg='..colors.bg)

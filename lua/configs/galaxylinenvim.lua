@@ -9,7 +9,7 @@ local create_border = function (condition)
     local result = {
         provider = function() return '' end,
         separator = '| ',
-        separator_highlight = {colors.inactive, colors.bg_accent},
+        separator_highlight = {colors.inactive, colors.bg},
     }
     if condition ~= nil then
         result.condition = condition
@@ -80,23 +80,23 @@ gls.left = {
                 return mode.text
             end,
             separator = ' ',
-            separator_highlight = {colors.inactive, colors.bg_accent},
+            separator_highlight = {colors.inactive, colors.bg},
         }
     },
     {
         FileIcon = {
             provider = 'FileIcon',
             condition = conditions.buffer_not_empty,
-            highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg_accent},
+            highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg},
         },
     },
     {
         FileName = {
             provider = 'FileName',
             condition = conditions.buffer_not_empty,
-            highlight = {colors.active, colors.bg_accent, 'bold'},
+            highlight = {colors.active, colors.bg, 'bold'},
             separator = '| ',
-            separator_highlight = {colors.inactive, colors.bg_accent},
+            separator_highlight = {colors.inactive, colors.bg},
         }
     },
     {
@@ -104,16 +104,16 @@ gls.left = {
             provider = function() return ' ' end,
             condition = conditions.check_git_workspace,
             icon = '',
-            highlight = {colors.critical, colors.bg_accent},
+            highlight = {colors.critical, colors.bg},
         }
     },
     {
         GitBranch = {
             provider = 'GitBranch',
             condition = conditions.check_git_workspace,
-            highlight = {colors.active, colors.bg_accent},
+            highlight = {colors.active, colors.bg},
             separator = ' ',
-            separator_highlight = {'NONE', colors.bg_accent},
+            separator_highlight = {'NONE', colors.bg},
         }
     },
     {
@@ -121,7 +121,7 @@ gls.left = {
             provider = 'DiffRemove',
             condition = conditions.hide_in_width,
             icon = ' ',
-            highlight = {colors.error, colors.bg_accent},
+            highlight = {colors.error, colors.bg},
         }
     },
     {
@@ -129,7 +129,7 @@ gls.left = {
             provider = 'DiffModified',
             condition = conditions.hide_in_width,
             icon = ' ',
-            highlight = {colors.hint, colors.bg_accent},
+            highlight = {colors.hint, colors.bg},
         }
     },
     {
@@ -137,7 +137,7 @@ gls.left = {
             provider = 'DiffAdd',
             condition = conditions.hide_in_width,
             icon = ' ',
-            highlight = {colors.ok, colors.bg_accent},
+            highlight = {colors.ok, colors.bg},
         }
     },
     {
@@ -147,28 +147,28 @@ gls.left = {
         DiagnosticError = {
             provider = 'DiagnosticError',
             icon = ' ',
-            highlight = {colors.error, colors.bg_accent},
+            highlight = {colors.error, colors.bg},
         }
     },
     {
         DiagnosticWarn = {
             provider = 'DiagnosticWarn',
             icon = ' ',
-            highlight = {colors.warning, colors.bg_accent}
+            highlight = {colors.warning, colors.bg}
         }
     },
     {
         DiagnosticHint = {
             provider = 'DiagnosticHint',
             icon = ' ',
-            highlight = {colors.hint, colors.bg_accent}
+            highlight = {colors.hint, colors.bg}
         }
     },
     {
         DiagnosticInfo = {
             provider = 'DiagnosticInfo',
             icon = ' ',
-            highlight = {colors.information, colors.bg_accent}
+            highlight = {colors.information, colors.bg}
         }
     },
     {
@@ -180,7 +180,7 @@ gls.left = {
                 return true
             end,
             icon = ' ',
-            highlight = {colors.active, colors.bg_accent},
+            highlight = {colors.active, colors.bg},
         }
     }
 }
@@ -189,22 +189,22 @@ gls.right = {
     {
         PerCent = {
             provider = 'LinePercent',
-            highlight = {colors.hint, colors.bg_accent},
+            highlight = {colors.hint, colors.bg},
         }
     },
     {
         FileEncode = {
             provider = 'FileEncode',
             condition = conditions.hide_in_width,
-            highlight = {colors.hint, colors.bg_accent},
+            highlight = {colors.hint, colors.bg},
         }
     },
     {
         Space = {
             provider = function() return ' ' end,
-            highlight = {colors.inactive, colors.bg_accent},
+            highlight = {colors.inactive, colors.bg},
             separator = ' ',
-            separator_highlight = {'NONE', colors.bg_accent},
+            separator_highlight = {'NONE', colors.bg},
         }
     },
 }
@@ -214,54 +214,22 @@ gl.short_line_list = {'LspTrouble', 'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.short_line_left = {
     {
-        Init = {
+        Space = {
             provider = function() return ' ' end,
-            highlight = {colors.inactive, colors.bg_accent},
-        },
-    },
-    {
-        ShortFileIcon = {
-            provider = 'FileIcon',
-            condition = conditions.buffer_not_empty,
-            highlight = {colors.inactive, colors.bg_accent},
-        },
-    },
-    {
-        ShortFileName = {
-            provider = 'FileName',
-            condition = conditions.buffer_not_empty,
-            highlight = {colors.inactive, colors.bg_accent, 'bold'},
+            highlight = {colors.bg, colors.bg},
+            separator = ' ',
+            separator_highlight = {colors.bg, colors.bg},
         }
-    },
-    {
-        BufferIcon = {
-            provider = 'BufferIcon',
-            highlight = {colors.inactive, colors.bg_accent}
-        }
-    },
+    }
 }
 
 gls.short_line_right = {
     {
-        ShortPerCent = {
-            provider = 'LinePercent',
-            highlight = {colors.inactive, colors.bg_accent},
-        }
-    },
-    {
-        ShortFileEncode = {
-            provider = 'FileEncode',
-            condition = conditions.hide_in_width,
-            highlight = {colors.inactive, colors.bg_accent},
-        }
-    },
-    {
         Space = {
             provider = function() return ' ' end,
-            highlight = {colors.inactive, colors.bg_accent},
+            highlight = {colors.bg, colors.bg},
             separator = ' ',
-            separator_highlight = {'NONE', colors.bg_accent},
+            separator_highlight = {colors.bg, colors.bg},
         }
-    },
+    }
 }
-
