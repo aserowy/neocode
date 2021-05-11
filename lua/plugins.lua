@@ -15,7 +15,7 @@ require'packer'.startup(function(use)
     use {'glepnir/galaxyline.nvim', config = function() require'configs.galaxylinenvim' end, requires = 'kyazdani42/nvim-web-devicons'}
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua', config = function() require'configs.indentblanklinenvim' end}
     use {'907th/vim-auto-save', config = function() require'configs.vimautosave' end}
-    use {'folke/which-key.nvim', config = function() require'which-key'.setup {} end}
+    use {'folke/which-key.nvim', config = function() require'which-key'.setup() end}
 
     -- scrolling
     use {'karb94/neoscroll.nvim', config = function() require'configs.neoscrollnvim' end}
@@ -43,7 +43,7 @@ require'packer'.startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-textobjects'
 
     -- motion
-    use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup {} end}
+    use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup() end}
     use 'unblevable/quick-scope'
 
     -- formatting

@@ -9,10 +9,10 @@ local function on_attach(_, bufnr)
     keymaps.register_bufnr(bufnr, 'n', mappings.lsp_on_attach)
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+local function setup()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local function setup_servers()
     require'lspinstall'.setup()
     local servers = require'lspinstall'.installed_servers()
     for _, server in pairs(servers) do
@@ -23,9 +23,21 @@ local function setup_servers()
     end
 end
 
-setup_servers()
+local function reinstall()
+    local lspinstall = require'lspinstall'
+    for _, server in ipairs(lspinstall.installed_servers()) do
+        lspinstall.install_server(server)
+    end
+end
 
-require'lspinstall'.post_install_hook = function ()
-    setup_servers()
+require'lspinstall'.post_install_hook = function()
+    setup()
     vim.cmd("bufdo e")
 end
+
+setup()
+
+local m = {}
+m.reinstall = reinstall
+
+return m
