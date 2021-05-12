@@ -32,6 +32,7 @@ end
 local function set_mappings()
     require'nvim.keymaps'.register('n', {
         ['ga'] = [[<cmd>call VSCodeNotify('editor.action.formatDocument')<cr>]],
+        ['gi'] = [[<cmd>call VSCodeNotify('editor.action.goToImplementation')<cr>]],
         ['gn'] = [[<cmd>call VSCodeNotify('editor.action.marker.next')<cr>]],
         ['gp'] = [[<cmd>call VSCodeNotify('editor.action.marker.prev')<cr>]],
         ['gq'] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
