@@ -3,36 +3,36 @@ local vim = vim
 local colors = require'colors'
 
 -- common
-vim.cmd('hi EndOfBuffer guifg='..colors.bg)
-vim.cmd('hi LineNr guibg='..colors.bg)
-vim.cmd('hi SignColumn guibg='..colors.bg)
-vim.cmd('hi StatusLine guibg='..colors.bg)
-vim.cmd('hi StatusLineNC guibg='..colors.bg)
-vim.cmd('hi VertSplit guibg='..colors.bg)
+vim.cmd('hi EndOfBuffer guifg='..colors.background)
+vim.cmd('hi LineNr guibg='..colors.background)
+vim.cmd('hi SignColumn guibg='..colors.background)
+vim.cmd('hi StatusLine guibg='..colors.background_statusline)
+vim.cmd('hi StatusLineNC guibg='..colors.background_statusline)
+vim.cmd('hi VertSplit guibg='..colors.background)
 
 -- dashboard
-vim.cmd('hi DashboardHeader guifg='..colors.hint)
+vim.cmd('hi DashboardHeader guifg='..colors.foreground_light)
 
 -- tree
-vim.cmd('hi NvimTreeNormal guibg='..colors.bg_accent)
-vim.cmd('hi NvimTreeVertSplit guifg='..colors.bg_accent..' guibg='..colors.bg_accent)
-vim.cmd('hi NvimTreeEndOfBuffer guifg='..colors.bg_accent)
+vim.cmd('hi NvimTreeNormal guibg='..colors.background_statusline)
+vim.cmd('hi NvimTreeVertSplit guifg='..colors.background_statusline..' guibg='..colors.background_statusline)
+vim.cmd('hi NvimTreeEndOfBuffer guifg='..colors.background_statusline)
 
 -- gitsigns
-vim.cmd('hi DiffAdd guibg='..colors.bg)
-vim.cmd('hi DiffChange guibg='..colors.bg)
-vim.cmd('hi DiffDelete guibg='..colors.bg)
-vim.cmd('hi DiffModified guibg='..colors.bg)
+vim.cmd('hi DiffAdd guifg='..colors.git_inserted..' guibg='..colors.background)
+vim.cmd('hi DiffChange guifg='..colors.git_changed..' guibg='..colors.background)
+vim.cmd('hi DiffDelete guifg='..colors.git_deleted..' guibg='..colors.background)
+vim.cmd('hi DiffModified guifg='..colors.git_changed..' guibg='..colors.background)
 
 -- lightbulb
-vim.cmd('hi LightBulbSign guifg='..colors.information..' guibg='..colors.bg)
+vim.cmd('hi LightBulbSign guifg='..colors.diagnostic_hint..' guibg='..colors.background)
 
 -- lsp
-vim.cmd('hi LspDiagnosticsSignError guifg='..colors.error..' guibg='..colors.bg)
-vim.cmd('hi LspDiagnosticsSignWarning guifg='..colors.warning..' guibg='..colors.bg)
-vim.cmd('hi LspDiagnosticsSignInformation guifg='..colors.information..' guibg='..colors.bg)
-vim.cmd('hi LspDiagnosticsSignHint guifg='..colors.hint..' guibg='..colors.bg)
+vim.cmd('hi LspDiagnosticsDefaultError guifg='..colors.diagnostic_error..' guibg='..colors.background)
+vim.cmd('hi LspDiagnosticsDefaultWarning guifg='..colors.diagnostic_warning..' guibg='..colors.background)
+vim.cmd('hi LspDiagnosticsDefaultInformation guifg='..colors.diagnostic_information..' guibg='..colors.background)
+vim.cmd('hi LspDiagnosticsDefaultHint guifg='..colors.diagnostic_hint..' guibg='..colors.background)
 
 -- popup
-vim.cmd('hi Pmenu guibg='..colors.bg_accent)
-vim.cmd('hi PmenuSel guibg='..colors.hint)
+vim.cmd('hi Pmenu guibg='..colors.background_statusline)
+vim.cmd('hi PmenuSel guibg='..colors.background_selection)

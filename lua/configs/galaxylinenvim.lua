@@ -1,4 +1,5 @@
 local vim = vim
+
 local gl = require('galaxyline')
 local gls = gl.section
 local conditions = require('galaxyline.condition')
@@ -9,7 +10,7 @@ local create_border = function (condition)
     local result = {
         provider = function() return '' end,
         separator = '| ',
-        separator_highlight = {colors.inactive, colors.bg},
+        separator_highlight = {colors.highlight_line, colors.background_statusline},
     }
     if condition ~= nil then
         result.condition = condition
@@ -24,12 +25,12 @@ local create_mode = function (text, bg)
     }
 end
 
-local mode_normal = create_mode('NORMAL ', colors.hint)
-local mode_insert = create_mode('INSERT ', colors.ok)
-local mode_visual = create_mode('VISUAL ', colors.highlight02)
-local mode_visual_block = create_mode('VBLOCK ', colors.highlight02)
-local mode_terminal = create_mode('TERMNL ', colors.highlight03)
-local mode_undefined = create_mode('CMDLNE ', colors.error)
+local mode_normal = create_mode('N ', colors.vmode_normal)
+local mode_insert = create_mode('I ', colors.vmode_insert)
+local mode_visual = create_mode('V ', colors.vmode_visual)
+local mode_visual_block = create_mode('B ', colors.vmode_visual)
+local mode_terminal = create_mode('T ', colors.vmode_terminal)
+local mode_undefined = create_mode('C ', colors.vmode_cmdline)
 
 local get_mode = function (mode)
     local modes = {
@@ -76,27 +77,27 @@ gls.left = {
         ViMode = {
             provider = function()
                 local mode = get_mode(vim.fn.mode())
-                vim.api.nvim_command('hi GalaxyViMode guifg='..colors.active..' guibg='..mode.bg)
+                vim.api.nvim_command('hi GalaxyViMode guifg='..colors.foreground_light..' guibg='..mode.bg)
                 return mode.text
             end,
             separator = ' ',
-            separator_highlight = {colors.inactive, colors.bg},
+            separator_highlight = {colors.highlight_line, colors.background_statusline},
         }
     },
     {
         FileIcon = {
             provider = 'FileIcon',
             condition = conditions.buffer_not_empty,
-            highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.bg},
+            highlight = {require'galaxyline.provider_fileinfo'.get_file_icon_color, colors.background_statusline},
         },
     },
     {
         FileName = {
             provider = 'FileName',
             condition = conditions.buffer_not_empty,
-            highlight = {colors.active, colors.bg, 'bold'},
+            highlight = {colors.foreground, colors.background_statusline, 'bold'},
             separator = '| ',
-            separator_highlight = {colors.inactive, colors.bg},
+            separator_highlight = {colors.highlight_line, colors.background_statusline},
         }
     },
     {
@@ -104,16 +105,16 @@ gls.left = {
             provider = function() return ' ' end,
             condition = conditions.check_git_workspace,
             icon = '',
-            highlight = {colors.critical, colors.bg},
+            highlight = {colors.types, colors.background_statusline},
         }
     },
     {
         GitBranch = {
             provider = 'GitBranch',
             condition = conditions.check_git_workspace,
-            highlight = {colors.active, colors.bg},
+            highlight = {colors.foreground, colors.background_statusline},
             separator = ' ',
-            separator_highlight = {'NONE', colors.bg},
+            separator_highlight = {colors.background_statusline, colors.background_statusline},
         }
     },
     {
@@ -121,7 +122,7 @@ gls.left = {
             provider = 'DiffRemove',
             condition = conditions.hide_in_width,
             icon = ' ',
-            highlight = {colors.error, colors.bg},
+            highlight = {colors.git_deleted, colors.background_statusline},
         }
     },
     {
@@ -129,7 +130,7 @@ gls.left = {
             provider = 'DiffModified',
             condition = conditions.hide_in_width,
             icon = ' ',
-            highlight = {colors.hint, colors.bg},
+            highlight = {colors.git_changed, colors.background_statusline},
         }
     },
     {
@@ -137,7 +138,7 @@ gls.left = {
             provider = 'DiffAdd',
             condition = conditions.hide_in_width,
             icon = ' ',
-            highlight = {colors.ok, colors.bg},
+            highlight = {colors.git_inserted, colors.background_statusline},
         }
     },
     {
@@ -147,28 +148,28 @@ gls.left = {
         DiagnosticError = {
             provider = 'DiagnosticError',
             icon = ' ',
-            highlight = {colors.error, colors.bg},
+            highlight = {colors.diagnostic_error, colors.background_statusline},
         }
     },
     {
         DiagnosticWarn = {
             provider = 'DiagnosticWarn',
             icon = ' ',
-            highlight = {colors.warning, colors.bg}
+            highlight = {colors.diagnostic_warning, colors.background_statusline}
         }
     },
     {
         DiagnosticHint = {
             provider = 'DiagnosticHint',
             icon = ' ',
-            highlight = {colors.hint, colors.bg}
+            highlight = {colors.diagnostic_hint, colors.background_statusline}
         }
     },
     {
         DiagnosticInfo = {
             provider = 'DiagnosticInfo',
             icon = ' ',
-            highlight = {colors.information, colors.bg}
+            highlight = {colors.diagnostic_information, colors.background_statusline}
         }
     },
     {
@@ -180,7 +181,7 @@ gls.left = {
                 return true
             end,
             icon = ' ',
-            highlight = {colors.active, colors.bg},
+            highlight = {colors.foreground, colors.background_statusline},
         }
     }
 }
@@ -189,22 +190,22 @@ gls.right = {
     {
         PerCent = {
             provider = 'LinePercent',
-            highlight = {colors.hint, colors.bg},
+            highlight = {colors.foreground_dark, colors.background_statusline},
         }
     },
     {
         FileEncode = {
             provider = 'FileEncode',
             condition = conditions.hide_in_width,
-            highlight = {colors.hint, colors.bg},
+            highlight = {colors.foreground_dark, colors.background_statusline},
         }
     },
     {
         Space = {
             provider = function() return ' ' end,
-            highlight = {colors.inactive, colors.bg},
+            highlight = {colors.highlight_line, colors.background_statusline},
             separator = ' ',
-            separator_highlight = {'NONE', colors.bg},
+            separator_highlight = {colors.background_statusline, colors.background_statusline},
         }
     },
 }
@@ -216,9 +217,9 @@ gls.short_line_left = {
     {
         Space = {
             provider = function() return ' ' end,
-            highlight = {colors.bg, colors.bg},
+            highlight = {colors.background_statusline, colors.background_statusline},
             separator = ' ',
-            separator_highlight = {colors.bg, colors.bg},
+            separator_highlight = {colors.background_statusline, colors.background_statusline},
         }
     }
 }
@@ -227,9 +228,9 @@ gls.short_line_right = {
     {
         Space = {
             provider = function() return ' ' end,
-            highlight = {colors.bg, colors.bg},
+            highlight = {colors.background_statusline, colors.background_statusline},
             separator = ' ',
-            separator_highlight = {colors.bg, colors.bg},
+            separator_highlight = {colors.background_statusline, colors.background_statusline},
         }
     }
 }
