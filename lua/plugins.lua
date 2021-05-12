@@ -36,7 +36,7 @@ require'packer'.startup(function(use)
     -- linting
     use {'norcalli/nvim-colorizer.lua', config = function() require'configs.nvimcolorizer' end}
 
-    use {'nvim-treesitter/nvim-treesitter', config = function() require'configs.nvimtreesitter' end, run = ':TSUpdate'}
+    use {'nvim-treesitter/nvim-treesitter', config = function() require'configs.nvimtreesitter' end}
     use 'p00f/nvim-ts-rainbow'
     use 'romgrk/nvim-treesitter-context'
     use 'nvim-treesitter/nvim-treesitter-textobjects'

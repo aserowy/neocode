@@ -1,5 +1,6 @@
 local theme = require'configs.nvimbase16'.get_theme()
 
+-- http://chriskempson.com/projects/base16/
 return {
     background = '#'..theme.base00,
     background_statusline = '#'..theme.base01,
