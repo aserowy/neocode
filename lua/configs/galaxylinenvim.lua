@@ -105,7 +105,7 @@ gls.left = {
             provider = function() return ' ' end,
             condition = conditions.check_git_workspace,
             icon = '',
-            highlight = {colors.types, colors.background_statusline},
+            highlight = {colors.vmode_normal, colors.background_statusline},
         }
     },
     {
@@ -211,7 +211,7 @@ gls.right = {
 }
 
 -- short line
-gl.short_line_list = {'LspTrouble', 'NvimTree', 'vista', 'dbui', 'packer'}
+gl.short_line_list = {'Trouble', 'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.short_line_left = {
     {

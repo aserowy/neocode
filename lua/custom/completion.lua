@@ -1,4 +1,5 @@
 local vim = vim
+local autopairs = require('nvim-autopairs')
 
 local rtc = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -13,28 +14,37 @@ local check_back_space = function()
     end
 end
 
-local completion = {}
-completion.complete = function(keys)
-    if vim.fn.complete_info()['selected'] ~= -1 then
-        return vim.fn.call('compe#confirm', {'<CR>'})
+local function confirm()
+    if vim.fn.pumvisible() ~= 0  then
+        if vim.fn.complete_info()['selected'] ~= -1 then
+            require'completion'.confirmCompletion()
+            return autopairs.esc('<c-y>')
+        elseif vim.fn.call('vsnip#available', {1}) == 1 then
+            return rtc('<plug>(vsnip-jump-next)')
+        else
+            return autopairs.autopairs_cr()
+        end
+    else
+        return autopairs.autopairs_cr()
     end
-    return rtc(keys)
 end
 
-completion.completion_or_jump_down = function(keys)
-    if vim.fn.pumvisible() == 1 then
+local function jump_next(keys)
+    if vim.fn.pumvisible() ~= 0  then
         return rtc('<C-n>')
     elseif vim.fn.call('vsnip#available', {1}) == 1 then
         return rtc('<plug>(vsnip-jump-next)')
     elseif check_back_space() then
         return rtc(keys)
     else
-        return vim.fn['compe#complete']()
+        vim.api.nvim_select_popupmenu_item(0 , false , false ,{})
+        require'completion'.confirmCompletion()
+        return autopairs.esc('<c-n><c-y>')
     end
 end
 
-completion.completion_or_jump_up = function(keys)
-    if vim.fn.pumvisible() == 1 then
+local function jump_previous(keys)
+    if vim.fn.pumvisible() ~= 0  then
         return rtc('<C-p>')
     elseif vim.fn.call('vsnip#jumpable', {-1}) == 1 then
         return rtc('<plug>(vsnip-jump-prev)')
@@ -43,4 +53,8 @@ completion.completion_or_jump_up = function(keys)
     end
 end
 
-_G.completion = completion
+_G.completion = {
+    confirm = confirm,
+    jump_next = jump_next,
+    jump_previous = jump_previous,
+}

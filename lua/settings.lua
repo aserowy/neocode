@@ -10,9 +10,11 @@ settings.setup = function ()
     local options = require'nvim.options'
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
+    vim.cmd([[set shortmess+=c]])
+
     -- options
     options.set(option, 'clipboard', 'unnamedplus')
-    options.set(option, 'completeopt', 'menuone,noselect')
+    options.set(option, 'completeopt', 'menuone,noinsert,noselect')
     options.set(option, 'hidden', true)
     options.set(option, 'ignorecase', true)
     options.set(option, 'mouse', 'a')
