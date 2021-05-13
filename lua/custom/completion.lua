@@ -19,6 +19,8 @@ local function confirm()
         if vim.fn.complete_info()['selected'] ~= -1 then
             require'completion'.confirmCompletion()
             return autopairs.esc('<c-y>')
+        elseif vim.fn.call('vsnip#available', {1}) == 1 then
+            return rtc('<plug>(vsnip-jump-next)')
         else
             return autopairs.autopairs_cr()
         end
