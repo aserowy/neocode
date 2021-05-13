@@ -36,7 +36,7 @@ require'packer'.startup(function(use)
     -- linting
     use {'norcalli/nvim-colorizer.lua', config = function() require'configs.nvimcolorizer' end}
 
-    use {'nvim-treesitter/nvim-treesitter', config = function() require'configs.nvimtreesitter' end}
+    use {'nvim-treesitter/nvim-treesitter', config = function() require'configs.nvimtreesitter' end, run = 'TSUpdate'}
     use 'p00f/nvim-ts-rainbow'
     use 'romgrk/nvim-treesitter-context'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -50,10 +50,10 @@ require'packer'.startup(function(use)
     use 'sbdchd/neoformat'
 
     -- autocompletion
-    use {'windwp/nvim-autopairs', config = function() require'configs.nvimautopair' end}
-    use {'hrsh7th/nvim-compe', config = function() require'configs.nvimcompe' end}
+    use {'windwp/nvim-autopairs', config = function() require'nvim-autopairs'.setup() end}
+    use {'nvim-lua/completion-nvim', config = function() require'configs.completionnvim'.setup() end}
     use {'kosayoda/nvim-lightbulb', config = function() require'configs.nvimlightbulb' end}
-    use 'hrsh7th/vim-vsnip'
+    use {'hrsh7th/vim-vsnip', requires = 'hrsh7th/vim-vsnip-integ'}
 
     -- terminal
     use {'numtostr/FTerm.nvim', config = function() require'FTerm'.setup() end}
