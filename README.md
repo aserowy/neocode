@@ -22,7 +22,7 @@ Keep buffers on sight with a buffer bar ([barbar.nvim](https://github.com/romgrk
 
 ![editor](./docs/preview/editor.png)
 
-Complete your thoughts with auto completion ([nvim-compe](https://github.com/hrsh7th/nvim-compe)) and snippets ([vim-vsnip](https://github.com/hrsh7th/vim-vsnip)).
+Complete your thoughts with auto completion ([completion-nvim](https://github.com/nvim-lua/completion-nvim)) and snippets ([vim-vsnip](https://github.com/hrsh7th/vim-vsnip)).
 
 ![completion](./docs/preview/completion.png)
 
