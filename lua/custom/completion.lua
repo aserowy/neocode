@@ -17,8 +17,7 @@ end
 local function confirm()
     if vim.fn.pumvisible() ~= 0  then
         if vim.fn.complete_info()['selected'] ~= -1 then
-            require'completion'.confirmCompletion()
-            return autopairs.esc('<c-y>')
+            return vim.fn['compe#confirm'](autopairs.esc('<cr>'))
         elseif vim.fn.call('vsnip#available', {1}) == 1 then
             return rtc('<plug>(vsnip-jump-next)')
         else
@@ -37,9 +36,7 @@ local function jump_next(keys)
     elseif check_back_space() then
         return rtc(keys)
     else
-        vim.api.nvim_select_popupmenu_item(0 , false , false ,{})
-        require'completion'.confirmCompletion()
-        return autopairs.esc('<c-n><c-y>')
+        return vim.fn['compe#complete']()
     end
 end
 

@@ -51,7 +51,7 @@ require'packer'.startup(function(use)
 
     -- autocompletion
     use {'windwp/nvim-autopairs', config = function() require'nvim-autopairs'.setup() end}
-    use {'nvim-lua/completion-nvim', config = function() require'configs.completionnvim'.setup() end}
+    use {'hrsh7th/nvim-compe', config = function() require'configs.nvimcompe'.setup() end}
     use {'kosayoda/nvim-lightbulb', config = function() require'configs.nvimlightbulb' end}
     use {'hrsh7th/vim-vsnip', requires = 'hrsh7th/vim-vsnip-integ'}
 
