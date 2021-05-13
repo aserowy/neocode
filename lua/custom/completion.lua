@@ -54,7 +54,7 @@ local function jump_previous(keys)
 end
 
 _G.completion = {
+    confirm = confirm,
     jump_next = jump_next,
     jump_previous = jump_previous,
-    confirm = confirm,
 }

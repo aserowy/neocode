@@ -1,7 +1,6 @@
 local keymaps = require'nvim.keymaps'
 
 local mappings = {}
-
 mappings.setup = function()
     -- TODO reorder like documentation
 
@@ -57,13 +56,13 @@ mappings.setup = function()
 
     -- completion & snippets
     keymaps.register('i', {
-        ['<cr>'] = [[v:lua.completion.confirm('<cr>')]],
+        ['<cr>'] = [[v:lua.completion.confirm()]],
         ['<S-tab>'] = [[v:lua.completion.jump_previous('<S-tab>')]],
         ['<tab>'] = [[v:lua.completion.jump_next('<tab>')]],
     }, {expr = true})
 
     keymaps.register('s', {
-        ['<cr>'] = [[v:lua.completion.confirm('<cr>')]],
+        ['<cr>'] = [[v:lua.completion.confirm()]],
         ['<S-tab>'] = [[v:lua.completion.jump_previous('<S-tab>')]],
         ['<tab>'] = [[v:lua.completion.jump_next('<tab>')]],
     }, {expr = true})
