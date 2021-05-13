@@ -20,10 +20,12 @@ return {
     keywords = '#'..theme.base0E,
     deprecation = '#'..theme.base0F, ]]
 
+    git_branch = '#'..theme.base09,
     git_deleted = '#'..theme.base08,
     git_inserted = '#'..theme.base0B,
     git_changed = '#'..theme.base0E,
 
+    diagnostic_icon = '#'..theme.base0F,
     diagnostic_error = '#'..theme.base08,
     diagnostic_warning = '#'..theme.base0A,
     diagnostic_information = '#'..theme.base0B,

@@ -63,6 +63,24 @@ local get_mode = function (mode)
     return result
 end
 
+local function contains(list, value)
+	for _, v in pairs(list) do
+		if v == value then return true end
+	end
+	return false
+end
+
+local function show_lsp()
+    local hide_on = {
+        'dashboard',
+        ' ',
+    }
+    if contains(hide_on, vim.bo.filetype) then
+        return false
+    end
+    return true
+end
+
 gls.left = {
     {
         ViModeSpace = {
@@ -105,7 +123,7 @@ gls.left = {
             provider = function() return ' ' end,
             condition = conditions.check_git_workspace,
             icon = '',
-            highlight = {colors.vmode_normal, colors.background_statusline},
+            highlight = {colors.git_branch, colors.background_statusline},
         }
     },
     {
@@ -173,14 +191,17 @@ gls.left = {
         }
     },
     {
+        ShowLspClientIcon = {
+            provider = function() return ' ' end,
+            icon = '',
+            condition = show_lsp,
+            highlight = {colors.diagnostic_icon, colors.background_statusline},
+        }
+    },
+    {
         ShowLspClient = {
             provider = 'GetLspClient',
-            condition = function()
-                local tbl = {['dashboard'] = true, [' '] = true}
-                if tbl[vim.bo.filetype] then return false end
-                return true
-            end,
-            icon = ' ',
+            condition = show_lsp,
             highlight = {colors.foreground, colors.background_statusline},
         }
     }
