@@ -55,6 +55,9 @@ require'packer'.startup(function(use)
     use {'glepnir/lspsaga.nvim', config = function() require'configs.lspsaganvim'.setup() end}
     use {'hrsh7th/vim-vsnip', requires = 'hrsh7th/vim-vsnip-integ'}
 
+    -- todo
+    use {"folke/todo-comments.nvim", config = function() require("todo-comments").setup({}) end}
+
     -- terminal
     use {'numtostr/FTerm.nvim', config = function() require'FTerm'.setup() end}
 
