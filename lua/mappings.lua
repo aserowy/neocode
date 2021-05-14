@@ -100,9 +100,8 @@ mappings.lsp_on_attach = {
     ['gh'] = '<cmd>lua vim.lsp.buf.signature_help()<cr>',
     ['gr'] = '<cmd>lua vim.lsp.buf.rename()<cr>',
     ['gq'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>]],
-    ['gl'] = '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>',
-    ['gp'] = '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>',
-    ['gn'] = '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>',
+    ['gp'] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>]],
+    ['gn'] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>]],
 }
 
 -- diagnostic
