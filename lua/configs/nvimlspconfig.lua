@@ -1,21 +1,21 @@
 local vim = vim
 
 vim.fn.sign_define('LspDiagnosticsSignError', {
-    text = '',
+    text = '',
     texthl = 'LspDiagnosticsSignError'
 })
 
 vim.fn.sign_define('LspDiagnosticsSignWarning', {
-    text = '',
+    text = '',
     texthl = 'LspDiagnosticsSignWarning'
 })
 
 vim.fn.sign_define('LspDiagnosticsSignInformation', {
-    text = '',
+    text = '',
     texthl = 'LspDiagnosticsSignInformation'
 })
 
 vim.fn.sign_define('LspDiagnosticsSignHint', {
-    text = '',
+    text = '',
     texthl = 'LspDiagnosticsSignHint'
 })
