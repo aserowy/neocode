@@ -23,16 +23,18 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Functions
 
-| only? | key                                     | effect                                | notes        |
-| ----- | --------------------------------------- | ------------------------------------- | ------------ |
-| vim   | <kbd>ctrl + a</kbd>                     | focus todo (`A`ufgabe in german) list | TODO: vscode |
-|       | <kbd>ctrl + e</kbd>                     | focus explorer (file tree)            |              |
-|       | <kbd>ctrl + f</kbd>                     | focus file search                     |              |
-| vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |              |
-|       | <kbd>ctrl + s</kbd> <kbd>ctrl + g</kbd> | search grep                           |              |
-|       | <kbd>ctrl + s</kbd> <kbd>ctrl + s</kbd> | search symbols                        |              |
-|       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |              |
-|       | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |              |
+| only? | key                                     | effect                                | notes                               |
+| ----- | --------------------------------------- | ------------------------------------- | ----------------------------------- |
+| vim   | <kbd>ctrl + a</kbd>                     | focus todo (`A`ufgabe in german) list | TODO: vscode                        |
+|       | <kbd>ctrl + e</kbd>                     | focus explorer (file tree)            |                                     |
+|       | <kbd>ctrl + f</kbd>                     | focus file search                     |                                     |
+| vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |                                     |
+| vim   | <kbd>ctrl + s</kbd> <kbd>ctrl + b</kbd> | search open buffers                   | TODO: vscode                        |
+|       | <kbd>ctrl + s</kbd> <kbd>ctrl + g</kbd> | search grep                           |                                     |
+| vim   | <kbd>ctrl + s</kbd> <kbd>ctrl + h</kbd> | search file history                   | is integrated file search in vscode |
+|       | <kbd>ctrl + s</kbd> <kbd>ctrl + s</kbd> | search symbols                        |                                     |
+|       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |                                     |
+|       | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |                                     |
 
 > NOTE: currently free keys to use for custom functions: g y <tab>
 
