@@ -98,11 +98,6 @@ Copy settings and keybindings into your current configuration.
     "when": "neovim.mode == 'normal'"
   },
   {
-    "key": "ctrl+q",
-    "command": "workbench.panel.markers.view.focus",
-    "when": "neovim.mode == 'normal'"
-  },
-  {
     "key": "ctrl+f",
     "command": "workbench.action.quickOpen",
     "when": "neovim.mode == 'normal'"
@@ -120,6 +115,11 @@ Copy settings and keybindings into your current configuration.
   {
     "key": "ctrl+t",
     "command": "terminal.focus",
+    "when": "neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+x",
+    "command": "workbench.panel.markers.view.focus",
     "when": "neovim.mode == 'normal'"
   },
 

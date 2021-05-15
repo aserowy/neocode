@@ -2,7 +2,7 @@ local keymaps = require'nvim.keymaps'
 
 local mappings = {}
 mappings.setup = function()
-    -- TODO reorder like documentation
+    -- TODO: reorder like documentation
 
     -- zen
     keymaps.register('n', {
@@ -14,9 +14,11 @@ mappings.setup = function()
         ['<C-e>'] = [[<cmd>lua require'navigation.tree'.open()<cr>]],
         ['<C-f>'] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
         ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
+        ['<C-m>'] = [[<cmd>TodoTrouble<cr>]],
+        ['<C-q>'] = [[<cmd>LspTrouble quickfix<cr>]],
         ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
-        ['<C-q>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
-        ['<C-x>'] = [[<cmd>LspTrouble quickfix<cr>]],
+        ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<cr>]],
+        ['<C-x>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
     })
 
     -- buffer
@@ -45,10 +47,6 @@ mappings.setup = function()
     })
 
     -- terminal
-    keymaps.register('n', {
-        ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<cr>]],
-    })
-
     keymaps.register('t', {
         ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<cr>]],
         ['<C-k>'] = [[<cmd>lua require'FTerm'.close()<cr>]],

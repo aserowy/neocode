@@ -23,15 +23,18 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Functions
 
-| only? | key                 | effect                     | notes |
-| ----- | ------------------- | -------------------------- | ----- |
-|       | <kbd>ctrl + e</kbd> | focus explorer (file tree) |       |
-|       | <kbd>ctrl + f</kbd> | focus file search          |       |
-|       | <kbd>ctrl + g</kbd> | focus grep search          |       |
-|       | <kbd>ctrl + q</kbd> | focus diagnostics          |       |
-|       | <kbd>ctrl + s</kbd> | focus symbol search        |       |
-|       | <kbd>ctrl + t</kbd> | focus integrated terminal  |       |
-| vim   | <kbd>ctrl + x</kbd> | focus quickfix list        |       |
+| only? | key                 | effect                     | notes        |
+| ----- | ------------------- | -------------------------- | ------------ |
+|       | <kbd>ctrl + e</kbd> | focus explorer (file tree) |              |
+|       | <kbd>ctrl + f</kbd> | focus file search          |              |
+|       | <kbd>ctrl + g</kbd> | focus grep search          |              |
+| vim   | <kbd>ctrl + m</kbd> | focus todo list            | TODO: vscode |
+| vim   | <kbd>ctrl + q</kbd> | focus quickfix list        |              |
+|       | <kbd>ctrl + s</kbd> | focus symbol search        |              |
+|       | <kbd>ctrl + t</kbd> | focus integrated terminal  |              |
+|       | <kbd>ctrl + x</kbd> | focus diagnostics          |              |
+
+> NOTE: currently free keys to use for custom functions: b y <tab>
 
 ## Windows
 

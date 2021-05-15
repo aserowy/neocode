@@ -9,7 +9,7 @@ require'packer'.startup(function(use)
         use 'sbdchd/neoformat'
 
         -- git
-        -- https://github.com/sindrets/diffview.nvim
+        -- TODO: https://github.com/sindrets/diffview.nvim
         use {'lewis6991/gitsigns.nvim', config = function() require'git.plugin_gitsigns' end, requires = 'nvim-lua/plenary.nvim'}
 
         -- helper
@@ -28,7 +28,7 @@ require'packer'.startup(function(use)
         use {'hrsh7th/vim-vsnip', requires = 'hrsh7th/vim-vsnip-integ'}
 
         -- layout
-        -- TODO add plugins to functions
+        -- TODO: add plugins to functions
         use {'glepnir/dashboard-nvim', config = function() require'layout.plugin_dashboard' end}
         use {'lukas-reineke/indent-blankline.nvim', branch = 'lua', config = function() require'layout.plugin_indentblankline' end}
         use {'kdav5758/TrueZen.nvim', config = function() require'true-zen' end}
