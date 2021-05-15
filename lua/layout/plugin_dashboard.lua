@@ -7,14 +7,11 @@ vim.g.dashboard_custom_header = {
     '____________________  ____/___________  /____ ',
     '__  __ \\  _ \\  __ \\  /    _  __ \\  __  /_  _ \\',
     '_  / / /  __/ /_/ / /___  / /_/ / /_/ / /  __/',
-    '/_/ /_/\\___/\\____/\\____/  \\____/\\__,_/  \\___/ ',
+    '/_/ /_/\\___/\\____/\\____/  \\____/\\____/  \\___/ ',
     '                                              ',
 }
 
 vim.g.dashboard_custom_section = {
-    --[[ a_sessions = {
-        description = {'  last session                         <leader> s l'},
-        command = 'SessionLoad'}, ]]
     b_recent_files = {
         description = {'  recent files                                 '},
         command =  'DashboardFindHistory'},
