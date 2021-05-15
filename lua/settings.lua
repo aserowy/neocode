@@ -1,10 +1,6 @@
 local vim = vim
 
-local settings = {
-    theme = 'solarized-dark'
-}
-
-settings.setup = function ()
+local function setup()
     vim.g.mapleader = '['
 
     local options = require'nvim.options'
@@ -34,4 +30,6 @@ settings.setup = function ()
     options.set(buffer, 'tabstop', 4)
 end
 
-return settings
+return {
+    setup = setup
+}
