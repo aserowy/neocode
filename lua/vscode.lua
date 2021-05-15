@@ -19,13 +19,13 @@ end
 
 local function set_mappings()
     require'nvim.keymaps'.register('n', {
+        ['<C-b><C-s>'] = [[<cmd>call VSCodeNotify('workbench.action.files.save')<cr>]],
         ['ga'] = [[<cmd>call VSCodeNotify('editor.action.formatDocument')<cr>]],
         ['gi'] = [[<cmd>call VSCodeNotify('editor.action.goToImplementation')<cr>]],
         ['gn'] = [[<cmd>call VSCodeNotify('editor.action.marker.next')<cr>]],
         ['gp'] = [[<cmd>call VSCodeNotify('editor.action.marker.prev')<cr>]],
         ['gq'] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
         ['gr'] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
-        ['gs'] = [[<cmd>call VSCodeNotify('workbench.action.files.save')<cr>]],
     })
 
     vim.cmd([[nmap <Leader>l <Plug>(easymotion-bd-jk)]])

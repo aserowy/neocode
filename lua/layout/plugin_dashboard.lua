@@ -19,8 +19,11 @@ vim.g.dashboard_custom_section = {
         description = {'  find file                            ctrl + f'},
         command = [[lua require'custom.search'.git_or_local()]]},
     d_search = {
-        description = {'  search                               ctrl + g'},
+        description = {'  search grep                 ctrl + s ctrl + g'},
         command = 'Telescope live_grep'},
+    e_search = {
+        description = {'  seach symbols               ctrl + s ctrl + s'},
+        command = 'Telescope lsp_workspace_symbols'},
 }
 
 vim.g.dashboard_custom_footer = {'Don\'t be lazy, get chillin!'}

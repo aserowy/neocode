@@ -11,25 +11,25 @@ mappings.setup = function()
 
     -- functions
     keymaps.register('n', {
+        ['<C-a>'] = [[<cmd>TodoTrouble<cr>]],
         ['<C-e>'] = [[<cmd>lua require'navigation.tree'.open()<cr>]],
         ['<C-f>'] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
-        ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
-        ['<C-m>'] = [[<cmd>TodoTrouble<cr>]],
         ['<C-q>'] = [[<cmd>LspTrouble quickfix<cr>]],
-        ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
+        ['<C-s><C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
+        ['<C-s><C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<cr>]],
         ['<C-x>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
     })
 
     -- buffer
     keymaps.register('n', {
-        ['<C-a>'] = [[<cmd>enew<cr>]],
+        ['<C-b><C-n>'] = [[<cmd>enew<cr>]],
+        ['<C-b><C-s>'] = [[<cmd>w<cr>]],
         ['<C-c>'] = [[<cmd>BufferClose<cr>]],
         ['<C-n>'] = [[<cmd>BufferNext<cr>]],
         ['<C-p>'] = [[<cmd>BufferPrevious<cr>]],
 
         ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<cr>]],
-        ['gs'] = [[<cmd>w<cr>]],
     })
 
     -- motion

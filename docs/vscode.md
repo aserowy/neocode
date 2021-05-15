@@ -103,12 +103,12 @@ Copy settings and keybindings into your current configuration.
     "when": "neovim.mode == 'normal'"
   },
   {
-    "key": "ctrl+g",
+    "key": "ctrl+s ctrl+g",
     "command": "workbench.view.search",
     "when": "!searchViewletFocus && neovim.mode == 'normal'"
   },
   {
-    "key": "ctrl+s",
+    "key": "ctrl+s ctrl+s",
     "command": "workbench.action.showAllSymbols",
     "when": "neovim.mode == 'normal'"
   },
@@ -151,7 +151,7 @@ Copy settings and keybindings into your current configuration.
 
   // buffer
   {
-    "key": "ctrl+a",
+    "key": "ctrl+b ctrl+n",
     "command": "workbench.action.files.newUntitledFile"
   },
   {
@@ -368,6 +368,6 @@ Copy settings and keybindings into your current configuration.
     "key": "escape",
     "command": "-vscode-neovim.escape",
     "when": "editorTextFocus && neovim.init"
-  }
+  },
 ]
 ```

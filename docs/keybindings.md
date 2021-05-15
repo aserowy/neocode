@@ -23,18 +23,18 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Functions
 
-| only? | key                 | effect                     | notes        |
-| ----- | ------------------- | -------------------------- | ------------ |
-|       | <kbd>ctrl + e</kbd> | focus explorer (file tree) |              |
-|       | <kbd>ctrl + f</kbd> | focus file search          |              |
-|       | <kbd>ctrl + g</kbd> | focus grep search          |              |
-| vim   | <kbd>ctrl + m</kbd> | focus todo list            | TODO: vscode |
-| vim   | <kbd>ctrl + q</kbd> | focus quickfix list        |              |
-|       | <kbd>ctrl + s</kbd> | focus symbol search        |              |
-|       | <kbd>ctrl + t</kbd> | focus integrated terminal  |              |
-|       | <kbd>ctrl + x</kbd> | focus diagnostics          |              |
+| only? | key                                     | effect                                | notes        |
+| ----- | --------------------------------------- | ------------------------------------- | ------------ |
+| vim   | <kbd>ctrl + a</kbd>                     | focus todo (`A`ufgabe in german) list | TODO: vscode |
+|       | <kbd>ctrl + e</kbd>                     | focus explorer (file tree)            |              |
+|       | <kbd>ctrl + f</kbd>                     | focus file search                     |              |
+| vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |              |
+|       | <kbd>ctrl + s</kbd> <kbd>ctrl + g</kbd> | search grep                           |              |
+|       | <kbd>ctrl + s</kbd> <kbd>ctrl + s</kbd> | search symbols                        |              |
+|       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |              |
+|       | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |              |
 
-> NOTE: currently free keys to use for custom functions: b y <tab>
+> NOTE: currently free keys to use for custom functions: g y <tab>
 
 ## Windows
 
@@ -59,12 +59,13 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Buffer
 
-| only? | key                 | effect                    | notes |
-| ----- | ------------------- | ------------------------- | ----- |
-|       | <kbd>ctrl + a</kbd> | open new empty buffer     |       |
-|       | <kbd>ctrl + p</kbd> | move to previous buffer   |       |
-|       | <kbd>ctrl + n</kbd> | move to next buffer       |       |
-|       | <kbd>ctrl + c</kbd> | closes the current buffer |       |
+| only? | key                                     | effect                    | notes |
+| ----- | --------------------------------------- | ------------------------- | ----- |
+|       | <kbd>ctrl + b</kbd> <kbd>ctrl + n</kbd> | open new empty buffer     |       |
+|       | <kbd>ctrl + b</kbd> <kbd>ctrl + s</kbd> | saves file                |       |
+|       | <kbd>ctrl + c</kbd>                     | closes the current buffer |       |
+|       | <kbd>ctrl + p</kbd>                     | move to previous buffer   |       |
+|       | <kbd>ctrl + n</kbd>                     | move to next buffer       |       |
 
 ## Editor
 
@@ -72,7 +73,6 @@ Got any troubles in your workflows? Issues are welcome!
 
 | only?  | key                                           | effect                         | notes                  |
 | ------ | --------------------------------------------- | ------------------------------ | ---------------------- |
-|        | <kbd>g</kbd> <kbd>s</kbd>                     | saves file                     |                        |
 |        | <kbd>g</kbd> <kbd>d</kbd>                     | definitions                    |                        |
 |        | <kbd>ctrl + w</kbd><kbd>g</kbd> <kbd>d</kbd>  | opens definition aside         |                        |
 |        | <kbd>g</kbd> <kbd>f</kbd>                     | declarations                   |                        |
