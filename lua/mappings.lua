@@ -11,8 +11,8 @@ mappings.setup = function()
 
     -- functions
     keymaps.register('n', {
-        ['<C-e>'] = [[<cmd>lua require'custom.tree'.open()<cr>]],
-        ['<C-f>'] = [[<cmd>lua require'custom.search'.git_or_local()<cr>]],
+        ['<C-e>'] = [[<cmd>lua require'navigation.tree'.open()<cr>]],
+        ['<C-f>'] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
         ['<C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ['<C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ['<C-q>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
@@ -79,8 +79,8 @@ mappings.file_tree = {
 }
 
 mappings.file_tree_no_cb = {
-    ['<C-c>'] = [[<cmd>lua require'custom.tree'.close()<cr>]],
-    ['q'] = [[<cmd>lua require'custom.tree'.close()<cr>]],
+    ['<C-c>'] = [[<cmd>lua require'navigation.tree'.close()<cr>]],
+    ['q'] = [[<cmd>lua require'navigation.tree'.close()<cr>]],
 }
 
 -- File/grep/symbol search

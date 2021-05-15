@@ -1,5 +1,5 @@
 local function open()
-   require'bufferline.state'.set_offset(31)
+   require'bufferline.state'.set_offset(30)
    require'nvim-tree'.find_file(true)
 end
 

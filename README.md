@@ -2,11 +2,7 @@
 
 In my current workflow I use VSCode more and more, because features like remote containers or developing via SSH are not supported in nvim. To be able to work without interruption and not have to use different key bindings everywhere, NeoCode was born. With this configuration I can work fluently in both environments with a only few exceptions.
 
-![themes](./docs/preview/themes.png)
-
-Beyond the same workflow, you can change themes in a heartbeat. 
-
-Bindings and settings are NOT the best you can get with vim. BUT the ability to switch between both tools without interrupting your flow is worth the trade off imho.
+![theme](./docs/preview/theme.png)
 
 ## look & feel
 

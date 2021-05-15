@@ -1,5 +1,5 @@
 local function setup()
-    require'custom.completion'
+    require'language.completion'
 
     require'compe'.setup {
         preselect = 'disable',
