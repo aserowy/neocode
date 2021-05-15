@@ -32,6 +32,7 @@ mappings.setup = function()
 
     -- motion
     keymaps.register('n', {
+        ['<leader>l'] = [[<cmd>HopLine<cr>]],
         ['<leader>w'] = [[<cmd>HopWord<cr>]],
     })
 

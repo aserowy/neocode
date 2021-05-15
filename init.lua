@@ -10,10 +10,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
+require'plugins'
+
 if not vim.g.vscode then
     require'settings'.setup()
-    require'plugins'
-
     require'mappings'.setup()
 else
     require'vscode'.setup()

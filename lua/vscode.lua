@@ -1,7 +1,5 @@
 local vim = vim
 
-local init_code = {}
-
 local function set_settings()
     vim.g.mapleader = '['
 
@@ -12,16 +10,6 @@ local function set_settings()
     options.set(option, 'ignorecase', true)
     options.set(option, 'smartcase', true)
     options.set(option, 'termguicolors', true)
-end
-
-local function register_plugins()
-    require'packer'.startup(
-        function(use)
-            use 'wbthomason/packer.nvim'
-
-            use 'unblevable/quick-scope'
-            use {'phaazon/hop.nvim', as = 'hop', config = function() require'hop'.setup {} end}
-        end)
 end
 
 local function set_theme()
@@ -38,16 +26,18 @@ local function set_mappings()
         ['gq'] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
         ['gr'] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
         ['gs'] = [[<cmd>call VSCodeNotify('workbench.action.files.save')<cr>]],
-
-        ['<leader>w'] = [[<cmd>HopWord<cr>]],
     })
+
+    vim.cmd([[nmap <Leader>l <Plug>(easymotion-bd-jk)]])
+    vim.cmd([[nmap <Leader>w <Plug>(easymotion-bd-w)]])
 end
 
-init_code.setup = function ()
+local function setup()
     set_settings()
-    register_plugins()
     set_theme()
     set_mappings()
 end
 
-return init_code
+return {
+    setup = setup
+}

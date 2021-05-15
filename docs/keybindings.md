@@ -97,6 +97,7 @@ Got any troubles in your workflows? Issues are welcome!
 
 | only? | key                                | effect                              | notes |
 | ----- | ---------------------------------- | ----------------------------------- | ----- |
+|       | <kbd>leader ([)</kbd> <kbd>l</kbd> | trigger hop lines (like easymotion) |       |
 |       | <kbd>leader ([)</kbd> <kbd>w</kbd> | trigger hop words (like easymotion) |       |
 
 ## Explorer
