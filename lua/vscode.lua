@@ -28,6 +28,7 @@ local function set_mappings()
         ['gr'] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
     })
 
+    vim.cmd([[nmap <Leader>k <Plug>(easymotion-bd-f)]])
     vim.cmd([[nmap <Leader>l <Plug>(easymotion-bd-jk)]])
     vim.cmd([[nmap <Leader>w <Plug>(easymotion-bd-w)]])
 end

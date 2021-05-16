@@ -100,10 +100,11 @@ Got any troubles in your workflows? Issues are welcome!
 
 ### motion
 
-| only? | key                                | effect                              | notes |
-| ----- | ---------------------------------- | ----------------------------------- | ----- |
-|       | <kbd>leader ([)</kbd> <kbd>l</kbd> | trigger hop lines (like easymotion) |       |
-|       | <kbd>leader ([)</kbd> <kbd>w</kbd> | trigger hop words (like easymotion) |       |
+| only? | key                                | effect                                    | notes |
+| ----- | ---------------------------------- | ----------------------------------------- | ----- |
+|       | <kbd>leader ([)</kbd> <kbd>k</kbd> | trigger hop for one key (like easymotion) |       |
+|       | <kbd>leader ([)</kbd> <kbd>l</kbd> | trigger hop lines (like easymotion)       |       |
+|       | <kbd>leader ([)</kbd> <kbd>w</kbd> | trigger hop words (like easymotion)       |       |
 
 ## Explorer
 
