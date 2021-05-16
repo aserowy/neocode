@@ -27,12 +27,12 @@ Got any troubles in your workflows? Issues are welcome!
 | ----- | --------------------------------------- | ------------------------------------- | ----------------------------------- |
 | vim   | <kbd>ctrl + a</kbd>                     | focus todo (`A`ufgabe in german) list | TODO: vscode                        |
 |       | <kbd>ctrl + e</kbd>                     | focus explorer (file tree)            |                                     |
-|       | <kbd>ctrl + f</kbd>                     | focus file search                     |                                     |
+| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + b</kbd> | find buffer                           | TODO: vscode                        |
+|       | <kbd>ctrl + f</kbd> <kbd>ctrl + f</kbd> | find file                             |                                     |
+|       | <kbd>ctrl + f</kbd> <kbd>ctrl + g</kbd> | find with grep                        |                                     |
+| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + h</kbd> | find file in history                  | is integrated file search in vscode |
+|       | <kbd>ctrl + f</kbd> <kbd>ctrl + s</kbd> | find symbol                           |                                     |
 | vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |                                     |
-| vim   | <kbd>ctrl + s</kbd> <kbd>ctrl + b</kbd> | search open buffers                   | TODO: vscode                        |
-|       | <kbd>ctrl + s</kbd> <kbd>ctrl + g</kbd> | search grep                           |                                     |
-| vim   | <kbd>ctrl + s</kbd> <kbd>ctrl + h</kbd> | search file history                   | is integrated file search in vscode |
-|       | <kbd>ctrl + s</kbd> <kbd>ctrl + s</kbd> | search symbols                        |                                     |
 |       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |                                     |
 |       | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |                                     |
 

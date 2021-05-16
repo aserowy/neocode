@@ -98,17 +98,17 @@ Copy settings and keybindings into your current configuration.
     "when": "neovim.mode == 'normal'"
   },
   {
-    "key": "ctrl+f",
+    "key": "ctrl+f ctrl+f",
     "command": "workbench.action.quickOpen",
     "when": "neovim.mode == 'normal'"
   },
   {
-    "key": "ctrl+s ctrl+g",
+    "key": "ctrl+f ctrl+g",
     "command": "workbench.view.search",
     "when": "!searchViewletFocus && neovim.mode == 'normal'"
   },
   {
-    "key": "ctrl+s ctrl+s",
+    "key": "ctrl+f ctrl+s",
     "command": "workbench.action.showAllSymbols",
     "when": "neovim.mode == 'normal'"
   },

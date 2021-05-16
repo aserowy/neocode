@@ -13,16 +13,16 @@ vim.g.dashboard_custom_header = {
 
 vim.g.dashboard_custom_section = {
     b_recent_files = {
-        description = {'  recent files                                 '},
+        description = {'  recent files                ctrl + f ctrl + h'},
         command =  'DashboardFindHistory'},
     c_find_files = {
-        description = {'  find file                            ctrl + f'},
+        description = {'  find file                   ctrl + f ctrl + f'},
         command = [[lua require'custom.search'.git_or_local()]]},
     d_search = {
-        description = {'  search grep                 ctrl + s ctrl + g'},
+        description = {'  search grep                 ctrl + f ctrl + g'},
         command = 'Telescope live_grep'},
     e_search = {
-        description = {'  seach symbols               ctrl + s ctrl + s'},
+        description = {'  seach symbols               ctrl + f ctrl + s'},
         command = 'Telescope lsp_workspace_symbols'},
 }
 

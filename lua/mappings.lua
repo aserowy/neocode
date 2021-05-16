@@ -13,12 +13,12 @@ mappings.setup = function()
     keymaps.register('n', {
         ['<C-a>'] = [[<cmd>TodoTrouble<cr>]],
         ['<C-e>'] = [[<cmd>lua require'navigation.tree'.open()<cr>]],
-        ['<C-f>'] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
+        ['<C-f><C-b>'] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
+        ['<C-f><C-f>'] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
+        ['<C-f><C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
+        ['<C-f><C-h>'] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
+        ['<C-f><C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ['<C-q>'] = [[<cmd>LspTrouble quickfix<cr>]],
-        ['<C-s><C-b>'] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
-        ['<C-s><C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
-        ['<C-s><C-h>'] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
-        ['<C-s><C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<cr>]],
         ['<C-x>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
     })
