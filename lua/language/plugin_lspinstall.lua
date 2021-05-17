@@ -4,6 +4,14 @@ local mappings = require'mappings'
 local function on_attach(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
+    require'lsp_signature'.on_attach({
+        bind = true,
+        handler_opts = {
+            border = 'single'
+        },
+        hint_enable = false,
+    })
+
     keymaps.register_bufnr(bufnr, 'n', mappings.editor_on_text)
 end
 

@@ -53,10 +53,17 @@ require'packer'.startup(function(use)
         cond = is_nvim_environment,
     }
     use {
+        'ray-x/lsp_signature.nvim',
+        cond = is_nvim_environment,
+    }
+    use {
         'kabouzeid/nvim-lspinstall',
         cond = is_nvim_environment,
         config = function() require'language.plugin_lspinstall'.setup() end,
-        after = 'nvim-lspconfig'
+        after = {
+            'nvim-lspconfig',
+            'lsp_signature.nvim',
+        }
     }
     use {
         'onsails/lspkind-nvim',
@@ -68,6 +75,8 @@ require'packer'.startup(function(use)
         cond = is_nvim_environment,
         config = function() require'language.plugin_lspsaga'.setup() end,
     }
+
+    -- completion
     use {
         'windwp/nvim-autopairs',
         cond = is_nvim_environment,
@@ -76,7 +85,7 @@ require'packer'.startup(function(use)
     use {
         'hrsh7th/nvim-compe',
         cond = is_nvim_environment,
-        config = function() require'language.plugin_compe'.setup() end,
+        config = function() require'completion.plugin_compe'.setup() end,
         after = 'nvim-autopairs',
     }
     use {
