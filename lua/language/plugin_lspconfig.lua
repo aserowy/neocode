@@ -1,4 +1,4 @@
-vim.fn.sign_define('LspDiagnosticsSignError', {
+--[[ vim.fn.sign_define('LspDiagnosticsSignError', {
     text = '',
     texthl = 'LspDiagnosticsSignError'
 })
@@ -16,4 +16,4 @@ vim.fn.sign_define('LspDiagnosticsSignInformation', {
 vim.fn.sign_define('LspDiagnosticsSignHint', {
     text = '',
     texthl = 'LspDiagnosticsSignHint'
-})
+}) ]]

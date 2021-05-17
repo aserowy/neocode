@@ -12,12 +12,6 @@ m.setup = function ()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics, {
-            virtual_text = false,
-        }
-    )
-
     require'lspinstall'.setup()
     local servers = require'lspinstall'.installed_servers()
     for _, server in pairs(servers) do
