@@ -1,10 +1,13 @@
 local function setup()
     require('lspsaga').init_lsp_saga({
-        use_saga_diagnostic_sign = false,
         code_action_icon = '',
         code_action_prompt = {
             virtual_text = false,
         },
+        error_sign = "",
+        hint_sign = "",
+        infor_sign = "",
+        warn_sign = "",
     })
 end
 

@@ -47,11 +47,10 @@ require'packer'.startup(function(use)
         config = function() require'which-key'.setup() end,
     }
 
-    -- language support
+    -- language
     use {
         'neovim/nvim-lspconfig',
         cond = is_nvim_environment,
-        config = function() require'language.plugin_lspconfig' end,
     }
     use {
         'kabouzeid/nvim-lspinstall',
