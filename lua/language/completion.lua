@@ -1,4 +1,5 @@
-local vim = vim
+vim.cmd [[packadd nvim-autopairs]]
+
 local autopairs = require('nvim-autopairs')
 
 local rtc = function(str)

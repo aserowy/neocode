@@ -1,5 +1,3 @@
-local vim = vim
-
 local function set_settings()
     vim.g.mapleader = '['
 

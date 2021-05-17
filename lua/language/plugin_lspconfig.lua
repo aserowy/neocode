@@ -1,5 +1,3 @@
-local vim = vim
-
 vim.fn.sign_define('LspDiagnosticsSignError', {
     text = '',
     texthl = 'LspDiagnosticsSignError'

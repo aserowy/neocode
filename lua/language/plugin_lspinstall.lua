@@ -1,5 +1,3 @@
-local vim = vim
-
 local keymaps = require'nvim.keymaps'
 local mappings = require'mappings'
 

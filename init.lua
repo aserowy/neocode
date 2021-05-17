@@ -1,5 +1,3 @@
-local vim = vim
-
 local execute = vim.api.nvim_command
 local fn = vim.fn
 

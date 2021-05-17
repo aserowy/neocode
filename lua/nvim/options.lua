@@ -1,5 +1,3 @@
-local vim = vim
-
 local o, wo, bo = vim.o, vim.wo, vim.bo
 local options = {}
 
