@@ -4,7 +4,7 @@ local mappings = require'mappings'
 local function on_attach(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-    keymaps.register_bufnr(bufnr, 'n', mappings.lsp_on_attach)
+    keymaps.register_bufnr(bufnr, 'n', mappings.editor_on_text)
 end
 
 local m = {}

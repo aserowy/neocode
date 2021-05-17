@@ -4,8 +4,8 @@ local mapping = require'mappings'
 require'telescope'.setup {
     defaults = {
         mappings = {
-            i = mapping.telescope(actions),
-            n = mapping.telescope(actions),
+            i = mapping.search(actions),
+            n = mapping.search(actions),
         },
         -- TODO: https://github.com/glepnir/dashboard-nvim/issues/65
         layout_defaults = {

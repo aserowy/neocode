@@ -36,11 +36,10 @@ require'packer'.startup(function(use)
     }
 
     -- helper
-    vim.g.auto_save = 1
     use {
         '907th/vim-auto-save',
         cond = is_nvim_environment,
-        -- config = function() vim.g.auto_save = 1 end,
+        config = function() vim.g.auto_save = 1 end,
     }
     use {
         'folke/which-key.nvim',
@@ -187,9 +186,9 @@ require'packer'.startup(function(use)
 
     -- terminal
     use {
-        'numtostr/FTerm.nvim',
+        'akinsho/nvim-toggleterm.lua',
         cond = is_nvim_environment,
-        config = function() require'FTerm'.setup() end,
+        config = function() require'terminal.plugin_toggleterm'.setup() end,
     }
 
     -- theming

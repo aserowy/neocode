@@ -1,11 +1,11 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 local mappings = {}
-for key, value in pairs(require'mappings'.file_tree) do
+for key, value in pairs(require'mappings'.explorer) do
     mappings[key] = tree_cb(value)
 end
 
-for key, value in pairs(require'mappings'.file_tree_no_cb) do
+for key, value in pairs(require'mappings'.explorer_nocallback) do
     mappings[key] = value
 end
 

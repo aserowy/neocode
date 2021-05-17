@@ -1,15 +1,14 @@
 local keymaps = require'nvim.keymaps'
 
 local mappings = {}
-mappings.setup = function()
-    -- TODO: reorder like documentation
 
-    -- zen
+local function zen()
     keymaps.register('n', {
         ['<C-z>'] = [[<cmd>TZMinimalist<cr>]]
     })
+end
 
-    -- functions
+local function functions()
     keymaps.register('n', {
         ['<C-a>'] = [[<cmd>TodoTrouble<cr>]],
         ['<C-e>'] = [[<cmd>lua require'navigation.tree'.open()<cr>]],
@@ -19,11 +18,22 @@ mappings.setup = function()
         ['<C-f><C-h>'] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
         ['<C-f><C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ['<C-q>'] = [[<cmd>LspTrouble quickfix<cr>]],
-        ['<C-t>'] = [[<cmd>lua require'FTerm'.toggle()<cr>]],
         ['<C-x>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
     })
+end
 
-    -- buffer
+mappings.functions_terminal = '<C-t>'
+
+local function window_focus()
+    keymaps.register('n', {
+        ['<C-j>'] = '<C-w><C-j>',
+        ['<C-k>'] = '<C-w><C-k>',
+        ['<C-l>'] = '<C-w><C-l>',
+        ['<C-h>'] = '<C-w><C-h>',
+    })
+end
+
+local function buffer()
     keymaps.register('n', {
         ['<C-b><C-n>'] = [[<cmd>enew<cr>]],
         ['<C-b><C-s>'] = [[<cmd>w<cr>]],
@@ -33,30 +43,23 @@ mappings.setup = function()
 
         ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<cr>]],
     })
+end
 
-    -- motion
-    keymaps.register('n', {
-        ['<leader>k'] = [[<cmd>HopChar1<cr>]],
-        ['<leader>l'] = [[<cmd>HopLine<cr>]],
-        ['<leader>w'] = [[<cmd>HopWord<cr>]],
-    })
+-- editor
+mappings.editor_on_text = {
+    ['gd'] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>]],
+    ['gf'] = '<cmd>lua vim.lsp.buf.declaration()<cr>',
+    ['gH'] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],
+    ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<cr>',
+    ['K'] = '<cmd>lua vim.lsp.buf.hover()<cr>',
+    ['gh'] = '<cmd>lua vim.lsp.buf.signature_help()<cr>',
+    ['gr'] = '<cmd>lua vim.lsp.buf.rename()<cr>',
+    ['gq'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>]],
+    ['gp'] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>]],
+    ['gn'] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>]],
+}
 
-    -- window
-    keymaps.register('n', {
-        ['<C-j>'] = '<C-w><C-j>',
-        ['<C-k>'] = '<C-w><C-k>',
-        ['<C-l>'] = '<C-w><C-l>',
-        ['<C-h>'] = '<C-w><C-h>',
-    })
-
-    -- terminal
-    keymaps.register('t', {
-        ['<C-c>'] = [[<cmd>lua require'FTerm'.close()<cr>]],
-        ['<C-k>'] = [[<cmd>lua require'FTerm'.close()<cr>]],
-        ['<C-j>'] = [[<cmd>lua require'FTerm'.close()<cr>]],
-    })
-
-    -- completion & snippets
+local function editor_completion()
     keymaps.register('i', {
         ['<cr>'] = [[v:lua.completion.confirm()]],
         ['<S-tab>'] = [[v:lua.completion.jump_previous('<S-tab>')]],
@@ -70,8 +73,22 @@ mappings.setup = function()
     }, {expr = true})
 end
 
--- file tree
-mappings.file_tree = {
+local function editor_motion()
+    keymaps.register('n', {
+        ['<leader>k'] = [[<cmd>HopChar1<cr>]],
+        ['<leader>l'] = [[<cmd>HopLine<cr>]],
+        ['<leader>w'] = [[<cmd>HopWord<cr>]],
+    })
+end
+
+mappings.editor_motion_textobjects = {
+    ['af'] = '@function.outer',
+    ['if'] = '@function.inner',
+    ['ac'] = '@class.outer',
+    ['ic'] = '@class.inner',
+}
+
+mappings.explorer = {
     ['l'] = 'edit',
     ['h'] = 'close_node',
     ['r'] = 'full_rename',
@@ -80,34 +97,12 @@ mappings.file_tree = {
     ['y'] = 'copy',
 }
 
-mappings.file_tree_no_cb = {
+mappings.explorer_nocallback = {
     ['<C-c>'] = [[<cmd>lua require'navigation.tree'.close()<cr>]],
     ['q'] = [[<cmd>lua require'navigation.tree'.close()<cr>]],
 }
 
--- File/grep/symbol search
-mappings.telescope = function(actions)
-    return {
-        ['<C-q>'] = actions.send_to_qflist
-    }
-end
-
--- lsp
-mappings.lsp_on_attach = {
-    ['gd'] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>]],
-    ['gf'] = '<cmd>lua vim.lsp.buf.declaration()<cr>',
-    ['gH'] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],
-    ['gi'] = '<cmd>lua vim.lsp.buf.implementation()<cr>',
-    ['K'] = '<cmd>lua vim.lsp.buf.hover()<cr>',
-    ['gh'] = '<cmd>lua vim.lsp.buf.signature_help()<cr>',
-    ['gr'] = '<cmd>lua vim.lsp.buf.rename()<cr>',
-    ['gq'] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>]],
-    ['gp'] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>]],
-    ['gn'] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>]],
-}
-
--- diagnostic
-mappings.lsp_trouble = {
+mappings.diagnostics = {
     ['close'] = '<C-c>',
     ['cancel'] = '<C-k>',
     ['refresh'] = 'r',
@@ -118,12 +113,27 @@ mappings.lsp_trouble = {
     ['next'] = '<C-n>',
 }
 
--- selection
-mappings.tree_sitter_textobjects = {
-    ['af'] = '@function.outer',
-    ['if'] = '@function.inner',
-    ['ac'] = '@class.outer',
-    ['ic'] = '@class.inner',
-}
+mappings.search = function(actions)
+    return {
+        ['<C-q>'] = actions.send_to_qflist
+    }
+end
+
+local function terminal()
+    keymaps.register('t', {
+        ['<C-k>'] = [[<C-\><C-n><C-w><C-k>]],
+        ['<C-j>'] = [[<cmd>ToggleTerm<cr>]],
+    })
+end
+
+mappings.setup = function()
+    zen()
+    functions()
+    window_focus()
+    buffer()
+    editor_completion()
+    editor_motion()
+    terminal()
+end
 
 return mappings
