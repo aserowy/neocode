@@ -16,6 +16,7 @@ local function functions()
         ['<C-f><C-f>'] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
         ['<C-f><C-g>'] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ['<C-f><C-h>'] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
+        ['<C-f><C-l>'] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ['<C-f><C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ['<C-q>'] = [[<cmd>LspTrouble quickfix<cr>]],
         ['<C-x>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],

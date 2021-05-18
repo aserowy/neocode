@@ -15,6 +15,24 @@ require'packer'.startup(function(use)
         cond = is_vscode_environment,
     }
 
+    -- completion
+    use {
+        'windwp/nvim-autopairs',
+        cond = is_nvim_environment,
+        config = function() require'nvim-autopairs'.setup() end,
+    }
+    use {
+        'hrsh7th/nvim-compe',
+        cond = is_nvim_environment,
+        config = function() require'completion.plugin_compe'.setup() end,
+        after = 'nvim-autopairs',
+    }
+    use {
+        'hrsh7th/vim-vsnip',
+        cond = is_nvim_environment,
+        requires = 'hrsh7th/vim-vsnip-integ'
+    }
+
     -- formatting
     use {
         'b3nj5m1n/kommentary',
@@ -74,24 +92,6 @@ require'packer'.startup(function(use)
         'glepnir/lspsaga.nvim',
         cond = is_nvim_environment,
         config = function() require'language.plugin_lspsaga'.setup() end,
-    }
-
-    -- completion
-    use {
-        'windwp/nvim-autopairs',
-        cond = is_nvim_environment,
-        config = function() require'nvim-autopairs'.setup() end,
-    }
-    use {
-        'hrsh7th/nvim-compe',
-        cond = is_nvim_environment,
-        config = function() require'completion.plugin_compe'.setup() end,
-        after = 'nvim-autopairs',
-    }
-    use {
-        'hrsh7th/vim-vsnip',
-        cond = is_nvim_environment,
-        requires = 'hrsh7th/vim-vsnip-integ'
     }
 
     -- layout
