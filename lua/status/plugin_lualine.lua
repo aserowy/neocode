@@ -1,8 +1,10 @@
 local function setup()
+    local theme = require'settings'.theme()
+
     require'lualine'.setup({
         extensions = {'nvim-tree'},
         options = {
-            theme = 'tokyonight',
+            theme = theme.theme,
             component_separators = {'', ''},
             section_separators = {'', ''},
         },

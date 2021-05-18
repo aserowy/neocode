@@ -201,9 +201,14 @@ require'packer'.startup(function(use)
 
     -- theming
     use {
+        'shaunsingh/nord.nvim',
+        cond = is_nvim_environment,
+        config = function() require'theming.theme'.setup() end
+    }
+    use {
         'folke/tokyonight.nvim',
         cond = is_nvim_environment,
-        config = function() require'theming.plugin_tokyonight'.setup() end
+        config = function() require'theming.theme'.setup() end
     }
 
     -- todo

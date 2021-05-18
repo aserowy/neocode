@@ -1,3 +1,13 @@
+local function theme()
+    return {
+        --[[ theme = 'nord',
+        style = '', ]]
+        theme = 'tokyonight',
+        style = 'storm',
+        transparent = false,
+    }
+end
+
 local function setup()
     vim.g.mapleader = '['
 
@@ -29,5 +39,6 @@ local function setup()
 end
 
 return {
-    setup = setup
+    setup = setup,
+    theme = theme,
 }
