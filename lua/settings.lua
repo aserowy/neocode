@@ -1,9 +1,11 @@
 local function theme()
     return {
-        --[[ theme = 'nord',
-        style = '', ]]
-        theme = 'tokyonight',
-        style = 'storm',
+        --[[ theme = 'material',
+        style = 'oceanic', ]]
+        theme = 'nord',
+        -- style = '',
+        --[[ theme = 'tokyonight',
+        style = 'storm', ]]
         transparent = false,
     }
 end

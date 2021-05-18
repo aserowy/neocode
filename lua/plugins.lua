@@ -201,6 +201,11 @@ require'packer'.startup(function(use)
 
     -- theming
     use {
+        'marko-cerovac/material.nvim',
+        cond = is_nvim_environment,
+        config = function() require'theming.theme'.setup() end
+    }
+    use {
         'shaunsingh/nord.nvim',
         cond = is_nvim_environment,
         config = function() require'theming.theme'.setup() end

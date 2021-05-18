@@ -1,10 +1,10 @@
 local function setup()
-    local theme = require'settings'.theme()
+    local theme = require'theming.theme'.get_lualine()
 
     require'lualine'.setup({
         extensions = {'nvim-tree'},
         options = {
-            theme = theme.theme,
+            theme = theme,
             component_separators = {'', ''},
             section_separators = {'', ''},
         },
