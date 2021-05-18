@@ -21,6 +21,7 @@ local function setup()
     -- options
     options.set(option, 'clipboard', 'unnamedplus')
     options.set(option, 'completeopt', 'menuone,noinsert,noselect')
+    options.set(option, 'cursorline', true)
     options.set(option, 'hidden', true)
     options.set(option, 'ignorecase', true)
     options.set(option, 'mouse', 'a')
