@@ -31,7 +31,8 @@ Got any troubles in your workflows? Issues are welcome!
 |       | <kbd>ctrl + f</kbd> <kbd>ctrl + f</kbd> | find file                             |                                     |
 |       | <kbd>ctrl + f</kbd> <kbd>ctrl + g</kbd> | find with grep                        |                                     |
 | vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + h</kbd> | find file in history                  | is integrated file search in vscode |
-|       | <kbd>ctrl + f</kbd> <kbd>ctrl + s</kbd> | find symbol                           |                                     |
+| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + l</kbd> | find symbol in current document       | TODO: vscode                        |
+|       | <kbd>ctrl + f</kbd> <kbd>ctrl + s</kbd> | find symbol in workspace              |                                     |
 | vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |                                     |
 |       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |                                     |
 |       | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |                                     |
