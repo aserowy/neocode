@@ -203,17 +203,33 @@ require'packer'.startup(function(use)
     use {
         'marko-cerovac/material.nvim',
         cond = is_nvim_environment,
-        config = function() require'theming.theme'.setup() end
+        opt = true,
     }
     use {
         'shaunsingh/nord.nvim',
         cond = is_nvim_environment,
-        config = function() require'theming.theme'.setup() end
+        opt = true,
+    }
+    use {
+        'yonlu/omni.vim',
+        cond = is_nvim_environment,
+        opt = true,
+    }
+    use {
+        'MordechaiHadad/nvim-papadark',
+        cond = is_nvim_environment,
+        opt = true,
+        requires = {
+            {
+                'rktjmp/lush.nvim',
+                opt = true,
+            },
+        }
     }
     use {
         'folke/tokyonight.nvim',
         cond = is_nvim_environment,
-        config = function() require'theming.theme'.setup() end
+        opt = true,
     }
 
     -- todo

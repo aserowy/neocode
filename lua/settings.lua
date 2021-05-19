@@ -1,12 +1,14 @@
+---@diagnostic disable: undefined-global
+
 local function theme()
     return {
-        --[[ theme = 'material',
-        style = 'oceanic', ]]
-        theme = 'nord',
-        -- style = '',
-        --[[ theme = 'tokyonight',
-        style = 'storm', ]]
-        transparent = false,
+        -- theme = 'material',
+        -- theme = 'nord',
+        -- theme = 'omni',
+        -- theme = 'papadark',
+        theme = 'tokyonight',
+        --[[ style = 'storm',
+        transparent = false, ]]
     }
 end
 

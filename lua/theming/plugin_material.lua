@@ -1,10 +1,15 @@
+---@diagnostic disable: undefined-global
+
 local function setup()
     vim.cmd [[packadd material.nvim]]
 
-    local theme = require'settings'.theme()
+    local config = require'theming.configuration'.get({
+        style = 'oceanic',
+        transparent = false,
+    })
 
-    vim.g.material_style = theme.style
-    vim.g.material_disable_background = theme.transparent
+    vim.g.material_style = config.style
+    vim.g.material_disable_background = config.transparent
 
     require'material'.set()
 end

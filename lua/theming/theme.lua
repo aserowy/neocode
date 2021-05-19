@@ -1,7 +1,11 @@
 local function setup()
+    require'packer'.install()
+
     local setup_functions = {
         material = require'theming.plugin_material'.setup,
         nord = require'theming.plugin_nord'.setup,
+        omni = require'theming.plugin_omni'.setup,
+        papadark = require'theming.plugin_papadark'.setup,
         tokyonight = require'theming.plugin_tokyonight'.setup,
     }
 
@@ -12,7 +16,9 @@ end
 
 local function get_lualine()
     local mappings = {
-        material = 'material-nvim'
+        material = 'material-nvim',
+        omni = 'nightfly',
+        papadark = 'nord',
     }
 
     local theme = require'settings'.theme().theme
@@ -26,6 +32,7 @@ end
 local function get_sidebar_offset()
     local custom_offsets = {
         material = 30,
+        omni = 30,
         tokyonight = 30,
     }
 

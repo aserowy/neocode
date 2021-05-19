@@ -1,9 +1,13 @@
+---@diagnostic disable: undefined-global
+
 local function setup()
     vim.cmd [[packadd nord.nvim]]
 
-    local theme = require'settings'.theme()
+    local config = require'theming.configuration'.get({
+        transparent = false,
+    })
 
-    vim.g.nord_disable_background = theme.transparent
+    vim.g.nord_disable_background = config.transparent
 
     require'nord'.set()
 end
