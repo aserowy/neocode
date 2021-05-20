@@ -1,6 +1,14 @@
 local ts_config = require'nvim-treesitter.configs'
 local mappings = require'mappings'
 
+require'nvim-treesitter.install'.compilers = {
+    "clang",
+    vim.fn.getenv('CC'),
+    "cc",
+    "gcc",
+    "cl",
+}
+
 ts_config.setup {
     ensure_installed = 'maintained',
     highlight = {

@@ -2,8 +2,7 @@
 
 local function theme()
     return {
-        theme = 'moonlight',
-
+        theme = 'sonokai',
 
         -- theme = 'edge',
         -- style = 'default', 'aura', or 'neon'
