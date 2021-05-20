@@ -2,13 +2,35 @@
 
 local function theme()
     return {
+        theme = 'sonokai',
+
+
+        -- theme = 'edge',
+        -- style = 'default', 'aura', or 'neon'
+        -- flavour = 'light', or 'dark'
+        -- transparent = false,
+
+        -- theme = 'gruvbox',
+        -- style = 'material', 'mix', or 'original'
+        -- flavour = 'light', or 'dark'
+
         -- theme = 'material',
+        -- style = 'darker', 'lighter', 'palenight', 'oceanic', or 'deep ocean'
+        -- transparent = false,
+
         -- theme = 'nord',
+
         -- theme = 'omni',
+
         -- theme = 'papadark',
-        theme = 'tokyonight',
-        --[[ style = 'storm',
-        transparent = false, ]]
+
+        -- theme = 'sonokai',
+        -- style = 'default', 'atlantis', 'andromeda', 'shusia', or 'maia'
+        -- transparent = false,
+
+        -- theme = 'tokyonight',
+        -- style = 'storm', 'night', or 'day'
+        -- transparent = false,
     }
 end
 

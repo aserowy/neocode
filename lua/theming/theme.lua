@@ -2,10 +2,13 @@ local function setup()
     require'packer'.install()
 
     local setup_functions = {
+        edge = require'theming.plugin_edge'.setup,
+        gruvbox = require'theming.plugin_gruvbox'.setup,
         material = require'theming.plugin_material'.setup,
         nord = require'theming.plugin_nord'.setup,
         omni = require'theming.plugin_omni'.setup,
         papadark = require'theming.plugin_papadark'.setup,
+        sonokai = require'theming.plugin_sonokai'.setup,
         tokyonight = require'theming.plugin_tokyonight'.setup,
     }
 
@@ -16,9 +19,11 @@ end
 
 local function get_lualine()
     local mappings = {
+        edge = 'onedark',
         material = 'material-nvim',
         omni = 'nightfly',
         papadark = 'nord',
+        sonokai = 'material',
     }
 
     local theme = require'settings'.theme().theme

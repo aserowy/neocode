@@ -201,6 +201,16 @@ require'packer'.startup(function(use)
 
     -- theming
     use {
+        'sainnhe/edge',
+        cond = is_nvim_environment,
+        opt = true,
+    }
+    use {
+        'sainnhe/gruvbox-material',
+        cond = is_nvim_environment,
+        opt = true,
+    }
+    use {
         'marko-cerovac/material.nvim',
         cond = is_nvim_environment,
         opt = true,
@@ -225,6 +235,11 @@ require'packer'.startup(function(use)
                 opt = true,
             },
         }
+    }
+    use {
+        'sainnhe/sonokai',
+        cond = is_nvim_environment,
+        opt = true,
     }
     use {
         'folke/tokyonight.nvim',
