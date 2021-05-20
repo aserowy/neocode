@@ -216,6 +216,11 @@ require'packer'.startup(function(use)
         opt = true,
     }
     use {
+        'shaunsingh/moonlight.nvim',
+        cond = is_nvim_environment,
+        opt = true,
+    }
+    use {
         'shaunsingh/nord.nvim',
         cond = is_nvim_environment,
         opt = true,

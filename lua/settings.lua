@@ -2,7 +2,7 @@
 
 local function theme()
     return {
-        theme = 'sonokai',
+        theme = 'moonlight',
 
 
         -- theme = 'edge',
@@ -18,7 +18,11 @@ local function theme()
         -- style = 'darker', 'lighter', 'palenight', 'oceanic', or 'deep ocean'
         -- transparent = false,
 
+        -- theme = 'moonlight',
+        -- transparent = false,
+
         -- theme = 'nord',
+        -- transparent = false,
 
         -- theme = 'omni',
 

@@ -5,6 +5,7 @@ local function setup()
         edge = require'theming.plugin_edge'.setup,
         gruvbox = require'theming.plugin_gruvbox'.setup,
         material = require'theming.plugin_material'.setup,
+        moonlight = require'theming.plugin_moonlight'.setup,
         nord = require'theming.plugin_nord'.setup,
         omni = require'theming.plugin_omni'.setup,
         papadark = require'theming.plugin_papadark'.setup,
@@ -37,6 +38,7 @@ end
 local function get_sidebar_offset()
     local custom_offsets = {
         material = 30,
+        moonlight = 30,
         omni = 30,
         tokyonight = 30,
     }
