@@ -55,6 +55,10 @@ require'packer'.startup(function(use)
 
     -- helper
     use {
+        'ahmedkhalf/lsp-rooter.nvim',
+        cond = is_nvim_environment,
+    }
+    use {
         '907th/vim-auto-save',
         cond = is_nvim_environment,
         config = function() vim.g.auto_save = 1 end,

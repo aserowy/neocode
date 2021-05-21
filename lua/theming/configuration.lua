@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 local function extend(policy, ...)
   local function helper(inner_policy, k, v1, v2)
     if type(v1) ~= 'table' or type(v2) ~= 'table' then

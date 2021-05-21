@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 local function setup()
     vim.cmd [[packadd material.nvim]]
 

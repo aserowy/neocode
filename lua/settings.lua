@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 local function theme()
     return {
         theme = 'sonokai',
