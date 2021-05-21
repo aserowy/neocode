@@ -9,6 +9,7 @@ local function setup()
         nord = require'theming.plugin_nord'.setup,
         omni = require'theming.plugin_omni'.setup,
         papadark = require'theming.plugin_papadark'.setup,
+        solarized = require'theming.plugin_solarized'.setup,
         sonokai = require'theming.plugin_sonokai'.setup,
         tokyonight = require'theming.plugin_tokyonight'.setup,
     }

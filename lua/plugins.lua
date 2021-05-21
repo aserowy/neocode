@@ -226,6 +226,11 @@ require'packer'.startup(function(use)
         opt = true,
     }
     use {
+        'ishan9299/nvim-solarized-lua',
+        cond = is_nvim_environment,
+        opt = true,
+    }
+    use {
         'yonlu/omni.vim',
         cond = is_nvim_environment,
         opt = true,

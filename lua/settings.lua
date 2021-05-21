@@ -27,6 +27,10 @@ local function theme()
 
         -- theme = 'papadark',
 
+        -- theme = 'solarized',
+        -- style = 'default', 'flat', 'high', or 'low'
+        -- flavour = 'light', or 'dark'
+
         -- theme = 'sonokai',
         -- style = 'default', 'atlantis', 'andromeda', 'shusia', or 'maia'
         -- transparent = false,
