@@ -108,9 +108,9 @@ require'packer'.startup(function(use)
         config = function() require'layout.plugin_indentblankline' end,
     }
     use {
-        'kdav5758/TrueZen.nvim',
+        'folke/zen-mode.nvim',
         cond = is_nvim_environment,
-        config = function() require'true-zen' end,
+        config = function() require'zen-mode'.setup({}) end,
     }
 
     -- linting

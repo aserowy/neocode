@@ -4,7 +4,7 @@ local mappings = {}
 
 local function zen()
     keymaps.register('n', {
-        ['<C-z>'] = [[<cmd>TZMinimalist<cr>]]
+        ['<C-z>'] = [[<cmd>ZenMode<cr>]]
     })
 end
 
