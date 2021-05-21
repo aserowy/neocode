@@ -41,5 +41,5 @@ To be able to use vscode accordingly, the following plugins must be installed an
 - [Neo Vim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 - [Keyboard Quickfix](https://marketplace.visualstudio.com/items?itemName=pascalsenn.keyboard-quickfix)
 
-Beside these plugins you also have to set keybindings and settings. You can find them [here](./docs/vscode.md).
+Beside these plugins you also have to set keybindings and settings. You can find them [here](./docs/vscode.md). On newer neovim versions check <https://github.com/asvetliakov/vscode-neovim/issues/632> to prevent open new file loops!
 
