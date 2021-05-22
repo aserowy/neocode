@@ -13,8 +13,6 @@ end
 M.get_lualine = function()
     local mappings = {
         edge = 'onedark',
-        material = 'material-nvim',
-        omni = 'nightfly',
         papadark = 'nord',
         sonokai = 'material',
     }
@@ -29,9 +27,6 @@ end
 
 M.get_sidebar_offset = function()
     local custom_offsets = {
-        material = 30,
-        moonlight = 30,
-        omni = 30,
         tokyonight = 30,
     }
 

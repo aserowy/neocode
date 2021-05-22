@@ -4,11 +4,11 @@ M.packadd_if_exists = function(plugin)
     local plugin_path = plugin_prefix..plugin..'/'
 
     local ok, err, code = os.rename(plugin_path, plugin_path)
-    print(ok, err, code)
 
     if ok then
         vim.cmd('packadd '..plugin)
     else
+        print(ok, err, code)
         return false
     end
 
