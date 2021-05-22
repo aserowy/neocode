@@ -198,12 +198,12 @@ require'packer'.startup(function(use)
     -- theming
     use {
         'sainnhe/edge',
-        cond = require'conditions'.is_current_theme('edge'),
+        cond = function() return require'conditions'.is_current_theme('edge') end,
         config = function() require'theming.theme'.setup('edge') end,
     }
     use {
         'MordechaiHadad/nvim-papadark',
-        cond = require'conditions'.is_current_theme('papadark'),
+        cond = function() return require'conditions'.is_current_theme('papadark') end,
         config = function() require'theming.theme'.setup('papadark') end,
         requires = {
             {
@@ -214,12 +214,12 @@ require'packer'.startup(function(use)
     }
     use {
         'sainnhe/sonokai',
-        cond = require'conditions'.is_current_theme('sonokai'),
+        cond = function() return require'conditions'.is_current_theme('sonokai') end,
         config = function() require'theming.theme'.setup('sonokai') end,
     }
     use {
         'folke/tokyonight.nvim',
-        cond = require'conditions'.is_current_theme('tokyonight'),
+        cond = function() return require'conditions'.is_current_theme('tokyonight') end,
         config = function() require'theming.theme'.setup('tokyonight') end,
     }
 
