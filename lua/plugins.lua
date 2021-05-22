@@ -6,10 +6,6 @@ local function is_vscode_environment()
     return vim.g.vscode ~= nil
 end
 
-local function is_theme_configured(theme)
-   return require'settings'.theme().theme == theme
-end
-
 require'packer'.startup(function(use)
     use 'wbthomason/packer.nvim'
 
@@ -62,11 +58,11 @@ require'packer'.startup(function(use)
         'ahmedkhalf/lsp-rooter.nvim',
         cond = is_nvim_environment,
     }
-    use {
+    --[[ use {
         '907th/vim-auto-save',
         cond = is_nvim_environment,
         config = function() vim.g.auto_save = 1 end,
-    }
+    } ]]
     use {
         'folke/which-key.nvim',
         cond = is_nvim_environment,
@@ -212,7 +208,7 @@ require'packer'.startup(function(use)
         'sainnhe/edge',
         cond = {
             is_nvim_environment,
-            function() is_theme_configured('edge') end,
+            function() return require'settings'.theme().theme == 'edge' end,
         },
         config = function() require'theming.theme'.setup('edge') end,
     }
@@ -220,9 +216,9 @@ require'packer'.startup(function(use)
         'MordechaiHadad/nvim-papadark',
         cond = {
             is_nvim_environment,
-            function() is_theme_configured('nvim-papadark') end,
+            function() return require'settings'.theme().theme == 'papadark' end,
         },
-        config = function() require'theming.theme'.setup('nvim-papadark') end,
+        config = function() require'theming.theme'.setup('papadark') end,
         requires = {
             {
                 'rktjmp/lush.nvim',
@@ -234,7 +230,7 @@ require'packer'.startup(function(use)
         'sainnhe/sonokai',
         cond = {
             is_nvim_environment,
-            function() is_theme_configured('sonokai') end,
+            function() return require'settings'.theme().theme == 'sonokai' end,
         },
         config = function() require'theming.theme'.setup('sonokai') end,
     }
@@ -242,9 +238,9 @@ require'packer'.startup(function(use)
         'folke/tokyonight.nvim',
         cond = {
             is_nvim_environment,
-            function() is_theme_configured('tokyonight.nvim') end,
+            function() return require'settings'.theme().theme == 'tokyonight' end,
         },
-        config = function() require'theming.theme'.setup('tokyonight.nvim') end,
+        config = function() require'theming.theme'.setup('tokyonight') end,
     }
 
     -- todo
