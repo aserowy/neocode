@@ -1,5 +1,8 @@
-local function setup()
-    vim.cmd [[packadd sonokai]]
+local M = {}
+M.setup = function()
+    if not require'theming.packer'.packadd_if_exists('sonokai') then
+        return
+    end
 
     local config = require'theming.configuration'.get({
         style = 'maia',
@@ -14,6 +17,4 @@ local function setup()
     vim.cmd [[colorscheme sonokai]]
 end
 
-return {
-    setup = setup
-}
+return M

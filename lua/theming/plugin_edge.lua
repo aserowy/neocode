@@ -1,5 +1,8 @@
-local function setup()
-    vim.cmd [[packadd edge]]
+local M = {}
+M.setup = function()
+    if not require'theming.packer'.packadd_if_exists('edge') then
+        return
+    end
 
     local config = require'theming.configuration'.get({
         style = 'aura',
@@ -17,6 +20,4 @@ local function setup()
     vim.cmd [[colorscheme edge]]
 end
 
-return {
-    setup = setup
-}
+return M

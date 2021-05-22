@@ -1,5 +1,8 @@
-local function setup()
-    vim.cmd [[packadd tokyonight.nvim]]
+local M = {}
+M.setup = function()
+    if not require'theming.packer'.packadd_if_exists('tokyonight.nvim') then
+        return
+    end
 
     local config = require'theming.configuration'.get({
         style = 'storm',
@@ -13,6 +16,4 @@ local function setup()
     vim.cmd [[colorscheme tokyonight]]
 end
 
-return {
-    setup = setup
-}
+return M

@@ -27,11 +27,10 @@ local function extend(policy, ...)
   return result
 end
 
-local function get(defaults)
+local M = {}
+M.get = function(defaults)
    local theme = require'settings'.theme()
    return extend('force', defaults, theme)
 end
 
-return {
-    get = get,
-}
+return M

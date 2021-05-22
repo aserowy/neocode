@@ -6,6 +6,10 @@ local function is_vscode_environment()
     return vim.g.vscode ~= nil
 end
 
+local function is_theme_configured(theme)
+   return require'settings'.theme().theme == theme
+end
+
 require'packer'.startup(function(use)
     use 'wbthomason/packer.nvim'
 
@@ -206,43 +210,19 @@ require'packer'.startup(function(use)
     -- theming
     use {
         'sainnhe/edge',
-        cond = is_nvim_environment,
-        opt = true,
-    }
-    use {
-        'sainnhe/gruvbox-material',
-        cond = is_nvim_environment,
-        opt = true,
-    }
-    use {
-        'marko-cerovac/material.nvim',
-        cond = is_nvim_environment,
-        opt = true,
-    }
-    use {
-        'shaunsingh/moonlight.nvim',
-        cond = is_nvim_environment,
-        opt = true,
-    }
-    use {
-        'shaunsingh/nord.nvim',
-        cond = is_nvim_environment,
-        opt = true,
-    }
-    use {
-        'ishan9299/nvim-solarized-lua',
-        cond = is_nvim_environment,
-        opt = true,
-    }
-    use {
-        'yonlu/omni.vim',
-        cond = is_nvim_environment,
-        opt = true,
+        cond = {
+            is_nvim_environment,
+            function() is_theme_configured('edge') end,
+        },
+        config = function() require'theming.theme'.setup('edge') end,
     }
     use {
         'MordechaiHadad/nvim-papadark',
-        cond = is_nvim_environment,
-        opt = true,
+        cond = {
+            is_nvim_environment,
+            function() is_theme_configured('nvim-papadark') end,
+        },
+        config = function() require'theming.theme'.setup('nvim-papadark') end,
         requires = {
             {
                 'rktjmp/lush.nvim',
@@ -252,13 +232,19 @@ require'packer'.startup(function(use)
     }
     use {
         'sainnhe/sonokai',
-        cond = is_nvim_environment,
-        opt = true,
+        cond = {
+            is_nvim_environment,
+            function() is_theme_configured('sonokai') end,
+        },
+        config = function() require'theming.theme'.setup('sonokai') end,
     }
     use {
         'folke/tokyonight.nvim',
-        cond = is_nvim_environment,
-        opt = true,
+        cond = {
+            is_nvim_environment,
+            function() is_theme_configured('tokyonight.nvim') end,
+        },
+        config = function() require'theming.theme'.setup('tokyonight.nvim') end,
     }
 
     -- todo

@@ -1,4 +1,5 @@
-local function theme()
+local M = {}
+M.theme = function()
     return {
         theme = 'sonokai',
 
@@ -7,27 +8,7 @@ local function theme()
         -- flavour = 'light', or 'dark'
         -- transparent = false,
 
-        -- theme = 'gruvbox',
-        -- style = 'material', 'mix', or 'original'
-        -- flavour = 'light', or 'dark'
-
-        -- theme = 'material',
-        -- style = 'darker', 'lighter', 'palenight', 'oceanic', or 'deep ocean'
-        -- transparent = false,
-
-        -- theme = 'moonlight',
-        -- transparent = false,
-
-        -- theme = 'nord',
-        -- transparent = false,
-
-        -- theme = 'omni',
-
         -- theme = 'papadark',
-
-        -- theme = 'solarized',
-        -- style = 'default', 'flat', 'high', or 'low'
-        -- flavour = 'light', or 'dark'
 
         -- theme = 'sonokai',
         -- style = 'default', 'atlantis', 'andromeda', 'shusia', or 'maia'
@@ -39,7 +20,7 @@ local function theme()
     }
 end
 
-local function setup()
+M.setup = function()
     vim.g.mapleader = '['
 
     local options = require'nvim.options'
@@ -70,7 +51,4 @@ local function setup()
     options.set(buffer, 'tabstop', 4)
 end
 
-return {
-    setup = setup,
-    theme = theme,
-}
+return M
