@@ -8,7 +8,12 @@ M.is_vscode_environment = function()
 end
 
 M.is_current_theme = function(theme)
-    return function() return require'settings'.theme().theme == theme end
+    return function()
+        if not require'conditions'.is_nvim_environment() then
+           return false
+        end
+        return require'settings'.theme().theme == theme
+    end
 end
 
 return M
