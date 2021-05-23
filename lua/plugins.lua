@@ -91,7 +91,6 @@ require'packer'.startup(function(use)
     }
 
     -- layout
-    -- TODO: add plugins to functions
     use {
         'glepnir/dashboard-nvim',
         cond = require'conditions'.is_nvim_environment,
@@ -197,14 +196,25 @@ require'packer'.startup(function(use)
 
     -- theming
     use {
+        'briones-gabriel/darcula-solid.nvim',
+        cond = function() return require'conditions'.is_current_theme('darcula') end,
+        config = function() require'theming.theme'.setup('darcula') end,
+        requires = {
+            {
+                'rktjmp/lush.nvim',
+                opt = true,
+            },
+        }
+    }
+    use {
         'sainnhe/edge',
         cond = function() return require'conditions'.is_current_theme('edge') end,
         config = function() require'theming.theme'.setup('edge') end,
     }
     use {
         'MordechaiHadad/nvim-papadark',
-        cond = function() return require'conditions'.is_current_theme('papadark') end,
-        config = function() require'theming.theme'.setup('papadark') end,
+        cond = function() return require'conditions'.is_current_theme('nord') end,
+        config = function() require'theming.theme'.setup('nord') end,
         requires = {
             {
                 'rktjmp/lush.nvim',

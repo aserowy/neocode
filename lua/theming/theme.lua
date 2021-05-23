@@ -1,8 +1,9 @@
 local M = {}
 M.setup = function(theme)
     local setup_functions = {
+        darcula = require'theming.plugin_darcula'.setup,
         edge = require'theming.plugin_edge'.setup,
-        papadark = require'theming.plugin_papadark'.setup,
+        nord = require'theming.plugin_papadark'.setup,
         sonokai = require'theming.plugin_sonokai'.setup,
         tokyonight = require'theming.plugin_tokyonight'.setup,
     }
@@ -12,8 +13,9 @@ end
 
 M.get_lualine = function()
     local mappings = {
+        darcula = 'codedark',
         edge = 'onedark',
-        papadark = 'nord',
+        nord = 'nord',
         sonokai = 'material',
     }
 

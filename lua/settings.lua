@@ -1,14 +1,16 @@
 local M = {}
 M.theme = function()
     return {
-        theme = 'sonokai',
+        theme = 'darcula',
+
+        -- theme = 'darcula',
 
         -- theme = 'edge',
         -- style = 'default', 'aura', or 'neon'
         -- flavour = 'light', or 'dark'
         -- transparent = false,
 
-        -- theme = 'papadark',
+        -- theme = 'nord',
 
         -- theme = 'sonokai',
         -- style = 'default', 'atlantis', 'andromeda', 'shusia', or 'maia'
