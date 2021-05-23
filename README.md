@@ -18,7 +18,7 @@ Keep buffers on sight with a buffer bar ([barbar.nvim](https://github.com/romgrk
 
 ![buffers](./docs/preview/buffers.png)
 
-Handle your code with lsp support ([nvim-lspinstall](https://github.com/kabouzeid/nvim-lspinstall), [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim), [lspsaga](https://github.com/glepnir/lspsaga.nvim), and [trouble.nvim](https://github.com/folke/trouble.nvim).
+Handle your code with lsp support with [nvim-lspinstall](https://github.com/kabouzeid/nvim-lspinstall), [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter), [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim), [lspsaga](https://github.com/glepnir/lspsaga.nvim), and [trouble.nvim](https://github.com/folke/trouble.nvim).
 
 ![diagnostics](./docs/preview/diagnostics.png)
 
