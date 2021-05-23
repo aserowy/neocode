@@ -1,7 +1,7 @@
 local M = {}
 M.theme = function()
     return {
-        theme = 'darcula',
+        theme = 'tokyonight',
 
         -- theme = 'darcula',
 
