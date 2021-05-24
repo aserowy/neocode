@@ -1,7 +1,7 @@
 local M = {}
 M.theme = function()
     return {
-        theme = 'tokyonight',
+        theme = 'onedark',
 
         -- theme = 'darcula',
 
@@ -11,6 +11,9 @@ M.theme = function()
         -- transparent = false,
 
         -- theme = 'nord',
+
+        -- theme = 'onedark',
+        -- style = 'default', 'darker', 'cool', 'warm', or 'deep'
 
         -- theme = 'sonokai',
         -- style = 'default', 'atlantis', 'andromeda', 'shusia', or 'maia'

@@ -4,6 +4,7 @@ M.setup = function(theme)
         darcula = require'theming.plugin_darcula'.setup,
         edge = require'theming.plugin_edge'.setup,
         nord = require'theming.plugin_papadark'.setup,
+        onedark = require'theming.plugin_onedark'.setup,
         sonokai = require'theming.plugin_sonokai'.setup,
         tokyonight = require'theming.plugin_tokyonight'.setup,
     }
@@ -29,6 +30,7 @@ end
 
 M.get_sidebar_offset = function()
     local custom_offsets = {
+        onedark = 30,
         tokyonight = 30,
     }
 
