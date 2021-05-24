@@ -5,14 +5,14 @@ M.setup = function()
     end
 
     local config = require'theming.configuration'.get({
-        style = 'default',
+        transparent = false,
     })
 
-    if config.style ~= 'default' then
-        vim.g.onedark_style = config.style
-    end
+    vim.g.onedark_italic_keywords = false
+    vim.g.onedark_sidebars = {'qf', 'vista_kind', 'terminal', 'packer'}
+    vim.g.onedark_transparent = config.transparent
 
-    require('onedark').setup()
+    vim.cmd [[colorscheme onedark]]
 end
 
 return M

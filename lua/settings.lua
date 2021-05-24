@@ -13,7 +13,7 @@ M.theme = function()
         -- theme = 'nord',
 
         -- theme = 'onedark',
-        -- style = 'default', 'darker', 'cool', 'warm', or 'deep'
+        -- transparent = false,
 
         -- theme = 'sonokai',
         -- style = 'default', 'atlantis', 'andromeda', 'shusia', or 'maia'

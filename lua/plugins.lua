@@ -223,7 +223,7 @@ require'packer'.startup(function(use)
         }
     }
     use {
-        'navarasu/onedark.nvim',
+        'monsonjeremy/onedark.nvim',
         cond = function() return require'conditions'.is_current_theme('onedark') end,
         config = function() require'theming.theme'.setup('onedark') end,
     }
