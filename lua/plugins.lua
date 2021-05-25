@@ -60,12 +60,14 @@ require'packer'.startup(function(use)
     use {
         'ahmedkhalf/lsp-rooter.nvim',
         cond = require'conditions'.is_nvim_environment,
-}
+    }
+
 --[[ use {
 '907th/vim-auto-save',
 cond = require'conditions'.is_nvim_environment,
 config = function() vim.g.auto_save = 1 end,
     } ]]
+
     use {
         'folke/which-key.nvim',
         cond = require'conditions'.is_nvim_environment,
@@ -182,7 +184,8 @@ config = function() vim.g.auto_save = 1 end,
                 'kyazdani42/nvim-web-devicons',
                 cond = require'conditions'.is_nvim_environment,
             },
-        }
+        },
+        after = {'nvim-web-devicons'}
     }
     use {
         'folke/lsp-trouble.nvim',
@@ -193,14 +196,20 @@ config = function() vim.g.auto_save = 1 end,
                 'kyazdani42/nvim-web-devicons',
                 cond = require'conditions'.is_nvim_environment,
             },
-        }
+        },
+        after = {'nvim-web-devicons'}
     }
     use {
         'kyazdani42/nvim-tree.lua',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'navigation.plugin_tree' end,
-        requires = 'kyazdani42/nvim-web-devicons',
-        after = 'barbar.nvim',
+        requires = {
+            {
+                'kyazdani42/nvim-web-devicons',
+                cond = require'conditions'.is_nvim_environment,
+            },
+        },
+        after = {'barbar.nvim', 'nvim-web-devicons'}
     }
     use {
         'nvim-telescope/telescope.nvim',
@@ -229,7 +238,8 @@ config = function() vim.g.auto_save = 1 end,
                 'kyazdani42/nvim-web-devicons',
                 cond = require'conditions'.is_nvim_environment,
             },
-        }
+        },
+        after = {'nvim-web-devicons'}
     }
 
     -- terminal
