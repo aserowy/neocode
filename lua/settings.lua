@@ -2,6 +2,7 @@ local M = {}
 M.theme = function()
     return {
         theme = 'onedark',
+        transparent = true,
 
         -- theme = 'darcula',
 
@@ -36,7 +37,11 @@ M.setup = function()
     -- options
     options.set(option, 'clipboard', 'unnamedplus')
     options.set(option, 'completeopt', 'menuone,noinsert,noselect')
-    options.set(option, 'cursorline', true)
+
+    if not M.theme().transparent then
+        options.set(option, 'cursorline', true)
+    end
+
     options.set(option, 'hidden', true)
     options.set(option, 'ignorecase', true)
     options.set(option, 'mouse', 'a')
