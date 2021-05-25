@@ -22,7 +22,12 @@ require'packer'.startup(function(use)
     use {
         'hrsh7th/vim-vsnip',
         cond = require'conditions'.is_nvim_environment,
-        requires = 'hrsh7th/vim-vsnip-integ'
+        requires = {
+            {
+                'hrsh7th/vim-vsnip-integ',
+                cond = require'conditions'.is_nvim_environment,
+            },
+        }
     }
 
     -- formatting
@@ -42,18 +47,24 @@ require'packer'.startup(function(use)
         'lewis6991/gitsigns.nvim',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'git.plugin_gitsigns' end,
-        requires = 'nvim-lua/plenary.nvim'
+        requires = {
+            {
+                'nvim-lua/plenary.nvim',
+                cond = require'conditions'.is_nvim_environment,
+            },
+        },
+        after = 'plenary.nvim'
     }
 
     -- helper
     use {
         'ahmedkhalf/lsp-rooter.nvim',
         cond = require'conditions'.is_nvim_environment,
-    }
-    --[[ use {
-        '907th/vim-auto-save',
-        cond = require'conditions'.is_nvim_environment,
-        config = function() vim.g.auto_save = 1 end,
+}
+--[[ use {
+'907th/vim-auto-save',
+cond = require'conditions'.is_nvim_environment,
+config = function() vim.g.auto_save = 1 end,
     } ]]
     use {
         'folke/which-key.nvim',
@@ -120,9 +131,21 @@ require'packer'.startup(function(use)
         config = function() require'linting.plugin_treesitter' end,
         run = 'TSUpdate',
         requires = {
-            {'p00f/nvim-ts-rainbow', after = 'nvim-treesitter'},
-            {'romgrk/nvim-treesitter-context', after = 'nvim-treesitter'},
-            {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'},
+            {
+                'p00f/nvim-ts-rainbow',
+                cond = require'conditions'.is_nvim_environment,
+                after = 'nvim-treesitter'
+            },
+            {
+                'romgrk/nvim-treesitter-context',
+                cond = require'conditions'.is_nvim_environment,
+                after = 'nvim-treesitter'
+            },
+            {
+                'nvim-treesitter/nvim-treesitter-textobjects',
+                cond = require'conditions'.is_nvim_environment,
+                after = 'nvim-treesitter'
+            },
         }
     }
 
@@ -154,13 +177,23 @@ require'packer'.startup(function(use)
     use {
         'romgrk/barbar.nvim',
         cond = require'conditions'.is_nvim_environment,
-        requires = 'kyazdani42/nvim-web-devicons',
+        requires = {
+            {
+                'kyazdani42/nvim-web-devicons',
+                cond = require'conditions'.is_nvim_environment,
+            },
+        }
     }
     use {
         'folke/lsp-trouble.nvim',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'navigation.plugin_trouble' end,
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = {
+            {
+                'kyazdani42/nvim-web-devicons',
+                cond = require'conditions'.is_nvim_environment,
+            },
+        }
     }
     use {
         'kyazdani42/nvim-tree.lua',
@@ -174,9 +207,16 @@ require'packer'.startup(function(use)
         cond = require'conditions'.is_nvim_environment,
         config = function() require'navigation.plugin_telescope' end,
         requires = {
-            {'nvim-lua/popup.nvim'},
-            {'nvim-lua/plenary.nvim'},
-        }
+            {
+                'nvim-lua/popup.nvim',
+                cond = require'conditions'.is_nvim_environment,
+            },
+            {
+                'nvim-lua/plenary.nvim',
+                cond = require'conditions'.is_nvim_environment,
+            },
+        },
+        after = {'popup.nvim', 'plenary.nvim'}
     }
 
     -- status
@@ -184,7 +224,12 @@ require'packer'.startup(function(use)
         'hoob3rt/lualine.nvim',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'status.plugin_lualine'.setup() end,
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = {
+            {
+                'kyazdani42/nvim-web-devicons',
+                cond = require'conditions'.is_nvim_environment,
+            },
+        }
     }
 
     -- terminal
@@ -199,9 +244,11 @@ require'packer'.startup(function(use)
         'briones-gabriel/darcula-solid.nvim',
         cond = function() return require'conditions'.is_current_theme('darcula') end,
         config = function() require'theming.theme'.setup('darcula') end,
+        opt = true,
         requires = {
             {
                 'rktjmp/lush.nvim',
+                cond = require'conditions'.is_nvim_environment,
                 opt = true,
             },
         }
@@ -210,14 +257,17 @@ require'packer'.startup(function(use)
         'sainnhe/edge',
         cond = function() return require'conditions'.is_current_theme('edge') end,
         config = function() require'theming.theme'.setup('edge') end,
+        opt = true,
     }
     use {
         'MordechaiHadad/nvim-papadark',
         cond = function() return require'conditions'.is_current_theme('nord') end,
         config = function() require'theming.theme'.setup('nord') end,
+        opt = true,
         requires = {
             {
                 'rktjmp/lush.nvim',
+                cond = require'conditions'.is_nvim_environment,
                 opt = true,
             },
         }
@@ -226,16 +276,19 @@ require'packer'.startup(function(use)
         'monsonjeremy/onedark.nvim',
         cond = function() return require'conditions'.is_current_theme('onedark') end,
         config = function() require'theming.theme'.setup('onedark') end,
+        opt = true,
     }
     use {
         'sainnhe/sonokai',
         cond = function() return require'conditions'.is_current_theme('sonokai') end,
         config = function() require'theming.theme'.setup('sonokai') end,
+        opt = true,
     }
     use {
         'folke/tokyonight.nvim',
         cond = function() return require'conditions'.is_current_theme('tokyonight') end,
         config = function() require'theming.theme'.setup('tokyonight') end,
+        opt = true,
     }
 
     -- todo
