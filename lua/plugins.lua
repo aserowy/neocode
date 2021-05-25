@@ -61,13 +61,11 @@ require'packer'.startup(function(use)
         'ahmedkhalf/lsp-rooter.nvim',
         cond = require'conditions'.is_nvim_environment,
     }
-
---[[ use {
-'907th/vim-auto-save',
-cond = require'conditions'.is_nvim_environment,
-config = function() vim.g.auto_save = 1 end,
-    } ]]
-
+    use {
+        '907th/vim-auto-save',
+        cond = require'conditions'.is_nvim_environment,
+        config = function() vim.g.auto_save = 1 end,
+    }
     use {
         'folke/which-key.nvim',
         cond = require'conditions'.is_nvim_environment,
@@ -176,6 +174,12 @@ config = function() vim.g.auto_save = 1 end,
     use 'unblevable/quick-scope'
 
     -- navigation
+    -- TODO: https://github.com/wbthomason/packer.nvim/issues/272
+    use {
+        'kyazdani42/nvim-web-devicons',
+        cond = require'conditions'.is_nvim_environment,
+    }
+
     use {
         'romgrk/barbar.nvim',
         cond = require'conditions'.is_nvim_environment,
