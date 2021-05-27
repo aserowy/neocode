@@ -9,6 +9,10 @@ require'packer'.startup(function(use)
 
     -- completion
     use {
+        'rafamadriz/friendly-snippets',
+        cond = require'conditions'.is_nvim_environment,
+    }
+    use {
         'windwp/nvim-autopairs',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'nvim-autopairs'.setup() end,
@@ -177,7 +181,7 @@ require'packer'.startup(function(use)
     -- TODO: https://github.com/wbthomason/packer.nvim/issues/272
     use {
         'kyazdani42/nvim-web-devicons',
-        cond = require'conditions'.is_nvim_environment,
+        -- cond = require'conditions'.is_nvim_environment,
     }
 
     use {
