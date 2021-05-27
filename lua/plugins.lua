@@ -118,6 +118,11 @@ require'packer'.startup(function(use)
         config = function() require'layout.plugin_indentblankline' end,
     }
     use {
+        'sunjon/Shade.nvim',
+        cond = require'conditions'.is_nvim_environment,
+        config = function() require'shade'.setup({}) end,
+    }
+    use {
         'folke/zen-mode.nvim',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'zen-mode'.setup({}) end,
