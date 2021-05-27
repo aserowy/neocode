@@ -61,15 +61,15 @@ require'packer'.startup(function(use)
     }
 
     -- helper
-    use {
+    --[[ use {
         'ahmedkhalf/lsp-rooter.nvim',
         cond = require'conditions'.is_nvim_environment,
-    }
-    use {
+    } ]]
+    --[[ use {
         '907th/vim-auto-save',
         cond = require'conditions'.is_nvim_environment,
         config = function() vim.g.auto_save = 1 end,
-    }
+    } ]]
     use {
         'folke/which-key.nvim',
         cond = require'conditions'.is_nvim_environment,
@@ -117,11 +117,11 @@ require'packer'.startup(function(use)
         cond = require'conditions'.is_nvim_environment,
         config = function() require'layout.plugin_indentblankline' end,
     }
-    use {
+    --[[ use {
         'sunjon/Shade.nvim',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'shade'.setup({}) end,
-    }
+    } ]]
     use {
         'folke/zen-mode.nvim',
         cond = require'conditions'.is_nvim_environment,
