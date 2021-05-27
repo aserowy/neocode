@@ -61,15 +61,11 @@ require'packer'.startup(function(use)
     }
 
     -- helper
-    --[[ use {
-        'ahmedkhalf/lsp-rooter.nvim',
-        cond = require'conditions'.is_nvim_environment,
-    } ]]
-    --[[ use {
+    use {
         '907th/vim-auto-save',
         cond = require'conditions'.is_nvim_environment,
         config = function() vim.g.auto_save = 1 end,
-    } ]]
+    }
     use {
         'folke/which-key.nvim',
         cond = require'conditions'.is_nvim_environment,
@@ -117,11 +113,13 @@ require'packer'.startup(function(use)
         cond = require'conditions'.is_nvim_environment,
         config = function() require'layout.plugin_indentblankline' end,
     }
-    --[[ use {
-        'sunjon/Shade.nvim',
-        cond = require'conditions'.is_nvim_environment,
-        config = function() require'shade'.setup({}) end,
+
+--[[ use {
+'sunjon/Shade.nvim',
+cond = require'conditions'.is_nvim_environment,
+config = function() require'shade'.setup({}) end,
     } ]]
+
     use {
         'folke/zen-mode.nvim',
         cond = require'conditions'.is_nvim_environment,
@@ -239,6 +237,14 @@ require'packer'.startup(function(use)
             },
         },
         after = {'popup.nvim', 'plenary.nvim'}
+    }
+
+    -- session
+    -- TODO: https://github.com/rmagatti/session-lens maybe with leader + s?
+    use {
+        'rmagatti/auto-session',
+        cond = require'conditions'.is_nvim_environment,
+        config = function() require'session.plugin_auto-session'.setup() end,
     }
 
     -- status
