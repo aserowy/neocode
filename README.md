@@ -63,3 +63,9 @@ Beside these plugins you also have to set keybindings and settings. You can find
 
 > On newer neovim versions check <https://github.com/asvetliakov/vscode-neovim/issues/632> to prevent open new file loops!
 
+## Todos
+
+- [ ] todo views in vscode
+- [ ] git integration
+- [ ] dba integration in nvim
+- [ ] harmonize keybindings for debugging
