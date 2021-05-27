@@ -6,6 +6,7 @@ local function setup()
         options = {
             theme = theme,
             component_separators = {'', ''},
+            disabled_filetypes = {'toggleterm', 'terminal'},
             section_separators = {'', ''},
         },
         sections = {
