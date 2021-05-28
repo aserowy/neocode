@@ -69,3 +69,4 @@ Beside these plugins you also have to set keybindings and settings. You can find
 - [ ] git integration
 - [ ] dba integration in nvim
 - [ ] harmonize keybindings for debugging
+- [ ] add dev container (predefined docker with complete NeoCode integration for different languages with linter and formatter)
