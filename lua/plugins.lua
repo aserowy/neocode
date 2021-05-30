@@ -144,17 +144,19 @@ config = function() require'shade'.setup({}) end,
                 after = 'nvim-treesitter'
             },
             {
-                'romgrk/nvim-treesitter-context',
-                cond = require'conditions'.is_nvim_environment,
-                after = 'nvim-treesitter'
-            },
-            {
                 'nvim-treesitter/nvim-treesitter-textobjects',
                 cond = require'conditions'.is_nvim_environment,
                 after = 'nvim-treesitter'
             },
         }
     }
+    use {
+        'romgrk/nvim-treesitter-context',
+        cond = require'conditions'.is_nvim_environment,
+        config = function() require'treesitter-context.config'.setup({}) end,
+        after = 'nvim-treesitter',
+    }
+
 
     -- motion
     use {

@@ -33,6 +33,7 @@ M.setup = function()
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
     vim.cmd([[set shortmess+=c]])
+    vim.cmd([[set fillchars=eob:\ ,]])
 
     -- options
     options.set(option, 'clipboard', 'unnamedplus')
