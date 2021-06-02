@@ -10,7 +10,7 @@ M.setup = function()
     })
 
     vim.g.tokyonight_style = config.style
-    vim.g.tokyonight_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' }
+    vim.g.tokyonight_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer', 'outline' }
     vim.g.tokyonight_transparent = config.transparent
 
     vim.cmd [[colorscheme tokyonight]]

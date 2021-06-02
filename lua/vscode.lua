@@ -16,7 +16,19 @@ local function set_theme()
 end
 
 local function set_mappings()
-    require'nvim.keymaps'.register('n', {
+    local keymaps = require'nvim.keymaps'
+
+    keymaps.register('n', {
+        ['y'] = '"+y',
+        ['Y'] = '"+Y',
+    })
+
+    keymaps.register('v', {
+        ['y'] = '"+y',
+        ['Y'] = '"+Y',
+    })
+
+    keymaps.register('n', {
         ['<C-b><C-s>'] = [[<cmd>call VSCodeNotify('workbench.action.files.save')<cr>]],
         ['ga'] = [[<cmd>call VSCodeNotify('editor.action.formatDocument')<cr>]],
         ['gi'] = [[<cmd>call VSCodeNotify('editor.action.goToImplementation')<cr>]],

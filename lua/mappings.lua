@@ -6,15 +6,11 @@ local function yank_to_plus()
     keymaps.register('n', {
         ['y'] = '"+y',
         ['Y'] = '"+Y',
-        ['p'] = '"+p',
-        ['P'] = '"+P',
     })
 
     keymaps.register('v', {
         ['y'] = '"+y',
         ['Y'] = '"+Y',
-        ['p'] = '"+p',
-        ['P'] = '"+P',
     })
 end
 
@@ -34,6 +30,7 @@ local function functions()
         ['<C-f><C-h>'] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
         ['<C-f><C-l>'] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ['<C-f><C-s>'] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
+        ['<C-s>'] = [[<cmd>lua require'language.symbols'.open()<cr>]],
         ['<C-q>'] = [[<cmd>LspTrouble quickfix<cr>]],
         ['<C-x>'] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
     })

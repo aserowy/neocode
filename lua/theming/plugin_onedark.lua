@@ -9,7 +9,7 @@ M.setup = function()
     })
 
     vim.g.onedark_italic_keywords = false
-    vim.g.onedark_sidebars = {'qf', 'vista_kind', 'terminal', 'packer'}
+    vim.g.onedark_sidebars = {'qf', 'vista_kind', 'terminal', 'packer', 'outline'}
     vim.g.onedark_transparent = config.transparent
 
     if config.transparent then

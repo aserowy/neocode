@@ -34,6 +34,7 @@ Got any troubles in your workflows? Issues are welcome!
 | vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + l</kbd> | find symbol in current document       | TODO: vscode                        |
 |       | <kbd>ctrl + f</kbd> <kbd>ctrl + s</kbd> | find symbol in workspace              |                                     |
 | vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |                                     |
+| vim   | <kbd>ctrl + s</kbd>                     | focus symbols outline                 | TODO: vscode                        |
 |       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |                                     |
 |       | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |                                     |
 

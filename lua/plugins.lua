@@ -100,6 +100,11 @@ require'packer'.startup(function(use)
         cond = require'conditions'.is_nvim_environment,
         config = function() require'language.plugin_lspsaga'.setup() end,
     }
+    use {
+        'simrat39/symbols-outline.nvim',
+        cond = require'conditions'.is_nvim_environment,
+        setup = function() require'language.plugin_symbols-outline'.setup() end,
+    }
 
     -- layout
     use {
@@ -113,13 +118,6 @@ require'packer'.startup(function(use)
         cond = require'conditions'.is_nvim_environment,
         config = function() require'layout.plugin_indentblankline' end,
     }
-
---[[ use {
-'sunjon/Shade.nvim',
-cond = require'conditions'.is_nvim_environment,
-config = function() require'shade'.setup({}) end,
-    } ]]
-
     use {
         'folke/zen-mode.nvim',
         cond = require'conditions'.is_nvim_environment,
