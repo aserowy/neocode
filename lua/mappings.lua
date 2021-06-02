@@ -2,6 +2,22 @@ local keymaps = require'nvim.keymaps'
 
 local mappings = {}
 
+local function yank_to_plus()
+    keymaps.register('n', {
+        ['y'] = '"+y',
+        ['Y'] = '"+Y',
+        ['p'] = '"+p',
+        ['P'] = '"+P',
+    })
+
+    keymaps.register('v', {
+        ['y'] = '"+y',
+        ['Y'] = '"+Y',
+        ['p'] = '"+p',
+        ['P'] = '"+P',
+    })
+end
+
 local function zen()
     keymaps.register('n', {
         ['<C-z>'] = [[<cmd>ZenMode<cr>]]
@@ -128,6 +144,7 @@ local function terminal()
 end
 
 mappings.setup = function()
+    yank_to_plus()
     zen()
     functions()
     window_focus()

@@ -36,7 +36,6 @@ M.setup = function()
     vim.cmd([[set fillchars=eob:\ ,]])
 
     -- options
-    options.set(option, 'clipboard', 'unnamedplus')
     options.set(option, 'completeopt', 'menuone,noinsert,noselect')
 
     if not M.theme().transparent then
