@@ -58,6 +58,8 @@ To be able to use vscode accordingly, the following plugins must be installed an
 
 - [Neo Vim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 - [Keyboard Quickfix](https://marketplace.visualstudio.com/items?itemName=pascalsenn.keyboard-quickfix)
+- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
 Beside these plugins you also have to set keybindings and settings. You can find them [here](./docs/vscode.md).
 
@@ -65,7 +67,7 @@ Beside these plugins you also have to set keybindings and settings. You can find
 
 ## Todos
 
-- [ ] todo views in vscode
+- [ ] todo keybindings in vscode
 - [ ] git integration
 - [ ] dba integration in nvim
 - [ ] harmonize keybindings for debugging

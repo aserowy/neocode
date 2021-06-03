@@ -14,6 +14,7 @@ Copy settings and keybindings into your current configuration.
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
   "editor.scrollBeyondLastLine": false,
   "editor.smoothScrolling": true,
   "editor.wordWrap": "on",
@@ -30,12 +31,12 @@ Copy settings and keybindings into your current configuration.
   "files.eol": "\n",
   "search.showLineNumbers": true,
   "search.smartCase": true,
-  "workbench.editor.enablePreviewFromCodeNavigation": true,
-  "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.list.automaticKeyboardNavigation": false,
   "workbench.list.keyboardNavigation": "simple",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.panel.opensMaximized": "never",
+  "workbench.startupEditor": "newUntitledFile",
 
   // whitespaces & newline
   "files.insertFinalNewline": true,
@@ -46,9 +47,10 @@ Copy settings and keybindings into your current configuration.
   "extensions.closeExtensionDetailsOnViewChange": true,
   "extensions.ignoreRecommendations": true,
 
+  "vsicons.dontShowNewVersionMessage": true,
+  "vscode-neovim.highlightGroups.unknownHighlight": "vim",
+  "vscode-neovim.logLevel": "warn",
   "vscode-neovim.logOutputToConsole": true,
-  // path for e.g. windows
-  "vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
 
   // git
   "git.ignoreMissingGitWarning": true,
@@ -62,9 +64,18 @@ Copy settings and keybindings into your current configuration.
     "nvim"
   ],
 
+  // todo
+  "todo-tree.filtering.includeHiddenFiles": true,
+  "todo-tree.general.enableFileWatcher": true,
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.flat": true,
+  "todo-tree.tree.buttons.filter": false,
+  "todo-tree.tree.showCurrentScanMode": false,
+  "todo-tree.tree.scanAtStartup": false,
+
   // zen
   "zenMode.hideLineNumbers": false,
-  "zenMode.restore": false
+  "zenMode.restore": false,
 }
 ```
 
