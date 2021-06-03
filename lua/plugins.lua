@@ -263,6 +263,10 @@ require'packer'.startup(function(use)
 
     -- terminal
     use {
+        'christoomey/vim-tmux-navigator',
+        cond = require'conditions'.is_nvim_environment,
+    }
+    use {
         'akinsho/nvim-toggleterm.lua',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'terminal.plugin_toggleterm'.setup() end,

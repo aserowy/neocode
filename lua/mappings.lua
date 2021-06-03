@@ -38,15 +38,6 @@ end
 
 mappings.functions_terminal = '<C-t>'
 
-local function window_focus()
-    keymaps.register('n', {
-        ['<C-j>'] = '<C-w><C-j>',
-        ['<C-k>'] = '<C-w><C-k>',
-        ['<C-l>'] = '<C-w><C-l>',
-        ['<C-h>'] = '<C-w><C-h>',
-    })
-end
-
 local function buffer()
     keymaps.register('n', {
         ['<C-b><C-n>'] = [[<cmd>enew<cr>]],
@@ -144,7 +135,6 @@ mappings.setup = function()
     yank_to_plus()
     zen()
     functions()
-    window_focus()
     buffer()
     editor_completion()
     editor_motion()
