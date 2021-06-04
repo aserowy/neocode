@@ -48,7 +48,7 @@ Got any troubles in your workflows? Issues are welcome!
 | ----- | -------------------------------- | ------------------------------------ | ----- |
 |       | <kbd>ctrl + w</kbd> <kbd>n</kbd> | creates new window with empty buffer |       |
 |       | <kbd>ctrl + w</kbd> <kbd>v</kbd> | splits editor vertically             |       |
-|       | <kbd>ctrl + w</kbd> <kbd>s</kbd> | splits editor horizontally           |       |
+|       | <kbd>ctrl + w</kbd> <kbd>x</kbd> | splits editor horizontally           |       |
 |       | <kbd>ctrl + w</kbd> <kbd>q</kbd> | closes window and buffer             |       |
 |       | <kbd>ctrl + w</kbd> <kbd>o</kbd> | closes window and merges buffer      |       |
 

@@ -2,6 +2,12 @@ local keymaps = require'nvim.keymaps'
 
 local mappings = {}
 
+local function windows()
+    keymaps.register('n', {
+        ['<C-w>x'] = [[<C-w>s]],
+    })
+end
+
 local function yank_to_plus()
     keymaps.register('n', {
         ['y'] = '"+y',
@@ -132,6 +138,7 @@ local function terminal()
 end
 
 mappings.setup = function()
+    windows()
     yank_to_plus()
     zen()
     functions()
