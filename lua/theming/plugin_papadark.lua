@@ -1,9 +1,9 @@
 local M = {}
 M.setup = function()
-    if not require'theming.packer'.packadd_if_exists('lush.nvim') then
+    if not require'checker'.packadd_if_exists('lush.nvim') then
         return
     end
-    if not require'theming.packer'.packadd_if_exists('nvim-papadark') then
+    if not require'checker'.packadd_if_exists('nvim-papadark') then
         return
     end
 

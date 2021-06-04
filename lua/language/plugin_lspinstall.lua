@@ -1,6 +1,13 @@
 local keymaps = require'nvim.keymaps'
 local mappings = require'mappings'
 
+if not require'checker'.packadd_if_exists('nvim-lspconfig') then
+    return
+end
+if not require'checker'.packadd_if_exists('nvim-lspinstall') then
+    return
+end
+
 local function on_attach(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 

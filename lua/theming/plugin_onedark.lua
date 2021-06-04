@@ -1,6 +1,6 @@
 local M = {}
 M.setup = function()
-    if not require'theming.packer'.packadd_if_exists('onedark.nvim') then
+    if not require'checker'.packadd_if_exists('onedark.nvim') then
         return
     end
 
