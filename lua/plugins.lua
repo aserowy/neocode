@@ -107,11 +107,12 @@ require'packer'.startup(function(use)
     }
 
     -- layout
-    use {
+    -- FIX: interfers with session restores..
+    --[[ use {
         'glepnir/dashboard-nvim',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'layout.plugin_dashboard' end,
-    }
+    } ]]
     use {
         'lukas-reineke/indent-blankline.nvim',
         branch = 'lua',
