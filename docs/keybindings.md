@@ -90,6 +90,7 @@ Got any troubles in your workflows? Issues are welcome!
 |        | <kbd>g</kbd> <kbd>n</kbd>                     | show next diagnostic           |                        |
 |        | <kbd>g</kbd> <kbd>q</kbd>                     | show quick fixes               |                        |
 | vim    | <kbd>g</kbd> <kbd>h</kbd>                     | show signature help            |                        |
+| visual | <kbd>.</kbd>                                  | selects next outer scope       |                        |
 | vscode | <kbd>ctrl + space</kbd>                       | show completion menu           | is shown automatically |
 
 ### completion

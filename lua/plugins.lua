@@ -143,7 +143,7 @@ require'packer'.startup(function(use)
                 after = 'nvim-treesitter'
             },
             {
-                'nvim-treesitter/nvim-treesitter-textobjects',
+                'RRethy/nvim-treesitter-textsubjects',
                 cond = require'conditions'.is_nvim_environment,
                 after = 'nvim-treesitter'
             },

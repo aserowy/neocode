@@ -92,11 +92,8 @@ local function editor_motion()
     })
 end
 
-mappings.editor_motion_textobjects = {
-    ['af'] = '@function.outer',
-    ['if'] = '@function.inner',
-    ['ac'] = '@class.outer',
-    ['ic'] = '@class.inner',
+mappings.editor_motion_textsubjects = {
+    ['.'] = 'textsubjects-smart',
 }
 
 mappings.explorer = {

@@ -23,10 +23,8 @@ ts_config.setup {
     rainbow = {
         enable = true,
     },
-    textobjects = {
-        select = {
-            enable = true,
-            keymaps = mappings.editor_motion_textobjects
-        }
-    }
+    textsubjects = {
+        enable = true,
+        keymaps = mappings.editor_motion_textsubjects
+    },
 }
