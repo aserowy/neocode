@@ -1,3 +1,7 @@
+if not require'checker'.packadd_if_exists('nvim-treesitter') then
+    return
+end
+
 local ts_config = require'nvim-treesitter.configs'
 local mappings = require'mappings'
 

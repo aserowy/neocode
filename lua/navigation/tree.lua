@@ -1,3 +1,7 @@
+if not require'checker'.packadd_if_exists_for({'barbar.nvim', 'nvim-tree.lua'}) then
+    return
+end
+
 local M = {}
 M.open = function()
     local offset = require'theming.theme'.get_sidebar_offset()

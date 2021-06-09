@@ -1,6 +1,10 @@
-vim.cmd [[packadd nvim-autopairs]]
-
-local autopairs = require('nvim-autopairs')
+if not require'checker'.packadd_if_exists_for({
+    'nvim-autopairs',
+    'nvim-compe',
+    'vim-vsnip'
+}) then
+    return
+end
 
 local rtc = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -18,14 +22,14 @@ end
 local function confirm()
     if vim.fn.pumvisible() ~= 0  then
         if vim.fn.complete_info()['selected'] ~= -1 then
-            return vim.fn['compe#confirm'](autopairs.esc('<cr>'))
+            return vim.fn['compe#confirm'](require('nvim-autopairs').esc('<cr>'))
         elseif vim.fn.call('vsnip#available', {1}) == 1 then
             return rtc('<plug>(vsnip-jump-next)')
         else
-            return autopairs.autopairs_cr()
+            return require('nvim-autopairs').autopairs_cr()
         end
     else
-        return autopairs.autopairs_cr()
+        return require('nvim-autopairs').autopairs_cr()
     end
 end
 

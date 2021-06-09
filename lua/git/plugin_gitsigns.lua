@@ -1,5 +1,5 @@
 -- TODO: https://github.com/wbthomason/packer.nvim/issues/272
-if not require'checker'.packadd_if_exists('plenary.nvim') then
+if not require'checker'.packadd_if_exists_for({'plenary.nvim', 'gitsigns.nvim'}) then
     return
 end
 

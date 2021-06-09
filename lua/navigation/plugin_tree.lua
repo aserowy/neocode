@@ -1,3 +1,7 @@
+if not require'checker'.packadd_if_exists('nvim-tree.lua') then
+    return
+end
+
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 local mappings = {}

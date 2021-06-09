@@ -1,10 +1,11 @@
 local keymaps = require'nvim.keymaps'
 local mappings = require'mappings'
 
-if not require'checker'.packadd_if_exists('nvim-lspconfig') then
-    return
-end
-if not require'checker'.packadd_if_exists('nvim-lspinstall') then
+if not require'checker'.packadd_if_exists_for({
+    'nvim-lspconfig',
+    'nvim-lspinstall',
+    'lsp_signature.nvim'
+}) then
     return
 end
 

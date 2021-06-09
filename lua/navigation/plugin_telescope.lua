@@ -1,8 +1,5 @@
 -- TODO: https://github.com/wbthomason/packer.nvim/issues/272
-if not require'checker'.packadd_if_exists('popup.nvim') then
-    return
-end
-if not require'checker'.packadd_if_exists('plenary.nvim') then
+if not require'checker'.packadd_if_exists_for({'popup.nvim', 'plenary.nvim'}) then
     return
 end
 

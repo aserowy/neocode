@@ -1,3 +1,7 @@
+if not require'checker'.packadd_if_exists('nvim-compe') then
+    return
+end
+
 local function setup()
     require'completion.handles'
 
