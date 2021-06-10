@@ -1,8 +1,8 @@
-if not require'checker'.packadd_if_exists_for({
+if not require'checker'.packadd_if_exists(
     'nvim-autopairs',
     'nvim-compe',
     'vim-vsnip'
-}) then
+) then
     return
 end
 

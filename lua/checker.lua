@@ -15,12 +15,8 @@ local function packadd_if_exists(plugin)
 end
 
 local M = {}
-M.packadd_if_exists = function(plugin)
-    return packadd_if_exists(plugin)
-end
-
-M.packadd_if_exists_for = function(plugins)
-    for _, plugin in pairs(plugins) do
+M.packadd_if_exists = function(...)
+    for _, plugin in ipairs({...}) do
         if not packadd_if_exists(plugin) then
             return false
         end
