@@ -4,7 +4,6 @@ end
 
 local M = {}
 M.open = function()
-    local offset = require'theming.theme'.get_sidebar_offset()
     require'nvim-tree'.find_file(true)
 
     vim.cmd([[SymbolsOutlineClose]])
