@@ -62,6 +62,10 @@ require'packer'.startup(function(use)
 
     -- helper
     use {
+        'famiu/bufdelete.nvim',
+        cond = require'conditions'.is_nvim_environment,
+    }
+    use {
         '907th/vim-auto-save',
         cond = require'conditions'.is_nvim_environment,
         config = function() vim.g.auto_save = 1 end,

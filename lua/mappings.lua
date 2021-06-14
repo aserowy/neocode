@@ -48,9 +48,11 @@ local function buffer()
     keymaps.register('n', {
         ['<C-b><C-n>'] = [[<cmd>enew<cr>]],
         ['<C-b><C-s>'] = [[<cmd>w<cr>]],
-        ['<C-c>'] = [[<cmd>BufferClose<cr>]],
+        ['<C-c>'] = [[<cmd>lua require'bufdelete'.bufdelete()<cr>]],
         ['<C-n>'] = [[<cmd>BufferLineCycleNext<cr>]],
         ['<C-p>'] = [[<cmd>BufferLineCyclePrev<cr>]],
+
+        ['<leader>b'] = [[<cmd>BufferLinePick<cr>]],
 
         ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<cr>]],
     })
