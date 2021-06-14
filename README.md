@@ -14,7 +14,7 @@ Navigate files, symbols, grep and more with explorer ([nvim-tree](https://github
 
 ![telescope](./docs/preview/telescope.png)
 
-Keep buffers on sight with a buffer bar ([barbar.nvim](https://github.com/romgrk/barbar.nvim)). 
+Keep buffers on sight with a buffer bar ([nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)). 
 
 ![buffers](./docs/preview/buffers.png)
 

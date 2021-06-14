@@ -49,8 +49,8 @@ local function buffer()
         ['<C-b><C-n>'] = [[<cmd>enew<cr>]],
         ['<C-b><C-s>'] = [[<cmd>w<cr>]],
         ['<C-c>'] = [[<cmd>BufferClose<cr>]],
-        ['<C-n>'] = [[<cmd>BufferNext<cr>]],
-        ['<C-p>'] = [[<cmd>BufferPrevious<cr>]],
+        ['<C-n>'] = [[<cmd>BufferLineCycleNext<cr>]],
+        ['<C-p>'] = [[<cmd>BufferLineCyclePrev<cr>]],
 
         ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<cr>]],
     })
