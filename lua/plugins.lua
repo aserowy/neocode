@@ -62,6 +62,10 @@ require'packer'.startup(function(use)
 
     -- helper
     use {
+        'famiu/bufdelete.nvim',
+        cond = require'conditions'.is_nvim_environment,
+    }
+    use {
         '907th/vim-auto-save',
         cond = require'conditions'.is_nvim_environment,
         config = function() vim.g.auto_save = 1 end,
@@ -189,8 +193,9 @@ require'packer'.startup(function(use)
     }
 
     use {
-        'romgrk/barbar.nvim',
+        'akinsho/nvim-bufferline.lua',
         cond = require'conditions'.is_nvim_environment,
+        config = function() require'navigation.plugin_bufferline'.setup() end,
         requires = {
             {
                 'kyazdani42/nvim-web-devicons',
@@ -221,7 +226,7 @@ require'packer'.startup(function(use)
                 cond = require'conditions'.is_nvim_environment,
             },
         },
-        after = {'barbar.nvim', 'nvim-web-devicons'}
+        after = {'nvim-web-devicons'}
     }
     use {
         'nvim-telescope/telescope.nvim',

@@ -63,13 +63,14 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Buffer
 
-| only? | key                                     | effect                    | notes |
-| ----- | --------------------------------------- | ------------------------- | ----- |
-|       | <kbd>ctrl + b</kbd> <kbd>ctrl + n</kbd> | open new empty buffer     |       |
-|       | <kbd>ctrl + b</kbd> <kbd>ctrl + s</kbd> | saves file                |       |
-|       | <kbd>ctrl + c</kbd>                     | closes the current buffer |       |
-|       | <kbd>ctrl + p</kbd>                     | move to previous buffer   |       |
-|       | <kbd>ctrl + n</kbd>                     | move to next buffer       |       |
+| only? | key                                     | effect                         | notes |
+| ----- | --------------------------------------- | ------------------------------ | ----- |
+|       | <kbd>ctrl + b</kbd> <kbd>ctrl + n</kbd> | open new empty buffer          |       |
+|       | <kbd>ctrl + b</kbd> <kbd>ctrl + s</kbd> | saves file                     |       |
+|       | <kbd>ctrl + c</kbd>                     | closes the current buffer      |       |
+|       | <kbd>ctrl + p</kbd>                     | move to previous buffer        |       |
+|       | <kbd>ctrl + n</kbd>                     | move to next buffer            |       |
+| vim   | <kbd>leader ([)</kbd> <kbd>b</kbd>      | trigger hop-like buffer motion |       |
 
 ## Editor
 
