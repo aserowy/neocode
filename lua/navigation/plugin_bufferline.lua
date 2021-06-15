@@ -7,6 +7,9 @@ M.setup = function()
     require'bufferline'.setup({
         options = {
             offsets = {
+                close_command = function(bufnum)
+                    require('bufdelete').bufdelete(bufnum, true)
+                end,
                 {filetype = "NvimTree", text = "Explorer", text_align = "left"},
                 {filetype = "Outline", text = "Symbols", text_align = "left"},
             },
