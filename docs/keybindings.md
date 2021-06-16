@@ -51,6 +51,10 @@ Got any troubles in your workflows? Issues are welcome!
 |       | <kbd>ctrl + w</kbd> <kbd>x</kbd> | splits editor horizontally           |       |
 |       | <kbd>ctrl + w</kbd> <kbd>q</kbd> | closes window and buffer             |       |
 |       | <kbd>ctrl + w</kbd> <kbd>o</kbd> | closes window and merges buffer      |       |
+| vim   | <kbd>alt + h</kbd>               | in/decrease window size              |       |
+| vim   | <kbd>alt + l</kbd>               | in/decrease window size              |       |
+| vim   | <kbd>alt + k</kbd>               | in/decrease window size              |       |
+| vim   | <kbd>alt + j</kbd>               | in/decrease window size              |       |
 
 ### Focus
 

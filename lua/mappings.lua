@@ -52,6 +52,11 @@ local function buffer()
         ['<C-n>'] = [[<cmd>BufferLineCycleNext<cr>]],
         ['<C-p>'] = [[<cmd>BufferLineCyclePrev<cr>]],
 
+        ['<A-h>'] = [[<cmd>lua require'layout.resize'.resize('h')<cr>]],
+        ['<A-j>'] = [[<cmd>lua require'layout.resize'.resize('j')<cr>]],
+        ['<A-k>'] = [[<cmd>lua require'layout.resize'.resize('k')<cr>]],
+        ['<A-l>'] = [[<cmd>lua require'layout.resize'.resize('l')<cr>]],
+
         ['<leader>b'] = [[<cmd>BufferLinePick<cr>]],
 
         ['ga'] = [[gg=G<C-o>zz<cmd>Neoformat<cr>]],
