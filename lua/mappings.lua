@@ -44,6 +44,15 @@ end
 
 mappings.functions_terminal = '<C-t>'
 
+local function navigation()
+    keymaps.register('n', {
+        ['<C-h>'] = [[<cmd>lua require'Navigator'.left()<cr>]],
+        ['<C-j>'] = [[<cmd>lua require'Navigator'.down()<cr>]],
+        ['<C-k>'] = [[<cmd>lua require'Navigator'.up()<cr>]],
+        ['<C-l>'] = [[<cmd>lua require'Navigator'.right()<cr>]],
+    })
+end
+
 local function buffer()
     keymaps.register('n', {
         ['<C-b><C-n>'] = [[<cmd>enew<cr>]],
@@ -146,6 +155,7 @@ mappings.setup = function()
     yank_to_plus()
     zen()
     functions()
+    navigation()
     buffer()
     editor_completion()
     editor_motion()

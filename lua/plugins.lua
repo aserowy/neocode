@@ -37,7 +37,6 @@ require'packer'.startup(function(use)
     -- formatting
     use {
         'b3nj5m1n/kommentary',
-        cond = require'conditions'.is_nvim_environment,
         config = function() require'kommentary.config' end,
     }
     use {
@@ -193,6 +192,11 @@ require'packer'.startup(function(use)
     }
 
     use {
+        'numToStr/navigator.nvim',
+        cond = require'conditions'.is_nvim_environment,
+        config = function() require'Navigator'.setup() end,
+    }
+    use {
         'akinsho/nvim-bufferline.lua',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'navigation.plugin_bufferline'.setup() end,
@@ -268,10 +272,6 @@ require'packer'.startup(function(use)
     }
 
     -- terminal
-    use {
-        'christoomey/vim-tmux-navigator',
-        cond = require'conditions'.is_nvim_environment,
-    }
     use {
         'akinsho/nvim-toggleterm.lua',
         cond = require'conditions'.is_nvim_environment,
