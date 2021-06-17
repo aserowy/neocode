@@ -34,8 +34,9 @@ M.setup = function()
     local options = require'nvim.options'
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
-    vim.cmd([[set shortmess+=c]])
     vim.cmd([[set fillchars=eob:\ ,]])
+    vim.cmd([[set shortmess+=c]])
+    vim.cmd([[set undofile]])
 
     -- options
     options.set(option, 'completeopt', 'menuone,noinsert,noselect')
