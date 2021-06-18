@@ -9,8 +9,17 @@ local function wincmd(direction)
     return vim.api.nvim_command('wincmd '..direction)
 end
 
+local function is_only_window()
+    local current = winnr()
+
+    return current == winnr('1h')
+        and current == winnr('1j')
+        and current == winnr('1k')
+        and current == winnr('1l')
+end
+
 local function is_tmux_target(border)
-    return tmux.is_tmux and tmux.has_neighbor(border)
+    return tmux.is_tmux and tmux.has_neighbor(border) or is_only_window()
 end
 
 local M = {}
@@ -28,7 +37,7 @@ M.resize = function(direction)
     elseif direction == 'j' then
         local is_border = current == winnr('1j')
         if is_border and is_tmux_target('j') then
-            tmux.resize('+')
+            tmux.resize('j')
         elseif is_border and current ~= winnr('1k') then
             wincmd('-')
         else
@@ -37,7 +46,7 @@ M.resize = function(direction)
     elseif direction == 'k' then
         local is_border = current == winnr('1j')
         if is_border and is_tmux_target('j') then
-            tmux.resize('-')
+            tmux.resize('k')
         elseif is_border then
             wincmd('+')
         else

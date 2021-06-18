@@ -5,9 +5,16 @@ local TMUX_PANE = os.getenv("TMUX_PANE")
 
 local tmux_directions = {
     h = "L",
+    j = "D",
     k = "U",
     l = "R",
-    j = "D"
+}
+
+local tmux_borders = {
+    h = "left",
+    j = "bottom",
+    k = "top",
+    l = "right",
 }
 
 local function get_socket()
@@ -30,6 +37,11 @@ local T = {
 }
 
 T.has_neighbor = function(direction)
+    local command = string.format("display-message -p '#{pane_at_%s}'", tmux_borders[direction])
+    if execute(command) == '1' then
+        return false
+    end
+
     T.change_pane(direction)
 
     local pane_after_move = os.getenv("TMUX")
