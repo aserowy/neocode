@@ -10,12 +10,7 @@ local function wincmd(direction)
 end
 
 local function is_only_window()
-    local current = winnr()
-
-    return current == winnr('1h')
-        and current == winnr('1j')
-        and current == winnr('1k')
-        and current == winnr('1l')
+    return (winnr('1h') == winnr('1j')) == (winnr('1k') == winnr('1l'))
 end
 
 local function is_tmux_target(border)
