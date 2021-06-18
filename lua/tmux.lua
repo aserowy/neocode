@@ -38,18 +38,8 @@ local T = {
 
 T.has_neighbor = function(direction)
     local command = string.format("display-message -p '#{pane_at_%s}'", tmux_borders[direction])
-    if execute(command) == '1' then
-        return false
-    end
 
-    T.change_pane(direction)
-
-    local pane_after_move = os.getenv("TMUX")
-    local is_border = TMUX == pane_after_move
-
-    execute(string.format("select-pane -t '%s'", TMUX_PANE))
-
-    return is_border
+    return execute(command) ~= '1'
 end
 
 T.change_pane = function(direction)
