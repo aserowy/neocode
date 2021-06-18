@@ -1,5 +1,6 @@
-local tmux = require("tmux")
 local vim = vim
+
+local tmux = require("tmux")
 
 local function winnr(direction)
     return vim.api.nvim_call_function('winnr', {direction})
@@ -10,7 +11,7 @@ local function wincmd(direction)
 end
 
 local function is_only_window()
-    return (winnr('1h') == winnr('1j')) == (winnr('1k') == winnr('1l'))
+    return (winnr('1h') == winnr('1l')) == (winnr('1j') == winnr('1k'))
 end
 
 local function is_tmux_target(border)

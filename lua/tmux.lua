@@ -22,9 +22,8 @@ local function get_socket()
 end
 
 local function execute(arg)
-    local t_cmd = string.format("tmux -S %s %s", get_socket(), arg)
-
-    local handle = assert(io.popen(t_cmd), string.format("Navigator: Unable to execute > [%s]", t_cmd))
+    local command = string.format("tmux -S %s %s", get_socket(), arg)
+    local handle = assert(io.popen(command), string.format("unable to execute: [%s]", command))
     local result = handle:read("l")
 
     handle:close()
@@ -32,26 +31,26 @@ local function execute(arg)
     return result
 end
 
-local T = {
+local M = {
     is_tmux = TMUX ~= nil,
 }
 
-T.has_neighbor = function(direction)
+M.change_pane = function(direction)
+    execute(string.format("select-pane -t '%s' -%s", TMUX_PANE, tmux_directions[direction]))
+end
+
+M.has_neighbor = function(direction)
     local command = string.format("display-message -p '#{pane_at_%s}'", tmux_borders[direction])
 
     return execute(command) ~= '1'
 end
 
-T.change_pane = function(direction)
-    execute(string.format("select-pane -t '%s' -%s", TMUX_PANE, tmux_directions[direction]))
+M.is_zoomed = function()
+    return execute("display-message -p '#{window_zoomed_flag}'") == '1'
 end
 
-T.resize = function(direction)
+M.resize = function(direction)
     execute(string.format("resize-pane -t '%s' -%s 1", TMUX_PANE, tmux_directions[direction]))
 end
 
-T.is_zoomed = function()
-    return execute("display-message -p '#{window_zoomed_flag}'") == "1"
-end
-
-return T
+return M

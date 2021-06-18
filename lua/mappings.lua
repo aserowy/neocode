@@ -46,10 +46,10 @@ mappings.functions_terminal = '<C-t>'
 
 local function navigation()
     keymaps.register('n', {
-        ['<C-h>'] = [[<cmd>lua require'Navigator'.left()<cr>]],
-        ['<C-j>'] = [[<cmd>lua require'Navigator'.down()<cr>]],
-        ['<C-k>'] = [[<cmd>lua require'Navigator'.up()<cr>]],
-        ['<C-l>'] = [[<cmd>lua require'Navigator'.right()<cr>]],
+        ['<C-h>'] = [[<cmd>lua require'navigation.windows'.navigate('h')<cr>]],
+        ['<C-j>'] = [[<cmd>lua require'navigation.windows'.navigate('j')<cr>]],
+        ['<C-k>'] = [[<cmd>lua require'navigation.windows'.navigate('k')<cr>]],
+        ['<C-l>'] = [[<cmd>lua require'navigation.windows'.navigate('l')<cr>]],
     })
 end
 

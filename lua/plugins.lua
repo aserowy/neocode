@@ -192,11 +192,6 @@ require'packer'.startup(function(use)
     }
 
     use {
-        'numToStr/navigator.nvim',
-        cond = require'conditions'.is_nvim_environment,
-        config = function() require'Navigator'.setup() end,
-    }
-    use {
         'akinsho/nvim-bufferline.lua',
         cond = require'conditions'.is_nvim_environment,
         config = function() require'navigation.plugin_bufferline'.setup() end,
