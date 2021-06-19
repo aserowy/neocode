@@ -1,16 +1,16 @@
-if not require'checker'.packadd_if_exists('nvim-tree.lua') then
-    return
+if not require("checker").packadd_if_exists("nvim-tree.lua") then
+	return
 end
 
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
 local mappings = {}
-for key, value in pairs(require'mappings'.explorer) do
-    mappings[key] = tree_cb(value)
+for key, value in pairs(require("mappings").explorer) do
+	mappings[key] = tree_cb(value)
 end
 
-for key, value in pairs(require'mappings'.explorer_nocallback) do
-    mappings[key] = value
+for key, value in pairs(require("mappings").explorer_nocallback) do
+	mappings[key] = value
 end
 
 vim.g.nvim_tree_bindings = mappings
