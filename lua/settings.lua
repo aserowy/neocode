@@ -27,8 +27,6 @@ M.theme = function()
 end
 
 M.setup = function()
-	require("layout.resize")
-
 	vim.g.mapleader = "["
 
 	local options = require("nvim.options")

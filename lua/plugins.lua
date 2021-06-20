@@ -228,6 +228,10 @@ require("packer").startup(function(use)
 		-- cond = require'conditions'.is_nvim_environment,
 	})
 
+    use({
+       "~/src/tmux.nvim",
+		cond = require("conditions").is_nvim_environment,
+    })
 	use({
 		"akinsho/nvim-bufferline.lua",
 		cond = require("conditions").is_nvim_environment,

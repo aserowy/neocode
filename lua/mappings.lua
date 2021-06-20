@@ -46,10 +46,10 @@ mappings.functions_terminal = "<C-t>"
 
 local function navigation()
 	keymaps.register("n", {
-		["<C-h>"] = [[<cmd>lua require'navigation.windows'.navigate('h')<cr>]],
-		["<C-j>"] = [[<cmd>lua require'navigation.windows'.navigate('j')<cr>]],
-		["<C-k>"] = [[<cmd>lua require'navigation.windows'.navigate('k')<cr>]],
-		["<C-l>"] = [[<cmd>lua require'navigation.windows'.navigate('l')<cr>]],
+		["<C-h>"] = [[<cmd>lua require'tmux'.move_left()<cr>]],
+		["<C-j>"] = [[<cmd>lua require'tmux'.move_bottom()<cr>]],
+		["<C-k>"] = [[<cmd>lua require'tmux'.move_top()<cr>]],
+		["<C-l>"] = [[<cmd>lua require'tmux'.move_right()<cr>]],
 	})
 end
 
@@ -61,10 +61,10 @@ local function buffer()
 		["<C-n>"] = [[<cmd>BufferLineCycleNext<cr>]],
 		["<C-p>"] = [[<cmd>BufferLineCyclePrev<cr>]],
 
-		["<A-h>"] = [[<cmd>lua require'layout.resize'.resize('h')<cr>]],
-		["<A-j>"] = [[<cmd>lua require'layout.resize'.resize('j')<cr>]],
-		["<A-k>"] = [[<cmd>lua require'layout.resize'.resize('k')<cr>]],
-		["<A-l>"] = [[<cmd>lua require'layout.resize'.resize('l')<cr>]],
+		["<A-h>"] = [[<cmd>lua require'tmux'.resize_left()<cr>]],
+		["<A-j>"] = [[<cmd>lua require'tmux'.resize_bottom()<cr>]],
+		["<A-k>"] = [[<cmd>lua require'tmux'.resize_top()<cr>]],
+		["<A-l>"] = [[<cmd>lua require'tmux'.resize_right()<cr>]],
 
 		["<leader>b"] = [[<cmd>BufferLinePick<cr>]],
 
