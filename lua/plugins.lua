@@ -229,6 +229,13 @@ require("packer").startup(function(use)
 	})
 
 	use({
+		"aserowy/tmux.nvim",
+		cond = require("conditions").is_nvim_environment,
+		config = function()
+			require("navigation.plugin_tmux").setup()
+		end,
+	})
+	use({
 		"akinsho/nvim-bufferline.lua",
 		cond = require("conditions").is_nvim_environment,
 		config = function()

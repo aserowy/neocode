@@ -44,15 +44,6 @@ end
 
 mappings.functions_terminal = "<C-t>"
 
-local function navigation()
-	keymaps.register("n", {
-		["<C-h>"] = [[<cmd>lua require'navigation.windows'.navigate('h')<cr>]],
-		["<C-j>"] = [[<cmd>lua require'navigation.windows'.navigate('j')<cr>]],
-		["<C-k>"] = [[<cmd>lua require'navigation.windows'.navigate('k')<cr>]],
-		["<C-l>"] = [[<cmd>lua require'navigation.windows'.navigate('l')<cr>]],
-	})
-end
-
 local function buffer()
 	keymaps.register("n", {
 		["<C-b><C-n>"] = [[<cmd>enew<cr>]],
@@ -60,11 +51,6 @@ local function buffer()
 		["<C-c>"] = [[<cmd>lua require'bufdelete'.bufdelete()<cr>]],
 		["<C-n>"] = [[<cmd>BufferLineCycleNext<cr>]],
 		["<C-p>"] = [[<cmd>BufferLineCyclePrev<cr>]],
-
-		["<A-h>"] = [[<cmd>lua require'layout.resize'.resize('h')<cr>]],
-		["<A-j>"] = [[<cmd>lua require'layout.resize'.resize('j')<cr>]],
-		["<A-k>"] = [[<cmd>lua require'layout.resize'.resize('k')<cr>]],
-		["<A-l>"] = [[<cmd>lua require'layout.resize'.resize('l')<cr>]],
 
 		["<leader>b"] = [[<cmd>BufferLinePick<cr>]],
 
@@ -159,7 +145,6 @@ mappings.setup = function()
 	yank_to_plus()
 	zen()
 	functions()
-	navigation()
 	buffer()
 	editor_completion()
 	editor_motion()
