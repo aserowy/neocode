@@ -229,7 +229,7 @@ require("packer").startup(function(use)
 	})
 
 	use({
-		"~/src/tmux.nvim",
+		"aserowy/tmux.nvim",
 		cond = require("conditions").is_nvim_environment,
 		config = function()
 			require("navigation.plugin_tmux").setup()
