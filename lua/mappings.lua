@@ -44,15 +44,6 @@ end
 
 mappings.functions_terminal = "<C-t>"
 
-local function navigation()
-	keymaps.register("n", {
-		["<C-h>"] = [[<cmd>lua require'tmux'.move_left()<cr>]],
-		["<C-j>"] = [[<cmd>lua require'tmux'.move_bottom()<cr>]],
-		["<C-k>"] = [[<cmd>lua require'tmux'.move_top()<cr>]],
-		["<C-l>"] = [[<cmd>lua require'tmux'.move_right()<cr>]],
-	})
-end
-
 local function buffer()
 	keymaps.register("n", {
 		["<C-b><C-n>"] = [[<cmd>enew<cr>]],
@@ -60,11 +51,6 @@ local function buffer()
 		["<C-c>"] = [[<cmd>lua require'bufdelete'.bufdelete()<cr>]],
 		["<C-n>"] = [[<cmd>BufferLineCycleNext<cr>]],
 		["<C-p>"] = [[<cmd>BufferLineCyclePrev<cr>]],
-
-		["<A-h>"] = [[<cmd>lua require'tmux'.resize_left()<cr>]],
-		["<A-j>"] = [[<cmd>lua require'tmux'.resize_bottom()<cr>]],
-		["<A-k>"] = [[<cmd>lua require'tmux'.resize_top()<cr>]],
-		["<A-l>"] = [[<cmd>lua require'tmux'.resize_right()<cr>]],
 
 		["<leader>b"] = [[<cmd>BufferLinePick<cr>]],
 
@@ -159,7 +145,6 @@ mappings.setup = function()
 	yank_to_plus()
 	zen()
 	functions()
-	navigation()
 	buffer()
 	editor_completion()
 	editor_motion()
