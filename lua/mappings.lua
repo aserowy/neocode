@@ -8,7 +8,7 @@ local function windows()
 	})
 end
 
-local function yank_to_plus()
+--[[ local function yank_to_plus()
 	keymaps.register("n", {
 		["y"] = '"+y',
 		["Y"] = '"+Y',
@@ -18,7 +18,7 @@ local function yank_to_plus()
 		["y"] = '"+y',
 		["Y"] = '"+Y',
 	})
-end
+end ]]
 
 local function zen()
 	keymaps.register("n", {
@@ -142,7 +142,7 @@ end
 
 mappings.setup = function()
 	windows()
-	yank_to_plus()
+	-- yank_to_plus()
 	zen()
 	functions()
 	buffer()

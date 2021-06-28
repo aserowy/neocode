@@ -75,7 +75,7 @@ Copy settings and keybindings into your current configuration.
 
   // zen
   "zenMode.hideLineNumbers": false,
-  "zenMode.restore": false,
+  "zenMode.restore": false
 }
 ```
 
@@ -379,6 +379,6 @@ Copy settings and keybindings into your current configuration.
     "key": "escape",
     "command": "-vscode-neovim.escape",
     "when": "editorTextFocus && neovim.init"
-  },
+  }
 ]
 ```

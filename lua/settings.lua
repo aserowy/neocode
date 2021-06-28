@@ -1,5 +1,6 @@
 local M = {}
-M.theme = function()
+
+function M.theme()
 	return {
 		theme = "onedark",
 		transparent = true,
@@ -26,7 +27,7 @@ M.theme = function()
 	}
 end
 
-M.setup = function()
+function M.setup()
 	vim.g.mapleader = "["
 
 	local options = require("nvim.options")
