@@ -7,7 +7,7 @@ M.setup = function()
 	require("tmux").setup({
 		copy_sync = {
 			enable = true,
-            redirect_to_clipboard = true,
+			redirect_to_clipboard = true,
 		},
 		navigation = {
 			cycle_navigation = false,
