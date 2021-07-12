@@ -2,15 +2,14 @@ with import <nixpkgs> { };
 mkShell rec {
   name = "neocode";
   buildInputs = [
-    cargo
+    stylua
     lua51Packages.luacheck
+    nodePackages.prettier
   ];
   shellHook = ''
-    cargo install --root $PWD/.cargo stylua
-
-    PATH=$PWD/.cargo/bin:$PATH
-
     # format and check -> fac :)
-    alias fac="stylua init.lua lua/ && luacheck init.lua lua/"
+    alias fac="prettier --write README.md \
+        && stylua init.lua lua/ \
+        && luacheck init.lua lua/"
   '';
 }
