@@ -1,7 +1,7 @@
 if not require("checker").packadd_if_exists("neoscroll.nvim") then
-	return
+    return
 end
 
 require("neoscroll").setup({
-	mappings = { "<C-u>", "<C-d>", "zt", "zz", "zb" },
+    mappings = { "<C-u>", "<C-d>", "zt", "zz", "zb" },
 })

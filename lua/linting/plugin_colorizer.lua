@@ -1,5 +1,5 @@
 if not require("checker").packadd_if_exists("nvim-colorizer.lua") then
-	return
+    return
 end
 
 require("colorizer").setup()
