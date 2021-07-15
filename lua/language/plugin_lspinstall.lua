@@ -34,6 +34,8 @@ m.setup = function()
         },
     })
 
+    require("language.lsp").setup(capabilities, on_attach)
+
     require("lspinstall").setup()
     local servers = require("lspinstall").installed_servers()
     for _, server in pairs(servers) do
