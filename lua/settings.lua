@@ -2,7 +2,7 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "onedark",
+        theme = "sonokai",
         transparent = true,
 
         -- theme = 'darcula',

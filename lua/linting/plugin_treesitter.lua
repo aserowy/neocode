@@ -2,22 +2,10 @@ if not require("checker").packadd_if_exists("nvim-treesitter") then
     return
 end
 
-local ts_config = require("nvim-treesitter.configs")
-local mappings = require("mappings")
-
-require("nvim-treesitter.install").compilers = {
-    "clang",
-    vim.fn.getenv("CC"),
-    "cc",
-    "gcc",
-    "cl",
-}
-
-ts_config.setup({
+require("nvim-treesitter.configs").setup({
     ensure_installed = "maintained",
     highlight = {
         enable = true,
-        use_languagetree = true,
     },
     indent = {
         enable = true,
@@ -29,6 +17,6 @@ ts_config.setup({
     },
     textsubjects = {
         enable = true,
-        keymaps = mappings.editor_motion_textsubjects,
+        keymaps = require("mappings").editor_motion_textsubjects,
     },
 })

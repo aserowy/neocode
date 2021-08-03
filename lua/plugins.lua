@@ -166,7 +166,7 @@ require("packer").startup(function(use)
         config = function()
             require("linting.plugin_treesitter")
         end,
-        run = "TSUpdate",
+        run = ":TSUpdate",
         requires = {
             {
                 "p00f/nvim-ts-rainbow",
@@ -184,7 +184,9 @@ require("packer").startup(function(use)
         "romgrk/nvim-treesitter-context",
         cond = require("conditions").is_nvim_environment,
         config = function()
-            require("treesitter-context.config").setup({})
+            require("treesitter-context.config").setup({
+                enable = true,
+            })
         end,
         after = "nvim-treesitter",
     })
