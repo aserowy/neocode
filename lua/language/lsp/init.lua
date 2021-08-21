@@ -1,4 +1,5 @@
 local lsps = {
+    require("language.lsp.dockerfile"),
     require("language.lsp.lua"),
     require("language.lsp.rust"),
 }
