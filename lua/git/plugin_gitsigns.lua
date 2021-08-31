@@ -1,8 +1,3 @@
--- TODO: https://github.com/wbthomason/packer.nvim/issues/272
-if not require("checker").packadd_if_exists("plenary.nvim", "gitsigns.nvim") then
-    return
-end
-
 require("gitsigns").setup({
     numhl = false,
     watch_index = {

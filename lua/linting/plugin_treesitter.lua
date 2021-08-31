@@ -1,7 +1,3 @@
-if not require("checker").packadd_if_exists("nvim-treesitter") then
-    return
-end
-
 require("nvim-treesitter.configs").setup({
     ensure_installed = "maintained",
     highlight = {

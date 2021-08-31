@@ -1,7 +1,3 @@
-if not require("checker").packadd_if_exists("nvim-tree.lua") then
-    return
-end
-
 local function has_aktive_lsp()
     local bufnr = vim.api.nvim_get_current_buf()
     for _, client in pairs(vim.lsp.buf_get_clients(bufnr)) do

@@ -1,8 +1,3 @@
--- TODO: https://github.com/wbthomason/packer.nvim/issues/272
-if not require("checker").packadd_if_exists("popup.nvim", "plenary.nvim") then
-    return
-end
-
 local actions = require("telescope.actions")
 local mapping = require("mappings")
 

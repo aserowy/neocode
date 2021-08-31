@@ -1,7 +1,3 @@
-if not require("checker").packadd_if_exists("nvim-autopairs", "nvim-compe", "vim-vsnip") then
-    return
-end
-
 local rtc = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end

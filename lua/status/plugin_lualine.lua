@@ -1,7 +1,3 @@
-if not require("checker").packadd_if_exists("lualine.nvim") then
-    return
-end
-
 local function setup()
     local theme = require("theming.theme").get_lualine()
 

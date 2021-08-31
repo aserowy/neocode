@@ -1,9 +1,5 @@
 local M = {}
 M.setup = function()
-    if not require("checker").packadd_if_exists("edge") then
-        return
-    end
-
     local config = require("theming.configuration").get({
         style = "aura",
         transparent = false,

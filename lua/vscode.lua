@@ -1,3 +1,34 @@
+local is_windows = jit.os == "Windows"
+
+local function join_paths(...)
+    local separator = "/"
+    if is_windows then
+        separator = "\\"
+    end
+    return table.concat({ ... }, separator)
+end
+
+local function set_plugins()
+    require("packer").startup({
+        function(use)
+            use("asvetliakov/vim-easymotion")
+
+            use({
+                "b3nj5m1n/kommentary",
+                config = function()
+                    require("kommentary.config")
+                end,
+            })
+
+            use("unblevable/quick-scope")
+        end,
+        config = {
+            package_root = join_paths(vim.fn.stdpath("data"), "site", "vscode"),
+            compile_path = join_paths(vim.fn.stdpath("config"), "plugin", "vscode_compiled.lua"),
+        },
+    })
+end
+
 local function set_settings()
     vim.g.mapleader = "["
 
@@ -44,6 +75,7 @@ local function set_mappings()
 end
 
 local function setup()
+    set_plugins()
     set_settings()
     set_theme()
     set_mappings()
