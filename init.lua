@@ -10,6 +10,7 @@ end
 
 if not vim.g.vscode then
     require("plugins")
+    require("language").setup()
 
     require("settings").setup()
     require("mappings").setup()

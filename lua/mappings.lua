@@ -41,13 +41,12 @@ local function buffer()
         ["<C-p>"] = [[<cmd>BufferLineCyclePrev<cr>]],
 
         ["<leader>b"] = [[<cmd>BufferLinePick<cr>]],
-
-        ["ga"] = [[gg=G<C-o>zz<cmd>Neoformat<cr>]],
     })
 end
 
 -- editor
 mappings.editor_on_text = {
+    ["ga"] = [[<cmd>lua vim.lsp.buf.formatting()<cr>]],
     ["gd"] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>]],
     ["gf"] = "<cmd>lua vim.lsp.buf.declaration()<cr>",
     ["gH"] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],

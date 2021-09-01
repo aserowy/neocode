@@ -3,6 +3,7 @@ mkShell rec {
   name = "neocode";
   buildInputs = [
     lua51Packages.luacheck
+    nodePackages.markdownlint-cli
     nodePackages.prettier
     stylua
     sumneko-lua-language-server

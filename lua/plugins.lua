@@ -1,6 +1,7 @@
 require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
 
+    -- dependencies
     use("rktjmp/lush.nvim")
     use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
@@ -8,6 +9,12 @@ require("packer").startup(function(use)
 
     -- completion
     use("rafamadriz/friendly-snippets")
+    use({
+        "b3nj5m1n/kommentary",
+        config = function()
+            require("kommentary.config")
+        end,
+    })
     use({
         "windwp/nvim-autopairs",
         config = function()
@@ -26,15 +33,6 @@ require("packer").startup(function(use)
             "hrsh7th/vim-vsnip-integ",
         },
     })
-
-    -- formatting
-    use({
-        "b3nj5m1n/kommentary",
-        config = function()
-            require("kommentary.config")
-        end,
-    })
-    use("sbdchd/neoformat")
 
     -- git
     -- TODO: https://github.com/sindrets/diffview.nvim
@@ -69,17 +67,8 @@ require("packer").startup(function(use)
     })
     use("ray-x/lsp_signature.nvim")
     use("neovim/nvim-lspconfig")
-    use({
-        "kabouzeid/nvim-lspinstall",
-        config = function()
-            require("language.plugin_lspinstall").setup()
-        end,
-        after = {
-            "aerial.nvim",
-            "nvim-lspconfig",
-            "lsp_signature.nvim",
-        },
-    })
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("kabouzeid/nvim-lspinstall")
     use({
         "onsails/lspkind-nvim",
         config = function()
