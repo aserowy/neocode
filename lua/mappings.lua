@@ -129,7 +129,6 @@ end
 
 mappings.setup = function()
     windows()
-    -- yank_to_plus()
     zen()
     functions()
     buffer()

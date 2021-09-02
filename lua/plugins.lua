@@ -22,16 +22,22 @@ require("packer").startup(function(use)
         end,
     })
     use({
-        "hrsh7th/nvim-compe",
-        config = function()
-            require("completion.plugin_compe").setup()
-        end,
-    })
-    use({
-        "hrsh7th/vim-vsnip",
+        "hrsh7th/nvim-cmp",
         requires = {
-            "hrsh7th/vim-vsnip-integ",
+            "onsails/lspkind-nvim",
+
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-path",
         },
+        event = "InsertEnter",
+        config = function()
+            require("completion.plugin_cmp").setup()
+        end,
     })
 
     -- git
@@ -69,12 +75,6 @@ require("packer").startup(function(use)
     use("neovim/nvim-lspconfig")
     use("jose-elias-alvarez/null-ls.nvim")
     use("kabouzeid/nvim-lspinstall")
-    use({
-        "onsails/lspkind-nvim",
-        config = function()
-            require("lspkind").init()
-        end,
-    })
     use({
         "glepnir/lspsaga.nvim",
         config = function()
