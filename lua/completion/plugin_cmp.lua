@@ -4,6 +4,21 @@ local handle = require("completion.handle")
 local M = {}
 function M.setup()
     cmp.setup({
+        formatting = {
+            format = function(entry, vim_item)
+                vim_item.kind = require("lspkind").presets.default[vim_item.kind]
+
+                vim_item.menu = ({
+                    luasnip = "[snip]",
+                    buffer = "[buffer]",
+                    nvim_lsp = "[lsp]",
+                    nvim_lua = "[lua]",
+                    path = "[path]",
+                })[entry.source.name]
+
+                return vim_item
+            end,
+        },
         mapping = {
             ["<C-p>"] = cmp.mapping.select_prev_item(),
             ["<C-n>"] = cmp.mapping.select_next_item(),

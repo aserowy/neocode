@@ -21,24 +21,19 @@ require("packer").startup(function(use)
             require("nvim-autopairs").setup()
         end,
     })
+    use("onsails/lspkind-nvim")
     use({
         "hrsh7th/nvim-cmp",
-        requires = {
-            "onsails/lspkind-nvim",
-
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
-
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lua",
-            "hrsh7th/cmp-path",
-        },
-        event = "InsertEnter",
         config = function()
             require("completion.plugin_cmp").setup()
         end,
     })
+    use("L3MON4D3/LuaSnip")
+    use("saadparwaiz1/cmp_luasnip")
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-nvim-lua")
+    use("hrsh7th/cmp-path")
 
     -- git
     -- TODO: https://github.com/sindrets/diffview.nvim
