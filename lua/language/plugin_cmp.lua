@@ -27,7 +27,7 @@ function M.setup()
             ["<C-Space>"] = cmp.mapping.complete(),
             ["<CR>"] = cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Insert,
-                select = true,
+                select = false,
             }),
             ["<Tab>"] = cmp.mapping(handle.jump_next, { "i", "s" }),
             ["<S-Tab>"] = cmp.mapping(handle.jump_previous, { "i", "s" }),
