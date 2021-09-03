@@ -1,7 +1,4 @@
 local keymaps = require("nvim.keymaps")
-local test = require "null-ls.builtins.test"
-local tests = require "plenary.async.tests"
-local compare = require "cmp.config.compare"
 
 local mappings = {}
 
@@ -84,8 +81,8 @@ mappings.explorer = {
 }
 
 mappings.explorer_nocallback = {
-    ["<C-c>"] = [[<cmd>lua require'layout.sidebar'.close()<cr>]],
-    ["q"] = [[<cmd>lua require'layout.sidebar'.close()<cr>]],
+    ["<C-c>"] = [[<cmd>lua require'sidebar'.close()<cr>]],
+    ["q"] = [[<cmd>lua require'sidebar'.close()<cr>]],
 }
 
 mappings.diagnostics = {
