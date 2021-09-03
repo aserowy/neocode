@@ -30,7 +30,12 @@ local function language(use)
             require("language.plugin_cmp").setup()
         end,
     })
-    use("L3MON4D3/LuaSnip")
+    use({
+        "L3MON4D3/LuaSnip",
+        config = function()
+            require("language.plugin_luasnip").setup()
+        end,
+    })
     use("saadparwaiz1/cmp_luasnip")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-nvim-lsp")
