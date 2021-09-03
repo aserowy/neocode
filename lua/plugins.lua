@@ -1,13 +1,15 @@
-require("packer").startup(function(use)
-    use("wbthomason/packer.nvim")
+local function git(use)
+    -- TODO: https://github.com/sindrets/diffview.nvim
+    -- TODO: neogit
+    use({
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("git.plugin_gitsigns")
+        end,
+    })
+end
 
-    -- dependencies
-    use("rktjmp/lush.nvim")
-    use("nvim-lua/plenary.nvim")
-    use("nvim-lua/popup.nvim")
-    use("kyazdani42/nvim-web-devicons")
-
-    -- completion
+local function language(use)
     use("rafamadriz/friendly-snippets")
     use({
         "b3nj5m1n/kommentary",
@@ -25,7 +27,7 @@ require("packer").startup(function(use)
     use({
         "hrsh7th/nvim-cmp",
         config = function()
-            require("completion.plugin_cmp").setup()
+            require("language.plugin_cmp").setup()
         end,
     })
     use("L3MON4D3/LuaSnip")
@@ -35,31 +37,6 @@ require("packer").startup(function(use)
     use("hrsh7th/cmp-nvim-lua")
     use("hrsh7th/cmp-path")
 
-    -- git
-    -- TODO: https://github.com/sindrets/diffview.nvim
-    use({
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("git.plugin_gitsigns")
-        end,
-    })
-
-    -- helper
-    use("famiu/bufdelete.nvim")
-    use({
-        "907th/vim-auto-save",
-        config = function()
-            vim.g.auto_save = 1
-        end,
-    })
-    use({
-        "folke/which-key.nvim",
-        config = function()
-            require("which-key").setup()
-        end,
-    })
-
-    -- language
     use({
         "stevearc/aerial.nvim",
         setup = function()
@@ -77,36 +54,22 @@ require("packer").startup(function(use)
         end,
     })
 
-    -- layout
-    -- FIX: interfers with session restores..
-    --[[ use {
-        'glepnir/dashboard-nvim',
-        config = function() require'layout.plugin_dashboard' end,
-    } ]]
     use({
-        "lukas-reineke/indent-blankline.nvim",
+        "folke/todo-comments.nvim",
         config = function()
-            require("layout.plugin_indentblankline")
+            require("todo-comments").setup({})
         end,
     })
-    use({
-        "folke/zen-mode.nvim",
-        config = function()
-            require("zen-mode").setup({})
-        end,
-    })
-
-    -- linting
     use({
         "norcalli/nvim-colorizer.lua",
         config = function()
-            require("linting.plugin_colorizer")
+            require("language.plugin_colorizer")
         end,
     })
     use({
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            require("linting.plugin_treesitter")
+            require("language.plugin_treesitter")
         end,
         run = ":TSUpdate",
     })
@@ -127,8 +90,25 @@ require("packer").startup(function(use)
         end,
         after = "nvim-treesitter",
     })
+end
 
-    -- motion
+local function layout(use)
+    use("famiu/bufdelete.nvim")
+    use({
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup()
+        end,
+    })
+    use({
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup({})
+        end,
+    })
+end
+
+local function motion(use)
     use({
         "phaazon/hop.nvim",
         as = "hop",
@@ -155,14 +135,9 @@ require("packer").startup(function(use)
         end,
     })
     use("unblevable/quick-scope")
+end
 
-    -- navigation
-    use({
-        "aserowy/tmux.nvim",
-        config = function()
-            require("navigation.plugin_tmux").setup()
-        end,
-    })
+local function navigation(use)
     use({
         "akinsho/nvim-bufferline.lua",
         config = function()
@@ -187,33 +162,59 @@ require("packer").startup(function(use)
             require("navigation.plugin_telescope")
         end,
     })
+end
 
-    -- session
+local function startup(use)
     -- TODO: https://github.com/rmagatti/session-lens maybe with leader + s?
     use({
         "rmagatti/auto-session",
         config = function()
-            require("session.plugin_auto-session").setup()
+            require("startup.plugin_auto-session").setup()
         end,
     })
-
-    -- status
+    -- FIX: interfers with session restores..
+    --[[ use {
+        'glepnir/dashboard-nvim',
+        config = function() require'startup.plugin_dashboard' end,
+    } ]]
+    use({
+        "907th/vim-auto-save",
+        config = function()
+            vim.g.auto_save = 1
+        end,
+    })
+end
+local function status(use)
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("status.plugin_indentblankline")
+        end,
+    })
     use({
         "hoob3rt/lualine.nvim",
         config = function()
             require("status.plugin_lualine").setup()
         end,
     })
+end
 
-    -- terminal
+local function terminal(use)
     use({
         "akinsho/nvim-toggleterm.lua",
         config = function()
             require("terminal.plugin_toggleterm").setup()
         end,
     })
+    use({
+        "aserowy/tmux.nvim",
+        config = function()
+            require("terminal.plugin_tmux").setup()
+        end,
+    })
+end
 
-    -- theming
+local function theming(use)
     use({
         "briones-gabriel/darcula-solid.nvim",
         cond = function()
@@ -268,12 +269,24 @@ require("packer").startup(function(use)
             require("theming.theme").setup("tokyonight")
         end,
     })
+end
 
-    -- todo
-    use({
-        "folke/todo-comments.nvim",
-        config = function()
-            require("todo-comments").setup({})
-        end,
-    })
+require("packer").startup(function(use)
+    use("wbthomason/packer.nvim")
+
+    -- dependencies
+    use("rktjmp/lush.nvim")
+    use("nvim-lua/plenary.nvim")
+    use("nvim-lua/popup.nvim")
+    use("kyazdani42/nvim-web-devicons")
+
+    git(use)
+    language(use)
+    layout(use)
+    motion(use)
+    navigation(use)
+    startup(use)
+    status(use)
+    terminal(use)
+    theming(use)
 end)

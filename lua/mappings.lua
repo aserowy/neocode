@@ -1,4 +1,7 @@
 local keymaps = require("nvim.keymaps")
+local test = require "null-ls.builtins.test"
+local tests = require "plenary.async.tests"
+local compare = require "cmp.config.compare"
 
 local mappings = {}
 
@@ -17,14 +20,14 @@ end
 local function functions()
     keymaps.register("n", {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
-        ["<C-e>"] = [[<cmd>lua require'layout.sidebar'.explorer()<cr>]],
+        ["<C-e>"] = [[<cmd>lua require'sidebar'.explorer()<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f><C-f>"] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
         ["<C-f><C-g>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
         ["<C-f><C-l>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
-        ["<C-s>"] = [[<cmd>lua require'layout.sidebar'.symbols()<cr>]],
+        ["<C-s>"] = [[<cmd>lua require'sidebar'.symbols()<cr>]],
         ["<C-q>"] = [[<cmd>LspTrouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>LspTrouble lsp_workspace_diagnostics<cr>]],
     })
@@ -58,24 +61,6 @@ mappings.editor_on_text = {
     ["gp"] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>]],
     ["gn"] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>]],
 }
-
-local function editor_completion()
-    keymaps.register("i", {
-        ["<cr>"] = [[v:lua.completion.confirm()]],
-        ["<S-tab>"] = [[v:lua.completion.jump_previous('<S-tab>')]],
-        ["<tab>"] = [[v:lua.completion.jump_next('<tab>')]],
-    }, {
-        expr = true,
-    })
-
-    keymaps.register("s", {
-        ["<cr>"] = [[v:lua.completion.confirm()]],
-        ["<S-tab>"] = [[v:lua.completion.jump_previous('<S-tab>')]],
-        ["<tab>"] = [[v:lua.completion.jump_next('<tab>')]],
-    }, {
-        expr = true,
-    })
-end
 
 local function editor_motion()
     keymaps.register("n", {
@@ -132,7 +117,6 @@ mappings.setup = function()
     zen()
     functions()
     buffer()
-    editor_completion()
     editor_motion()
     terminal()
 end

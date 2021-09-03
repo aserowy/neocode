@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-local handle = require("completion.handle")
+local handle = require("language.completion")
 
 local M = {}
 function M.setup()
