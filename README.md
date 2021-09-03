@@ -24,7 +24,7 @@ Handle your code with lsp support with [nvim-lspinstall](https://github.com/kabo
 
 ![signature](./docs/preview/signature.png)
 
-Complete your thoughts with auto completion ([nvim-compe](https://github.com/hrsh7th/nvim-compe)) and snippets ([vim-vsnip](https://github.com/hrsh7th/vim-vsnip)).
+Complete your thoughts with auto completion ([nvim-cmp](https://github.com/hrsh7th/nvim-cmp)) and snippets ([vim-vsnip](https://github.com/hrsh7th/vim-vsnip)).
 
 ![completion](./docs/preview/completion.png)
 
