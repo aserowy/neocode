@@ -178,11 +178,6 @@ local function startup(use)
             require("startup.plugin_auto-session").setup()
         end,
     })
-    -- FIX: interfers with session restores..
-    --[[ use {
-        'glepnir/dashboard-nvim',
-        config = function() require'startup.plugin_dashboard' end,
-    } ]]
     use({
         "907th/vim-auto-save",
         config = function()
@@ -190,6 +185,7 @@ local function startup(use)
         end,
     })
 end
+
 local function status(use)
     use({
         "lukas-reineke/indent-blankline.nvim",
