@@ -38,8 +38,6 @@ function M.setup()
     vim.cmd([[set undofile]])
 
     -- options
-    options.set(option, "completeopt", "menuone,noinsert,noselect")
-
     if not M.theme().transparent then
         options.set(option, "cursorline", true)
     end
