@@ -164,9 +164,10 @@ local function navigation(use)
     use({
         "nvim-telescope/telescope.nvim",
         config = function()
-            require("navigation.plugin_telescope")
+            require("navigation.plugin_telescope").setup()
         end,
     })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 end
 
 local function startup(use)
