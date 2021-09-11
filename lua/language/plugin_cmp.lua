@@ -22,6 +22,7 @@ function M.setup()
                 return vim_item
             end,
         },
+        -- TODO: Refactor mapping into mappings.lua
         mapping = {
             ["<C-p>"] = cmp.mapping.select_prev_item(),
             ["<C-n>"] = cmp.mapping.select_next_item(),
