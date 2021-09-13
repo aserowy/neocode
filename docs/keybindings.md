@@ -28,11 +28,13 @@ Got any troubles in your workflows? Issues are welcome!
 | vim   | <kbd>ctrl + a</kbd>                     | focus todo (`A`ufgabe in german) list | TODO: vscode                        |
 |       | <kbd>ctrl + e</kbd>                     | focus explorer (file tree)            |                                     |
 | vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + b</kbd> | find buffer                           | TODO: vscode                        |
+| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + d</kbd> | find document diagnostics             |                                     |
 |       | <kbd>ctrl + f</kbd> <kbd>ctrl + f</kbd> | find file                             |                                     |
 |       | <kbd>ctrl + f</kbd> <kbd>ctrl + g</kbd> | find with grep                        |                                     |
 | vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + h</kbd> | find file in history                  | is integrated file search in vscode |
 | vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + l</kbd> | find symbol in current document       | TODO: vscode                        |
 |       | <kbd>ctrl + f</kbd> <kbd>ctrl + s</kbd> | find symbol in workspace              |                                     |
+| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + x</kbd> | find workspace diagnostics            |                                     |
 | vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |                                     |
 | vim   | <kbd>ctrl + s</kbd>                     | focus symbols outline                 | TODO: vscode                        |
 |       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |                                     |
