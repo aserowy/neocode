@@ -43,6 +43,13 @@ local function buffer()
         ["<C-p>"] = [[<cmd>BufferLineCyclePrev<cr>]],
 
         ["<leader>b"] = [[<cmd>BufferLinePick<cr>]],
+
+        ["+"] = [[<C-a>]],
+        ["-"] = [[<C-x>]],
+    })
+    keymaps.register("x", {
+        ["+"] = [[g<C-a>]],
+        ["-"] = [[g<C-x>]],
     })
 end
 
