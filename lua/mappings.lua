@@ -63,7 +63,7 @@ mappings.editor_on_text = {
     ["K"] = "<cmd>lua vim.lsp.buf.hover()<cr>",
     ["gh"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>",
     ["gr"] = "<cmd>lua vim.lsp.buf.rename()<cr>",
-    ["gq"] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>]],
+    ["gx"] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>]],
     ["gp"] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>]],
     ["gn"] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>]],
 }

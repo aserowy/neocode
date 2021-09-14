@@ -65,8 +65,8 @@ local function set_mappings()
         ["gi"] = [[<cmd>call VSCodeNotify('editor.action.goToImplementation')<cr>]],
         ["gn"] = [[<cmd>call VSCodeNotify('editor.action.marker.next')<cr>]],
         ["gp"] = [[<cmd>call VSCodeNotify('editor.action.marker.prev')<cr>]],
-        ["gq"] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
         ["gr"] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
+        ["gx"] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
     })
 
     vim.cmd([[nmap <Leader>k <Plug>(easymotion-bd-f)]])
