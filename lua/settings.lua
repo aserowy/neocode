@@ -2,7 +2,7 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "github",
+        theme = "material",
         transparent = true,
 
         -- theme = 'github',

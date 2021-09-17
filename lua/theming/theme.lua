@@ -11,7 +11,7 @@ end
 
 M.get_lualine = function()
     local mappings = {
-        material = "material-nvim",
+        -- material = "material-nvim",
     }
 
     local theme = require("settings").theme().theme
