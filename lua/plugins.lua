@@ -218,48 +218,12 @@ end
 
 local function theming(use)
     use({
-        "briones-gabriel/darcula-solid.nvim",
+        "projekt0n/github-nvim-theme",
         cond = function()
-            return require("conditions").is_current_theme("darcula")
+            return require("conditions").is_current_theme("github")
         end,
         config = function()
-            require("theming.theme").setup("darcula")
-        end,
-    })
-    use({
-        "sainnhe/edge",
-        cond = function()
-            return require("conditions").is_current_theme("edge")
-        end,
-        config = function()
-            require("theming.theme").setup("edge")
-        end,
-    })
-    use({
-        "MordechaiHadad/nvim-papadark",
-        cond = function()
-            return require("conditions").is_current_theme("nord")
-        end,
-        config = function()
-            require("theming.theme").setup("nord")
-        end,
-    })
-    use({
-        "monsonjeremy/onedark.nvim",
-        cond = function()
-            return require("conditions").is_current_theme("onedark")
-        end,
-        config = function()
-            require("theming.theme").setup("onedark")
-        end,
-    })
-    use({
-        "sainnhe/sonokai",
-        cond = function()
-            return require("conditions").is_current_theme("sonokai")
-        end,
-        config = function()
-            require("theming.theme").setup("sonokai")
+            require("theming.theme").setup("github")
         end,
     })
     use({

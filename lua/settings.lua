@@ -2,23 +2,11 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "sonokai",
+        theme = "github",
         transparent = true,
 
-        -- theme = 'darcula',
-
-        -- theme = 'edge',
-        -- style = 'default', 'aura', or 'neon'
-        -- flavour = 'light', or 'dark'
-        -- transparent = false,
-
-        -- theme = 'nord',
-
-        -- theme = 'onedark',
-        -- transparent = false,
-
-        -- theme = 'sonokai',
-        -- style = 'default', 'atlantis', 'andromeda', 'shusia', or 'maia'
+        -- theme = 'github',
+        -- style = dark/dark_default/dimmed/light/light_default
         -- transparent = false,
 
         -- theme = 'tokyonight',
