@@ -9,6 +9,10 @@ function M.theme()
         -- style = dark/dark_default/dimmed/light/light_default
         -- transparent = false,
 
+        -- theme = 'material'
+        -- style = darker, lighter, oceanic, palenight, deep ocean
+        -- transparent = false,
+
         -- theme = 'tokyonight',
         -- style = 'storm', 'night', or 'day'
         -- transparent = false,

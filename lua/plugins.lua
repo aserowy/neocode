@@ -227,6 +227,15 @@ local function theming(use)
         end,
     })
     use({
+        "marko-cerovac/material.nvim",
+        cond = function()
+            return require("conditions").is_current_theme("material")
+        end,
+        config = function()
+            require("theming.theme").setup("material")
+        end,
+    })
+    use({
         "folke/tokyonight.nvim",
         cond = function()
             return require("conditions").is_current_theme("tokyonight")
