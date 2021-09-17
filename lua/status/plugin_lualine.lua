@@ -5,9 +5,9 @@ local function setup()
         extensions = { "nvim-tree" },
         options = {
             theme = theme,
-            component_separators = { "", "" },
+            component_separators = { left = "", right = "" },
             disabled_filetypes = { "aerial", "toggleterm", "terminal" },
-            section_separators = { "", "" },
+            section_separators = { left = "", right = "" },
         },
         sections = {
             lualine_b = {
