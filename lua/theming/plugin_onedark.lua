@@ -5,11 +5,10 @@ M.setup = function()
         transparent = false,
     })
 
-    require("github-theme").setup({
-        sidebars = config.sidebars,
-        theme_style = config.style,
-        transparent = config.transparent,
-    })
+    vim.g.onedark_disable_toggle_style = true
+    vim.g.onedark_transparent_background = config.transparent
+
+    require("onedark").setup()
 end
 
 return M

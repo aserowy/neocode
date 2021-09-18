@@ -236,6 +236,15 @@ local function theming(use)
         end,
     })
     use({
+        "navarasu/onedark.nvim",
+        cond = function()
+            return require("conditions").is_current_theme("onedark")
+        end,
+        config = function()
+            require("theming.theme").setup("onedark")
+        end,
+    })
+    use({
         "folke/tokyonight.nvim",
         cond = function()
             return require("conditions").is_current_theme("tokyonight")

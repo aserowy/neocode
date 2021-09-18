@@ -9,21 +9,13 @@ M.setup = function()
 
     require("material").setup({
         borders = true,
-        italics = {
-            comments = true,
-        },
-
-        contrast_windows = {
-            "aerial",
-            "nvimtree",
-            "terminal",
-            "packer",
-            "qf",
-        },
-
+        contrast_windows = config.sidebars,
         disable = {
             background = config.transparent,
             eob_lines = false,
+        },
+        italics = {
+            comments = true,
         },
     })
 

@@ -3,6 +3,7 @@ M.setup = function(theme)
     local setup_functions = {
         github = require("theming.plugin_github").setup,
         material = require("theming.plugin_material").setup,
+        onedark = require("theming.plugin_onedark").setup,
         tokyonight = require("theming.plugin_tokyonight").setup,
     }
 
@@ -11,7 +12,7 @@ end
 
 M.get_lualine = function()
     local mappings = {
-        -- material = "material-nvim",
+        material = "material-nvim",
     }
 
     local theme = require("settings").theme().theme

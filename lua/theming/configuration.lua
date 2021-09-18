@@ -27,7 +27,10 @@ local function extend(policy, ...)
     return result
 end
 
-local M = {}
+local M = {
+    sidebars = { "outline", "Aerial", "NvimTree", "qf", "vista_kind", "terminal", "packer" },
+}
+
 M.get = function(defaults)
     local theme = require("settings").theme()
     return extend("force", defaults, theme)
