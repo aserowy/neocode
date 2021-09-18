@@ -6,7 +6,7 @@ In my current workflow I use VSCode more and more, because features like remote 
 
 ## look & feel
 
-Theme your nvim with ease under [settings](./lua/settings.lua) with [darcula](https://github.com/briones-gabriel/darcula-solid.nvim), [edge](https://github.com/sainnhe/edge), [nord (papadark)](https://github.com/MordechaiHadad/nvim-papadark), [onedark](https://github.com/monsonjeremy/onedark.nvim), [sonokai (monokai pro)](https://github.com/sainnhe/sonokai), or [tokyonight](https://github.com/folke/tokyonight.nvim).
+Theme your nvim with ease under [settings](./lua/settings.lua) with [github](https://github.com/projekt0n/github-nvim-theme), [material](https://github.com/marko-cerovac/material.nvim), [onedark](https://github.com/navarasu/onedark.nvim), or [tokyonight](https://github.com/folke/tokyonight.nvim).
 
 ![theming](./docs/preview/theming.png)
 
