@@ -20,8 +20,9 @@ local function language(use)
     use({
         "windwp/nvim-autopairs",
         config = function()
-            require("nvim-autopairs").setup()
+            require("language.plugin_autopairs").setup()
         end,
+        after = "nvim-cmp",
     })
     use("onsails/lspkind-nvim")
     use({
