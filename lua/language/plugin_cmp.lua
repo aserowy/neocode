@@ -3,6 +3,9 @@ local handle = require("language.completion")
 
 local M = {}
 function M.setup()
+    local options = require("nvim.options")
+    options.set(options.scope.option, "pumheight", 12)
+
     cmp.setup({
         completion = {
             completeopt = "menu,menuone,noinsert",
@@ -43,10 +46,10 @@ function M.setup()
         },
         sources = {
             { name = "luasnip" },
-            { name = "buffer" },
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
             { name = "path" },
+            { name = "buffer" },
         },
     })
 end
