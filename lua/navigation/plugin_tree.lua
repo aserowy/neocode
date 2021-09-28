@@ -13,3 +13,5 @@ vim.g.nvim_tree_bindings = mappings
 vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_hide_dotfiles = 0
 vim.g.nvim_tree_indent_markers = 1
+
+require("nvim-tree").setup({})
