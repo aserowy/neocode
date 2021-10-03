@@ -54,7 +54,7 @@ local function language(use)
     use("jose-elias-alvarez/null-ls.nvim")
     use("kabouzeid/nvim-lspinstall")
     use({
-        "glepnir/lspsaga.nvim",
+        "tami5/lspsaga.nvim",
         config = function()
             require("language.plugin_lspsaga").setup()
         end,
