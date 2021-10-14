@@ -3,7 +3,6 @@ local M = {}
 function M.theme()
     return {
         theme = "onedark",
-        transparent = true,
 
         -- theme = 'github',
         -- style = dark/dark_default/dimmed/light/light_default
