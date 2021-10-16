@@ -52,7 +52,7 @@ local function language(use)
     use("ray-x/lsp_signature.nvim")
     use("neovim/nvim-lspconfig")
     use("jose-elias-alvarez/null-ls.nvim")
-    use("kabouzeid/nvim-lspinstall")
+    use("williamboman/nvim-lsp-installer")
     use({
         "tami5/lspsaga.nvim",
         config = function()
