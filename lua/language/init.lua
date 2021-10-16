@@ -30,26 +30,10 @@ m.setup = function()
 
     require("language.lsp").setup(capabilities, on_attach)
 
-    require("lspinstall").setup()
-    local servers = require("lspinstall").installed_servers()
-    for _, server in pairs(servers) do
-        require("lspconfig")[server].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-    end
-end
-
-m.reinstall = function()
-    local lspinstall = require("lspinstall")
-    for _, server in ipairs(lspinstall.installed_servers()) do
-        lspinstall.install_server(server)
-    end
-end
-
-require("lspinstall").post_install_hook = function()
-    m.setup()
-    vim.cmd("bufdo e")
+    require("nvim-lsp-installer").on_server_ready(function(server)
+        server:setup({})
+        vim.cmd([[ do User LspAttachBuffers ]])
+    end)
 end
 
 return m
