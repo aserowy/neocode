@@ -197,7 +197,7 @@ local function status(use)
         end,
     })
     use({
-        "shadmansaleh/lualine.nvim",
+        "nvim-lualine/lualine.nvim",
         config = function()
             require("status.plugin_lualine").setup()
         end,
