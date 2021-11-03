@@ -1,14 +1,10 @@
 local M = {}
 M.setup = function()
-    local config = require("theming.configuration").get({
-        style = "dark",
-        transparent = false,
+    local config = require("theming.configuration").get({})
+
+    require("onedark").setup({
+        sidebars = config.sidebars,
     })
-
-    vim.g.onedark_disable_toggle_style = true
-    vim.g.onedark_transparent_background = config.transparent
-
-    require("onedark").setup()
 end
 
 return M

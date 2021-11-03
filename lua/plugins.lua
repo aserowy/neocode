@@ -239,7 +239,7 @@ local function theming(use)
         end,
     })
     use({
-        "navarasu/onedark.nvim",
+        "ful1e5/onedark.nvim",
         cond = function()
             return require("conditions").is_current_theme("onedark")
         end,
