@@ -9,9 +9,15 @@ for key, value in pairs(require("mappings").explorer_nocallback) do
     table.insert(mappings, { key = key, cb = value })
 end
 
-vim.g.nvim_tree_bindings = mappings
-vim.g.nvim_tree_follow = 1
-vim.g.nvim_tree_hide_dotfiles = 0
 vim.g.nvim_tree_indent_markers = 1
 
-require("nvim-tree").setup({})
+require("nvim-tree").setup({
+    update_focused_file = {
+        enable = true,
+    },
+    view = {
+        mappings = {
+            list = mappings,
+        },
+    },
+})
