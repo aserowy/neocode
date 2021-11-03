@@ -1,3 +1,4 @@
+local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 local function rtc(str)
@@ -11,8 +12,8 @@ end
 
 local M = {}
 function M.jump_next(fallback)
-    if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(rtc("<C-n>"), "n")
+    if cmp and cmp.visible() then
+        vim.fn.feedkeys(cmp.select_next_item())
     elseif luasnip.expand_or_jumpable() then
         vim.fn.feedkeys(rtc("<Plug>luasnip-expand-or-jump"), "")
     elseif check_back_space() then
@@ -23,8 +24,8 @@ function M.jump_next(fallback)
 end
 
 function M.jump_previous(fallback)
-    if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(rtc("<C-p>"), "n")
+    if cmp and cmp.visible() then
+        vim.fn.feedkeys(cmp.select_prev_item())
     elseif luasnip.jumpable(-1) then
         vim.fn.feedkeys(rtc("<Plug>luasnip-jump-prev"), "")
     else
