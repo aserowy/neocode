@@ -1,6 +1,6 @@
 local M = {}
 M.setup = function()
-    vim.o.sessionoptions = "blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal"
+    vim.o.sessionoptions = "buffers,curdir,tabpages,winpos"
 
     local function pre_save()
         if package.loaded["aerial"] then
