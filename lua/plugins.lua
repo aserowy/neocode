@@ -86,10 +86,6 @@ local function language(use)
         after = "nvim-treesitter",
     })
     use({
-        "RRethy/nvim-treesitter-textsubjects",
-        after = "nvim-treesitter",
-    })
-    use({
         "romgrk/nvim-treesitter-context",
         config = function()
             require("treesitter-context.config").setup({

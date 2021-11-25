@@ -6,13 +6,13 @@ require("nvim-treesitter.configs").setup({
     indent = {
         enable = true,
     },
+    incremental_selection = {
+        enable = true,
+        keymaps = require("mappings").editor_motion_textsubjects,
+    },
 
     -- third party
     rainbow = {
         enable = true,
-    },
-    textsubjects = {
-        enable = true,
-        keymaps = require("mappings").editor_motion_textsubjects,
     },
 })

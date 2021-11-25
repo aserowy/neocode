@@ -76,7 +76,10 @@ local function editor_motion()
 end
 
 mappings.editor_motion_textsubjects = {
-    ["."] = "textsubjects-smart",
+    init_selection = "<CR>",
+    scope_incremental = "<CR>",
+    node_incremental = "<TAB>",
+    node_decremental = "<S-TAB>",
 }
 
 mappings.explorer = {
