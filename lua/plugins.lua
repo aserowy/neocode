@@ -55,8 +55,6 @@ local function language(use)
     use("williamboman/nvim-lsp-installer")
     use({
         "tami5/lspsaga.nvim",
-        -- TODO: change to main after 0.6.0 is stable
-        branch = "nvim51",
         config = function()
             require("language.plugin_lspsaga").setup()
         end,
