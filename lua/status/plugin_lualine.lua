@@ -25,7 +25,7 @@ local function setup()
                 "filename",
                 {
                     "diagnostics",
-                    sources = { "nvim_lsp" },
+                    sources = { "nvim_diagnostic" },
                 },
             },
         },
