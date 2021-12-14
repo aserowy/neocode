@@ -75,6 +75,13 @@ local function editor_motion()
     })
 end
 
+local function editor_visual()
+    keymaps.register("v", {
+        ["J"] = [[:m'>+1<CR>gv=gv]],
+        ["K"] = [[:m-2<CR>gv=gv]],
+    })
+end
+
 mappings.editor_motion_textsubjects = {
     init_selection = "<CR>",
     scope_incremental = "<CR>",
@@ -126,6 +133,7 @@ mappings.setup = function()
     functions()
     buffer()
     editor_motion()
+    editor_visual()
     terminal()
 end
 

@@ -99,6 +99,8 @@ Got any troubles in your workflows? Issues are welcome!
 |        | <kbd>g</kbd> <kbd>n</kbd>                     | show next diagnostic           |                        |
 |        | <kbd>g</kbd> <kbd>x</kbd>                     | show quick fixes               |                        |
 | vim    | <kbd>g</kbd> <kbd>h</kbd>                     | show signature help            |                        |
+| visual | <kbd>shift + j</kbd>                          | move selection one line down   |                        |
+| visual | <kbd>shift + k</kbd>                          | move selection one line up     |                        |
 | visual | <kbd>.</kbd>                                  | selects next outer scope       |                        |
 | vscode | <kbd>ctrl + space</kbd>                       | show completion menu           | is shown automatically |
 
