@@ -1,7 +1,4 @@
 local function generate_sources(null_ls)
-    local helpers = require("null-ls.helpers")
-    local methods = require("null-ls.methods")
-
     local sources = {
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.rustfmt,
@@ -19,7 +16,7 @@ local M = {}
 function M.setup(_, on_attach)
     local null_ls = require("null-ls")
 
-    null_ls.config({
+    null_ls.setup({
         sources = generate_sources(null_ls),
     })
 
