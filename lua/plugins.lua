@@ -95,7 +95,12 @@ local function language(use)
 end
 
 local function layout(use)
-    use("famiu/bufdelete.nvim")
+    use({
+        "kazhala/close-buffers.nvim",
+        config = function()
+            require("close_buffers").setup({})
+        end,
+    })
     use({
         "folke/which-key.nvim",
         config = function()
