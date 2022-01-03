@@ -21,7 +21,6 @@ local function set_settings()
     options.set(option, "clipboard", "unnamedplus")
     options.set(option, "ignorecase", true)
     options.set(option, "smartcase", true)
-    options.set(option, "termguicolors", true)
 end
 
 local function set_theme()
