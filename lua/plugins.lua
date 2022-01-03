@@ -152,7 +152,7 @@ local function navigation(use)
         end,
     })
     use({
-        "folke/lsp-trouble.nvim",
+        "folke/trouble.nvim",
         config = function()
             require("navigation.plugin_trouble")
         end,
