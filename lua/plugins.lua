@@ -45,7 +45,7 @@ local function language(use)
 
     use({
         "stevearc/aerial.nvim",
-        setup = function()
+        config = function()
             require("language.plugin_aerial").setup()
         end,
     })
