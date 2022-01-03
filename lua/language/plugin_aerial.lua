@@ -1,11 +1,11 @@
 local M = {}
 M.setup = function()
-    vim.g.aerial = {
+    require("aerial").setup({
         default_direction = "left",
-        manage_folds = "false",
         max_width = 30,
         min_width = 30,
-    }
+        placement_editor_edge = true,
+    })
 end
 
 return M
