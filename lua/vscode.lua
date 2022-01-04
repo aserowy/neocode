@@ -1,33 +1,7 @@
-local function set_plugins()
-    local use = vim.fn["plug#"]
+local M = {}
 
-    vim.call("plug#begin")
-
-    use("asvetliakov/vim-easymotion")
-    use("b3nj5m1n/kommentary")
-    use("nvim-treesitter/nvim-treesitter")
-    use("unblevable/quick-scope")
-
-    vim.call("plug#end")
-
-    require("kommentary.config")
-
-    require("nvim-treesitter.configs").setup({
-        ensure_installed = "maintained",
-        highlight = {
-            enable = false,
-        },
-        indent = {
-            enable = false,
-        },
-        incremental_selection = {
-            enable = true,
-            keymaps = require("mappings").editor_motion_textsubjects,
-        },
-    })
-end
-
-local function set_settings()
+function M.configure()
+    -- settings
     vim.g.mapleader = "["
 
     local options = require("nvim.options")
@@ -36,14 +10,11 @@ local function set_settings()
     options.set(option, "clipboard", "unnamedplus")
     options.set(option, "ignorecase", true)
     options.set(option, "smartcase", true)
-end
 
-local function set_theme()
     vim.cmd([[hi QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline]])
     vim.cmd([[hi QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline]])
-end
 
-local function set_mappings()
+    -- mappings
     local keymaps = require("nvim.keymaps")
 
     keymaps.register("n", {
@@ -61,13 +32,34 @@ local function set_mappings()
     vim.cmd([[nmap <Leader>w <Plug>(easymotion-bd-w)]])
 end
 
-local function setup()
-    set_plugins()
-    set_settings()
-    set_theme()
-    set_mappings()
+function M.register_packages(use)
+    use("asvetliakov/vim-easymotion")
+    use({
+        "b3nj5m1n/kommentary",
+        config = function()
+            require("kommentary.config")
+        end,
+    })
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = "maintained",
+                highlight = {
+                    enable = false,
+                },
+                indent = {
+                    enable = false,
+                },
+                incremental_selection = {
+                    enable = true,
+                    keymaps = require("mappings").editor_motion_textsubjects,
+                },
+            })
+        end,
+        run = ":TSUpdate",
+    })
+    use("unblevable/quick-scope")
 end
 
-return {
-    setup = setup,
-}
+return M

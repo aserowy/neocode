@@ -1,4 +1,21 @@
-local function git(use)
+local M = {}
+
+function M.configure()
+    require("language").setup()
+
+    require("settings").setup()
+    require("mappings").setup()
+end
+
+function M.register_packages(use)
+    use("wbthomason/packer.nvim")
+
+    -- dependencies
+    use("rktjmp/lush.nvim")
+    use("nvim-lua/plenary.nvim")
+    use("nvim-lua/popup.nvim")
+    use("kyazdani42/nvim-web-devicons")
+
     -- TODO: https://github.com/sindrets/diffview.nvim
     -- TODO: neogit
     use({
@@ -7,9 +24,7 @@ local function git(use)
             require("git.plugin_gitsigns")
         end,
     })
-end
 
-local function language(use)
     use("rafamadriz/friendly-snippets")
     use({
         "b3nj5m1n/kommentary",
@@ -92,9 +107,7 @@ local function language(use)
         end,
         after = "nvim-treesitter",
     })
-end
 
-local function layout(use)
     use({
         "kazhala/close-buffers.nvim",
         config = function()
@@ -113,9 +126,7 @@ local function layout(use)
             require("zen-mode").setup({})
         end,
     })
-end
 
-local function motion(use)
     use({
         "phaazon/hop.nvim",
         as = "hop",
@@ -142,9 +153,7 @@ local function motion(use)
         end,
     })
     use("unblevable/quick-scope")
-end
 
-local function navigation(use)
     use({
         "akinsho/nvim-bufferline.lua",
         config = function()
@@ -170,9 +179,7 @@ local function navigation(use)
         end,
     })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-end
 
-local function startup(use)
     -- TODO: https://github.com/rmagatti/session-lens maybe with leader + s?
     use({
         "rmagatti/auto-session",
@@ -186,9 +193,7 @@ local function startup(use)
             vim.g.auto_save = 1
         end,
     })
-end
 
-local function status(use)
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
@@ -201,9 +206,7 @@ local function status(use)
             require("status.plugin_lualine").setup()
         end,
     })
-end
 
-local function terminal(use)
     use({
         "akinsho/nvim-toggleterm.lua",
         config = function()
@@ -216,9 +219,7 @@ local function terminal(use)
             require("terminal.plugin_tmux").setup()
         end,
     })
-end
 
-local function theming(use)
     use({
         "projekt0n/github-nvim-theme",
         cond = function()
@@ -255,41 +256,6 @@ local function theming(use)
             require("theming.theme").setup("tokyonight")
         end,
     })
-end
-
-local packer_compiled_path = vim.fn.stdpath("data") .. "/packer_compiled.lua"
-
-local M = {}
-
-function M.setup()
-    require("packer").startup({
-        function(use)
-            use("wbthomason/packer.nvim")
-
-            -- dependencies
-            use("rktjmp/lush.nvim")
-            use("nvim-lua/plenary.nvim")
-            use("nvim-lua/popup.nvim")
-            use("kyazdani42/nvim-web-devicons")
-
-            git(use)
-            language(use)
-            layout(use)
-            motion(use)
-            navigation(use)
-            startup(use)
-            status(use)
-            terminal(use)
-            theming(use)
-        end,
-        config = {
-            compile_path = packer_compiled_path,
-        },
-    })
-end
-
-function M.postprocessing()
-    assert(loadfile(packer_compiled_path))()
 end
 
 return M
