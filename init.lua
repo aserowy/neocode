@@ -9,13 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 if not vim.g.vscode then
-    local nvim_configuration = require("nvim")
-    local path = fn.stdpath("data") .. "/packer_compiled.lua"
-
-    require("startup.packer_scope").scope(nvim_configuration, path)
+    require("startup.packer_scope").scope(require("nvim"))
 else
-    local vscode_configuration = require("vscode")
-    local path = fn.stdpath("data") .. "/packer_compiled_vscode.lua"
-
-    require("startup.packer_scope").scope(vscode_configuration, path)
+    require("startup.packer_scope").scope(require("vscode"))
 end

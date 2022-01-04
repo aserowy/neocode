@@ -1,4 +1,6 @@
-local M = {}
+local M = {
+    path = vim.fn.stdpath("data") .. "/env/vscode"
+}
 
 function M.configure()
     -- settings

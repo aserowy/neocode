@@ -1,4 +1,6 @@
-local M = {}
+local M = {
+    path = vim.fn.stdpath("data") .. "/env/nvim",
+}
 
 function M.configure()
     require("language").setup()
