@@ -9,11 +9,13 @@ if not vim.g.vscode then
         execute("packadd packer.nvim")
     end
 
-    require("plugins")
+    require("plugins").setup()
     require("language").setup()
 
     require("settings").setup()
     require("mappings").setup()
+
+    require("plugins").postprocessing()
 else
     local install_path = fn.stdpath("data") .. "/plugged"
 

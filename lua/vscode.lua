@@ -5,11 +5,26 @@ local function set_plugins()
 
     use("asvetliakov/vim-easymotion")
     use("b3nj5m1n/kommentary")
+    use("nvim-treesitter/nvim-treesitter")
     use("unblevable/quick-scope")
 
     vim.call("plug#end")
 
     require("kommentary.config")
+
+    require("nvim-treesitter.configs").setup({
+        ensure_installed = "maintained",
+        highlight = {
+            enable = false,
+        },
+        indent = {
+            enable = false,
+        },
+        incremental_selection = {
+            enable = true,
+            keymaps = require("mappings").editor_motion_textsubjects,
+        },
+    })
 end
 
 local function set_settings()

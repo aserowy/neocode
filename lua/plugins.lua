@@ -257,22 +257,39 @@ local function theming(use)
     })
 end
 
-require("packer").startup(function(use)
-    use("wbthomason/packer.nvim")
+local packer_compiled_path = vim.fn.stdpath("data") .. "/packer_compiled.lua"
 
-    -- dependencies
-    use("rktjmp/lush.nvim")
-    use("nvim-lua/plenary.nvim")
-    use("nvim-lua/popup.nvim")
-    use("kyazdani42/nvim-web-devicons")
+local M = {}
 
-    git(use)
-    language(use)
-    layout(use)
-    motion(use)
-    navigation(use)
-    startup(use)
-    status(use)
-    terminal(use)
-    theming(use)
-end)
+function M.setup()
+    require("packer").startup({
+        function(use)
+            use("wbthomason/packer.nvim")
+
+            -- dependencies
+            use("rktjmp/lush.nvim")
+            use("nvim-lua/plenary.nvim")
+            use("nvim-lua/popup.nvim")
+            use("kyazdani42/nvim-web-devicons")
+
+            git(use)
+            language(use)
+            layout(use)
+            motion(use)
+            navigation(use)
+            startup(use)
+            status(use)
+            terminal(use)
+            theming(use)
+        end,
+        config = {
+            compile_path = packer_compiled_path,
+        },
+    })
+end
+
+function M.postprocessing()
+    assert(loadfile(packer_compiled_path))()
+end
+
+return M
