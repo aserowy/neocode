@@ -10,6 +10,7 @@ require("nvim-treesitter.configs").setup({
         enable = true,
         keymaps = require("mappings").editor_motion_textsubjects,
     },
+    sync_install = true,
 
     -- third party
     rainbow = {
