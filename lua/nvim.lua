@@ -155,9 +155,9 @@ function M.register_packages(use)
         end,
     })
     use({
-        "dstein64/nvim-scrollview",
+        "petertriho/nvim-scrollbar",
         config = function()
-            require("motion.plugin_scrollview")
+            require("motion.plugin_scrollbar").setup()
         end,
     })
     use("unblevable/quick-scope")
