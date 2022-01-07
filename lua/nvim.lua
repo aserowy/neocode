@@ -223,6 +223,16 @@ function M.register_packages(use)
     })
 
     use({
+        "catppuccin/nvim",
+        as = "catppuccin",
+        cond = function()
+            return require("conditions").is_current_theme("catppuccin")
+        end,
+        config = function()
+            require("theming.theme").setup("catppuccin")
+        end,
+    })
+    use({
         "projekt0n/github-nvim-theme",
         cond = function()
             return require("conditions").is_current_theme("github")

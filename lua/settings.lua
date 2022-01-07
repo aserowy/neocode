@@ -2,7 +2,10 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "onedark",
+        theme = "catppuccin",
+
+        -- theme = "catppuccin",
+        -- transparent = false,
 
         -- theme = 'github',
         -- style = dark/dark_default/dimmed/light/light_default
@@ -34,6 +37,8 @@ function M.setup()
     if not M.theme().transparent then
         options.set(option, "cursorline", true)
     end
+
+    options.set(option, "clipboard", "unnamed,unnamedplus")
 
     options.set(option, "hidden", true)
     options.set(option, "ignorecase", true)

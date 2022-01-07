@@ -1,6 +1,7 @@
 local M = {}
 M.setup = function(theme)
     local setup_functions = {
+        catppuccin = require("theming.plugin_catppuccin").setup,
         github = require("theming.plugin_github").setup,
         material = require("theming.plugin_material").setup,
         onedark = require("theming.plugin_onedark").setup,

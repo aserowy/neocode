@@ -2,7 +2,9 @@ with import <nixpkgs> { };
 mkShell rec {
   name = "neocode";
   buildInputs = [
+    gh
     lua51Packages.luacheck
+    nodePackages.dockerfile-language-server-nodejs
     nodePackages.markdownlint-cli
     nodePackages.prettier
     stylua
