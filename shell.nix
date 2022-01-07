@@ -16,7 +16,7 @@ mkShell rec {
 
     # test environment
     alias tb="docker build -t nvim-te $BASEDIR/.dev"
-    alias te="docker run -it -v $BASEDIR:/workspace nvim-te"
+    alias te="docker run -it -e "TERM=xterm-256color" -v $BASEDIR:/workspace nvim-te"
 
     # format and check -> fac :)
     alias fac="prettier --write README.md \
