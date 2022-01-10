@@ -19,7 +19,7 @@ local function functions()
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
         ["<C-e>"] = [[<cmd>lua require'sidebar'.explorer()<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
-        ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_diagnostics()<cr>]],
+        ["<C-f><C-d>"] = [[Telescope diagnostics]],
         ["<C-f><C-f>"] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
         ["<C-f><C-g>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
@@ -63,8 +63,8 @@ mappings.editor_on_text = {
     ["gh"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>",
     ["gr"] = "<cmd>lua vim.lsp.buf.rename()<cr>",
     ["gx"] = [[<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>]],
-    ["gp"] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<cr>]],
-    ["gn"] = [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<cr>]],
+    ["gp"] = [[<cmd>Lspsaga diagnostic_jump_prev<cr>]],
+    ["gn"] = [[<cmd>Lspsaga diagnostic_jump_next<cr>]],
 }
 
 local function editor_motion()
