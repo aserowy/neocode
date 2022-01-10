@@ -4,6 +4,10 @@ In my current workflow I use VSCode more and more, because features like remote 
 
 ![intro](./docs/preview/intro.png)
 
+## requirements
+
+- neovim >= 0.6
+
 ## look & feel
 
 Theme your nvim with ease under [settings](./lua/settings.lua) with [github](https://github.com/projekt0n/github-nvim-theme), [material](https://github.com/marko-cerovac/material.nvim), [onedark](https://github.com/navarasu/onedark.nvim), or [tokyonight](https://github.com/folke/tokyonight.nvim).
@@ -48,7 +52,7 @@ Most standard keymaps of nvim are untouched. You can find a list for custom mapp
 
 ## setup
 
-### nvim (> 0.5)
+### neovim (>= 0.6)
 
 Clone or copy the repo into your `.config/nvim` folder and start nvim. The package manager will get installed automatically. After the first start, install all packages with `:PackerInstall` and restart nvim.
 
@@ -65,7 +69,7 @@ Beside these plugins you also have to set keybindings and settings. You can find
 
 > On newer neovim versions check <https://github.com/asvetliakov/vscode-neovim/issues/632> to prevent open new file loops!
 
-## Todos
+## todos
 
 - [ ] todo keybindings in vscode
 - [ ] git integration

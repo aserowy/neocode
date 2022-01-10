@@ -17,11 +17,8 @@ function M.setup(_, on_attach)
     local null_ls = require("null-ls")
 
     null_ls.setup({
-        sources = generate_sources(null_ls),
-    })
-
-    require("lspconfig")["null-ls"].setup({
         on_attach = on_attach,
+        sources = generate_sources(null_ls),
     })
 end
 
