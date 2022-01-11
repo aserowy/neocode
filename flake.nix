@@ -12,16 +12,8 @@
         packageName = "neocode";
 
         pkgs = nixpkgs.legacyPackages.${system};
-
-        overlay = final: prev:
-          let neocode = prev.callPackage ./. { }; in
-          {
-            inherit neocode;
-          };
       in
       {
-        inherit overlay;
-
         packages.${packageName} = pkgs.stdenv.mkDerivation {
           name = "neocode";
           src = self;
