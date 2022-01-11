@@ -14,7 +14,12 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       {
-        packages.${packageName} = nixpkgs.legacyPackages.x86_64-linux.hello;
+        packages.${packageName} = pkgs.stdenv.mkDerivation {
+          name = "neocode";
+          src = self;
+
+          installPhase = "mkdir -p $out; cp -rf * $out";
+        };
 
         defaultPackage = self.packages.${system}.${packageName};
 
