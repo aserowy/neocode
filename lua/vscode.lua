@@ -1,5 +1,5 @@
 local M = {
-    path = vim.fn.stdpath("data") .. "/env/vscode"
+    path = vim.fn.stdpath("data") .. "/env/vscode",
 }
 
 function M.configure()
