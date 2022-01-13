@@ -4,5 +4,9 @@ stdenv.mkDerivation {
   name = "neocode";
   src = ./.;
 
-  installPhase = "mkdir -p $out; cp -rf * $out";
+  installPhase = ''
+    mkdir -p $out; cp -rf * $out
+
+    echo ${theme} > $out/test.txt
+  '';
 }
