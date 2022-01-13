@@ -12,7 +12,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
 
         name = "neocode";
-        package = (with pkgs; callPackage self { });
+        package = (with pkgs; (makeOverridable callPackage self { }));
       in
       {
         defaultPackage = package;
