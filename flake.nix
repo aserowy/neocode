@@ -9,17 +9,14 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        packageName = "neocode";
-
         pkgs = nixpkgs.legacyPackages.${system};
+
+        name = "neocode";
+        package = (with pkgs; callPackage self { });
       in
       {
-        packages.${packageName} = pkgs.stdenv.mkDerivation {
-          name = "neocode";
-          src = self;
-
-          installPhase = "mkdir -p $out; cp -rf * $out";
-        };
+        defaultPackage = package;
+        packages.${name} = package;
 
         devShell =
           pkgs.mkShell {
