@@ -5,8 +5,11 @@ stdenv.mkDerivation {
   src = ./.;
 
   installPhase = ''
-    mkdir -p $out; cp -rf * $out
+    mkdir -p $out 
 
     echo ${theme} > $out/test.txt
+    echo 'test' > $out/test2.txt
+
+    cp -rf * $out
   '';
 }

@@ -1,6 +1,6 @@
-.cargo/
-.direnv/
-plugin/
-result/
+.cargo
+.direnv
+plugin
+result
 
 Session.vim
