@@ -2,9 +2,9 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "onedark",
+        theme = "tokyonight",
 
-        -- theme = "catppuccin",
+        -- theme = 'catppuccin',
         -- transparent = false,
 
         -- theme = 'github',

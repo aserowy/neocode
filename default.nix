@@ -1,5 +1,12 @@
 { stdenv, lib, theme ? "onedark", syncBuild ? false }:
 
+let
+  syncBuildString =
+    if syncBuild then
+      "sync_install = true"
+    else
+      "sync_install = false";
+in
 stdenv.mkDerivation {
   name = "neocode";
 
@@ -8,10 +15,10 @@ stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out;
 
-    echo ${theme} > $out/test_theme.txt;
-    echo ${toString syncBuild} > $out/test_syncBuild.txt;
-
     cp -rf * $out;
+
+    sed -i 's/theme = "\w*"/theme = "${theme}"/' $out/lua/settings.lua
+    sed -i 's/sync_install = \w*/${syncBuildString}/' $out/lua/language/plugin_treesitter.lua;
   '';
 
   meta = with lib; {
