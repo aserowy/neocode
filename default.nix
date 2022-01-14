@@ -9,7 +9,7 @@ stdenv.mkDerivation {
     mkdir -p $out;
 
     echo ${theme} > $out/test_theme.txt;
-    echo ${syncBuild} > $out/test_syncBuild.txt;
+    echo ${toString syncBuild} > $out/test_syncBuild.txt;
 
     cp -rf * $out;
   '';
