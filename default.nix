@@ -1,16 +1,15 @@
-{ stdenv, lib, theme ? "onedark" }:
+{ stdenv, lib, theme ? "onedark", syncBuild ? false }:
 
 stdenv.mkDerivation {
-  pname = "neocode";
-  version = "1.0.0";
+  name = "neocode";
 
   src = ./.;
 
   installPhase = ''
     mkdir -p $out;
 
-    echo ${theme} > $out/test.txt;
-    echo 'test' > $out/test2.txt;
+    echo ${theme} > $out/test_theme.txt;
+    echo ${syncBuild} > $out/test_syncBuild.txt;
 
     cp -rf * $out;
   '';
