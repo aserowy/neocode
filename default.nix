@@ -1,11 +1,7 @@
-{ stdenv, lib, theme ? "onedark", syncBuild ? false }:
+{ stdenv, lib, theme ? "onedark", style ? "", transparent ? false, syncBuild ? false }:
 
 let
-  syncBuildString =
-    if syncBuild then
-      "sync_install = true"
-    else
-      "sync_install = false";
+  boolToString = bool: if bool then "true" else "false";
 in
 stdenv.mkDerivation {
   name = "neocode";
@@ -17,8 +13,11 @@ stdenv.mkDerivation {
 
     cp -rf * $out;
 
-    sed -i 's/theme = "\w*"/theme = "${theme}"/' $out/lua/settings.lua
-    sed -i 's/sync_install = \w*/${syncBuildString}/' $out/lua/language/plugin_treesitter.lua;
+    sed -i 's/theme = "\w*",/theme = "${theme}",/' $out/lua/settings.lua
+    sed -i 's/style = "\w*",/style = "${style}",/' $out/lua/settings.lua
+    sed -i 's/transparent = \w*,/transparent = ${boolToString transparent},/' $out/lua/settings.lua
+
+    sed -i 's/sync_install = \w*/sync_install = ${boolToString syncBuild}/' $out/lua/language/plugin_treesitter.lua;
   '';
 
   meta = with lib; {
