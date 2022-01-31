@@ -202,6 +202,8 @@ function M.register_packages(use)
         end,
     })
 
+    use("lambdalisue/suda.vim")
+
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
