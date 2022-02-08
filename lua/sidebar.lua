@@ -10,8 +10,8 @@ end
 
 local M = {}
 function M.close()
-    require("nvim-tree").close()
     vim.cmd("AerialClose")
+    vim.cmd("NvimTreeClose")
 end
 
 function M.explorer()
