@@ -14,7 +14,8 @@ end
 M.get_lualine = function()
     local mappings = {
         material = "material-nvim",
-        onedark = "onedark-nvim",
+        -- FIX: lualine does not resolve the theme currently
+        -- onedark = "onedark-nvim",
     }
 
     local theme = require("settings").theme().theme
