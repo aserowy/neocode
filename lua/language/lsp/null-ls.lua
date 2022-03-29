@@ -5,9 +5,7 @@ local function generate_sources(null_ls)
         null_ls.builtins.formatting.stylua,
     }
 
-    if require("language.lsp.which").path_exists("markdownlint") then
-        table.insert(sources, null_ls.builtins.diagnostics.markdownlint)
-    end
+    table.insert(sources, null_ls.builtins.diagnostics.markdownlint)
 
     return sources
 end

@@ -1,6 +1,6 @@
 local M = {}
 function M.setup(capabilities, on_attach)
-    require("lspconfig").dockerls.setup({
+    require("lspconfig").omnisharp.setup({
         capabilities = capabilities,
         on_attach = on_attach,
     })

@@ -1,9 +1,5 @@
 local M = {}
 function M.setup(capabilities, on_attach)
-    if not require("language.lsp.which").path_exists("lua-language-server") then
-        return
-    end
-
     local runtime_path = vim.split(package.path, ";")
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")

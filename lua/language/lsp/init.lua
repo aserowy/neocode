@@ -1,4 +1,5 @@
 local lsps = {
+    require("language.lsp.csharp"),
     require("language.lsp.dockerfile"),
     require("language.lsp.null-ls"),
     require("language.lsp.lua"),
