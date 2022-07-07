@@ -9,9 +9,12 @@ for key, value in pairs(require("mappings").explorer_nocallback) do
     table.insert(mappings, { key = key, cb = value })
 end
 
-vim.g.nvim_tree_indent_markers = 1
-
 require("nvim-tree").setup({
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+    },
     update_focused_file = {
         enable = true,
     },

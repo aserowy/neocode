@@ -77,7 +77,7 @@ function M.register_packages(use)
     use("jose-elias-alvarez/null-ls.nvim")
     use("williamboman/nvim-lsp-installer")
     use({
-        "tami5/lspsaga.nvim",
+        "kkharji/lspsaga.nvim",
         config = function()
             require("language.plugin_lspsaga").setup()
         end,
@@ -106,15 +106,6 @@ function M.register_packages(use)
         "p00f/nvim-ts-rainbow",
         after = "nvim-treesitter",
     })
-    use({
-        "romgrk/nvim-treesitter-context",
-        config = function()
-            require("treesitter-context.config").setup({
-                enable = true,
-            })
-        end,
-        after = "nvim-treesitter",
-    })
 
     use({
         "kazhala/close-buffers.nvim",
@@ -137,6 +128,7 @@ function M.register_packages(use)
 
     use({
         "phaazon/hop.nvim",
+        branch = "v2",
         as = "hop",
         config = function()
             require("hop").setup({})
@@ -152,12 +144,6 @@ function M.register_packages(use)
         "nacro90/numb.nvim",
         config = function()
             require("numb").setup()
-        end,
-    })
-    use({
-        "petertriho/nvim-scrollbar",
-        config = function()
-            require("motion.plugin_scrollbar").setup()
         end,
     })
     use("unblevable/quick-scope")
@@ -176,6 +162,7 @@ function M.register_packages(use)
     })
     use({
         "kyazdani42/nvim-tree.lua",
+        tag = 'nightly',
         config = function()
             require("navigation.plugin_tree")
         end,
@@ -188,13 +175,6 @@ function M.register_packages(use)
     })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
-    -- TODO: https://github.com/rmagatti/session-lens maybe with leader + s?
-    use({
-        "rmagatti/auto-session",
-        config = function()
-            require("startup.plugin_auto-session").setup()
-        end,
-    })
     use({
         "907th/vim-auto-save",
         config = function()
