@@ -1,4 +1,5 @@
-local function setup()
+local M = {}
+M.setup = function()
     local theme = require("theming.theme").get_lualine()
 
     require("lualine").setup({
@@ -32,6 +33,4 @@ local function setup()
     })
 end
 
-return {
-    setup = setup,
-}
+return M
