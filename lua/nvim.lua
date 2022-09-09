@@ -13,6 +13,12 @@ function M.register_packages(use)
     use("wbthomason/packer.nvim")
 
     -- dependencies
+    use({
+        "stevearc/dressing.nvim",
+        config = function()
+            require("dressing").setup({})
+        end
+    })
     use("rktjmp/lush.nvim")
     use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
