@@ -79,7 +79,12 @@ function M.register_packages(use)
     use("ray-x/lsp_signature.nvim")
     use("neovim/nvim-lspconfig")
     use("jose-elias-alvarez/null-ls.nvim")
-    use("williamboman/nvim-lsp-installer")
+    use({
+        "williamboman/nvim-lsp-installer",
+        config = function()
+            require("nvim-lsp-installer").setup({})
+        end
+    })
     use({
         "kkharji/lspsaga.nvim",
         config = function()

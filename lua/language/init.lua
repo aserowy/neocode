@@ -29,11 +29,6 @@ m.setup = function()
     })
 
     require("language.lsp").setup(capabilities, on_attach)
-
-    require("nvim-lsp-installer").on_server_ready(function(server)
-        server:setup({})
-        vim.cmd([[ do User LspAttachBuffers ]])
-    end)
 end
 
 return m
