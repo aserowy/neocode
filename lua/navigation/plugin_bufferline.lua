@@ -10,7 +10,6 @@ M.setup = function()
             end,
             offsets = {
                 { filetype = "NvimTree", text = "Explorer", text_align = "left" },
-                { filetype = "aerial", text = "Symbols", text_align = "left" },
             },
             show_buffer_close_icons = false,
         },

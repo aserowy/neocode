@@ -28,7 +28,7 @@ local function extend(policy, ...)
 end
 
 local M = {
-    sidebars = { "outline", "Aerial", "NvimTree", "qf", "vista_kind", "terminal", "packer" },
+    sidebars = { "outline", "NvimTree", "qf", "vista_kind", "terminal", "packer" },
 }
 
 M.get = function(defaults)

@@ -17,7 +17,7 @@ end
 local function functions()
     keymaps.register("n", {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
-        ["<C-e>"] = [[<cmd>lua require'sidebar'.explorer()<cr>]],
+        ["<C-e>"] = [[<cmd>NvimTreeToggle<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f><C-d>"] = [[Telescope diagnostics]],
         ["<C-f><C-f>"] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
@@ -25,7 +25,6 @@ local function functions()
         ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
         ["<C-f><C-l>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
-        ["<C-s>"] = [[<cmd>lua require'sidebar'.symbols()<cr>]],
         ["<C-q>"] = [[<cmd>Trouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })

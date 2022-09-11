@@ -7,7 +7,7 @@ M.setup = function()
         options = {
             theme = theme,
             component_separators = { left = "", right = "" },
-            disabled_filetypes = { "aerial", "toggleterm", "terminal" },
+            disabled_filetypes = { "toggleterm", "terminal" },
             section_separators = { left = "", right = "" },
         },
         sections = {

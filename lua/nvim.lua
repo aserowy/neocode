@@ -76,12 +76,6 @@ function M.register_packages(use)
     use("hrsh7th/cmp-nvim-lua")
     use("hrsh7th/cmp-path")
 
-    use({
-        "stevearc/aerial.nvim",
-        config = function()
-            require("language.plugin_aerial").setup()
-        end,
-    })
     use("ray-x/lsp_signature.nvim")
     use("neovim/nvim-lspconfig")
     use("jose-elias-alvarez/null-ls.nvim")
