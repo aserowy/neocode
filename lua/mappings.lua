@@ -99,6 +99,7 @@ mappings.explorer = {
 
 mappings.explorer_nocallback = {
     ["<C-c>"] = [[<cmd>NvimTreeClose<cr>]],
+    ["<C-e>"] = [[<cmd>NvimTreeClose<cr>]],
     ["q"] = [[<cmd>NvimTreeClose<cr>]],
 }
 
