@@ -254,7 +254,7 @@ function M.register_packages(use)
         end,
     })
     use({
-        "ful1e5/onedark.nvim",
+        "navarasu/onedark.nvim",
         cond = function()
             return require("conditions").is_current_theme("onedark")
         end,
