@@ -27,15 +27,22 @@ function M.configure()
         ["gp"] = [[<cmd>call VSCodeNotify('editor.action.marker.prev')<cr>]],
         ["gr"] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
         ["gx"] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
-    })
 
-    vim.cmd([[nmap <Leader>k <Plug>(easymotion-bd-f)]])
-    vim.cmd([[nmap <Leader>l <Plug>(easymotion-bd-jk)]])
-    vim.cmd([[nmap <Leader>w <Plug>(easymotion-bd-w)]])
+        ["<leader>k"] = [[<cmd>HopChar1<cr>]],
+        ["<leader>l"] = [[<cmd>HopLine<cr>]],
+        ["<leader>w"] = [[<cmd>HopWord<cr>]],
+    })
 end
 
 function M.register_packages(use)
-    use("asvetliakov/vim-easymotion")
+    use({
+        "phaazon/hop.nvim",
+        branch = "v2",
+        as = "hop",
+        config = function()
+            require("hop").setup({})
+        end,
+    })
     use({
         "b3nj5m1n/kommentary",
         config = function()
@@ -45,8 +52,33 @@ function M.register_packages(use)
     use({
         "nvim-treesitter/nvim-treesitter",
         config = function()
+            require("nvim-treesitter.install").prefer_git = true
+
             require("nvim-treesitter.configs").setup({
-                ensure_installed = "maintained",
+                ensure_installed = {
+                    "bash",
+                    "c_sharp",
+                    "css",
+                    "dockerfile",
+                    "go",
+                    "graphql",
+                    "html",
+                    "javascript",
+                    "json",
+                    "json5",
+                    "jsonc",
+                    "latex",
+                    "lua",
+                    "markdown",
+                    "nix",
+                    "python",
+                    "regex",
+                    "rust",
+                    "scss",
+                    "toml",
+                    "typescript",
+                    "yaml",
+                },
                 highlight = {
                     enable = false,
                 },
