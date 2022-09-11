@@ -228,45 +228,45 @@ function M.register_packages(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
-        --[[ cond = function()
+        cond = function()
             return require("conditions").is_current_theme("catppuccin")
-        end, ]]
+        end,
         config = function()
             require("theming.theme").setup("catppuccin")
         end,
     })
     use({
         "projekt0n/github-nvim-theme",
-        --[[ cond = function()
+        cond = function()
             return require("conditions").is_current_theme("github")
-        end, ]]
+        end,
         config = function()
             require("theming.theme").setup("github")
         end,
     })
     use({
         "marko-cerovac/material.nvim",
-        --[[ cond = function()
+        cond = function()
             return require("conditions").is_current_theme("material")
-        end, ]]
+        end,
         config = function()
             require("theming.theme").setup("material")
         end,
     })
     use({
         "navarasu/onedark.nvim",
-        --[[ cond = function()
+        cond = function()
             return require("conditions").is_current_theme("onedark")
-        end, ]]
+        end,
         config = function()
             require("theming.theme").setup("onedark")
         end,
     })
     use({
         "folke/tokyonight.nvim",
-        --[[ cond = function()
+        cond = function()
             return require("conditions").is_current_theme("tokyonight")
-        end, ]]
+        end,
         config = function()
             require("theming.theme").setup("tokyonight")
         end,

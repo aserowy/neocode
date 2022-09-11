@@ -18,6 +18,8 @@ function M.theme()
         -- transparent = false
 
         -- theme = 'onedark'
+        -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+        -- transparent = false
 
         -- theme = 'tokyonight'
         -- style = 'storm', 'night', 'day'
