@@ -17,7 +17,7 @@ end
 local function functions()
     keymaps.register("n", {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
-        ["<C-e>"] = [[<cmd>NvimTreeToggle<cr>]],
+        ["<C-e>"] = [[<cmd>NvimTreeFocus<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f><C-d>"] = [[Telescope diagnostics]],
         ["<C-f><C-f>"] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
@@ -98,8 +98,8 @@ mappings.explorer = {
 }
 
 mappings.explorer_nocallback = {
-    ["<C-c>"] = [[<cmd>lua require'sidebar'.close()<cr>]],
-    ["q"] = [[<cmd>lua require'sidebar'.close()<cr>]],
+    ["<C-c>"] = [[<cmd>NvimTreeClose<cr>]],
+    ["q"] = [[<cmd>NvimTreeClose<cr>]],
 }
 
 mappings.diagnostics = {
