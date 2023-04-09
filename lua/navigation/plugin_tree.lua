@@ -18,7 +18,7 @@ local function on_attach(bufnr)
     vim.keymap.del("n", "p", { buffer = bufnr })
     vim.keymap.del("n", "y", { buffer = bufnr })
 
-    keymaps.register(
+    keymaps.register_with_keymap(
         "n",
         require("mappings").explorer,
         { buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -27,15 +27,6 @@ end
 
 require("nvim-tree").setup({
     on_attach = on_attach,
-    diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        show_on_open_dirs = false,
-        severity = {
-            min = vim.diagnostic.severity.INFO,
-            max = vim.diagnostic.severity.ERROR,
-        },
-    },
     renderer = {
         indent_markers = {
             enable = true,

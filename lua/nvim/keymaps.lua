@@ -18,6 +18,23 @@ keymaps.register = function(scope, mappings, options)
     end
 end
 
+keymaps.register_with_keymap = function(scope, mappings, options)
+    local opts
+    if options == nil then
+        opts = {
+            nowait = true,
+            silent = true,
+            noremap = true,
+        }
+    else
+        opts = options
+    end
+
+    for key, value in pairs(mappings) do
+        vim.keymap.set(scope, key, value, opts)
+    end
+end
+
 keymaps.register_bufnr = function(bufnr, scope, mappings)
     local options = { noremap = true, silent = true }
 
