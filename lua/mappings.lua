@@ -26,7 +26,7 @@ end
 
 local function buffer()
     keymaps.register("n", {
-        ["<C-c>"] = [[<cmd>bw<cr>]],
+        ["<C-c>"] = [[<cmd>bp | sp | bn | bd<cr>]],
         ["<C-n>"] = [[<cmd>bnext<cr>]],
         ["<C-p>"] = [[<cmd>bprevious<cr>]],
 

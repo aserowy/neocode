@@ -1,15 +1,21 @@
-local execute = vim.api.nvim_command
-local fn = vim.fn
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
-if fn.empty(fn.glob(install_path)) > 0 then
-    execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
-    execute("packadd packer.nvim")
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
 end
 
+vim.opt.rtp:prepend(lazypath)
+
 if not vim.g.vscode then
-    require("startup.packer_scope").scope(require("nvim"))
+    require("lazy").setup("plugins")
+    require("nvim").configure()
 else
-    require("startup.packer_scope").scope(require("vscode"))
+    -- require("startup.packer_scope").scope(require("vscode"))
 end
