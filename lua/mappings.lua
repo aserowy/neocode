@@ -91,6 +91,7 @@ mappings.explorer = {
     ["gn"] = api.node.navigate.diagnostics.next,
     ["gp"] = api.node.navigate.diagnostics.previous,
     ["m"] = api.fs.cut,
+    ["l"] = api.node.open.edit,
     ["p"] = api.fs.paste,
     ["R"] = api.tree.reload,
     ["y"] = api.fs.copy.node,
