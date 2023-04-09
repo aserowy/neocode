@@ -86,10 +86,19 @@ mappings.editor_motion_textsubjects = {
 
 local api = require("nvim-tree.api")
 mappings.explorer = {
+    ["a"] = api.fs.create,
+    ["d"] = api.fs.remove,
+    ["gn"] = api.node.navigate.diagnostics.next,
+    ["gp"] = api.node.navigate.diagnostics.previous,
     ["m"] = api.fs.cut,
     ["p"] = api.fs.paste,
+    ["R"] = api.tree.reload,
     ["y"] = api.fs.copy.node,
     ["<C-c>"] = api.tree.close,
+    ["<C-v>"] = api.node.open.vertical,
+    ["<C-x>"] = api.node.open.horizontal,
+    ["<CR>"] = api.node.open.edit,
+    ["<Tab>"] = api.node.open.preview,
 }
 
 mappings.diagnostics = {
