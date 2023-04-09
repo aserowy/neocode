@@ -23,16 +23,6 @@ function M.register_packages(use)
     use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
     use("kyazdani42/nvim-web-devicons")
-    use({
-        "rcarriga/nvim-notify",
-        config = function()
-            require("notify").setup({
-                background_colour = "#000000",
-            })
-
-            vim.notify = require("notify")
-        end,
-    })
 
     -- TODO: https://github.com/sindrets/diffview.nvim
     -- TODO: neogit
