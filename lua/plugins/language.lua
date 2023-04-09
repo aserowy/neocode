@@ -9,9 +9,6 @@ return {
         },
         build = ":TSUpdate",
     },
-    {
-        after = "nvim-treesitter",
-    },
 
     {
         "hrsh7th/nvim-cmp",
@@ -42,7 +39,12 @@ return {
         end,
     },
     "neovim/nvim-lspconfig",
-    "jose-elias-alvarez/null-ls.nvim",
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim", 
+        },
+    },
     "onsails/lspkind-nvim",
     "ray-x/lsp_signature.nvim",
 
