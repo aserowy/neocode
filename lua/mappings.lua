@@ -4,7 +4,7 @@ local mappings = {}
 
 local function tabs()
     keymaps.register("n", {
-        ["<C-t><C-c>"] = [[<cmd>tabclose<cr>]],
+        ["<C-t><C-q>"] = [[<cmd>tabclose<cr>]],
         ["<C-t><C-n>"] = [[<cmd>tabnext<cr>]],
         ["<C-t><C-p>"] = [[<cmd>tabprevious<cr>]],
     })
@@ -84,19 +84,12 @@ mappings.editor_motion_textsubjects = {
     node_decremental = "<S-TAB>",
 }
 
+local api = require("nvim-tree.api")
 mappings.explorer = {
-    ["l"] = "edit",
-    ["h"] = "close_node",
-    ["r"] = "full_rename",
-    ["m"] = "cut",
-    ["d"] = "remove",
-    ["y"] = "copy",
-}
-
-mappings.explorer_nocallback = {
-    ["<C-c>"] = [[<cmd>NvimTreeClose<cr>]],
-    ["<C-e>"] = [[<cmd>NvimTreeClose<cr>]],
-    ["q"] = [[<cmd>NvimTreeClose<cr>]],
+    ["m"] = api.fs.cut,
+    ["p"] = api.fs.paste,
+    ["y"] = api.fs.copy.node,
+    ["<C-c>"] = api.tree.close,
 }
 
 mappings.diagnostics = {

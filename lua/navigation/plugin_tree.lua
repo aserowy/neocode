@@ -1,15 +1,41 @@
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
+local keymaps = require("nvim.keymaps")
 
-local mappings = {}
-for key, value in pairs(require("mappings").explorer) do
-    table.insert(mappings, { key = key, cb = tree_cb(value) })
-end
+local function on_attach(bufnr)
+    require("nvim-tree.api").config.mappings.default_on_attach(bufnr)
 
-for key, value in pairs(require("mappings").explorer_nocallback) do
-    table.insert(mappings, { key = key, cb = value })
+    vim.keymap.del("n", "<2-RightMouse>", { buffer = bufnr })
+    vim.keymap.del("n", "D", { buffer = bufnr })
+    vim.keymap.del("n", "[e", { buffer = bufnr })
+    vim.keymap.del("n", "]e", { buffer = bufnr })
+    vim.keymap.del("n", "[c", { buffer = bufnr })
+    vim.keymap.del("n", "]c", { buffer = bufnr })
+    vim.keymap.del("n", "g?", { buffer = bufnr })
+    vim.keymap.del("n", "<BS>", { buffer = bufnr })
+    vim.keymap.del("n", "<C-e>", { buffer = bufnr })
+    vim.keymap.del("n", "f", { buffer = bufnr })
+    vim.keymap.del("n", "F", { buffer = bufnr })
+    vim.keymap.del("n", "m", { buffer = bufnr })
+    vim.keymap.del("n", "p", { buffer = bufnr })
+    vim.keymap.del("n", "y", { buffer = bufnr })
+
+    keymaps.register(
+        "n",
+        require("mappings").explorer,
+        { buffer = bufnr, noremap = true, silent = true, nowait = true }
+    )
 end
 
 require("nvim-tree").setup({
+    on_attach = on_attach,
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        show_on_open_dirs = false,
+        severity = {
+            min = vim.diagnostic.severity.INFO,
+            max = vim.diagnostic.severity.ERROR,
+        },
+    },
     renderer = {
         indent_markers = {
             enable = true,
@@ -17,10 +43,5 @@ require("nvim-tree").setup({
     },
     update_focused_file = {
         enable = true,
-    },
-    view = {
-        mappings = {
-            list = mappings,
-        },
     },
 })
