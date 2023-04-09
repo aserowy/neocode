@@ -14,8 +14,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 if not vim.g.vscode then
+    local neovim = require("neovim")
+
+    neovim.set_mappings()
     require("lazy").setup("plugins")
-    require("nvim").configure()
+
+    neovim.configure()
 else
-    -- require("startup.packer_scope").scope(require("vscode"))
+    local vscode = require("vscode")
+
+    require("lazy").setup(vscode.packages(), {
+        root = vim.fn.stdpath("data") .. "/lazy-vscode",
+        lockfile = vim.fn.stdpath("config") .. "/lazy-vscode-lock.json",
+    })
+    vscode.configure()
 end

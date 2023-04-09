@@ -2,6 +2,14 @@ local keymaps = require("nvim.keymaps")
 
 local mappings = {}
 
+local function tabs()
+    keymaps.register("n", {
+        ["<C-t><C-c>"] = [[<cmd>tabclose<cr>]],
+        ["<C-t><C-n>"] = [[<cmd>tabnext<cr>]],
+        ["<C-t><C-p>"] = [[<cmd>tabprevious<cr>]],
+    })
+end
+
 local function windows()
     keymaps.register("n", {
         ["<C-w>x"] = [[<C-w>s]],
@@ -26,7 +34,7 @@ end
 
 local function buffer()
     keymaps.register("n", {
-        ["<C-c>"] = [[<cmd>bp | sp | bn | bd<cr>]],
+        ["<C-c>"] = [[<cmd>bp<bar>sp<bar>bn<bar>bd<cr>]],
         ["<C-n>"] = [[<cmd>bnext<cr>]],
         ["<C-p>"] = [[<cmd>bprevious<cr>]],
 
@@ -109,6 +117,9 @@ mappings.search = function(actions)
 end
 
 mappings.setup = function()
+    vim.g.mapleader = "["
+
+    tabs()
     windows()
     functions()
     buffer()

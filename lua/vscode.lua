@@ -1,6 +1,4 @@
-local M = {
-    path = vim.fn.stdpath("data") .. "/env/vscode",
-}
+local M = {}
 
 function M.configure()
     -- settings
@@ -34,66 +32,68 @@ function M.configure()
     })
 end
 
-function M.register_packages(use)
-    use({
-        "phaazon/hop.nvim",
-        branch = "v2",
-        as = "hop",
-        config = function()
-            require("hop").setup({})
-        end,
-    })
-    use({
-        "b3nj5m1n/kommentary",
-        config = function()
-            require("kommentary.config")
-        end,
-    })
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("nvim-treesitter.install").prefer_git = true
+function M.packages()
+    return {
+        {
+            "phaazon/hop.nvim",
+            name = "hop",
+            branch = "v2",
+            config = function()
+                require("hop").setup({})
+            end,
+        },
+        {
+            "b3nj5m1n/kommentary",
+            config = function()
+                require("kommentary.config")
+            end,
+        },
+        {
+            "nvim-treesitter/nvim-treesitter",
+            config = function()
+                require("nvim-treesitter.install").prefer_git = true
 
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = {
-                    "bash",
-                    "c_sharp",
-                    "css",
-                    "dockerfile",
-                    "go",
-                    "graphql",
-                    "html",
-                    "javascript",
-                    "json",
-                    "json5",
-                    "jsonc",
-                    "latex",
-                    "lua",
-                    "markdown",
-                    "nix",
-                    "python",
-                    "regex",
-                    "rust",
-                    "scss",
-                    "toml",
-                    "typescript",
-                    "yaml",
-                },
-                highlight = {
-                    enable = false,
-                },
-                indent = {
-                    enable = false,
-                },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = require("mappings").editor_motion_textsubjects,
-                },
-            })
-        end,
-        run = ":TSUpdate",
-    })
-    use("unblevable/quick-scope")
+                require("nvim-treesitter.configs").setup({
+                    ensure_installed = {
+                        "bash",
+                        "c_sharp",
+                        "css",
+                        "dockerfile",
+                        "go",
+                        "graphql",
+                        "html",
+                        "javascript",
+                        "json",
+                        "json5",
+                        "jsonc",
+                        "latex",
+                        "lua",
+                        "markdown",
+                        "nix",
+                        "python",
+                        "regex",
+                        "rust",
+                        "scss",
+                        "toml",
+                        "typescript",
+                        "yaml",
+                    },
+                    highlight = {
+                        enable = false,
+                    },
+                    indent = {
+                        enable = false,
+                    },
+                    incremental_selection = {
+                        enable = true,
+                        keymaps = require("mappings").editor_motion_textsubjects,
+                    },
+                })
+            end,
+            build = ":TSUpdate",
+        },
+        "unblevable/quick-scope",
+    }
 end
 
 return M
