@@ -1,8 +1,11 @@
 local M = {}
 
 function M.setup()
-    require("mappings").setup()
     require("settings").setup()
+end
+
+function M.configure_mappings()
+    require("mappings").setup()
 end
 
 function M.configure_lsp()

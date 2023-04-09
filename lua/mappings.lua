@@ -119,8 +119,6 @@ mappings.search = function(actions)
 end
 
 mappings.setup = function()
-    vim.g.mapleader = "["
-
     tabs()
     windows()
     functions()

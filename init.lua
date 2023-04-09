@@ -19,6 +19,7 @@ if not vim.g.vscode then
 
     require("lazy").setup("plugins")
 
+    neovim.configure_mappings()
     neovim.configure_lsp()
 else
     local vscode = require("vscode")
