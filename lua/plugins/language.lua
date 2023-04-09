@@ -42,16 +42,16 @@ return {
     {
         "jose-elias-alvarez/null-ls.nvim",
         dependencies = {
-            "nvim-lua/plenary.nvim", 
+            "nvim-lua/plenary.nvim",
         },
     },
     "onsails/lspkind-nvim",
     "ray-x/lsp_signature.nvim",
 
     {
-        "b3nj5m1n/kommentary",
+        "numToStr/Comment.nvim",
         config = function()
-            require("kommentary.config")
+            require("Comment").setup()
         end,
     },
 }
