@@ -8,12 +8,6 @@ local function windows()
     })
 end
 
-local function zen()
-    keymaps.register("n", {
-        ["<C-z>"] = [[<cmd>ZenMode<cr>]],
-    })
-end
-
 local function functions()
     keymaps.register("n", {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
@@ -30,12 +24,8 @@ local function functions()
     })
 end
 
-mappings.functions_terminal = "<C-t>"
-
 local function buffer()
     keymaps.register("n", {
-        ["<C-b><C-n>"] = [[<cmd>enew<cr>]],
-        ["<C-b><C-s>"] = [[<cmd>w<cr>]],
         ["<C-c>"] = [[<cmd>bw<cr>]],
         ["<C-n>"] = [[<cmd>bnext<cr>]],
         ["<C-p>"] = [[<cmd>bprevious<cr>]],
@@ -56,12 +46,12 @@ mappings.editor_on_text = {
     ["gf"] = [[<cmd>lua vim.lsp.buf.declaration()<cr>]],
     ["gH"] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],
     ["gi"] = [[<cmd>lua vim.lsp.buf.implementation()<cr>]],
-    ["K"] = [[<cmd>lua vim.lsp.buf.hover()<cr>]],
     ["gh"] = [[<cmd>lua vim.lsp.buf.signature_help()<cr>]],
     ["gr"] = [[<cmd>lua vim.lsp.buf.rename()<cr>]],
     ["gx"] = [[<cmd>lua vim.lsp.buf.code_action()<cr>]],
-    ["gp"] = [[<cmd>Lspsaga diagnostic_jump_prev<cr>]],
-    ["gn"] = [[<cmd>Lspsaga diagnostic_jump_next<cr>]],
+    ["gp"] = [[<cmd>lua vim.diagnostic.goto_next()<cr>]],
+    ["gn"] = [[<cmd>lua vim.diagnostic.goto_prev()<cr>]],
+    ["K"] = [[<cmd>lua vim.lsp.buf.hover()<cr>]],
 }
 
 local function editor_motion()
@@ -118,21 +108,12 @@ mappings.search = function(actions)
     }
 end
 
-local function terminal()
-    keymaps.register("t", {
-        ["<C-k>"] = [[<C-\><C-n><C-w><C-k>]],
-        ["<C-j>"] = [[<cmd>ToggleTerm<cr>]],
-    })
-end
-
 mappings.setup = function()
     windows()
-    zen()
     functions()
     buffer()
     editor_motion()
     editor_visual()
-    terminal()
 end
 
 return mappings

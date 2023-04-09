@@ -24,15 +24,6 @@ function M.register_packages(use)
     use("nvim-lua/popup.nvim")
     use("kyazdani42/nvim-web-devicons")
 
-    -- TODO: https://github.com/sindrets/diffview.nvim
-    -- TODO: neogit
-    use({
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("git.plugin_gitsigns")
-        end,
-    })
-
     use("rafamadriz/friendly-snippets")
     use({
         "b3nj5m1n/kommentary",
@@ -158,12 +149,6 @@ function M.register_packages(use)
         end,
     })
 
-    use({
-        "akinsho/nvim-toggleterm.lua",
-        config = function()
-            require("terminal.plugin_toggleterm").setup()
-        end,
-    })
     use({
         "aserowy/tmux.nvim",
         config = function()
