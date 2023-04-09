@@ -2,28 +2,10 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "tokyonight",
-        style = "storm",
-        transparent = false,
-
-        -- theme = 'catppuccin'
-        -- transparent = false
-
-        -- theme = 'github'
-        -- style = 'dark', 'dark_default', 'dimmed', 'light', 'light_default'
-        -- transparent = false
-
-        -- theme = 'material'
-        -- style = 'darker', 'lighter', 'oceanic', 'palenight', 'deep ocean'
-        -- transparent = false
-
-        -- theme = 'onedark'
+        theme = "onedark",
         -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
-        -- transparent = false
-
-        -- theme = 'tokyonight'
-        -- style = 'storm', 'night', 'day'
-        -- transparent = false
+        style = "dark",
+        transparent = false,
     }
 end
 

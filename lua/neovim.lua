@@ -1,12 +1,12 @@
 local M = {}
 
-function M.set_mappings()
+function M.setup()
     require("mappings").setup()
+    require("settings").setup()
 end
 
-function M.configure()
+function M.configure_lsp()
     require("language").setup()
-    require("settings").setup()
 end
 
 return M
