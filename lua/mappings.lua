@@ -36,11 +36,9 @@ local function buffer()
     keymaps.register("n", {
         ["<C-b><C-n>"] = [[<cmd>enew<cr>]],
         ["<C-b><C-s>"] = [[<cmd>w<cr>]],
-        ["<C-c>"] = [[<cmd>lua require'close_buffers'.delete({ type = 'this' })<cr>]],
-        ["<C-n>"] = [[<cmd>BufferLineCycleNext<cr>]],
-        ["<C-p>"] = [[<cmd>BufferLineCyclePrev<cr>]],
-
-        ["<leader>b"] = [[<cmd>BufferLinePick<cr>]],
+        ["<C-c>"] = [[<cmd>bw<cr>]],
+        ["<C-n>"] = [[<cmd>bnext<cr>]],
+        ["<C-p>"] = [[<cmd>bprevious<cr>]],
 
         ["+"] = [[<C-a>]],
         ["-"] = [[<C-x>]],

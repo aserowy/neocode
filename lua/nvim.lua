@@ -50,13 +50,6 @@ function M.register_packages(use)
             require("kommentary.config")
         end,
     })
-    use({
-        "windwp/nvim-autopairs",
-        config = function()
-            require("language.plugin_autopairs").setup()
-        end,
-        after = "nvim-cmp",
-    })
     use("onsails/lspkind-nvim")
     use({
         "hrsh7th/nvim-cmp",
@@ -85,12 +78,6 @@ function M.register_packages(use)
             require("nvim-lsp-installer").setup({})
         end
     })
-    use({
-        "kkharji/lspsaga.nvim",
-        config = function()
-            require("language.plugin_lspsaga").setup()
-        end,
-    })
 
     use({
         "folke/todo-comments.nvim",
@@ -117,25 +104,6 @@ function M.register_packages(use)
     })
 
     use({
-        "kazhala/close-buffers.nvim",
-        config = function()
-            require("close_buffers").setup({})
-        end,
-    })
-    use({
-        "folke/which-key.nvim",
-        config = function()
-            require("which-key").setup()
-        end,
-    })
-    use({
-        "folke/zen-mode.nvim",
-        config = function()
-            require("zen-mode").setup({})
-        end,
-    })
-
-    use({
         "phaazon/hop.nvim",
         branch = "v2",
         as = "hop",
@@ -157,12 +125,6 @@ function M.register_packages(use)
     })
     use("unblevable/quick-scope")
 
-    use({
-        "akinsho/nvim-bufferline.lua",
-        config = function()
-            require("navigation.plugin_bufferline").setup()
-        end,
-    })
     use({
         "folke/trouble.nvim",
         config = function()
