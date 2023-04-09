@@ -49,8 +49,8 @@ mappings.editor_on_text = {
     ["gh"] = [[<cmd>lua vim.lsp.buf.signature_help()<cr>]],
     ["gr"] = [[<cmd>lua vim.lsp.buf.rename()<cr>]],
     ["gx"] = [[<cmd>lua vim.lsp.buf.code_action()<cr>]],
-    ["gp"] = [[<cmd>lua vim.diagnostic.goto_next()<cr>]],
-    ["gn"] = [[<cmd>lua vim.diagnostic.goto_prev()<cr>]],
+    ["gn"] = [[<cmd>lua vim.diagnostic.goto_next()<cr>]],
+    ["gp"] = [[<cmd>lua vim.diagnostic.goto_prev()<cr>]],
     ["K"] = [[<cmd>lua vim.lsp.buf.hover()<cr>]],
 }
 

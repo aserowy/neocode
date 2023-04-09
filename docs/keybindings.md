@@ -15,30 +15,23 @@ Got any troubles in your workflows? Issues are welcome!
 |       | <kbd>ctrl + shift + c</kbd> | copy to clipboard    |       |
 |       | <kbd>ctrl + shift + v</kbd> | paste from clipboard |       |
 
-## Zen
-
-| only? | key                 | effect           | notes |
-| ----- | ------------------- | ---------------- | ----- |
-|       | <kbd>ctrl + z</kbd> | toggles zen mode |       |
-
 ## Functions
 
-| only? | key                                     | effect                                | notes                               |
-| ----- | --------------------------------------- | ------------------------------------- | ----------------------------------- |
-| vim   | <kbd>ctrl + a</kbd>                     | focus todo (`A`ufgabe in german) list | TODO: vscode                        |
-|       | <kbd>ctrl + e</kbd>                     | focus explorer (file tree)            |                                     |
-| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + b</kbd> | find buffer                           | TODO: vscode                        |
-| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + d</kbd> | find document diagnostics             |                                     |
-|       | <kbd>ctrl + f</kbd> <kbd>ctrl + f</kbd> | find file                             |                                     |
-|       | <kbd>ctrl + f</kbd> <kbd>ctrl + g</kbd> | find with grep                        |                                     |
-| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + h</kbd> | find file in history                  | is integrated file search in vscode |
-| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + l</kbd> | find symbol in current document       | TODO: vscode                        |
-|       | <kbd>ctrl + f</kbd> <kbd>ctrl + s</kbd> | find symbol in workspace              |                                     |
-| vim   | <kbd>ctrl + f</kbd> <kbd>ctrl + x</kbd> | find workspace diagnostics            |                                     |
-| vim   | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |                                     |
-| vim   | <kbd>ctrl + s</kbd>                     | focus symbols outline                 | TODO: vscode                        |
-|       | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |                                     |
-|       | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |                                     |
+| only?  | key                                     | effect                                | notes                               |
+| ------ | --------------------------------------- | ------------------------------------- | ----------------------------------- |
+| vim    | <kbd>ctrl + a</kbd>                     | focus todo (`A`ufgabe in german) list | TODO: vscode                        |
+|        | <kbd>ctrl + e</kbd>                     | focus explorer (file tree)            |                                     |
+| vim    | <kbd>ctrl + f</kbd> <kbd>ctrl + b</kbd> | find buffer                           | TODO: vscode                        |
+| vim    | <kbd>ctrl + f</kbd> <kbd>ctrl + d</kbd> | find document diagnostics             |                                     |
+|        | <kbd>ctrl + f</kbd> <kbd>ctrl + f</kbd> | find file                             |                                     |
+|        | <kbd>ctrl + f</kbd> <kbd>ctrl + g</kbd> | find with grep                        |                                     |
+| vim    | <kbd>ctrl + f</kbd> <kbd>ctrl + h</kbd> | find file in history                  | is integrated file search in vscode |
+| vim    | <kbd>ctrl + f</kbd> <kbd>ctrl + l</kbd> | find symbol in current document       | TODO: vscode                        |
+|        | <kbd>ctrl + f</kbd> <kbd>ctrl + s</kbd> | find symbol in workspace              |                                     |
+| vim    | <kbd>ctrl + f</kbd> <kbd>ctrl + x</kbd> | find workspace diagnostics            |                                     |
+| vim    | <kbd>ctrl + q</kbd>                     | focus quickfix list                   |                                     |
+| vscode | <kbd>ctrl + t</kbd>                     | focus integrated terminal             |                                     |
+|        | <kbd>ctrl + x</kbd>                     | focus diagnostics                     |                                     |
 
 > NOTE: currently free keys to use for custom functions: g y <tab>
 
@@ -170,11 +163,9 @@ Got any troubles in your workflows? Issues are welcome!
 
 ## Terminal
 
-| only?  | key                             | effect                      | notes     |
-| ------ | ------------------------------- | --------------------------- | --------- |
-|        | <kbd>ctrl + k</kbd>             | focuses current buffer      |           |
-|        | <kbd>ctrl + j</kbd>             | closes the terminal         |           |
-| vscode | <kbd>ctrl + w</kbd><kbd>n</kbd> | opens new terminal          | TODO: vim |
-| vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split | TODO: vim |
-| vscode | <kbd>ctrl + p</kbd>             | focuses previous terminal   | TODO: vim |
-| vscode | <kbd>ctrl + n</kbd>             | focuses next terminal       | TODO: vim |
+| only?  | key                             | effect                      | notes |
+| ------ | ------------------------------- | --------------------------- | ----- |
+| vscode | <kbd>ctrl + w</kbd><kbd>n</kbd> | opens new terminal          |       |
+| vscode | <kbd>ctrl + w</kbd><kbd>v</kbd> | opens new terminal in split |       |
+| vscode | <kbd>ctrl + p</kbd>             | focuses previous terminal   |       |
+| vscode | <kbd>ctrl + n</kbd>             | focuses next terminal       |       |
