@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 local handle = require("language.completion")
+local lspkind = require("lspkind")
 
 local M = {}
 function M.setup()
@@ -11,19 +12,15 @@ function M.setup()
             completeopt = "menu,menuone,noinsert",
         },
         formatting = {
-            format = function(entry, vim_item)
-                vim_item.kind = require("lspkind").presets.default[vim_item.kind]
-
-                vim_item.menu = ({
-                    luasnip = "[snip]",
-                    buffer = "[buffer]",
-                    nvim_lsp = "[lsp]",
-                    nvim_lua = "[lua]",
-                    path = "[path]",
-                })[entry.source.name]
-
-                return vim_item
-            end,
+            format = lspkind.cmp_format({
+                mode = "symbol_text",
+                menu = {
+                    buffer = "[Buffer]",
+                    luasnip = "[LuaSnip]",
+                    nvim_lsp = "[LSP]",
+                    nvim_lua = "[Lua]",
+                },
+            }),
         },
         -- TODO: Refactor mapping into mappings.lua
         mapping = {
