@@ -103,6 +103,7 @@ mappings.explorer = {
     ["<Tab>"] = api.node.open.preview,
 }
 
+-- diagnostics
 mappings.diagnostics = {
     ["close"] = "<C-c>",
     ["cancel"] = "<C-k>",
@@ -113,6 +114,23 @@ mappings.diagnostics = {
     ["previous"] = "<C-p>",
     ["next"] = "<C-n>",
 }
+
+local function editor_dap()
+    keymaps.register("n", {
+        ["<F5>"] = [[<cmd>lua require'dap'.continue()<cr>]],
+        ["<F10>"] = [[<cmd>lua require'dap'.step_over()<cr>]],
+        ["<F11>"] = [[<cmd>lua require'dap'.step_into()<cr>]],
+        ["<F12>"] = [[<cmd>lua require'dap'.step_out()<cr>]],
+        ["<leader>b"] = [[<cmd>lua require'dap'.toggle_breakpoint()<cr>]],
+        ["<leader>c"] = [[<cmd>lua require'telescope'.extensions.dap.configurations{}<cr>]],
+
+        -- require'telescope'.extensions.dap.commands{}
+        -- require'telescope'.extensions.dap.configurations{}
+        -- require'telescope'.extensions.dap.list_breakpoints{}
+        -- require'telescope'.extensions.dap.variables{}
+        -- require'telescope'.extensions.dap.frames{}
+    })
+end
 
 mappings.search = function(actions)
     return {
@@ -125,6 +143,7 @@ mappings.setup = function()
     windows()
     functions()
     buffer()
+    editor_dap()
     editor_motion()
     editor_visual()
 end

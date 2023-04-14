@@ -4,6 +4,7 @@ return {
         config = function()
             require("language.dap.init").setup()
         end,
+        dependencies = { "rcarriga/nvim-dap-ui" },
     },
     {
         "theHamsta/nvim-dap-virtual-text",
@@ -11,5 +12,4 @@ return {
             require("nvim-dap-virtual-text").setup({})
         end,
     },
-    { "rcarriga/nvim-dap-ui" },
 }
