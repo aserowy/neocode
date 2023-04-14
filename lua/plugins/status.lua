@@ -10,5 +10,8 @@ return {
         config = function()
             require("status.plugin_lualine").setup()
         end,
+        dependencies = {
+            "arkav/lualine-lsp-progress",
+        },
     },
 }

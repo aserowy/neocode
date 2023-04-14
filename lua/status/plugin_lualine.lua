@@ -28,6 +28,7 @@ M.setup = function()
                     "diagnostics",
                     sources = { "nvim_diagnostic" },
                 },
+                "lsp_progress",
             },
         },
     })
