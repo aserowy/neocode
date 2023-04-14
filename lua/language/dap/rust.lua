@@ -2,7 +2,7 @@ local dap = require("dap")
 
 local M = {}
 function M.setup()
-    dap.adapters.lldb = {
+    dap.adapters.codelldb = {
         type = "server",
         port = "${port}",
         executable = {
@@ -22,7 +22,7 @@ function M.setup()
             request = "launch",
             -- This is where cargo outputs the executable
             program = function()
-                os.execute("cargo build &> /dev/null")
+                os.execute('sh -c "cargo build &> /dev/null"')
                 return "target/debug/${workspaceFolderBasename}"
             end,
             args = {},
@@ -35,7 +35,7 @@ function M.setup()
             --     return argv
             -- end,
             stopOnEntry = false,
-            runInTerminal = false,
+            runInTerminal = true,
             cwd = "${workspaceFolder}",
             -- MIMode = "gdb",
             -- miDebuggerPath = "/usr/bin/gdb",
