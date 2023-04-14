@@ -5,6 +5,9 @@ function M.setup()
     dap.adapters.codelldb = {
         type = "server",
         port = "${port}",
+        options = {
+            initialize_timeout_sec = 30,
+        },
         executable = {
             -- NOTE: using flake.nix codelldb is in PATH with:
             -- export PATH=${vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter:$PATH
@@ -35,7 +38,7 @@ function M.setup()
             --     return argv
             -- end,
             stopOnEntry = false,
-            runInTerminal = true,
+            runInTerminal = false,
             cwd = "${workspaceFolder}",
             -- MIMode = "gdb",
             -- miDebuggerPath = "/usr/bin/gdb",
