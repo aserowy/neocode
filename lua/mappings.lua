@@ -7,6 +7,7 @@ local function tabs()
         ["<C-t><C-q>"] = [[<cmd>tabclose<cr>]],
         ["<C-t><C-n>"] = [[<cmd>tabnext<cr>]],
         ["<C-t><C-p>"] = [[<cmd>tabprevious<cr>]],
+        ["<C-t><C-t>"] = [[<cmd>tabnew<cr>]],
     })
 end
 
