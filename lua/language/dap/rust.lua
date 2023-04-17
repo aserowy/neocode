@@ -27,6 +27,7 @@ function M.setup()
 
     dap.configurations.rust = {
         {
+            name = "launch codelldb",
             type = "codelldb",
             request = "launch",
             program = function()
