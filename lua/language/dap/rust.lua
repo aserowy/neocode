@@ -23,32 +23,14 @@ function M.setup()
         {
             type = "codelldb",
             request = "launch",
-            -- This is where cargo outputs the executable
             program = function()
                 os.execute("cargo build --quiet")
                 return "target/debug/${workspaceFolderBasename}"
             end,
             args = {},
-            -- args = function()
-            --     local argv = {}
-            --     arg = vim.fn.input(string.format("argv: "))
-            --     for a in string.gmatch(arg, "%S+") do
-            --         table.insert(argv, a)
-            --     end
-            --     return argv
-            -- end,
             stopOnEntry = false,
             runInTerminal = false,
             cwd = "${workspaceFolder}",
-            -- MIMode = "gdb",
-            -- miDebuggerPath = "/usr/bin/gdb",
-            -- setupCommands = {
-            --     {
-            --         text = "-enable-pretty-printing",
-            --         description = "enable pretty printing",
-            --         ignoreFailures = false,
-            --     },
-            -- },
         },
     }
 end
