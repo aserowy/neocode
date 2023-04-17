@@ -2,22 +2,28 @@ local dap = require("dap")
 
 local M = {}
 function M.setup()
-    dap.adapters.codelldb = {
-        type = "server",
-        port = "${port}",
-        options = {
-            initialize_timeout_sec = 30,
-        },
-        executable = {
-            -- NOTE: using flake.nix codelldb is in PATH with:
-            -- export PATH=${vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter:$PATH
-            command = "codelldb",
-            args = { "--port", "${port}" },
+    dap.adapters.codelldb = function(cb, config)
+        if config.preLaunchTask then
+            vim.fn.system(config.preLaunchTask)
+        end
 
-            -- On windows you may have to uncomment this:
-            -- detached = false,
-        },
-    }
+        cb({
+            type = "server",
+            port = "${port}",
+            options = {
+                initialize_timeout_sec = 30,
+            },
+            executable = {
+                -- NOTE: using flake.nix codelldb is in PATH with:
+                -- export PATH=${vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter:$PATH
+                command = "codelldb",
+                args = { "--port", "${port}" },
+
+                -- On windows you may have to uncomment this:
+                -- detached = false,
+            },
+        })
+    end
 
     dap.configurations.rust = {
         {
