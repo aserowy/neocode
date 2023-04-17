@@ -35,7 +35,6 @@ end
 
 local function buffer()
     keymaps.register("n", {
-        -- ["<C-c>"] = [[<cmd>bp<bar>sp<bar>bn<bar>bd<cr>]],
         ["<C-n>"] = [[<cmd>bnext<cr>]],
         ["<C-p>"] = [[<cmd>bprevious<cr>]],
 
@@ -125,12 +124,6 @@ local function editor_dap()
         ["<leader>b"] = [[<cmd>lua require'dap'.toggle_breakpoint()<cr>]],
         ["<leader>d"] = [[<cmd>lua require'dapui'.toggle()<cr>]],
         ["<leader>c"] = [[<cmd>lua require'telescope'.extensions.dap.configurations{}<cr>]],
-
-        -- require'telescope'.extensions.dap.commands{}
-        -- require'telescope'.extensions.dap.configurations{}
-        -- require'telescope'.extensions.dap.list_breakpoints{}
-        -- require'telescope'.extensions.dap.variables{}
-        -- require'telescope'.extensions.dap.frames{}
     })
 end
 
