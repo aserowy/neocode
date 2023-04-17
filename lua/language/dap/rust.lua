@@ -25,7 +25,7 @@ function M.setup()
             request = "launch",
             -- This is where cargo outputs the executable
             program = function()
-                os.execute('sh -c "cargo build &> /dev/null"')
+                os.execute("cargo build --quiet")
                 return "target/debug/${workspaceFolderBasename}"
             end,
             args = {},

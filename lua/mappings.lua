@@ -123,6 +123,7 @@ local function editor_dap()
         ["<F11>"] = [[<cmd>lua require'dap'.step_into()<cr>]],
         ["<F12>"] = [[<cmd>lua require'dap'.step_out()<cr>]],
         ["<leader>b"] = [[<cmd>lua require'dap'.toggle_breakpoint()<cr>]],
+        ["<leader>d"] = [[<cmd>lua require'dapui'.toggle()<cr>]],
         ["<leader>c"] = [[<cmd>lua require'telescope'.extensions.dap.configurations{}<cr>]],
 
         -- require'telescope'.extensions.dap.commands{}
