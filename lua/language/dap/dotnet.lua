@@ -24,13 +24,13 @@ end
 
 function Dotnet_get_dll_path()
     local request = function()
-        return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
+        return vim.fn.input("Path to dll", vim.g["dotnet_last_proj_path"] .. "/bin/Debug/", "file")
     end
 
     if vim.g["dotnet_last_dll_path"] == nil then
         vim.g["dotnet_last_dll_path"] = request()
     else
-        if vim.fn.confirm("Do you want to change the path to dll?\n" .. vim.g["dotnet_last_dll_path"], "&yes\n&no", 2)
+        if vim.fn.confirm("Do you want to change the path to dll? \n" .. vim.g["dotnet_last_dll_path"], "&yes\n&no", 2)
             == 1
         then
             vim.g["dotnet_last_dll_path"] = request()
