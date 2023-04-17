@@ -1,8 +1,7 @@
 local function git_or_local()
-    local opts = {}
-    local ok = pcall(require("telescope.builtin").git_files({ use_git_root = false }), opts)
+    local ok = pcall(require("telescope.builtin").git_files, { use_git_root = false })
     if not ok then
-        require("telescope.builtin").find_files(opts)
+        require("telescope.builtin").find_files()
     end
 end
 
