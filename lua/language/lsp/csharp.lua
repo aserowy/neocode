@@ -4,16 +4,6 @@ function M.setup(capabilities, on_attach)
 
     -- BUG: workaround for OmniSharp/omnisharp-roslyn#2483
     local on_attach_wrapper = function(client, bufnr)
-        local tokenModifiers = client.server_capabilities.semanticTokensProvider.legend.tokenModifiers
-        for i, v in ipairs(tokenModifiers) do
-            tokenModifiers[i] = v:gsub(" ", "_")
-        end
-
-        local tokenTypes = client.server_capabilities.semanticTokensProvider.legend.tokenTypes
-        for i, v in ipairs(tokenTypes) do
-            tokenTypes[i] = v:gsub(" ", "_")
-        end
-
         client.server_capabilities.semanticTokensProvider = {
             full = vim.empty_dict(),
             legend = {
