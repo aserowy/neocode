@@ -2,11 +2,15 @@
 
 ## Introduction
 
-To enable fluent developement in nvim and vscode (with neovim integration) all keybindings are equal. Small differences caused by different ui concepts are marked under the note column. All standard vim keybindings are supported in both environments.
+To enable fluent developement in nvim and vscode (with neovim integration) all
+keybindings are equal. Small differences caused by different ui concepts are
+marked under the note column. All standard vim keybindings are supported in both
+environments.
 
 Got any troubles in your workflows? Issues are welcome!
 
-> all keys are configured for normal mode, except completion and snippet bindings of course :)
+> all keys are configured for normal mode, except completion and snippet
+> bindings of course :)
 
 ## General
 
@@ -159,7 +163,8 @@ Got any troubles in your workflows? Issues are welcome!
 |       | <kbd>enter</kbd>    | opens file                    |                                                      |
 |       | <kbd>ctrl + v</kbd> | opens file in vertical split  | in vscode currently ctrl + enter                     |
 
-> to research grep in vscode press <kbd>ctrl + g</kbd> again while the search is focused. This resets the search and selects the search input.
+> to research grep in vscode press <kbd>ctrl + g</kbd> again while the search is
+> focused. This resets the search and selects the search input.
 
 ## Terminal
 

@@ -23,7 +23,6 @@
             buildInputs = with pkgs; [
               gh
               lua51Packages.luacheck
-              nodePackages.dockerfile-language-server-nodejs
               nodePackages.markdownlint-cli
               nodePackages.prettier
               stylua
@@ -31,13 +30,6 @@
               rnix-lsp
             ];
             shellHook = ''
-              FULLPATH=$(realpath $0)
-              BASEDIR=$(dirname $FULLPATH)
-
-              # test environment
-              alias tb="docker build -t nvim-te $BASEDIR/.dev"
-              alias te="docker run -it -e 'TERM=xterm-256color' -v $BASEDIR:/workspace nvim-te"
-
               # format and check -> fac :)
               alias fac="prettier --write README.md \
                   && stylua init.lua lua/ \
