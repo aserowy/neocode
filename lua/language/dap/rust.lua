@@ -38,6 +38,9 @@ function M.setup()
             stopOnEntry = false,
             runInTerminal = false,
             cwd = "${workspaceFolder}",
+            env = {
+                ["CARGO_MANIFEST_DIR"] = "${workspaceFolder}",
+            },
         },
     }
 end
