@@ -66,6 +66,12 @@ function M.setup()
                 Dotnet_build_project()
                 return Dotnet_get_dll_path()
             end,
+            cwd = function()
+                return vim.g["dotnet_last_proj_path"]
+            end,
+            env = {
+                ["DOTNET_ENVIRONMENT"] = "Development",
+            },
         },
     }
 end
