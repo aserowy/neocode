@@ -5,9 +5,9 @@ local mappings = {}
 local function tabs()
     keymaps.register("n", {
         ["<C-t><C-q>"] = [[<cmd>tabclose<cr>]],
-        ["<C-t><C-n>"] = [[<cmd>tabnext<cr>]],
-        ["<C-t><C-p>"] = [[<cmd>tabprevious<cr>]],
         ["<C-t><C-t>"] = [[<cmd>tabnew<cr>]],
+        ["<C-n>"] = [[<cmd>tabnext<cr>]],
+        ["<C-p>"] = [[<cmd>tabprevious<cr>]],
     })
 end
 
@@ -35,9 +35,6 @@ end
 
 local function buffer()
     keymaps.register("n", {
-        ["<C-n>"] = [[<cmd>bnext<cr>]],
-        ["<C-p>"] = [[<cmd>bprevious<cr>]],
-
         ["+"] = [[<C-a>]],
         ["-"] = [[<C-x>]],
     })
