@@ -17,7 +17,12 @@ if not vim.g.vscode then
     local neovim = require("neovim")
     neovim.setup()
 
-    require("lazy").setup("plugins")
+    local options = {}
+    if vim.loop.os_uname().version:match("Windows") then
+        options.concurrency = 1
+    end
+
+    require("lazy").setup("plugins", options)
 
     neovim.configure_mappings()
     neovim.configure_lsp()
@@ -25,8 +30,13 @@ else
     local vscode = require("vscode")
     vscode.configure()
 
-    require("lazy").setup(vscode.packages(), {
+    local options = {
         root = vim.fn.stdpath("data") .. "/lazy-vscode",
         lockfile = vim.fn.stdpath("config") .. "/lazy-vscode-lock.json",
-    })
+    }
+    if vim.loop.os_uname().version:match("Windows") then
+        options.concurrency = 1
+    end
+
+    require("lazy").setup(vscode.packages(), options)
 end
