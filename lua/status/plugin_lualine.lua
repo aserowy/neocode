@@ -16,9 +16,9 @@ M.setup = function()
                 {
                     "diff",
                     symbols = {
-                        added = " ",
-                        modified = " ",
-                        removed = " ",
+                        added = "󰐖 ",
+                        modified = "󱗜 ",
+                        removed = "󰍵 ",
                     },
                 },
             },

@@ -9,7 +9,6 @@ return {
         },
         build = ":TSUpdate",
     },
-
     {
         "hrsh7th/nvim-cmp",
         config = function()
@@ -23,7 +22,6 @@ return {
         },
     },
     "saadparwaiz1/cmp_luasnip",
-
     {
         "L3MON4D3/LuaSnip",
         config = function()

@@ -21,12 +21,6 @@ m.setup = function()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = {
-            prefix = "𥉉 ",
-        },
-    })
-
     require("language.lsp").setup(capabilities, on_attach)
 end
 
