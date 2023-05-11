@@ -2,10 +2,14 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "onedark",
-        -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+        theme = "hardhacker",
+        -- style = 'dark', 'warm'
         style = "dark",
-        transparent = false,
+
+        -- theme = "onedark",
+        -- -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+        -- style = "dark",
+        -- transparent = false,
     }
 end
 

@@ -1,22 +1,17 @@
+local theme_dictionary = {
+    hardhacker = require("theming.plugin_hardhacker"),
+    onedark = require("theming.plugin_onedark"),
+}
+
 local M = {}
 M.setup = function(theme)
-    local setup_functions = {
-        onedark = require("theming.plugin_onedark").setup,
-    }
-
-    setup_functions[theme]()
+    theme_dictionary[theme].setup()
 end
 
 M.get_lualine = function()
-    local mappings = {
-    }
-
     local theme = require("settings").theme().theme
-    if mappings[theme] then
-        return mappings[theme]
-    end
 
-    return theme
+    return theme_dictionary[theme].lualine_theme
 end
 
 return M
