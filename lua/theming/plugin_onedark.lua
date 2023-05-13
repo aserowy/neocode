@@ -3,6 +3,12 @@ local M = {
 }
 
 M.setup = function()
+    require("onedark").setup({
+        style = "dark",
+    })
+end
+
+M.activate = function()
     local config = require("theming.configuration").get({
         style = "dark",
         transparent = false,

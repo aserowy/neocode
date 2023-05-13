@@ -3,6 +3,10 @@ local M = {
 }
 
 M.setup = function()
+    require("tokyonight").setup({})
+end
+
+M.activate = function()
     local config = require("theming.configuration").get({
         style = "night",
         transparent = false,

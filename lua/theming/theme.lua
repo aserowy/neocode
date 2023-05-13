@@ -6,7 +6,13 @@ local theme_dictionary = {
 
 local M = {}
 M.setup = function(theme)
-    theme_dictionary[theme].setup()
+    for _, plugin_theme in pairs(theme_dictionary) do
+        if plugin_theme ~= nil then
+            plugin_theme.setup()
+        end
+    end
+
+    theme_dictionary[theme].activate()
 end
 
 M.get_lualine = function()
