@@ -17,4 +17,10 @@ return {
             setup_theme("hardhacker")
         end,
     },
+    {
+        "folke/tokyonight.nvim",
+        config = function()
+            setup_theme("tokyonight")
+        end,
+    },
 }

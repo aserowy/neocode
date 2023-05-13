@@ -1,6 +1,7 @@
 local theme_dictionary = {
     hardhacker = require("theming.plugin_hardhacker"),
     onedark = require("theming.plugin_onedark"),
+    tokyonight = require("theming.plugin_tokyonight"),
 }
 
 local M = {}
