@@ -1,12 +1,13 @@
 local function generate_sources(null_ls)
     local sources = {
+        null_ls.builtins.diagnostics.markdownlint,
+
+        null_ls.builtins.formatting.csharpier,
         null_ls.builtins.formatting.deno_fmt,
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.rustfmt,
         null_ls.builtins.formatting.stylua,
     }
-
-    table.insert(sources, null_ls.builtins.diagnostics.markdownlint)
 
     return sources
 end
