@@ -13,7 +13,7 @@ stdenv.mkDerivation {
 
     cp -rf * $out;
 
-    sed -i 's/theme = "\w*",/theme = "${theme}",/' $out/lua/settings.lua
+    sed -i 's/name = "\w*",/name = "${theme}",/' $out/lua/settings.lua
     sed -i 's/style = "\w*",/style = "${style}",/' $out/lua/settings.lua
     sed -i 's/transparent = \w*,/transparent = ${boolToString transparent},/' $out/lua/settings.lua
 

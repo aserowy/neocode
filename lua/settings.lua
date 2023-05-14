@@ -1,23 +1,10 @@
-local M = {}
-
-function M.theme()
-    return {
-        theme = "tokyonight",
+local M = {
+    theme = {
+        name = "tokyonight",
         style = "storm",
         transparent = false,
-
-        -- theme = "hardhacker",
-        -- style = "dark", "warm"
-
-        -- theme = "onedark",
-        -- style = "dark", "darker", "cool", "deep", "warm", "warmer", "light"
-        -- transparent = false,
-
-        -- theme = "tokyonight"
-        -- style = "storm", "moon", "night", "day",
-        -- transparent = false,
-    }
-end
+    },
+}
 
 function M.setup()
     vim.g.mapleader = "["
@@ -30,10 +17,6 @@ function M.setup()
     vim.cmd([[set undofile]])
 
     -- options
-    if not M.theme().transparent then
-        options.set(option, "cursorline", true)
-    end
-
     options.set(option, "clipboard", "unnamed,unnamedplus")
 
     options.set(option, "hidden", true)

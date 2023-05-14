@@ -28,7 +28,8 @@ local function functions()
         ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
         ["<C-f><C-l>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
-        ["<C-f><C-t>"] = [[<cmd>lua require'telescope.builtin'.colorscheme()<cr>]],
+        -- ["<C-f><C-t>"] = [[<cmd>lua require'telescope.builtin'.colorscheme()<cr>]],
+        ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
         ["<C-q>"] = [[<cmd>Trouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })

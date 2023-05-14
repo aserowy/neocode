@@ -13,7 +13,8 @@ local function setup_blankline()
 end
 
 local function setup_lualine()
-    local theme = require("theming.theme").get_lualine()
+    local settings = require("settings")
+    local theme = require("theming.themes").get_lualine(settings.theme.name)
     local tab_max_length = 23
 
     require("lualine").setup({

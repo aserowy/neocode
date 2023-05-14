@@ -24,6 +24,7 @@ if not vim.g.vscode then
 
     require("lazy").setup("plugins", options)
 
+    neovim.activate_theme()
     neovim.configure_mappings()
     neovim.configure_lsp()
 else
