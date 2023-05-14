@@ -31,7 +31,7 @@ local M = {
             end,
         },
         onedark = {
-            style = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
+            style = { "dark", "darker", "cool", "deep", "warm", "warmer" },
             transparent = false,
             lualine = "onedark",
             activate = function(style, transparent)
@@ -62,8 +62,6 @@ local M = {
 
 function M.activate_theme(theme, style, transparent)
     local entry = M.themes[theme]
-    print(theme, style, transparent)
-    print(vim.inspect(entry))
     entry.activate(style, transparent)
 
     if not transparent then
