@@ -6,6 +6,12 @@ end
 
 return {
     {
+        "catppuccin/nvim",
+        config = function()
+            setup_theme("catppuccin")
+        end,
+    },
+    {
         "navarasu/onedark.nvim",
         config = function()
             setup_theme("onedark")
