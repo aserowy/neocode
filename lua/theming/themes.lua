@@ -64,10 +64,10 @@ function M.activate_theme(theme, style, transparent)
     local entry = M.themes[theme]
     entry.activate(style, transparent)
 
-    if not transparent then
-        options.set(option, "cursorline", true)
-    else
+    if transparent then
         options.set(option, "cursorline", false)
+    else
+        options.set(option, "cursorline", true)
     end
 
     require("lualine").setup({
