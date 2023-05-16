@@ -9,6 +9,9 @@ local M = {
 function M.setup()
     vim.g.mapleader = "["
 
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+
     local options = require("nvim.options")
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
