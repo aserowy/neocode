@@ -48,6 +48,20 @@ local M = {
                 vim.cmd.colorscheme("hardhacker")
             end,
         },
+        nightfox = {
+            style = { "nightfox", "dayfox", "dawnfox", "duskfox", "nordfox", "terafox", "carbonfox" },
+            transparent = false,
+            lualine = function(style)
+                return style
+            end,
+            activate = function(style, transparent)
+                require("nightfox").setup({
+                    transparent = transparent,
+                })
+
+                vim.cmd.colorscheme(style)
+            end,
+        },
         onedark = {
             style = { "dark", "darker", "cool", "deep", "warm", "warmer" },
             transparent = false,
