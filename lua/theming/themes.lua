@@ -32,6 +32,17 @@ local M = {
                 vim.cmd.colorscheme("github_" .. style)
             end,
         },
+        gruvbox = {
+            style = { "light", "dark" },
+            transparent = false,
+            lualine = function(_)
+                return "gruvbox"
+            end,
+            activate = function(style, _)
+                vim.o.background = style
+                vim.cmd.colorscheme("gruvbox")
+            end,
+        },
         hardhacker = {
             style = { "dark", "darker" },
             transparent = false,
