@@ -14,7 +14,7 @@ end
 
 local function setup_lualine()
     local settings = require("settings")
-    local theme = require("theming.themes").get_lualine(settings.theme.name)
+    local theme = require("theming.themes").get_lualine(settings.theme.name, settings.theme.style)
     local tab_max_length = 23
 
     require("lualine").setup({

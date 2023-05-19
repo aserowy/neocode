@@ -6,7 +6,9 @@ local M = {
         catppuccin = {
             style = { "latte", "frappe", "macchiato", "mocha" },
             transparent = false,
-            lualine = "catppuccin",
+            lualine = function(_)
+                return "catppuccin"
+            end,
             activate = function(style, transparent)
                 require("catppuccin").setup({
                     flavour = style,
@@ -16,10 +18,26 @@ local M = {
                 vim.cmd.colorscheme("catppuccin")
             end,
         },
+        github = {
+            style = { "dark", "dark_dimmed", "dark_default", "light", "light_default" },
+            transparent = false,
+            lualine = function(style)
+                return "github_" .. style
+            end,
+            activate = function(style, transparent)
+                require("github-theme").setup({
+                    transparent = transparent,
+                })
+
+                vim.cmd.colorscheme("github_" .. style)
+            end,
+        },
         hardhacker = {
             style = { "dark", "darker" },
             transparent = false,
-            lualine = "palenight",
+            lualine = function(_)
+                return "palenight"
+            end,
             activate = function(style, _)
                 if style == "darker" then
                     vim.g.hardhacker_darker = 1
@@ -33,7 +51,9 @@ local M = {
         onedark = {
             style = { "dark", "darker", "cool", "deep", "warm", "warmer" },
             transparent = false,
-            lualine = "onedark",
+            lualine = function(_)
+                return "onedark"
+            end,
             activate = function(style, transparent)
                 require("onedark").setup({
                     style = style,
@@ -47,7 +67,9 @@ local M = {
         tokyonight = {
             style = { "storm", "moon", "night", "day" },
             transparent = false,
-            lualine = "tokyonight",
+            lualine = function(_)
+                return "tokyonight"
+            end,
             activate = function(style, transparent)
                 require("tokyonight").setup({
                     style = style,
@@ -72,13 +94,13 @@ function M.activate_theme(theme, style, transparent)
 
     require("lualine").setup({
         options = {
-            theme = entry.lualine,
+            theme = entry.lualine(style),
         },
     })
 end
 
-function M.get_lualine(theme)
-    return M.themes[theme].lualine
+function M.get_lualine(theme, style)
+    return M.themes[theme].lualine(style)
 end
 
 return M
