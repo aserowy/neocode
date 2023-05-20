@@ -2,14 +2,16 @@ return {
     {
         "karb94/neoscroll.nvim",
         config = function()
-            require("motion.plugin_neoscroll")
+            require("neoscroll").setup({
+                mappings = { "<C-u>", "<C-d>", "zt", "zz", "zb" },
+            })
         end,
     },
     "lambdalisue/suda.vim",
     {
         "norcalli/nvim-colorizer.lua",
         config = function()
-            require("language.plugin_colorizer")
+            require("colorizer").setup()
         end,
     },
     {
