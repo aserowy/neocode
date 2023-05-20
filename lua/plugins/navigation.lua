@@ -74,7 +74,7 @@ return {
     {
         "folke/trouble.nvim",
         config = function()
-            require("navigation.plugin_trouble")
+            setup_trouble()
         end,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
@@ -83,7 +83,7 @@ return {
     {
         "folke/todo-comments.nvim",
         config = function()
-            setup_trouble()
+            require("todo-comments").setup({})
         end,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
