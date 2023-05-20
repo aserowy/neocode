@@ -26,7 +26,7 @@ local M = {
             end,
             activate = function(style, transparent)
                 require("github-theme").setup({
-                    transparent = transparent,
+                    options = { transparent = transparent },
                 })
 
                 vim.cmd.colorscheme("github_" .. style)
