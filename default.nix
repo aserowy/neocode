@@ -17,7 +17,7 @@ stdenv.mkDerivation {
     sed -i 's/style = "\w*",/style = "${style}",/' $out/lua/settings.lua
     sed -i 's/transparent = \w*,/transparent = ${boolToString transparent},/' $out/lua/settings.lua
 
-    sed -i 's/sync_install = \w*/sync_install = ${boolToString syncBuild}/' $out/lua/language/plugin_treesitter.lua;
+    sed -i 's/sync_install = \w*/sync_install = ${boolToString syncBuild}/' $out/lua/plugins/language.lua
   '';
 
   meta = with lib; {
