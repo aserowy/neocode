@@ -8,6 +8,7 @@ local function generate_sources(null_ls)
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.rustfmt,
         null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.terraform_fmt,
     }
 
     return sources

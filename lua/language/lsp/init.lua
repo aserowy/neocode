@@ -6,6 +6,7 @@ local lsps = {
     require("language.lsp.lua"),
     require("language.lsp.nix"),
     require("language.lsp.rust"),
+    require("language.lsp.terraform"),
 }
 
 local M = {}
