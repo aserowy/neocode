@@ -106,8 +106,8 @@ mappings.explorer = {
 
 mappings.oil = {
     ["g?"] = "actions.show_help",
-    ["<BS>"] = "actions.parent",
-    ["<CR>"] = "actions.select",
+    ["h"] = "actions.parent",
+    ["l"] = "actions.select",
     ["<C-v>"] = "actions.select_vsplit",
     ["<C-x>"] = "actions.select_split",
     ["<tab>"] = "actions.preview",
