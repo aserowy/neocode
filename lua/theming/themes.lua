@@ -59,6 +59,21 @@ local M = {
                 vim.cmd.colorscheme("hardhacker")
             end,
         },
+        monokai = {
+            style = { "classic", "octagon", "pro", "machine", "ristretto", "spectrum" },
+            transparent = false,
+            lualine = function(_)
+                return "monokai-pro"
+            end,
+            activate = function(style, transparent)
+                require("monokai-pro").setup({
+                    filter = style,
+                    transparent_background = transparent,
+                })
+
+                vim.cmd.colorscheme("monokai-pro")
+            end,
+        },
         nightfox = {
             style = { "nightfox", "dayfox", "dawnfox", "duskfox", "nordfox", "terafox", "carbonfox" },
             transparent = false,
