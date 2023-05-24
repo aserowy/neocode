@@ -22,6 +22,15 @@ local function setup_nvimtree()
     })
 end
 
+local function setup_oil()
+    local mappings = require("mappings")
+
+    require("oil").setup({
+        use_default_keymaps = false,
+        keymaps = mappings.oil,
+    })
+end
+
 local function setup_trouble()
     local mappings = require("mappings")
 
@@ -70,6 +79,13 @@ return {
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
+    },
+    {
+        "stevearc/oil.nvim",
+        config = function()
+            setup_oil()
+        end,
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     {
         "folke/trouble.nvim",

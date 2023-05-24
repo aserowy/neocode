@@ -29,6 +29,7 @@ local function navigations()
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
+        ["<C-g>"] = [[<cmd>Oil<cr>]],
         ["<C-q>"] = [[<cmd>Trouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })
@@ -62,8 +63,8 @@ mappings.editor_on_text = {
 
 local function editor_motion()
     keymaps.register("n", {
-        ["<leader>k"] = [[<cmd>HopChar1<cr>]],
-        ["<leader>l"] = [[<cmd>HopLine<cr>]],
+        ["<leader>l"] = [[<cmd>HopChar1<cr>]],
+        ["<leader>r"] = [[<cmd>HopLine<cr>]],
         ["<leader>w"] = [[<cmd>HopWord<cr>]],
     })
 end
@@ -100,7 +101,19 @@ mappings.explorer = {
     ["<C-v>"] = api.node.open.vertical,
     ["<C-x>"] = api.node.open.horizontal,
     ["<CR>"] = api.node.open.edit,
-    ["<Tab>"] = api.node.open.preview,
+    ["<tab>"] = api.node.open.preview,
+}
+
+mappings.oil = {
+    ["g?"] = "actions.show_help",
+    ["<BS>"] = "actions.parent",
+    ["<CR>"] = "actions.select",
+    ["<C-v>"] = "actions.select_vsplit",
+    ["<C-x>"] = "actions.select_split",
+    ["<tab>"] = "actions.preview",
+    ["<C-c>"] = "actions.close",
+    ["<C-r>"] = "actions.refresh",
+    ["g."] = "actions.toggle_hidden",
 }
 
 -- diagnostics
