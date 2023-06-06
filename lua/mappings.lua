@@ -107,14 +107,14 @@ mappings.explorer = {
 
 mappings.oil = {
     ["g?"] = "actions.show_help",
-    ["h"] = "actions.parent",
-    ["l"] = "actions.select",
-    ["<C-v>"] = "actions.select_vsplit",
-    ["<C-x>"] = "actions.select_split",
+    ["H"] = "actions.parent",
+    ["<CR>"] = "actions.select",
+    ["L"] = "actions.select_vsplit",
+    ["J"] = "actions.select_split",
     ["<tab>"] = "actions.preview",
     ["<C-c>"] = "actions.close",
     ["<C-r>"] = "actions.refresh",
-    ["g."] = "actions.toggle_hidden",
+    ["zh"] = "actions.toggle_hidden",
 }
 
 -- diagnostics
