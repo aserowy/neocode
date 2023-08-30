@@ -108,6 +108,17 @@ end
 
 return {
     {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
+        end,
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             setup_treesitter()
@@ -128,6 +139,12 @@ return {
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-path",
         },
+    },
+    {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+            require("copilot_cmp").setup()
+        end,
     },
     "saadparwaiz1/cmp_luasnip",
     {

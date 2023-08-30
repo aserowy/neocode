@@ -23,6 +23,7 @@
             buildInputs = with pkgs; [
               gh
               lua51Packages.luacheck
+              nodejs_20
               nodePackages.markdownlint-cli
               nodePackages.prettier
               stylua
