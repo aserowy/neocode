@@ -4,6 +4,7 @@ local function setup_treesitter()
     require("nvim-treesitter.configs").setup({
         ensure_installed = {
             "bash",
+            "c",
             "c_sharp",
             "css",
             "dockerfile",
