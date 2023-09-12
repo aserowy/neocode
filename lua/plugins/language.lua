@@ -69,19 +69,7 @@ local function setup_cmp()
                 },
             }),
         },
-        -- TODO: Refactor mapping into mappings.lua
-        mapping = {
-            ["<C-p>"] = cmp.mapping.select_prev_item(),
-            ["<C-n>"] = cmp.mapping.select_next_item(),
-            ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-            ["<C-d>"] = cmp.mapping.scroll_docs(4),
-            ["<CR>"] = cmp.mapping.confirm({
-                behavior = cmp.ConfirmBehavior.Insert,
-                select = false,
-            }),
-            ["<Tab>"] = cmp.mapping(handle.jump_next, { "i", "s" }),
-            ["<S-Tab>"] = cmp.mapping(handle.jump_previous, { "i", "s" }),
-        },
+        mapping = require("mappings").editor_completion(cmp, handle),
         snippet = {
             expand = function(args)
                 require("luasnip").lsp_expand(args.body)
@@ -109,14 +97,11 @@ end
 
 return {
     {
-        "zbirenbaum/copilot.lua",
+        "github/copilot.vim",
         cmd = "Copilot",
         event = "InsertEnter",
         config = function()
-            require("copilot").setup({
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-            })
+
         end,
     },
     {
@@ -140,12 +125,6 @@ return {
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-path",
         },
-    },
-    {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-            require("copilot_cmp").setup()
-        end,
     },
     "saadparwaiz1/cmp_luasnip",
     {

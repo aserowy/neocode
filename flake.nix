@@ -23,12 +23,12 @@
             buildInputs = with pkgs; [
               gh
               lua51Packages.luacheck
+              nil
               nodejs_20
               nodePackages.markdownlint-cli
               nodePackages.prettier
               stylua
               sumneko-lua-language-server
-              rnix-lsp
             ];
             shellHook = ''
               # format and check -> fac :)

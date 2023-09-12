@@ -81,8 +81,6 @@ end
 mappings.editor_motion_textsubjects = {
     init_selection = "<CR>",
     scope_incremental = "<CR>",
-    node_incremental = "<TAB>",
-    node_decremental = "<S-TAB>",
 }
 
 local api = require("nvim-tree.api")
@@ -140,6 +138,21 @@ local function editor_dap()
         ["<leader>d"] = [[<cmd>lua require'dapui'.toggle()<cr>]],
         ["<leader>c"] = [[<cmd>lua require'telescope'.extensions.dap.configurations{}<cr>]],
     })
+end
+
+mappings.editor_completion = function(cmp, handle)
+    return {
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = false,
+        }),
+        ["<Tab>"] = cmp.mapping(handle.jump_next, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(handle.jump_previous, { "i", "s" }),
+    }
 end
 
 mappings.search = function(actions)
