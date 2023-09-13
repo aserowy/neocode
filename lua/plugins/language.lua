@@ -47,6 +47,9 @@ local function setup_treesitter()
 end
 
 local function setup_cmp()
+    local ELLIPSIS_CHAR = "…"
+    local LABEL_WIDTH = 35
+
     local cmp = require("cmp")
     local handle = require("language.completion")
     local lspkind = require("lspkind")
@@ -60,13 +63,23 @@ local function setup_cmp()
         },
         formatting = {
             format = lspkind.cmp_format({
+                maxwidth = LABEL_WIDTH,
                 mode = "symbol_text",
-                menu = {
-                    buffer = "[Buffer]",
-                    luasnip = "[LuaSnip]",
-                    nvim_lsp = "[LSP]",
-                    nvim_lua = "[Lua]",
-                },
+                symbol_map = { Copilot = "" },
+                before = function(_, vim_item)
+                    local ellipsis_char_len = string.len(ELLIPSIS_CHAR)
+
+                    local label = vim_item.abbr
+                    if string.len(label) <= LABEL_WIDTH then
+                        local truncated_label = vim.fn.strcharpart(label, 0, LABEL_WIDTH - ellipsis_char_len)
+                        vim_item.abbr = truncated_label .. ELLIPSIS_CHAR
+                    end
+
+                    local padding = string.rep(" ", LABEL_WIDTH - string.len(label))
+                    vim_item.abbr = label .. padding
+
+                    return vim_item
+                end,
             }),
         },
         mapping = require("mappings").editor_completion(cmp, handle),
@@ -76,12 +89,29 @@ local function setup_cmp()
             end,
         },
         sources = {
-            { name = "luasnip" },
-            { name = "nvim_lsp" },
-            { name = "nvim_lua" },
-            { name = "path" },
+            { name = "copilot",  group_index = 2 },
+            { name = "luasnip",  group_index = 2 },
+            { name = "nvim_lsp", group_index = 2 },
+            { name = "nvim_lua", group_index = 2 },
+            { name = "path",     group_index = 2 },
+            { name = "buffer",   group_index = 2 },
+        },
+    })
+
+    cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
             { name = "buffer" },
         },
+    })
+
+    cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+            { name = "path" },
+        }, {
+            { name = "cmdline" },
+        }),
     })
 end
 
@@ -97,13 +127,23 @@ end
 
 return {
     {
-        "github/copilot.vim",
+        "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         event = "InsertEnter",
         config = function()
-
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
         end,
     },
+    {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+            require("copilot_cmp").setup()
+        end,
+    },
+
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
@@ -114,6 +154,7 @@ return {
         },
         build = ":TSUpdate",
     },
+
     {
         "hrsh7th/nvim-cmp",
         config = function()
@@ -134,4 +175,5 @@ return {
         end,
     },
     "rafamadriz/friendly-snippets",
+    "onsails/lspkind-nvim",
 }

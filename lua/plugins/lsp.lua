@@ -6,7 +6,6 @@ return {
             "nvim-lua/plenary.nvim",
         },
     },
-    "onsails/lspkind-nvim",
     "ray-x/lsp_signature.nvim",
 
     {
