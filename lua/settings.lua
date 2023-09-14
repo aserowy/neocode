@@ -15,6 +15,7 @@ function M.setup()
     local options = require("nvim.options")
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
+    vim.cmd([[set formatoptions-=cro]])
     vim.cmd([[set fillchars=eob:\ ,]])
     vim.cmd([[set shortmess+=c]])
     vim.cmd([[set undofile]])
