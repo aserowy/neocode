@@ -9,7 +9,6 @@ function M.activate_theme()
     local theme = settings.theme
 
     local themes = require("theming.themes")
-
     themes.activate_theme(theme.name, theme.style, theme.transparent)
 end
 

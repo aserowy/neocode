@@ -15,7 +15,12 @@ function M.setup()
     local options = require("nvim.options")
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
 
-    vim.cmd([[set formatoptions-=cro]])
+    -- FIX: currently not working: vim.opt.formatoptions:remove { "c", "r", "o" }
+    -- https://github.com/neovim/neovim/blob/a49924a318520a3b5c2f210f22a8d450165e89b5/runtime/ftplugin/lua.vim#L20
+    vim.api.nvim_create_autocmd("FileType", {
+        command = "set formatoptions-=cro",
+    })
+
     vim.cmd([[set fillchars=eob:\ ,]])
     vim.cmd([[set shortmess+=c]])
     vim.cmd([[set undofile]])
