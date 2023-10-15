@@ -7,35 +7,31 @@
   };
 
   outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
+    flake-utils.lib.simpleFlake {
+      inherit self nixpkgs;
 
-        name = "neocode";
-        package = (with pkgs; (makeOverridable callPackage self { }));
-      in
-      {
-        defaultPackage = package;
-        packages.${name} = package;
+      overlay = final: prev: { neocode = prev.pkgs.callPackage ./. { }; };
+      name = "neocode";
 
-        devShell =
-          pkgs.mkShell {
-            buildInputs = with pkgs; [
-              gh
-              lua51Packages.luacheck
-              nil
-              nodejs_20
-              nodePackages.markdownlint-cli
-              nodePackages.prettier
-              stylua
-              sumneko-lua-language-server
-            ];
-            shellHook = ''
-              # format and check -> fac :)
-              alias fac="prettier --write README.md \
-                  && stylua init.lua lua/ \
-                  && luacheck init.lua lua/"
-            '';
-          };
-      });
+      shell =
+        { pkgs, ... }: with pkgs; mkShell {
+          buildInputs = with nixpkgs; [
+            gh
+            lua51Packages.luacheck
+            nil
+            nixpkgs-fmt
+            nodejs_20
+            nodePackages.markdownlint-cli
+            nodePackages.prettier
+            stylua
+            sumneko-lua-language-server
+          ];
+          shellHook = ''
+            # format and check -> fac :)
+            alias fac="prettier --write README.md \
+                && stylua init.lua lua/ \
+                && luacheck init.lua lua/"
+          '';
+        };
+    };
 }
