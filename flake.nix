@@ -38,32 +38,5 @@
           '';
         };
       };
-      flake = {
-        # The usual flake attributes can be defined here, including system-
-        # agnostic ones like nixosModule and system-enumerating ones, although
-        # those are more easily expressed in perSystem.
-
-      };
-
-
-
-
-
-
-
-      # flake-utils.lib.eachDefaultSystem (system:
-      #   let
-      #     pkgs = nixpkgs.legacyPackages.${system};
-      #
-      #     name = "neocode";
-      #     package = 
-      #   in
-      #   {
-      #     overlay = final: prev: { portableService = prev.pkgs.callPackage ./. { }; };
-      #
-      #     defaultPackage = package;
-      #     packages.${name} = package;
-      #
-      #   });
     };
 }
