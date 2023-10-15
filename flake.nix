@@ -24,6 +24,7 @@
           };
 
           packages.default = package;
+          packages.neocode = package;
 
           devShells.default = with pkgs; mkShell {
             buildInputs = [
