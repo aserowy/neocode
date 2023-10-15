@@ -157,6 +157,7 @@ end
 
 mappings.search = function(actions)
     return {
+        ["<C-c>"] = actions.delete_buffer,
         ["<C-q>"] = actions.send_to_qflist,
     }
 end
