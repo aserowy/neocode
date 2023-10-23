@@ -1,8 +1,8 @@
 return {
     {
-        "phaazon/hop.nvim",
+        "smoka7/hop.nvim",
         name = "hop",
-        branch = "v2",
+        version = "*",
         config = function()
             require("hop").setup({})
         end,
