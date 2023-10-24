@@ -20,7 +20,6 @@ end
 local function navigations()
     keymaps.register("n", {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
-        ["<C-e>"] = [[<cmd>NvimTreeFocus<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.diagnostics()<cr>]],
         ["<C-f><C-f>"] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
@@ -81,27 +80,6 @@ end
 mappings.editor_motion_textsubjects = {
     init_selection = "<CR>",
     scope_incremental = "<CR>",
-}
-
-local api = require("nvim-tree.api")
-mappings.explorer = {
-    ["a"] = api.fs.create,
-    ["d"] = api.fs.remove,
-    ["gn"] = api.node.navigate.diagnostics.next,
-    ["gp"] = api.node.navigate.diagnostics.previous,
-    ["h"] = api.node.navigate.parent,
-    ["l"] = api.node.open.edit,
-    ["m"] = api.fs.cut,
-    ["p"] = api.fs.paste,
-    ["r"] = api.fs.rename,
-    ["R"] = api.tree.reload,
-    ["t"] = api.node.open.tab,
-    ["y"] = api.fs.copy.node,
-    ["<C-c>"] = api.tree.close,
-    ["<C-v>"] = api.node.open.vertical,
-    ["<C-x>"] = api.node.open.horizontal,
-    ["<CR>"] = api.node.open.edit,
-    ["<tab>"] = api.node.open.preview,
 }
 
 mappings.oil = {

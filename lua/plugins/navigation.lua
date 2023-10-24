@@ -1,27 +1,3 @@
-local function setup_nvimtree()
-    local keymaps = require("nvim.keymaps")
-
-    local function on_attach(bufnr)
-        keymaps.register_with_keymap(
-            "n",
-            require("mappings").explorer,
-            { buffer = bufnr, noremap = true, silent = true, nowait = true }
-        )
-    end
-
-    require("nvim-tree").setup({
-        on_attach = on_attach,
-        renderer = {
-            indent_markers = {
-                enable = true,
-            },
-        },
-        update_focused_file = {
-            enable = true,
-        },
-    })
-end
-
 local function setup_oil()
     local mappings = require("mappings")
 
@@ -71,15 +47,6 @@ local function setup_telescope()
 end
 
 return {
-    {
-        "nvim-tree/nvim-tree.lua",
-        config = function()
-            setup_nvimtree()
-        end,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-    },
     {
         "stevearc/oil.nvim",
         config = function()
