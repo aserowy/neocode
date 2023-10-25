@@ -1,11 +1,9 @@
 return {
     {
-        "smoka7/hop.nvim",
-        name = "hop",
-        version = "*",
-        config = function()
-            require("hop").setup({})
-        end,
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        --@type Flash.Config
+        opts = {},
     },
     {
         "nacro90/numb.nvim",
@@ -13,5 +11,4 @@ return {
             require("numb").setup()
         end,
     },
-    "unblevable/quick-scope",
 }

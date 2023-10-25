@@ -64,9 +64,8 @@ mappings.editor_on_text = {
 
 local function editor_motion()
     keymaps.register("n", {
-        ["<leader>l"] = [[<cmd>HopChar1<cr>]],
-        ["<leader>r"] = [[<cmd>HopLine<cr>]],
-        ["<leader>w"] = [[<cmd>HopWord<cr>]],
+        ["<leader>w"] = [[<cmd>lua require("flash").treesitter()<cr>]],
+        ["<leader>t"] = [[<cmd>lua require("flash").treesitter_search()<cr>]],
     })
 end
 
