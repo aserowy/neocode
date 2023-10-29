@@ -10,6 +10,7 @@ local lsps = {
     require("language.lsp.rust"),
     require("language.lsp.terraform"),
     require("language.lsp.yaml"),
+    require("language.lsp.zig"),
 }
 
 local M = {}
