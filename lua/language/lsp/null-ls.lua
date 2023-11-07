@@ -1,9 +1,11 @@
 local function generate_sources(null_ls)
     local sources = {
+        null_ls.builtins.diagnostics.djlint,
         null_ls.builtins.diagnostics.markdownlint,
 
         null_ls.builtins.formatting.csharpier,
         null_ls.builtins.formatting.deno_fmt,
+        null_ls.builtins.formatting.djlint,
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.nixpkgs_fmt,
         null_ls.builtins.formatting.prettier,
