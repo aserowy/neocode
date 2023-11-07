@@ -101,13 +101,6 @@ local function setup_cmp()
             documentation = cmp.config.window.bordered()
         },
     })
-
-    cmp.setup.cmdline({ "/", "?" }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-            { name = "buffer" },
-        },
-    })
 end
 
 local function setup_luasnip()
