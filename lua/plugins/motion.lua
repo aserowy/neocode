@@ -6,7 +6,10 @@ return {
         opts = {
             modes = {
                 char = {
+                    autohide = true,
+                    highlight = { backdrop = false },
                     jump_labels = true,
+                    multi_line = false,
                 },
             },
         },
