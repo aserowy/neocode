@@ -18,6 +18,23 @@ local M = {
                 vim.cmd.colorscheme("catppuccin")
             end,
         },
+        dracula = {
+            style = { "classic", "soft" },
+            transparent = false,
+            lualine = function(_)
+                return "dracula-nvim"
+            end,
+            activate = function(style, _)
+                require("dracula").setup({})
+
+                local suffix = ""
+                if style == "soft" then
+                    suffix = "-soft"
+                end
+
+                vim.cmd.colorscheme("dracula" .. suffix)
+            end,
+        },
         github = {
             style = { "dark", "dark_dimmed", "dark_default", "light", "light_default" },
             transparent = false,

@@ -1,5 +1,6 @@
 return {
     { "catppuccin/nvim" },
+    { "mofiqul/dracula.nvim" },
     { "projekt0n/github-nvim-theme" },
     { "ellisonleao/gruvbox.nvim" },
     { "hardhackerlabs/theme-vim" },
