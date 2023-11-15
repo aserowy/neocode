@@ -11,6 +11,7 @@ local function setup_treesitter()
             "go",
             "graphql",
             "html",
+            "htmldjango",
             "javascript",
             "json",
             "json5",
@@ -26,6 +27,7 @@ local function setup_treesitter()
             "toml",
             "typescript",
             "yaml",
+            "zig",
         },
         highlight = {
             enable = true,
@@ -89,16 +91,16 @@ local function setup_cmp()
             end,
         },
         sources = {
-            { name = "copilot",  group_index = 2 },
-            { name = "luasnip",  group_index = 2 },
+            { name = "copilot", group_index = 2 },
+            { name = "luasnip", group_index = 2 },
             { name = "nvim_lsp", group_index = 2 },
             { name = "nvim_lua", group_index = 2 },
-            { name = "path",     group_index = 2 },
-            { name = "buffer",   group_index = 2 },
+            { name = "path", group_index = 2 },
+            { name = "buffer", group_index = 2 },
         },
         window = {
             completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered()
+            documentation = cmp.config.window.bordered(),
         },
     })
 end
