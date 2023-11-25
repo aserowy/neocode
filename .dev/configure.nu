@@ -14,7 +14,7 @@ def link_neocode [] {
 }
 
 def unlink_neocode [] {
-    rm ~/.config/nvim/
+    run-external --redirect-stderr "unlink" "~/.config/nvim"
     mv --force ~/.config/nvim_unlinked/ ~/.config/nvim/
 }
 
