@@ -19,7 +19,14 @@ end
 
 local function setup_telescope()
     local actions = require("telescope.actions")
+    local config = require("telescope.config")
     local mapping = require("mappings")
+
+    local grep_args = { unpack(config.values.vimgrep_arguments) }
+    table.insert(grep_args, "--hidden")
+    table.insert(grep_args, "--glob")
+    table.insert(grep_args, "!**/.git/*")
+
     require("telescope").setup({
         defaults = {
             extensions = {
@@ -33,16 +40,21 @@ local function setup_telescope()
                     require("telescope.themes").get_dropdown({}),
                 },
             },
+            layout_strategy = "flex",
             mappings = {
                 i = mapping.search(actions),
                 n = mapping.search(actions),
             },
-            layout_strategy = "flex",
+            pickers = {
+                find_files = {
+                    find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+                },
+            },
+            vimgrep_arguments = grep_args,
         },
     })
 
     require("telescope").load_extension("dap")
-    require("telescope").load_extension("fzf")
     require("telescope").load_extension("ui-select")
 end
 
@@ -83,5 +95,4 @@ return {
             "nvim-telescope/telescope-ui-select.nvim",
         },
     },
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }
