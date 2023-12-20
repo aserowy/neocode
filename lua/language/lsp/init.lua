@@ -6,6 +6,7 @@ local lsps = {
     require("language.lsp.go"),
     require("language.lsp.null-ls"),
     require("language.lsp.lua"),
+    require("language.lsp.nu"),
     require("language.lsp.nix"),
     require("language.lsp.rust"),
     require("language.lsp.terraform"),
