@@ -51,6 +51,12 @@ end
 
 return {
     {
+        "prichrd/netrw.nvim",
+        config = function()
+            require("netrw").setup({})
+        end,
+    },
+    {
         "folke/trouble.nvim",
         config = function()
             setup_trouble()
