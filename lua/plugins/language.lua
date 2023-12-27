@@ -56,8 +56,7 @@ local function setup_cmp()
     local handle = require("language.completion")
     local lspkind = require("lspkind")
 
-    local options = require("nvim.options")
-    options.set(options.scope.option, "pumheight", 12)
+    vim.opt.pumheight = 12
 
     cmp.setup({
         completion = {

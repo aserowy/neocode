@@ -6,8 +6,7 @@ return {
         opts = {
             modes = {
                 char = {
-                    highlight = { backdrop = false },
-                    multi_line = false,
+                    enabled = false,
                 },
             },
         },

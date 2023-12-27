@@ -1,6 +1,3 @@
-local options = require("nvim.options")
-local option = options.scope.option
-
 local M = {
     themes = {
         catppuccin = {
@@ -144,9 +141,9 @@ function M.activate_theme(theme, style, transparent)
     entry.activate(style, transparent)
 
     if transparent then
-        options.set(option, "cursorline", false)
+        vim.opt.cursorline = false
     else
-        options.set(option, "cursorline", true)
+        vim.opt.cursorline = true
     end
 
     require("lualine").setup({

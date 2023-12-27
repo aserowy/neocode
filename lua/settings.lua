@@ -9,16 +9,33 @@ local M = {
 function M.setup()
     vim.g.mapleader = "["
 
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
-
-    local options = require("nvim.options")
-    local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window
+    vim.g.netrw_browse_split = 0
+    vim.g.netrw_banner = 0
+    vim.g.netrw_winsize = 25
 
     -- FIX: currently not working: vim.opt.formatoptions:remove { "c", "r", "o" }
     -- https://github.com/neovim/neovim/blob/a49924a318520a3b5c2f210f22a8d450165e89b5/runtime/ftplugin/lua.vim#L20
-    vim.api.nvim_create_autocmd("FileType", {
+    local augroup = vim.api.nvim_create_augroup
+    local autocmd = vim.api.nvim_create_autocmd
+    autocmd("FileType", {
         command = "set formatoptions-=cro",
+    })
+
+    autocmd("TextYankPost", {
+        group = augroup("HighlightYank", {}),
+        pattern = "*",
+        callback = function()
+            vim.highlight.on_yank({
+                higroup = "IncSearch",
+                timeout = 250,
+            })
+        end,
+    })
+
+    autocmd("BufWritePre", {
+        group = augroup("StripTrailingWhitespace", {}),
+        pattern = "*",
+        command = [[%s/\s\+$//e]],
     })
 
     vim.cmd([[set fillchars=eob:\ ,]])
@@ -26,25 +43,27 @@ function M.setup()
     vim.cmd([[set undofile]])
 
     -- options
-    options.set(option, "clipboard", "unnamed,unnamedplus")
+    vim.opt.clipboard = "unnamed,unnamedplus"
 
-    options.set(option, "hidden", true)
-    options.set(option, "ignorecase", true)
-    options.set(option, "mouse", "a")
-    options.set(option, "showmode", false)
-    options.set(option, "smartcase", true)
-    options.set(option, "splitbelow", true)
-    options.set(option, "splitright", true)
-    options.set(option, "termguicolors", true)
+    vim.opt.ignorecase = true
+    vim.opt.mouse = "a"
+    vim.opt.showmode = false
+    vim.opt.smartcase = true
+    vim.opt.splitbelow = true
+    vim.opt.splitright = true
+    vim.opt.termguicolors = true
 
-    options.set(window, "number", true)
-    options.set(window, "relativenumber", true)
-    options.set(window, "signcolumn", "yes:2")
+    vim.opt.wrap = false
 
-    options.set(buffer, "expandtab", true)
-    options.set(buffer, "shiftwidth", 4)
-    options.set(buffer, "softtabstop", 4)
-    options.set(buffer, "tabstop", 4)
+    vim.opt.tabstop = 4
+    vim.opt.softtabstop = 4
+    vim.opt.shiftwidth = 4
+    vim.opt.expandtab = true
+
+    vim.opt.colorcolumn = "80"
+    vim.opt.number = true
+    vim.opt.relativenumber = true
+    vim.opt.signcolumn = "yes:2"
 end
 
 return M
