@@ -30,7 +30,6 @@ local function navigations()
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
-        ["<C-g>"] = [[<cmd>Oil<cr>]],
         ["<C-q>"] = [[<cmd>Trouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })
@@ -79,18 +78,6 @@ end
 mappings.editor_motion_textsubjects = {
     init_selection = "<CR>",
     scope_incremental = "<CR>",
-}
-
-mappings.oil = {
-    ["g?"] = "actions.show_help",
-    ["H"] = "actions.parent",
-    ["<CR>"] = "actions.select",
-    ["L"] = "actions.select_vsplit",
-    ["J"] = "actions.select_split",
-    ["<tab>"] = "actions.preview",
-    ["<C-c>"] = "actions.close",
-    ["<C-r>"] = "actions.refresh",
-    ["zh"] = "actions.toggle_hidden",
 }
 
 -- diagnostics
