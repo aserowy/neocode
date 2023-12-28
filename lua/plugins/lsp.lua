@@ -1,5 +1,10 @@
 return {
-    "neovim/nvim-lspconfig",
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("lspconfig.ui.windows").default_options = { border = "rounded" }
+        end,
+    },
     {
         "nvimtools/none-ls.nvim",
         dependencies = {

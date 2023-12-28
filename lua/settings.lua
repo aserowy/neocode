@@ -10,6 +10,7 @@ function M.setup()
     vim.g.mapleader = "["
 
     vim.g.netrw_banner = 0
+    vim.g.netrw_keepdir = 0
     vim.g.netrw_winsize = 25
 
     -- FIX: currently not working: vim.opt.formatoptions:remove { "c", "r", "o" }
@@ -59,7 +60,7 @@ function M.setup()
     vim.opt.shiftwidth = 4
     vim.opt.expandtab = true
 
-    vim.opt.colorcolumn = "120"
+    vim.opt.colorcolumn = "80"
     vim.opt.number = true
     vim.opt.relativenumber = true
     vim.opt.signcolumn = "yes:2"
