@@ -16,7 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 local neovim = require("neovim")
 neovim.setup()
 
-local options = {}
+local options = {
+    ui = { border = "rounded" },
+}
 if vim.loop.os_uname().version:match("Windows") then
     options.concurrency = 1
 end
