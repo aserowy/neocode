@@ -38,6 +38,13 @@ local function setup_treesitter()
         incremental_selection = {
             enable = true,
             keymaps = require("mappings").editor_motion_textsubjects,
+            is_supported = function()
+                local mode = vim.api.nvim_get_mode().mode
+                if mode == "c" then
+                    return false
+                end
+                return true
+            end,
         },
         sync_install = false,
 
@@ -90,12 +97,12 @@ local function setup_cmp()
             end,
         },
         sources = {
-            { name = "copilot", group_index = 2 },
-            { name = "luasnip", group_index = 2 },
+            { name = "copilot",  group_index = 2 },
+            { name = "luasnip",  group_index = 2 },
             { name = "nvim_lsp", group_index = 2 },
             { name = "nvim_lua", group_index = 2 },
-            { name = "path", group_index = 2 },
-            { name = "buffer", group_index = 2 },
+            { name = "path",     group_index = 2 },
+            { name = "buffer",   group_index = 2 },
         },
         window = {
             completion = cmp.config.window.bordered(),
