@@ -19,16 +19,3 @@ mappings and exceptions [here](./lua/mappings.lua).
 
 Clone or copy the repo into your `.config/nvim` folder and start nvim. The
 package manager will get installed automatically.
-
-### vscode
-
-To be able to use vscode accordingly, the following plugins must be installed
-and set up:
-
-- [Neo Vim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
-- [Keyboard Quickfix](https://marketplace.visualstudio.com/items?itemName=pascalsenn.keyboard-quickfix)
-- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
-- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
-
-The full setup for vscode including extensions, bindings and settings can be found
-[here](https://github.com/aserowy/dots/blob/main/home/components/vscode/default.nix).

@@ -18,7 +18,7 @@ function M.setup(capabilities, on_attach)
                     globals = { "vim" },
                 },
                 workspace = {
-                    library = vim.api.nvim_get_runtime_file("", true),
+                    vim.env.VIMRUNTIME,
                 },
                 telemetry = {
                     enable = false,
