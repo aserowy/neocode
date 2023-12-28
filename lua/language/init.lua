@@ -1,8 +1,7 @@
 local keymaps = require("nvim.keymaps")
 local mappings = require("mappings")
 
----@diagnostic disable-next-line: unused-local
-local function on_attach(client, bufnr)
+local function on_attach(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     require("lsp_signature").on_attach({

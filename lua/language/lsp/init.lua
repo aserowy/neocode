@@ -14,8 +14,7 @@ local lsps = {
     require("language.lsp.zig"),
 }
 
-local M = {}
-function M.setup(capabilities, on_attach)
+local function setup_lsp_styling()
     vim.fn.sign_define("DiagnosticSignError", { texthl = "DiagnosticSignError", text = "󰅚" })
     vim.fn.sign_define("DiagnosticSignWarn", { texthl = "DiagnosticSignWarn", text = "󰀪" })
     vim.fn.sign_define("DiagnosticSignInfo", { texthl = "DiagnosticSignInfo", text = "󰋽" })
@@ -26,6 +25,20 @@ function M.setup(capabilities, on_attach)
             prefix = "󰄮",
         },
     })
+
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
+    vim.diagnostic.config({
+        float = { border = "rounded" },
+    })
+end
+
+local M = {}
+function M.setup(capabilities, on_attach)
+    setup_lsp_styling()
 
     for _, server in pairs(lsps) do
         if server ~= nil then
