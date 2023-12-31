@@ -17,7 +17,11 @@ function M.open(split)
         vim.cmd(split)
     end
 
-    vim.cmd("term lf -print-selection " .. current)
+    if vim.fn.executable("lf") == 1 then
+        vim.cmd("term lf -print-selection " .. current)
+    else
+        vim.cmd("Explore")
+    end
 end
 
 function M.handle_termclose()
