@@ -1,5 +1,4 @@
 local keymaps = require("nvim.keymaps")
-
 local mappings = {}
 
 local function tabs()
