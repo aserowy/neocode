@@ -7,20 +7,12 @@ local M = {
 }
 
 function M.setup()
+    require("nvim.terminal").setup()
+
     vim.g.mapleader = "["
 
-    vim.g.netrw_banner = 0
-    vim.g.netrw_winsize = 25
-
-    -- FIX: currently not working: vim.opt.formatoptions:remove { "c", "r", "o" }
-    -- https://github.com/neovim/neovim/blob/a49924a318520a3b5c2f210f22a8d450165e89b5/runtime/ftplugin/lua.vim#L20
     local augroup = vim.api.nvim_create_augroup
     local autocmd = vim.api.nvim_create_autocmd
-
-    autocmd({ "BufWinEnter", "WinEnter"}, {
-        pattern = "term://*",
-        command = "startinsert",
-    })
 
     autocmd("BufWritePre", {
         group = augroup("StripTrailingWhitespace", {}),
@@ -28,35 +20,10 @@ function M.setup()
         command = [[%s/\s\+$//e]],
     })
 
+    -- FIX: currently not working: vim.opt.formatoptions:remove { "c", "r", "o" }
+    -- https://github.com/neovim/neovim/blob/a49924a318520a3b5c2f210f22a8d450165e89b5/runtime/ftplugin/lua.vim#L20
     autocmd("FileType", {
         command = "set formatoptions-=cro",
-    })
-
-    autocmd("TermClose", {
-        callback = function()
-            local title = vim.fn.expand("%")
-
-            local case = {
-                [require("nvim.lf").is_handle_valid_pattern] = require("nvim.lf").handle_termclose,
-            }
-
-            local is_executed = false
-            for key, value in pairs(case) do
-                if title:match(key) then
-                    value()
-                    is_executed = true
-                end
-            end
-
-            if not is_executed then
-                vim.cmd("bd")
-            end
-        end,
-    })
-
-    autocmd("TermOpen", {
-        pattern = "*",
-        command = "startinsert | setlocal nonumber norelativenumber",
     })
 
     autocmd("TextYankPost", {
