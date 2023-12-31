@@ -17,6 +17,11 @@ function M.setup()
     local augroup = vim.api.nvim_create_augroup
     local autocmd = vim.api.nvim_create_autocmd
 
+    autocmd({ "BufWinEnter", "WinEnter"}, {
+        pattern = "term://*",
+        command = "startinsert",
+    })
+
     autocmd("BufWritePre", {
         group = augroup("StripTrailingWhitespace", {}),
         pattern = "*",
@@ -49,7 +54,6 @@ function M.setup()
         end,
     })
 
-    -- TODO: start insert mode while navigating onto term
     autocmd("TermOpen", {
         pattern = "*",
         command = "startinsert | setlocal nonumber norelativenumber",
