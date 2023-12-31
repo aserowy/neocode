@@ -1,4 +1,3 @@
--- TODO: window/tab switching in term
 local keymaps = require("nvim.keymaps")
 local mappings = {}
 
@@ -9,9 +8,22 @@ local function tabs()
         ["<C-n>"] = [[<cmd>tabnext<cr>]],
         ["<C-p>"] = [[<cmd>tabprevious<cr>]],
     })
+    keymaps.register("t", {
+        ["<C-t><C-q>"] = [[<cmd>tabclose<cr>]],
+        ["<C-t><C-t>"] = [[<cmd>tabnew<cr>]],
+        ["<C-n>"] = [[<cmd>tabnext<cr>]],
+        ["<C-p>"] = [[<cmd>tabprevious<cr>]],
+    })
 end
 
 local function windows()
+    -- INFO: standard window switching is registered with tmux.nvim
+    keymaps.register("t", {
+        ["<C-h>"] = [[<cmd>lua require'tmux'.move_left()<cr>]],
+        ["<C-j>"] = [[<cmd>lua require'tmux'.move_bottom()<cr>]],
+        ["<C-k>"] = [[<cmd>lua require'tmux'.move_top()<cr>]],
+        ["<C-l>"] = [[<cmd>lua require'tmux'.move_right()<cr>]],
+    })
     keymaps.register("n", {
         ["<C-w>x"] = [[<C-w>s]],
     })
