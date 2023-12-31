@@ -49,6 +49,7 @@ function M.setup()
         end,
     })
 
+    -- TODO: start insert mode while navigating onto term
     autocmd("TermOpen", {
         pattern = "*",
         command = "startinsert | setlocal nonumber norelativenumber",
