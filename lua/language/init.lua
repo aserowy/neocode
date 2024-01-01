@@ -1,8 +1,12 @@
 local keymaps = require("nvim.keymaps")
 local mappings = require("mappings")
 
-local function on_attach(_, bufnr)
+local function on_attach(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+    if client.server_capabilities.documentSymbolProvider then
+        require("nvim-navic").attach(client, bufnr)
+    end
 
     require("lsp_signature").on_attach({
         bind = true,

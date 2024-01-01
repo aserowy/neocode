@@ -11,8 +11,6 @@ local function tabs()
     keymaps.register("t", {
         ["<C-t><C-q>"] = [[<cmd>tabclose<cr>]],
         ["<C-t><C-t>"] = [[<cmd>tabnew<cr>]],
-        ["<C-n>"] = [[<cmd>tabnext<cr>]],
-        ["<C-p>"] = [[<cmd>tabprevious<cr>]],
     })
 end
 
@@ -60,6 +58,9 @@ local function navigations()
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
+        ["<C-g><C-g>"] = [[<cmd>lua require'nvim.lf'.open('')<cr>]],
+        ["<C-g><C-v>"] = [[<cmd>lua require'nvim.lf'.open('vsplit')<cr>]],
+        ["<C-g><C-x>"] = [[<cmd>lua require'nvim.lf'.open('split')<cr>]],
         ["<C-q>"] = [[<cmd>Trouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })

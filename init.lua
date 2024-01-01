@@ -13,8 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local neovim = require("neovim")
-neovim.setup()
+require("settings").setup()
 
 local options = {
     ui = { border = "rounded" },
@@ -25,6 +24,6 @@ end
 
 require("lazy").setup("plugins", options)
 
-neovim.activate_theme()
-neovim.configure_mappings()
-neovim.configure_lsp()
+require("settings").activate_theme()
+require("mappings").setup()
+require("language").setup()

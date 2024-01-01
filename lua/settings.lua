@@ -6,6 +6,14 @@ local M = {
     },
 }
 
+function M.activate_theme()
+    local theme = M.theme
+
+    local themes = require("theming.themes")
+    themes.activate_theme(theme.name, theme.style, theme.transparent)
+end
+
+
 function M.setup()
     require("nvim.terminal").setup()
 

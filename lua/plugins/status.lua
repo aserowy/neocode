@@ -4,7 +4,6 @@ local function setup_lualine()
     local tab_max_length = 23
 
     require("lualine").setup({
-        extensions = { "nvim-tree" },
         options = {
             theme = theme,
             component_separators = { left = "", right = "" },
@@ -77,7 +76,5 @@ return {
             "arkav/lualine-lsp-progress",
         },
     },
-    {
-        "SmiteshP/nvim-navic",
-    },
+    { "SmiteshP/nvim-navic" },
 }
