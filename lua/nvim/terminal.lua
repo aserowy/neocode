@@ -11,31 +11,32 @@ function M.setup()
         command = "startinsert",
     })
 
-    autocmd("TermClose", {
-        callback = function()
-            local title = vim.fn.expand("%")
-
-            local case = {
-                [require("nvim.lf").is_handle_valid_pattern] = require("nvim.lf").handle_termclose,
-            }
-
-            local is_executed = false
-            for key, value in pairs(case) do
-                if title:match(key) then
-                    value()
-                    is_executed = true
-                end
-            end
-
-            if not is_executed then
-                vim.cmd("bd")
-            end
-        end,
-    })
-
     autocmd("TermOpen", {
         pattern = "*",
         command = "startinsert | setlocal nonumber norelativenumber",
+    })
+
+    autocmd("TermClose", {
+        callback = function()
+            local title = vim.api.nvim_buf_get_name(0)
+
+            local case = {
+                [require("nvim.lf").valid_for_pattern] = require("nvim.lf").close,
+            }
+
+            local result = 1
+            for pattern, close_handle in pairs(case) do
+                if title:match(pattern) then
+                    result = close_handle()
+
+                    break
+                end
+            end
+
+            if result > 0 then
+                vim.cmd("b# | bd#")
+            end
+        end,
     })
 end
 

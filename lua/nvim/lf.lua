@@ -1,5 +1,5 @@
 local M = {
-    is_handle_valid_pattern = "term://[%w/~]+:lf %-print%-selection [%w/]+",
+    valid_for_pattern = "term://[%w/~]+:lf %-print%-selection [%w/]+",
 }
 
 local function file_exists(name)
@@ -24,23 +24,23 @@ function M.open(split)
     end
 end
 
-function M.handle_termclose()
+function M.close()
     local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
 
     if #lines == 0 then
-        vim.cmd("b# | bd#")
-        return
+        return 1
     end
 
     local path = lines[1]
     if not file_exists(path) then
-        vim.cmd("b# | bd#")
-        return
+        return 1
     end
 
     vim.cmd("e " .. path)
     vim.cmd("bd#")
     vim.cmd("filetype detect")
+
+    return 0
 end
 
 return M
