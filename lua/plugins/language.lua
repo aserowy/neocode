@@ -12,6 +12,7 @@ local function setup_treesitter()
             "graphql",
             "html",
             "htmldjango",
+            "hypr",
             "javascript",
             "json",
             "json5",
@@ -20,6 +21,7 @@ local function setup_treesitter()
             "lua",
             "markdown",
             "nix",
+            "nu",
             "python",
             "regex",
             "rust",
@@ -146,7 +148,25 @@ return {
             setup_treesitter()
         end,
         dependencies = {
-            "p00f/nvim-ts-rainbow",
+            { "p00f/nvim-ts-rainbow" },
+
+            -- NOTE: additional parser
+            {
+                "luckasRanarison/tree-sitter-hypr",
+                config = function()
+                    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+                    parser_config.hypr = {
+                        install_info = {
+                            url = "https://github.com/luckasRanarison/tree-sitter-hypr",
+                            files = { "src/parser.c" },
+                            branch = "master",
+                        },
+                        filetype = "hypr",
+                    }
+                end,
+            },
+            -- FIX: change to nushell url after merge of https://github.com/nushell/tree-sitter-nu/pull/57
+            { "aserowy/tree-sitter-nu" },
         },
         build = ":TSUpdate",
     },
