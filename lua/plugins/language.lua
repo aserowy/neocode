@@ -151,25 +151,8 @@ return {
             { "p00f/nvim-ts-rainbow" },
 
             -- NOTE: additional parser
-            {
-                "luckasRanarison/tree-sitter-hypr",
-                config = function()
-                    vim.filetype.add({
-                        pattern = { [".*/hypr.*%/.*%.conf"] = "hypr" },
-                    })
-
-                    require("nvim-treesitter.parsers").get_parser_configs().hypr = {
-                        install_info = {
-                            url = "https://github.com/luckasRanarison/tree-sitter-hypr",
-                            files = { "src/parser.c" },
-                            branch = "master",
-                        },
-                        filetype = "hypr",
-                    }
-                end,
-            },
-            -- FIX: change to nushell url after merge of https://github.com/nushell/tree-sitter-nu/pull/57
-            { "aserowy/tree-sitter-nu" },
+            { "luckasRanarison/tree-sitter-hypr" },
+            { "nushell/tree-sitter-nu" },
         },
         build = ":TSUpdate",
     },
