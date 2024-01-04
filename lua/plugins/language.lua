@@ -12,7 +12,7 @@ local function setup_treesitter()
             "graphql",
             "html",
             "htmldjango",
-            "hypr",
+            "hyprlang",
             "javascript",
             "json",
             "json5",
@@ -151,7 +151,7 @@ return {
             { "p00f/nvim-ts-rainbow" },
 
             -- NOTE: additional parser
-            { "luckasRanarison/tree-sitter-hypr" },
+            { "luckasRanarison/tree-sitter-hyprlang" },
             { "nushell/tree-sitter-nu" },
         },
         build = ":TSUpdate",
