@@ -18,13 +18,13 @@ local function start()
         return
     end
 
-    local command_regex = fn.getreg("/")
-    if command_regex:find([[%#]]) then
+    local search_register = fn.getreg("/")
+    if search_register:find([[%#]]) then
         stop()
         return
     end
 
-    local ok, result = pcall(fn.search, [[\%#\zs]] .. command_regex, "cnW")
+    local ok, result = pcall(fn.search, [[\%#\zs]] .. search_register, "cnW")
     if ok and result == 0 then
         stop()
         return
