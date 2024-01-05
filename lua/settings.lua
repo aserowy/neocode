@@ -16,6 +16,7 @@ end
 
 function M.setup()
     require("nvim.terminal").setup()
+    require("nvim.hlsearch").setup()
 
     vim.g.mapleader = "["
 
