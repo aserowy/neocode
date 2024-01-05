@@ -6,7 +6,7 @@ function M.setup()
 
     local autocmd = vim.api.nvim_create_autocmd
 
-    autocmd({ "BufWinEnter", "WinEnter" }, {
+    autocmd({ "BufEnter", "WinEnter" }, {
         pattern = "term://*",
         command = "startinsert",
     })
