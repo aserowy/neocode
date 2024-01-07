@@ -38,6 +38,11 @@ function M.setup()
             end
         end,
     })
+
+    local usercmd = vim.api.nvim_create_user_command
+
+    usercmd("Vterm", "vsplit | term", { nargs = 0 })
+    usercmd("Xterm", "split | term", { nargs = 0 })
 end
 
 return M
