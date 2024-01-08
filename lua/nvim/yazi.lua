@@ -2,7 +2,8 @@ local buffer = require("nvim.buffer")
 local file = require("nvim.file")
 
 local M = {
-    valid_for_pattern = "term://[%w/~]+:lf %-print%-selection [%w/]+",
+    tmp_selection_file = os.tmpname(),
+    valid_for_pattern = "term://[%w/~]+:yazi %-%-chooser%-file",
 }
 
 function M.open(split)
@@ -17,7 +18,7 @@ function M.open(split)
         vim.cmd(split)
     end
 
-    if vim.fn.executable("lf") ~= 1 then
+    if vim.fn.executable("yazi") ~= 1 then
         vim.cmd("Explore")
         return
     end
@@ -26,11 +27,11 @@ function M.open(split)
         current = vim.fn.getcwd()
     end
 
-    vim.cmd("term lf -print-selection " .. current)
+    vim.cmd("term yazi --chooser-file " .. M.tmp_selection_file .. " " .. current)
 end
 
 function M.close()
-    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    local lines = file.lines(M.tmp_selection_file)
 
     if #lines == 0 then
         return 1

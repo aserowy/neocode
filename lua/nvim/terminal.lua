@@ -22,6 +22,7 @@ function M.setup()
 
             local case = {
                 [require("nvim.lf").valid_for_pattern] = require("nvim.lf").close,
+                [require("nvim.yazi").valid_for_pattern] = require("nvim.yazi").close,
             }
 
             local result = 1

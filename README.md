@@ -3,7 +3,7 @@
 ## requirements
 
 - neovim >= 0.9
-- lf (if not installed netrw gets used)
+- lf or yazi (depends on bindings)
 - ripgrep
 
 ## keymaps
