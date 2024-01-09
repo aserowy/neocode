@@ -3,17 +3,17 @@ local file = require("nvim.file")
 
 local M = {
     tmp_selection_file = os.tmpname(),
-    valid_for_pattern = "term://[%w/~]+:yazi %-%-chooser%-file",
+    valid_for_pattern = "term://[%w\\/~]+:yazi %-%-chooser%-file",
 }
 
 local function get_directory(path)
-    return path:match("(.*/)")
+    return path:match("(.*[\\/])")
 end
 
 function M.open(split)
     local file_path = vim.api.nvim_buf_get_name(0)
+    local type = buffer.get_type(file_path)
     local current = get_directory(file_path)
-    local type = buffer.get_type(current)
 
     if type == buffer.type.UNKNOWN then
         return
