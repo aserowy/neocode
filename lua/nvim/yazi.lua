@@ -6,8 +6,13 @@ local M = {
     valid_for_pattern = "term://[%w/~]+:yazi %-%-chooser%-file",
 }
 
+local function get_directory(path)
+    return path:match("(.*/)")
+end
+
 function M.open(split)
-    local current = vim.api.nvim_buf_get_name(0)
+    local file_path = vim.api.nvim_buf_get_name(0)
+    local current = get_directory(file_path)
     local type = buffer.get_type(current)
 
     if type == buffer.type.UNKNOWN then
