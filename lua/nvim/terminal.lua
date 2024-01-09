@@ -21,7 +21,6 @@ function M.setup()
             local title = vim.api.nvim_buf_get_name(0)
 
             local case = {
-                [require("nvim.lf").valid_for_pattern] = require("nvim.lf").close,
                 [require("nvim.yazi").valid_for_pattern] = require("nvim.yazi").close,
             }
 
