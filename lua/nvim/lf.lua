@@ -2,19 +2,13 @@ local buffer = require("nvim.buffer")
 local file = require("nvim.file")
 
 local M = {
-    is_executable = vim.fn.executable("yazi") == 1,
-    tmp_selection_file = os.tmpname(),
-    valid_for_pattern = "term://[%w\\/~]+:yazi %-%-chooser%-file",
+    is_executable = vim.fn.executable("lf") == 1,
+    valid_for_pattern = "term://[%w\\/~]+:lf %-print%-selection [%w\\/]+",
 }
 
-local function get_directory(path)
-    return path:match("(.*[\\/])")
-end
-
 function M.open(split)
-    local file_path = vim.api.nvim_buf_get_name(0)
-    local type = buffer.get_type(file_path)
-    local current = get_directory(file_path)
+    local current = vim.api.nvim_buf_get_name(0)
+    local type = buffer.get_type(current)
 
     if type == buffer.type.UNKNOWN then
         return
@@ -33,11 +27,11 @@ function M.open(split)
         current = vim.fn.getcwd()
     end
 
-    vim.cmd("term yazi --chooser-file " .. M.tmp_selection_file .. " " .. current)
+    vim.cmd("term lf -print-selection " .. current)
 end
 
 function M.close()
-    local lines = file.lines(M.tmp_selection_file)
+    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
 
     if #lines == 0 then
         return 1

@@ -21,6 +21,7 @@ function M.setup()
             local title = vim.api.nvim_buf_get_name(0)
 
             local case = {
+                [require("nvim.lf").valid_for_pattern] = require("nvim.lf").close,
                 [require("nvim.yazi").valid_for_pattern] = require("nvim.yazi").close,
             }
 
@@ -43,6 +44,20 @@ function M.setup()
 
     usercmd("Vterm", "vsplit | term", { nargs = 0 })
     usercmd("Xterm", "split | term", { nargs = 0 })
+end
+
+function M.open_file_manager_tui(split)
+    local file_manager = {
+        [1] = require("nvim.yazi"),
+        [2] = require("nvim.lf"),
+    }
+
+    for _, manager in ipairs(file_manager) do
+        if manager.is_executable then
+            manager.open(split)
+            break
+        end
+    end
 end
 
 return M
