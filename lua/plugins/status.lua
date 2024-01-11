@@ -58,9 +58,12 @@ return {
         name = "barbecue",
         version = "*",
         dependencies = {
+            "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons",
         },
-        opts = {},
+        opts = {
+            attach_navic = false,
+        },
     },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -76,5 +79,4 @@ return {
             "arkav/lualine-lsp-progress",
         },
     },
-    { "SmiteshP/nvim-navic" },
 }
