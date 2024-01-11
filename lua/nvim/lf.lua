@@ -3,7 +3,7 @@ local file = require("nvim.file")
 
 local M = {
     is_executable = vim.fn.executable("lf") == 1,
-    valid_for_pattern = "term://[%w\\/~]+:lf %-print%-selection [%w\\/]+",
+    valid_for_pattern = "term://[%w\\/~:]+:lf %-print%-selection",
 }
 
 function M.open(split)

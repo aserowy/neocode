@@ -4,7 +4,7 @@ local file = require("nvim.file")
 local M = {
     is_executable = vim.fn.executable("yazi") == 1,
     tmp_selection_file = os.tmpname(),
-    valid_for_pattern = "term://[%w\\/~]+:yazi %-%-chooser%-file",
+    valid_for_pattern = "term://[%w\\/~:]+:yazi %-%-chooser%-file",
 }
 
 local function get_directory(path)
