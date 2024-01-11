@@ -18,12 +18,17 @@ require("settings").setup()
 local options = {
     ui = { border = "rounded" },
 }
-if vim.loop.os_uname().version:match("Windows") then
+
+if require("nvim.os").is_windows then
     options.concurrency = 1
 end
 
 require("lazy").setup("plugins", options)
 
 require("settings").activate_theme()
+
+require("nvim.terminal").setup()
+require("nvim.hlsearch").setup()
+
 require("mappings").setup()
 require("language").setup()

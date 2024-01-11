@@ -4,6 +4,23 @@ function M.setup()
     vim.g.netrw_banner = 0
     vim.g.netrw_winsize = 25
 
+    if require("nvim.os").is_windows then
+        require("barbecue.ui").toggle(false)
+
+        if vim.fn.executable("pwsh") == 1 then
+            vim.opt.shell = "pwsh"
+        else
+            vim.opt.shell = "powershell"
+        end
+
+        vim.opt.shellcmdflag =
+        "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+        vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+        vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+        vim.opt.shellquote = ""
+        vim.opt.shellxquote = ""
+    end
+
     local autocmd = vim.api.nvim_create_autocmd
 
     autocmd("BufEnter", {
