@@ -18,11 +18,6 @@ function M.open(split)
         vim.cmd(split)
     end
 
-    if not M.is_executable then
-        vim.cmd("Explore")
-        return
-    end
-
     if type ~= buffer.type.PATH then
         current = vim.fn.getcwd()
     end

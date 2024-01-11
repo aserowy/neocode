@@ -55,9 +55,11 @@ function M.open_file_manager_tui(split)
     for _, manager in ipairs(file_manager) do
         if manager.is_executable then
             manager.open(split)
-            break
+            return
         end
     end
+
+    vim.cmd("Explore")
 end
 
 return M
