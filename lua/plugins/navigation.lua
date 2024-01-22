@@ -1,13 +1,3 @@
-local function setup_trouble()
-    local mappings = require("mappings")
-
-    vim.cmd([[autocmd WinEnter * if winnr('$') == 1 && &ft == 'Trouble' | q | endif]])
-
-    require("trouble").setup({
-        action_keys = mappings.diagnostics,
-    })
-end
-
 local function setup_telescope()
     local actions = require("telescope.actions")
     local config = require("telescope.config")
@@ -58,9 +48,9 @@ return {
     },
     {
         "folke/trouble.nvim",
-        config = function()
-            setup_trouble()
-        end,
+        opts = {
+            action_keys = require("mappings").diagnostics,
+        },
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },

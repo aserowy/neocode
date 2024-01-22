@@ -44,7 +44,6 @@ local function navigations()
         ["<C-e><C-t>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('tabnew')<cr>]],
         ["<C-e><C-v>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('vsplit')<cr>]],
         ["<C-e><C-x>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('split')<cr>]],
-        ["<C-q>"] = [[<cmd>Trouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })
     keymaps.register("t", {
@@ -63,7 +62,6 @@ local function navigations()
         ["<C-e><C-t>"] = [[<cmd>lua require'nvim.lf'.open('tabnew')<cr>]],
         ["<C-e><C-v>"] = [[<cmd>lua require'nvim.lf'.open('vsplit')<cr>]],
         ["<C-e><C-x>"] = [[<cmd>lua require'nvim.lf'.open('split')<cr>]],
-        ["<C-q>"] = [[<cmd>Trouble quickfix<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })
 end
@@ -155,7 +153,6 @@ end
 mappings.search = function(actions)
     return {
         ["<C-c>"] = actions.delete_buffer,
-        ["<C-q>"] = actions.send_to_qflist,
     }
 end
 
