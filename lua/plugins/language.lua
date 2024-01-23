@@ -141,6 +141,22 @@ return {
             require("copilot_cmp").setup()
         end,
     },
+    {
+        "jellydn/copilotchat.nvim",
+        opts = {
+            mode = "split", -- newbuffer or split  , default: newbuffer
+        },
+        build = function()
+            vim.defer_fn(function()
+                vim.cmd("UpdateRemotePlugins")
+                vim.notify("CopilotChat - Updated remote plugins. Please restart Neovim.")
+            end, 3000)
+        end,
+        event = "VeryLazy",
+        keys = {
+            { "<leader>ct", "<cmd>CopilotChatTests<cr>",   desc = "CopilotChat - Generate tests" },
+        },
+    },
 
     {
         "nvim-treesitter/nvim-treesitter",
