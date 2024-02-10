@@ -65,6 +65,7 @@ return {
             attach_navic = false,
         },
     },
+    { "j-hui/fidget.nvim", opts = {} },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
@@ -75,8 +76,8 @@ return {
         config = function()
             setup_lualine()
         end,
-        dependencies = {
-            "arkav/lualine-lsp-progress",
-        },
+        -- dependencies = {
+        --     "arkav/lualine-lsp-progress",
+        -- },
     },
 }

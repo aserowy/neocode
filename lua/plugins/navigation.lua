@@ -41,12 +41,6 @@ end
 
 return {
     {
-        "prichrd/netrw.nvim",
-        config = function()
-            require("netrw").setup({})
-        end,
-    },
-    {
         "folke/trouble.nvim",
         opts = {
             action_keys = require("mappings").diagnostics,
