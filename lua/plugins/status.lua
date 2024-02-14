@@ -76,8 +76,5 @@ return {
         config = function()
             setup_lualine()
         end,
-        -- dependencies = {
-        --     "arkav/lualine-lsp-progress",
-        -- },
     },
 }
