@@ -28,6 +28,8 @@ local function windows()
 end
 
 local function navigations()
+    -- TODO: extend register to set multiple modes
+    -- TODO: extend with telescope git pickers? C-g...
     keymaps.register("n", {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
@@ -83,7 +85,7 @@ mappings.editor_on_text = {
     ["gd"] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>]],
     ["gf"] = [[<cmd>lua vim.lsp.buf.declaration()<cr>]],
     ["gH"] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],
-    ["gi"] = [[<cmd>lua vim.lsp.buf.implementation()<cr>]],
+    ["gi"] = [[<cmd>lua require'telescope.builtin'.lsp_implementations()<cr>]],
     ["gh"] = [[<cmd>lua vim.lsp.buf.signature_help()<cr>]],
     ["gr"] = [[<cmd>lua vim.lsp.buf.rename()<cr>]],
     ["gx"] = [[<cmd>lua vim.lsp.buf.code_action()<cr>]],
