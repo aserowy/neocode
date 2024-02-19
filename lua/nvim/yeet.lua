@@ -2,8 +2,8 @@ local buffer = require("nvim.buffer")
 local file = require("nvim.file")
 
 local M = {
-    is_executable = vim.fn.executable("y1337") == 1,
-    valid_for_pattern = "term://[%w\\/~:]+:y1337 %-%-stdout%-on%-open",
+    is_executable = vim.fn.executable("yeet") == 1,
+    valid_for_pattern = "term://[%w\\/~:]+:yeet %-%-stdout%-on%-open",
 }
 
 function M.open(split)
@@ -22,7 +22,7 @@ function M.open(split)
         current = vim.fn.getcwd()
     end
 
-    vim.cmd("term y1337 --stdout-on-open " .. current)
+    vim.cmd("term yeet --stdout-on-open " .. current)
 end
 
 function M.close()

@@ -38,7 +38,7 @@ function M.setup()
             local title = vim.api.nvim_buf_get_name(0)
 
             local case = {
-                [require("nvim.y1337").valid_for_pattern] = require("nvim.y1337").close,
+                [require("nvim.yeet").valid_for_pattern] = require("nvim.yeet").close,
                 [require("nvim.lf").valid_for_pattern] = require("nvim.lf").close,
                 [require("nvim.yazi").valid_for_pattern] = require("nvim.yazi").close,
             }
@@ -66,7 +66,7 @@ end
 
 function M.open_file_manager_tui(split)
     local file_manager = {
-        [1] = require("nvim.y1337"),
+        [1] = require("nvim.yeet"),
         [2] = require("nvim.yazi"),
         [3] = require("nvim.lf"),
     }
