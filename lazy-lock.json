@@ -21,6 +21,7 @@
   "lsp_signature.nvim": { "branch": "master", "commit": "1b32f64549478efd8f9e0d00517db84cf41aa0ea" },
   "lspkind-nvim": { "branch": "master", "commit": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf" },
   "lualine.nvim": { "branch": "master", "commit": "3c55675a7bc170d21d7ea70874ae66fbf5cfb0dc" },
+  "material.nvim": { "branch": "main", "commit": "1804e517ceb0fce958a9fabaa94c9a6e09d54b8f" },
   "monokai-pro.nvim": { "branch": "master", "commit": "1b9b086df95ad9a6b946c56f65fa2d048297c00b" },
   "nightfox.nvim": { "branch": "main", "commit": "a4eb88b2dad3fba5c2d87f82cd15dfb9de73913d" },
   "none-ls.nvim": { "branch": "main", "commit": "ff3819c52ca04232fb70fbd6c1639de9abcbe122" },

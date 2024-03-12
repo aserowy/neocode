@@ -73,6 +73,28 @@ local M = {
                 vim.cmd.colorscheme("hardhacker")
             end,
         },
+        material = {
+            style = { "darker", "lighter", "oceanic", "palenight", "deep ocean" },
+            transparent = false,
+            lualine = function(_)
+                return "material"
+            end,
+            activate = function(style, transparent)
+                vim.g.material_style = style
+
+                require("material").setup({
+                    disable = {
+                        background = transparent,
+                        eob_lines = true,
+                    },
+                    high_visibility = {
+                        lighter = true, -- Enable higher contrast text for lighter style
+                    },
+                })
+
+                vim.cmd.colorscheme("material")
+            end,
+        },
         monokai = {
             style = { "classic", "octagon", "pro", "machine", "ristretto", "spectrum" },
             transparent = false,
