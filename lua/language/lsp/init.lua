@@ -1,4 +1,5 @@
 local lsps = {
+    require("language.lsp.angular"),
     require("language.lsp.bash"),
     require("language.lsp.c"),
     require("language.lsp.csharp"),

@@ -9,12 +9,12 @@ def main [action: string] {
 }
 
 def link_neocode [] {
-    mv --force ~/.config/nvim/ ~/.config/nvim_unlinked/
+    mv --force ~/.config/nvim/ ~/.config/nvim_unlinked
     run-external --redirect-stderr "ln" "-s" $env.PWD "~/.config/nvim"
 }
 
 def unlink_neocode [] {
     run-external --redirect-stderr "unlink" "~/.config/nvim"
-    mv --force ~/.config/nvim_unlinked/ ~/.config/nvim/
+    mv --force ~/.config/nvim_unlinked/ ~/.config/nvim
 }
 
