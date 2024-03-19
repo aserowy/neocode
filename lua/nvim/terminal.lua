@@ -47,7 +47,6 @@ function M.setup()
             for pattern, close_handle in pairs(case) do
                 if title:match(pattern) then
                     result = close_handle()
-
                     break
                 end
             end

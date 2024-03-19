@@ -32,8 +32,8 @@ function M.close()
         return 1
     end
 
-    local path = lines[1]
-    if not file.exists(path) then
+    local path = file.resolve(lines)
+    if not path then
         return 1
     end
 
