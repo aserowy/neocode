@@ -22,7 +22,7 @@ function M.get_type(title)
         return M.type.TERMINAL
     end
 
-    if file.exists(title) then
+    if vim.fn.filereadable(title) then
         return M.type.PATH
     end
 
