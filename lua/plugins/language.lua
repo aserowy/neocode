@@ -99,12 +99,12 @@ local function setup_cmp()
             end,
         },
         sources = {
-            { name = "copilot",  group_index = 2 },
-            { name = "luasnip",  group_index = 2 },
-            { name = "nvim_lsp", group_index = 2 },
-            { name = "nvim_lua", group_index = 2 },
-            { name = "path",     group_index = 2 },
-            { name = "buffer",   group_index = 2 },
+            { name = "luasnip",  priority = 900, group_index = 2, max_item_count = 3 },
+            { name = "path",     priority = 900, group_index = 2, max_item_count = 3 },
+            { name = "nvim_lsp", priority = 600, group_index = 2 },
+            { name = "nvim_lua", priority = 600, group_index = 2 },
+            { name = "buffer",   priority = 300, group_index = 2, max_item_count = 5 },
+            { name = "copilot",  priority = 100, group_index = 2, max_item_count = 3 },
         },
         window = {
             completion = cmp.config.window.bordered(),
@@ -154,7 +154,7 @@ return {
         end,
         event = "VeryLazy",
         keys = {
-            { "<leader>ct", "<cmd>CopilotChatTests<cr>",   desc = "CopilotChat - Generate tests" },
+            { "<leader>ct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
         },
     },
 
