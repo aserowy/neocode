@@ -56,6 +56,14 @@ local function buffer()
     })
 end
 
+-- copilot
+local function copilot_chat()
+    keymaps.register("n", {
+        ["<C-c><C-e>"] = [[<cmd>CopilotChatExplain<cr>]],
+        ["<C-c><C-t>"] = [[<cmd>CopilotChatTests<cr>]],
+    })
+end
+
 -- editor
 mappings.editor_on_text = {
     ["ga"] = [[<cmd>lua vim.lsp.buf.format()<cr>]],
@@ -140,6 +148,7 @@ mappings.setup = function()
     windows()
     navigations()
     buffer()
+    copilot_chat()
     editor_dap()
     editor_motion()
     editor_visual()
