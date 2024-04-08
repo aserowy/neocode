@@ -17,7 +17,6 @@ local function setup_treesitter()
             "json",
             "json5",
             "jsonc",
-            "latex",
             "lua",
             "markdown",
             "nix",
@@ -62,6 +61,7 @@ local function setup_cmp()
     local LABEL_WIDTH = 35
 
     local cmp = require("cmp")
+    local cmparer = require("cmp.config.compare")
     local handle = require("language.completion")
     local lspkind = require("lspkind")
 
@@ -98,13 +98,23 @@ local function setup_cmp()
                 require("luasnip").lsp_expand(args.body)
             end,
         },
+        sorting = {
+            priority_weight = 1.0,
+            comparators = {
+                cmparer.locality,
+                cmparer.recently_used,
+                cmparer.score,
+                cmparer.offset,
+                cmparer.order,
+            },
+        },
         sources = {
-            { name = "luasnip",  priority = 900, group_index = 2, max_item_count = 3 },
-            { name = "path",     priority = 900, group_index = 2, max_item_count = 3 },
-            { name = "nvim_lsp", priority = 600, group_index = 2 },
-            { name = "nvim_lua", priority = 600, group_index = 2 },
-            { name = "buffer",   priority = 300, group_index = 2, max_item_count = 5 },
-            { name = "copilot",  priority = 100, group_index = 2, max_item_count = 3 },
+            { name = "luasnip", max_item_count = 3 },
+            { name = "nvim_lsp" },
+            { name = "nvim_lua" },
+            { name = "path",    max_item_count = 3 },
+            { name = "buffer",  max_item_count = 5 },
+            { name = "copilot", max_item_count = 3, keyword_length = 5 },
         },
         window = {
             completion = cmp.config.window.bordered(),
@@ -142,19 +152,14 @@ return {
         end,
     },
     {
-        "jellydn/copilotchat.nvim",
-        opts = {
-            mode = "split", -- newbuffer or split  , default: newbuffer
+        "copilotc-nvim/copilotchat.nvim",
+        branch = "canary",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" },
+            { "nvim-lua/plenary.nvim" },
         },
-        build = function()
-            vim.defer_fn(function()
-                vim.cmd("UpdateRemotePlugins")
-                vim.notify("CopilotChat - Updated remote plugins. Please restart Neovim.")
-            end, 3000)
-        end,
-        event = "VeryLazy",
-        keys = {
-            { "<leader>ct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
+        opts = {
+            debug = true,
         },
     },
 

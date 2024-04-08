@@ -21,6 +21,8 @@ local function windows()
         ["<C-j>"] = [[<cmd>lua require'tmux'.move_bottom()<cr>]],
         ["<C-k>"] = [[<cmd>lua require'tmux'.move_top()<cr>]],
         ["<C-l>"] = [[<cmd>lua require'tmux'.move_right()<cr>]],
+        ["<C-i>"] = [[<C-\><C-n><C-i>]],
+        ["<C-o>"] = [[<C-\><C-n><C-o>]],
     })
     keymaps.register("n", {
         ["<C-w>x"] = [[<C-w>s]],
