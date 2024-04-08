@@ -3,14 +3,8 @@ local mappings = {}
 
 local function tabs()
     keymaps.register("n", {
-        ["<C-t><C-q>"] = [[<cmd>tabclose<cr>]],
-        ["<C-t><C-t>"] = [[<cmd>tabnew<cr>]],
         ["<C-n>"] = [[<cmd>tabnext<cr>]],
         ["<C-p>"] = [[<cmd>tabprevious<cr>]],
-    })
-    keymaps.register("t", {
-        ["<C-t><C-q>"] = [[<cmd>tabclose<cr>]],
-        ["<C-t><C-t>"] = [[<cmd>tabnew<cr>]],
     })
 end
 
@@ -30,27 +24,8 @@ local function windows()
 end
 
 local function navigations()
-    -- TODO: extend register to set multiple modes
     -- TODO: extend with telescope git pickers? C-?...
-    keymaps.register("n", {
-        ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
-        ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
-        ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.diagnostics()<cr>]],
-        ["<C-f><C-f>"] = [[<cmd>lua require'nvim.search'.git_or_local()<cr>]],
-        ["<C-f><C-w>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
-        ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
-        ["<C-f><C-q>"] = [[<cmd>lua require'telescope.builtin'.quickfixhistory()<cr>]],
-        ["<C-f><C-p>"] = [[<cmd>Telescope persisted<cr>]],
-        ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
-        ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
-        ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
-        ["<C-e><C-e>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('')<cr>]],
-        ["<C-e><C-t>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('tabnew')<cr>]],
-        ["<C-e><C-v>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('vsplit')<cr>]],
-        ["<C-e><C-x>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('split')<cr>]],
-        ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
-    })
-    keymaps.register("t", {
+    keymaps.register({ "n", "t" }, {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.diagnostics()<cr>]],

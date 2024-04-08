@@ -1,7 +1,17 @@
 local api = vim.api
 
+local function scope_to_table(scope)
+    if type(scope) == "table" then
+        return scope
+    end
+
+    return {
+        [1] = scope,
+    }
+end
+
 local keymaps = {}
-keymaps.register = function(scope, mappings, options)
+keymaps.register = function(scopes, mappings, options)
     local opts
     if options == nil then
         opts = {
@@ -13,12 +23,14 @@ keymaps.register = function(scope, mappings, options)
         opts = options
     end
 
-    for key, value in pairs(mappings) do
-        api.nvim_set_keymap(scope, key, value, opts)
+    for _, scope in pairs(scope_to_table(scopes)) do
+        for key, value in pairs(mappings) do
+            api.nvim_set_keymap(scope, key, value, opts)
+        end
     end
 end
 
-keymaps.register_with_keymap = function(scope, mappings, options)
+keymaps.register_with_keymap = function(scopes, mappings, options)
     local opts
     if options == nil then
         opts = {
@@ -30,8 +42,10 @@ keymaps.register_with_keymap = function(scope, mappings, options)
         opts = options
     end
 
-    for key, value in pairs(mappings) do
-        vim.keymap.set(scope, key, value, opts)
+    for _, scope in pairs(scope_to_table(scopes)) do
+        for key, value in pairs(mappings) do
+            vim.keymap.set(scope, key, value, opts)
+        end
     end
 end
 
