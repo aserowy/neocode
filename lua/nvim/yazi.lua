@@ -2,7 +2,7 @@ local buffer = require("nvim.buffer")
 local file = require("nvim.file")
 
 local M = {
-    is_executable = vim.fn.executable("yazi") == 1,
+    is_executable = vim.fn.executable("yazi"),
     tmp_selection_file = os.tmpname(),
     valid_for_pattern = "term://[%w\\/~:]+:yazi %-%-chooser%-file",
 }

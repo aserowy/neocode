@@ -37,10 +37,10 @@ local function navigations()
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
         ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
-        ["<C-e><C-e>"] = [[<cmd>lua require'nvim.lf'.open('')<cr>]],
-        ["<C-e><C-t>"] = [[<cmd>lua require'nvim.lf'.open('tabnew')<cr>]],
-        ["<C-e><C-v>"] = [[<cmd>lua require'nvim.lf'.open('vsplit')<cr>]],
-        ["<C-e><C-x>"] = [[<cmd>lua require'nvim.lf'.open('split')<cr>]],
+        ["<C-e><C-e>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('')<cr>]],
+        ["<C-e><C-t>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('tabnew')<cr>]],
+        ["<C-e><C-v>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('vsplit')<cr>]],
+        ["<C-e><C-x>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('split')<cr>]],
         ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })
 end

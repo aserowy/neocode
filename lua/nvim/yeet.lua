@@ -2,7 +2,7 @@ local buffer = require("nvim.buffer")
 local file = require("nvim.file")
 
 local M = {
-    is_executable = vim.fn.executable("yeet") == 1,
+    is_executable = vim.fn.executable("yeet"),
     valid_for_pattern = "term://[%w\\/~:]+:yeet %-%-stdout%-on%-open",
 }
 
