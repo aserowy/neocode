@@ -6,7 +6,6 @@ return {
 
             require("persisted").setup({
                 autoload = true,
-                use_git_branch = true,
             })
 
             require("telescope").load_extension("persisted")
