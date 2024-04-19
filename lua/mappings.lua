@@ -9,12 +9,13 @@ local function tabs()
 end
 
 local function windows()
-    -- INFO: standard window switching is registered with tmux.nvim
-    keymaps.register("t", {
-        ["<C-h>"] = [[<cmd>lua require'tmux'.move_left()<cr>]],
-        ["<C-j>"] = [[<cmd>lua require'tmux'.move_bottom()<cr>]],
-        ["<C-k>"] = [[<cmd>lua require'tmux'.move_top()<cr>]],
-        ["<C-l>"] = [[<cmd>lua require'tmux'.move_right()<cr>]],
+    keymaps.register({"n", "t"}, {
+        ["<C-h>"] = [[<C-w><C-h>]],
+        ["<C-j>"] = [[<C-w><C-j>]],
+        ["<C-k>"] = [[<C-w><C-k>]],
+        ["<C-l>"] = [[<C-w><C-l>]],
+        ["<leader>n"] = [[<cmd>cn<cr>]],
+        ["<leader>p"] = [[<cmd>cp<cr>]],
         ["<C-i>"] = [[<C-\><C-n><C-i>]],
         ["<C-o>"] = [[<C-\><C-n><C-o>]],
     })

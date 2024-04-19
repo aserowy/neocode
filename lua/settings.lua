@@ -13,9 +13,9 @@ function M.activate_theme()
     themes.activate_theme(theme.name, theme.style, theme.transparent)
 end
 
-
 function M.setup()
-    vim.g.mapleader = "["
+    vim.g.mapleader = " "
+    vim.g.maplocalleader = " "
 
     local augroup = vim.api.nvim_create_augroup
     local autocmd = vim.api.nvim_create_autocmd
@@ -65,10 +65,12 @@ function M.setup()
     vim.opt.tabstop = 4
     vim.opt.wrap = false
 
-    vim.opt.colorcolumn = "80"
+    vim.opt.colorcolumn = "100"
     vim.opt.number = true
     vim.opt.relativenumber = true
     vim.opt.signcolumn = "yes:2"
+
+    vim.opt.updatetime = 250
 end
 
 return M

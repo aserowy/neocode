@@ -25,25 +25,6 @@ keymaps.register = function(scopes, mappings, options)
 
     for _, scope in pairs(scope_to_table(scopes)) do
         for key, value in pairs(mappings) do
-            api.nvim_set_keymap(scope, key, value, opts)
-        end
-    end
-end
-
-keymaps.register_with_keymap = function(scopes, mappings, options)
-    local opts
-    if options == nil then
-        opts = {
-            nowait = true,
-            silent = true,
-            noremap = true,
-        }
-    else
-        opts = options
-    end
-
-    for _, scope in pairs(scope_to_table(scopes)) do
-        for key, value in pairs(mappings) do
             vim.keymap.set(scope, key, value, opts)
         end
     end

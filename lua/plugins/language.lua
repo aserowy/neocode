@@ -75,7 +75,6 @@ local function setup_cmp()
             format = lspkind.cmp_format({
                 maxwidth = LABEL_WIDTH,
                 mode = "symbol_text",
-                symbol_map = { Copilot = "" },
                 before = function(_, vim_item)
                     local ellipsis_char_len = string.len(ELLIPSIS_CHAR)
 
@@ -114,7 +113,6 @@ local function setup_cmp()
             { name = "nvim_lua" },
             { name = "path",    max_item_count = 3 },
             { name = "buffer",  max_item_count = 5 },
-            { name = "copilot", max_item_count = 3, keyword_length = 5 },
         },
         window = {
             completion = cmp.config.window.bordered(),
@@ -140,15 +138,15 @@ return {
         event = "InsertEnter",
         config = function()
             require("copilot").setup({
-                suggestion = { enabled = false },
                 panel = { enabled = false },
+                suggestion = {
+                    auto_trigger = true,
+                    keymaps = {
+                        -- TODO: into mappings.lua
+                        accept = "<leader>l",
+                    }
+                },
             })
-        end,
-    },
-    {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-            require("copilot_cmp").setup()
         end,
     },
     {
