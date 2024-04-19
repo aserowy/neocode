@@ -14,8 +14,8 @@ function M.activate_theme()
 end
 
 function M.setup()
-    vim.g.mapleader = " "
-    vim.g.maplocalleader = " "
+    vim.g.mapleader = "["
+    vim.g.maplocalleader = "["
 
     local augroup = vim.api.nvim_create_augroup
     local autocmd = vim.api.nvim_create_autocmd

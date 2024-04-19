@@ -14,12 +14,12 @@ local function windows()
         ["<C-j>"] = [[<C-w><C-j>]],
         ["<C-k>"] = [[<C-w><C-k>]],
         ["<C-l>"] = [[<C-w><C-l>]],
-        ["<leader>n"] = [[<cmd>cn<cr>]],
-        ["<leader>p"] = [[<cmd>cp<cr>]],
         ["<C-i>"] = [[<C-\><C-n><C-i>]],
         ["<C-o>"] = [[<C-\><C-n><C-o>]],
     })
     keymaps.register("n", {
+        ["<leader>n"] = [[<cmd>cn<cr>]],
+        ["<leader>p"] = [[<cmd>cp<cr>]],
         ["<C-w>x"] = [[<C-w>s]],
     })
 end
