@@ -9,7 +9,7 @@ local function tabs()
 end
 
 local function windows()
-    keymaps.register({"n", "t"}, {
+    keymaps.register({ "n", "t" }, {
         ["<C-h>"] = [[<C-w><C-h>]],
         ["<C-j>"] = [[<C-w><C-j>]],
         ["<C-k>"] = [[<C-w><C-k>]],
@@ -47,10 +47,17 @@ local function navigations()
 end
 
 local function buffer()
+    keymaps.register("i", {
+        ["<C-l>"] = [[<cmd>lua require'copilot.suggestion'.accept()<cr>]],
+        ["<C-n>"] = [[<cmd>lua require'copilot.suggestion'.next()<cr>]],
+        ["<C-p>"] = [[<cmd>lua require'copilot.suggestion'.prev()<cr>]],
+    })
+
     keymaps.register("n", {
         ["+"] = [[<C-a>]],
         ["-"] = [[<C-x>]],
     })
+
     keymaps.register("x", {
         ["+"] = [[g<C-a>]],
         ["-"] = [[g<C-x>]],

@@ -141,10 +141,7 @@ return {
                 panel = { enabled = false },
                 suggestion = {
                     auto_trigger = true,
-                    keymaps = {
-                        -- TODO: into mappings.lua
-                        accept = "<leader>l",
-                    }
+                    keymaps = {},
                 },
             })
         end,
