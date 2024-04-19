@@ -32,16 +32,17 @@ local function navigations()
     -- TODO: extend with telescope git pickers? C-?...
     keymaps.register({ "n", "t" }, {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
+        ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.diagnostics()<cr>]],
         ["<C-f><C-f>"] = [[<cmd>lua require'nvim.search'.git_or_local()<cr>]],
-        ["<C-f><C-w>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
         ["<C-f><C-q>"] = [[<cmd>lua require'telescope.builtin'.quickfixhistory()<cr>]],
         ["<C-f><C-p>"] = [[<cmd>Telescope persisted<cr>]],
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
-        ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
+        ["<C-f><C-u>"] = [[<cmd>Telescope undo<cr>]],
+        ["<C-f><C-w>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ["<C-e><C-e>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('')<cr>]],
         ["<C-e><C-t>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('tabnew')<cr>]],
         ["<C-e><C-v>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('vsplit')<cr>]],
@@ -149,9 +150,31 @@ mappings.editor_completion = function(cmp, handle)
     }
 end
 
-mappings.search = function(actions)
+mappings.telescope = function()
+    local actions = require("telescope.actions")
     return {
-        ["<C-c>"] = actions.delete_buffer,
+        i = {
+            ["<C-c>"] = actions.delete_buffer,
+        },
+        n = {
+            ["<C-c>"] = actions.delete_buffer,
+        },
+    }
+end
+
+mappings.undo = function()
+    local actions = require("telescope-undo.actions")
+    return {
+        i = {
+            ["<cr>"] = actions.restore,
+            ["<C-cr>"] = actions.yank_additions,
+            ["<S-cr>"] = actions.yank_deletions,
+        },
+        n = {
+            ["<cr>"] = actions.restore,
+            ["<C-cr>"] = actions.yank_additions,
+            ["<S-cr>"] = actions.yank_deletions,
+        },
     }
 end
 

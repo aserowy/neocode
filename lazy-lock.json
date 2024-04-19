@@ -43,6 +43,7 @@
   "suda.vim": { "branch": "master", "commit": "04469d855e36fffcda6be036eb7ff005f64fa0d6" },
   "telescope-dap.nvim": { "branch": "master", "commit": "8c88d9716c91eaef1cdea13cb9390d8ef447dbfe" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
+  "telescope-undo.nvim": { "branch": "main", "commit": "d19e2edc8b18d03283bd91f67310ac300ad003ce" },
   "telescope.nvim": { "branch": "master", "commit": "d00d9df48c00d8682c14c2b5da78bda7ef06b939" },
   "theme-vim": { "branch": "main", "commit": "2d7beee9a08560ee9574002f7b7b719bad53b0e5" },
   "todo-comments.nvim": { "branch": "main", "commit": "a7e39ae9e74f2c8c6dc4eea6d40c3971ae84752d" },

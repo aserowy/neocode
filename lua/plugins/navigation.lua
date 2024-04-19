@@ -1,5 +1,4 @@
 local function setup_telescope()
-    local actions = require("telescope.actions")
     local config = require("telescope.config")
     local mapping = require("mappings")
 
@@ -17,15 +16,9 @@ local function setup_telescope()
                     override_file_sorter = true,
                     case_mode = "smart_case",
                 },
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown({}),
-                },
             },
             layout_strategy = "flex",
-            mappings = {
-                i = mapping.search(actions),
-                n = mapping.search(actions),
-            },
+            mappings = mapping.telescope(),
             pickers = {
                 find_files = {
                     find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
@@ -33,10 +26,19 @@ local function setup_telescope()
             },
             vimgrep_arguments = grep_args,
         },
+        extensions = {
+            ["ui-select"] = {
+                require("telescope.themes").get_dropdown({}),
+            },
+            undo = {
+                mappings = mapping.undo(),
+            },
+        },
     })
 
     require("telescope").load_extension("dap")
     require("telescope").load_extension("ui-select")
+    require("telescope").load_extension("undo")
 end
 
 return {
@@ -67,6 +69,7 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-dap.nvim",
             "nvim-telescope/telescope-ui-select.nvim",
+            "debugloop/telescope-undo.nvim",
         },
     },
 }
