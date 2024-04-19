@@ -10,17 +10,21 @@ end
 
 local function windows()
     keymaps.register({ "n", "t" }, {
-        ["<C-h>"] = [[<C-w><C-h>]],
-        ["<C-j>"] = [[<C-w><C-j>]],
-        ["<C-k>"] = [[<C-w><C-k>]],
-        ["<C-l>"] = [[<C-w><C-l>]],
+        ["<C-h>"] = [[<C-\><C-n><C-w><C-h>]],
+        ["<C-j>"] = [[<C-\><C-n><C-w><C-j>]],
+        ["<C-k>"] = [[<C-\><C-n><C-w><C-k>]],
+        ["<C-l>"] = [[<C-\><C-n><C-w><C-l>]],
         ["<C-i>"] = [[<C-\><C-n><C-i>]],
         ["<C-o>"] = [[<C-\><C-n><C-o>]],
     })
     keymaps.register("n", {
+        ["<C-h>"] = [[<C-w><C-h>]],
+        ["<C-j>"] = [[<C-w><C-j>]],
+        ["<C-k>"] = [[<C-w><C-k>]],
+        ["<C-l>"] = [[<C-w><C-l>]],
+        ["<C-w>x"] = [[<C-w>s]],
         ["<leader>n"] = [[<cmd>cn<cr>]],
         ["<leader>p"] = [[<cmd>cp<cr>]],
-        ["<C-w>x"] = [[<C-w>s]],
     })
 end
 
