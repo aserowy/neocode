@@ -31,7 +31,6 @@ end
 local function navigations()
     -- TODO: extend with telescope git pickers? C-?...
     keymaps.register({ "n", "t" }, {
-        ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
         ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
         ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.diagnostics()<cr>]],
@@ -47,7 +46,12 @@ local function navigations()
         ["<C-e><C-t>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('tabnew')<cr>]],
         ["<C-e><C-v>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('vsplit')<cr>]],
         ["<C-e><C-x>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('split')<cr>]],
-        ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
+    })
+
+    keymaps.register("n", {
+        ["<leader>a"] = [[<cmd>TodoTrouble<cr>]],
+        ["<leader>u"] = [[<cmd>UndotreeToggle<cr>]],
+        ["<leader>x"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })
 end
 
@@ -82,9 +86,8 @@ mappings.editor_on_text = {
     ["ga"] = [[<cmd>lua vim.lsp.buf.format()<cr>]],
     ["gd"] = [[<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>]],
     ["gf"] = [[<cmd>lua vim.lsp.buf.declaration()<cr>]],
-    ["gH"] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],
+    ["gh"] = [[<cmd>lua require'telescope.builtin'.lsp_references()<cr>]],
     ["gi"] = [[<cmd>lua require'telescope.builtin'.lsp_implementations()<cr>]],
-    ["gh"] = [[<cmd>lua vim.lsp.buf.signature_help()<cr>]],
     ["gr"] = [[<cmd>lua vim.lsp.buf.rename()<cr>]],
     ["gx"] = [[<cmd>lua vim.lsp.buf.code_action()<cr>]],
     ["gn"] = [[<cmd>lua vim.diagnostic.goto_next()<cr>]],
@@ -95,7 +98,6 @@ mappings.editor_on_text = {
 local function editor_motion()
     keymaps.register("n", {
         ["<leader>w"] = [[<cmd>lua require("flash").treesitter()<cr>]],
-        ["<leader>t"] = [[<cmd>lua require("flash").treesitter_search()<cr>]],
     })
 end
 
@@ -166,14 +168,14 @@ mappings.undo = function()
     local actions = require("telescope-undo.actions")
     return {
         i = {
-            ["<cr>"] = actions.restore,
-            ["<C-cr>"] = actions.yank_additions,
-            ["<S-cr>"] = actions.yank_deletions,
+            ["<cr>"] = actions.yank_additions,
+            ["<C-cr>"] = actions.yank_deletions,
+            ["<S-cr>"] = actions.restore,
         },
         n = {
-            ["<cr>"] = actions.restore,
-            ["<C-cr>"] = actions.yank_additions,
-            ["<S-cr>"] = actions.yank_deletions,
+            ["<cr>"] = actions.yank_additions,
+            ["<C-cr>"] = actions.yank_deletions,
+            ["<S-cr>"] = actions.restore,
         },
     }
 end
