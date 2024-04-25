@@ -11,6 +11,7 @@ local function generate_sources(null_ls)
         null_ls.builtins.formatting.prettier.with({
             extra_filetypes = { "cshtml" },
         }),
+        null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.terraform_fmt,
     }
