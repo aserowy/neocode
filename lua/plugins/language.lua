@@ -167,7 +167,6 @@ return {
             { "p00f/nvim-ts-rainbow" },
 
             -- NOTE: additional parser
-            { "luckasRanarison/tree-sitter-hyprlang" },
             { "nushell/tree-sitter-nu" },
         },
         build = ":TSUpdate",
