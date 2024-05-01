@@ -3,10 +3,13 @@ local function setup_treesitter()
 
     require("nvim-treesitter.configs").setup({
         ensure_installed = {
+            "angular",
             "bash",
+            "bicep",
             "c",
             "c_sharp",
             "css",
+            "csv",
             "dockerfile",
             "go",
             "graphql",
@@ -25,6 +28,7 @@ local function setup_treesitter()
             "regex",
             "rust",
             "scss",
+            "terraform",
             "toml",
             "typescript",
             "yaml",
