@@ -57,22 +57,6 @@ local M = {
                 vim.cmd.colorscheme("gruvbox")
             end,
         },
-        hardhacker = {
-            style = { "dark", "darker" },
-            transparent = false,
-            lualine = function(_)
-                return "palenight"
-            end,
-            activate = function(style, _)
-                if style == "darker" then
-                    vim.g.hardhacker_darker = 1
-                else
-                    vim.g.hardhacker_darker = 0
-                end
-
-                vim.cmd.colorscheme("hardhacker")
-            end,
-        },
         material = {
             style = { "darker", "lighter", "oceanic", "palenight", "deep ocean" },
             transparent = false,
@@ -93,6 +77,21 @@ local M = {
                 })
 
                 vim.cmd.colorscheme("material")
+            end,
+        },
+        mellifluous = {
+            style = { "dark", "light" },
+            transparent = false,
+            lualine = function(_)
+                return "auto"
+            end,
+            activate = function(style, transparent)
+                require("mellifluous").setup({
+                    transparent_background = { enabled = transparent },
+                })
+
+                vim.o.background = style
+                vim.cmd.colorscheme("mellifluous")
             end,
         },
         monokai = {

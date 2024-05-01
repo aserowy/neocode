@@ -1,7 +1,7 @@
 local M = {
     theme = {
-        name = "monokai",
-        style = "pro",
+        name = "mellifluous",
+        style = "dark",
         transparent = false,
     },
 }
