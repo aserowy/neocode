@@ -28,6 +28,7 @@ local function setup_treesitter()
             "toml",
             "typescript",
             "yaml",
+            "yuck",
             "zig",
         },
         highlight = {
