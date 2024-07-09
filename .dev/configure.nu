@@ -10,11 +10,11 @@ def main [action: string] {
 
 def link_neocode [] {
     mv --force ~/.config/nvim/ ~/.config/nvim_unlinked
-    run-external "ln" "-s" $env.PWD "~/.config/nvim" e>|
+    (ln -s $env.PWD ~/.config/nvim)
 }
 
 def unlink_neocode [] {
-    run-external "unlink" "~/.config/nvim" e>|
-    mv --force ~/.config/nvim_unlinked/ ~/.config/nvim
+    (unlink ~/.config/nvim)
+    mv --force ~/.config/nvim_unlinked/ ~/.config/nvim/
 }
 

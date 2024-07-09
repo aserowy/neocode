@@ -1,5 +1,20 @@
 local M = {
     themes = {
+        bluloco = {
+            style = { "auto", "light", "dark" },
+            transparent = false,
+            lualine = function(_)
+                return "auto"
+            end,
+            activate = function(style, transparent)
+                require("bluloco").setup({
+                    style = style,
+                    transparent = transparent,
+                })
+
+                vim.cmd.colorscheme("bluloco")
+            end,
+        },
         catppuccin = {
             style = { "latte", "frappe", "macchiato", "mocha" },
             transparent = false,

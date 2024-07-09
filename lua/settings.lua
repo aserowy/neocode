@@ -1,6 +1,6 @@
 local M = {
     theme = {
-        name = "mellifluous",
+        name = "bluloco",
         style = "dark",
         transparent = false,
     },

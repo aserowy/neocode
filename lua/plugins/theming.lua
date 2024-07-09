@@ -1,4 +1,8 @@
 return {
+    {
+        "uloco/bluloco.nvim",
+        dependencies = { "rktjmp/lush.nvim" },
+    },
     { "catppuccin/nvim" },
     { "mofiqul/dracula.nvim" },
     { "projekt0n/github-nvim-theme" },
