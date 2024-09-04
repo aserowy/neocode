@@ -3,7 +3,8 @@ local file = require("nvim.file")
 
 local M = {
     is_executable = vim.fn.executable("yeet"),
-    valid_for_pattern = "term://[%w\\/~:]+:yeet %-%-stdout%-on%-open",
+    tmp_selection_file = os.tmpname(),
+    valid_for_pattern = "term://[%w\\/~:]+:yeet %-%-selection%-to%-file%-on%-open",
 }
 
 function M.open(split)
@@ -22,11 +23,11 @@ function M.open(split)
         current = vim.fn.getcwd()
     end
 
-    vim.cmd("term yeet --stdout-on-open " .. current)
+    vim.cmd("term yeet --selection-to-file-on-open " .. M.tmp_selection_file .. " " .. current)
 end
 
 function M.close()
-    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    local lines = file.lines(M.tmp_selection_file)
 
     if #lines == 0 then
         return 1
