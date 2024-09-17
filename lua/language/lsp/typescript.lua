@@ -1,6 +1,6 @@
 local M = {}
 function M.setup(capabilities, on_attach)
-    require("lspconfig").tsserver.setup({
+    require("lspconfig").ts_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
     })

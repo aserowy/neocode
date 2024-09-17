@@ -12,5 +12,6 @@ return {
     { "loctvl842/monokai-pro.nvim" },
     { "edeneast/nightfox.nvim" },
     { "navarasu/onedark.nvim" },
+    { "rmehri01/onenord.nvim" },
     { "folke/tokyonight.nvim" },
 }

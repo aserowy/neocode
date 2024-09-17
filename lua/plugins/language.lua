@@ -138,32 +138,6 @@ end
 
 return {
     {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                panel = { enabled = false },
-                suggestion = {
-                    auto_trigger = true,
-                    keymaps = {},
-                },
-            })
-        end,
-    },
-    {
-        "copilotc-nvim/copilotchat.nvim",
-        branch = "canary",
-        dependencies = {
-            { "zbirenbaum/copilot.lua" },
-            { "nvim-lua/plenary.nvim" },
-        },
-        opts = {
-            debug = true,
-        },
-    },
-
-    {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             setup_treesitter()

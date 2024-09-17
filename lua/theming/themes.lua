@@ -154,6 +154,23 @@ local M = {
                 require("onedark").load()
             end,
         },
+        onenord = {
+            style = { "dark", "ligt" },
+            transparent = false,
+            lualine = function(_)
+                return "onenord"
+            end,
+            activate = function(style, transparent)
+                require("onenord").setup({
+                    theme = style,
+                    disable = {
+                        background = transparent,
+                    },
+                })
+
+                require("onenord").setup()
+            end,
+        },
         tokyonight = {
             style = { "storm", "moon", "night", "day" },
             transparent = false,
