@@ -49,9 +49,8 @@ local function navigations()
     })
 
     keymaps.register("n", {
-        ["<leader>a"] = [[<cmd>TodoTrouble<cr>]],
-        ["<leader>u"] = [[<cmd>UndotreeToggle<cr>]],
-        ["<leader>x"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
+        ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
+        ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
     })
 end
 
