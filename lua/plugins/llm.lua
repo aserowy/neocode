@@ -5,9 +5,19 @@ return {
         lazy = false,
         opts = {
             provider = "copilot",
+            behaviour = {
+                auto_suggestions = false,
+            },
+            mappings = {
+                suggestion = {
+                    accept = "<C-l>",
+                    prev = "<C-k>",
+                    next = "<C-j>",
+                },
+            },
         },
-        build = "make",
         -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+        build = "make",
         dependencies = {
             "stevearc/dressing.nvim",
             "nvim-lua/plenary.nvim",
@@ -38,31 +48,6 @@ return {
                 },
                 ft = { "markdown", "Avante" },
             },
-        },
-    },
-    {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                panel = { enabled = false },
-                suggestion = {
-                    auto_trigger = true,
-                    keymaps = {},
-                },
-            })
-        end,
-    },
-    {
-        "copilotc-nvim/copilotchat.nvim",
-        branch = "canary",
-        dependencies = {
-            { "zbirenbaum/copilot.lua" },
-            { "nvim-lua/plenary.nvim" },
-        },
-        opts = {
-            debug = true,
         },
     },
 }
