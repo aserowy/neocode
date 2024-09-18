@@ -59,11 +59,12 @@ function M.setup()
 
     vim.opt.expandtab = true
     vim.opt.fillchars.eob = "\\ "
+    vim.opt.linebreak = true
     vim.opt.shiftwidth = 4
     vim.opt.shortmess:append({ c = true })
     vim.opt.softtabstop = 4
     vim.opt.tabstop = 4
-    vim.opt.wrap = false
+    vim.opt.wrap = true
 
     vim.opt.colorcolumn = "100"
     vim.opt.number = true
