@@ -49,8 +49,10 @@ local function navigations()
     })
 
     keymaps.register("n", {
-        ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
-        ["<C-x>"] = [[<cmd>Trouble workspace_diagnostics<cr>]],
+        ["<leader>t"] = [[<cmd>TodoTrouble toggle<cr>]],
+        ["<leader>lw"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.WARN<cr>]],
+        ["<leader>le"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.ERROR<cr>]],
+        ["<leader>la"] = [[<cmd>Trouble diagnostics toggle<cr>]],
     })
 end
 
