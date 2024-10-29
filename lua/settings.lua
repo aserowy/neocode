@@ -1,7 +1,7 @@
 local M = {
     theme = {
-        name = "bluloco",
-        style = "dark",
+        name = "material",
+        style = "darker",
         transparent = false,
     },
 }

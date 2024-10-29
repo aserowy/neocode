@@ -39,7 +39,7 @@ local function navigations()
         ["<C-f><C-q>"] = [[<cmd>lua require'telescope.builtin'.quickfixhistory()<cr>]],
         ["<C-f><C-p>"] = [[<cmd>Telescope persisted<cr>]],
         ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
-        ["<C-f><C-t>"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
+        ["<C-f>t"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
         ["<C-f><C-u>"] = [[<cmd>Telescope undo<cr>]],
         ["<C-f><C-w>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
         ["<C-e><C-e>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('')<cr>]],
