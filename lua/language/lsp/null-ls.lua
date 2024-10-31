@@ -1,8 +1,28 @@
+-- local helper = require("null-ls.helpers")
+-- local nufmt = helper.make_builtin({
+--     name = "nufmt",
+--     meta = {
+--         url = "https://github.com/nushell/nufmt",
+--         description = "",
+--     },
+--     method = require("null-ls.methods").internal.FORMATTING,
+--     filetypes = { "nu" },
+--     generator_opts = {
+--         command = "nufmt",
+--         args = { "--stdin" },
+--         to_stdin = true,
+--     },
+--     factory = helper.formatter_factory,
+-- })
+
 local function generate_sources(null_ls)
     local sources = {
         null_ls.builtins.diagnostics.djlint,
         null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.diagnostics.terraform_validate,
+
+        -- FIX: nufmt is currently unuseable
+        -- nufmt,
 
         null_ls.builtins.formatting.csharpier,
         null_ls.builtins.formatting.djlint,

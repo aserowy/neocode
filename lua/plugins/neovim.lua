@@ -7,10 +7,4 @@ return {
     },
     "lambdalisue/suda.vim",
     "mbbill/undotree",
-    {
-        "907th/vim-auto-save",
-        config = function()
-            vim.g.auto_save = 1
-        end,
-    },
 }

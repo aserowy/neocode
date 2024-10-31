@@ -57,6 +57,5 @@
   "tokyonight.nvim": { "branch": "main", "commit": "2e1daa1d164ad8cc3e99b44ca68e990888a66038" },
   "tree-sitter-nu": { "branch": "main", "commit": "082a7c7df7db460da6b280c9f902bf2b19a2f423" },
   "trouble.nvim": { "branch": "main", "commit": "2f3b537f2207ce32f4459f9d56746ee013b5e01b" },
-  "undotree": { "branch": "master", "commit": "78b5241191852ffa9bb5da5ff2ee033160798c3b" },
-  "vim-auto-save": { "branch": "master", "commit": "2e3e54ea4c0fc946c21b0a4ee4c1c295ba736ee8" }
+  "undotree": { "branch": "master", "commit": "78b5241191852ffa9bb5da5ff2ee033160798c3b" }
 }
