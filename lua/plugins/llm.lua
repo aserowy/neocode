@@ -5,16 +5,11 @@ return {
         lazy = false,
         opts = {
             provider = "copilot",
+            auto_suggestions_provider = "copilot",
             behaviour = {
-                auto_suggestions = false,
+                auto_suggestions = true,
             },
-            mappings = {
-                suggestion = {
-                    accept = "<C-l>",
-                    prev = "<C-k>",
-                    next = "<C-j>",
-                },
-            },
+            mappings = require("mappings").avante,
         },
         -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
         build = "make",

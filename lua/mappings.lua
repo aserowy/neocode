@@ -57,12 +57,6 @@ local function navigations()
 end
 
 local function buffer()
-    keymaps.register("i", {
-        ["<C-l>"] = [[<cmd>lua require'copilot.suggestion'.accept()<cr>]],
-        ["<C-n>"] = [[<cmd>lua require'copilot.suggestion'.next()<cr>]],
-        ["<C-p>"] = [[<cmd>lua require'copilot.suggestion'.prev()<cr>]],
-    })
-
     keymaps.register("n", {
         ["+"] = [[<C-a>]],
         ["-"] = [[<C-x>]],
@@ -71,14 +65,6 @@ local function buffer()
     keymaps.register("x", {
         ["+"] = [[g<C-a>]],
         ["-"] = [[g<C-x>]],
-    })
-end
-
--- copilot
-local function copilot_chat()
-    keymaps.register("n", {
-        ["<C-c><C-e>"] = [[<cmd>CopilotChatExplain<cr>]],
-        ["<C-c><C-t>"] = [[<cmd>CopilotChatTests<cr>]],
     })
 end
 
@@ -153,6 +139,15 @@ mappings.editor_completion = function(cmp, handle)
     }
 end
 
+mappings.avante = {
+    --- @class AvanteConflictMappings
+    suggestion = {
+        accept = "<C-l>",
+        next = "<C-n>",
+        prev = "<C-p>",
+    },
+}
+
 mappings.telescope = function()
     local actions = require("telescope.actions")
     return {
@@ -186,7 +181,6 @@ mappings.setup = function()
     windows()
     navigations()
     buffer()
-    copilot_chat()
     editor_dap()
     editor_motion()
     editor_visual()
