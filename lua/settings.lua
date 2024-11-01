@@ -1,7 +1,7 @@
 local M = {
     theme = {
-        name = "material",
-        style = "darker",
+        name = "onenord",
+        style = "dark",
         transparent = false,
     },
 }
