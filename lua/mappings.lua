@@ -140,7 +140,6 @@ mappings.editor_completion = function(cmp, handle)
 end
 
 mappings.avante = {
-    --- @class AvanteConflictMappings
     suggestion = {
         accept = "<C-l>",
         next = "<C-j>",
