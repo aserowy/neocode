@@ -12,6 +12,7 @@ local lsps = {
     require("language.lsp.nu"),
     require("language.lsp.nx"),
     require("language.lsp.rust"),
+    require("language.lsp.toml"),
     require("language.lsp.terraform"),
     require("language.lsp.typescript"),
     require("language.lsp.yaml"),
