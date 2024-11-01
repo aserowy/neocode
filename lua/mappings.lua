@@ -143,8 +143,8 @@ mappings.avante = {
     --- @class AvanteConflictMappings
     suggestion = {
         accept = "<C-l>",
-        next = "<C-n>",
-        prev = "<C-p>",
+        next = "<C-j>",
+        prev = "<C-k>",
     },
 }
 
