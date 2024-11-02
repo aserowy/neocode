@@ -12,22 +12,20 @@ mappings.avante = {
 local function avante_templates()
     local template_add_docstring = "Add docstring to the following codes"
     local template_add_tests = "Implement tests for the following code"
-    local template_code_readability_analysis = [[
-  You must identify any readability issues in the code snippet.
-  Some readability issues to consider:
-  - Unclear naming
-  - Unclear purpose
-  - Redundant or obvious comments
-  - Lack of comments
-  - Long or complex one liners
-  - Too much nesting
-  - Long variable names
-  - Inconsistent naming and code style.
-  - Code repetition
-  You may identify additional problems. The user submits a small section of code from a larger file.
-  Only list lines with readability issues, in the format <line_num>|<issue and proposed solution>
-  If there's no issues with code respond with only: <OK>
-]]
+    local template_code_readability_analysis = "You must identify any readability issues in the code snippet. "
+        .. "Some readability issues to consider: "
+        .. "- Unclear naming "
+        .. "- Unclear purpose "
+        .. "- Redundant or obvious comments "
+        .. "- Lack of comments "
+        .. "- Long or complex one liners "
+        .. "- Too much nesting "
+        .. "- Long variable names "
+        .. "- Inconsistent naming and code style  "
+        .. "- Code repetition "
+        .. "You may identify additional problems. The user submits a small section of code from a larger file. "
+        .. "Only list lines with readability issues, in the format <line_num>|<issue and proposed solution>. "
+        .. "If there's no issues with code respond with only: <OK>"
     local template_complete_code = "Complete the following codes written in " .. vim.bo.filetype
     local template_explain_code = "Explain the following code"
     local template_fix_bugs = "Fix the bugs inside the following codes if any"
@@ -35,10 +33,10 @@ local function avante_templates()
     local template_summarize = "Summarize the following text"
 
     local function resolve_cmd(template)
-        return string.format("<cmd>lua require'avante.api'.ask({template})<cr>", template)
+        return string.format("<cmd>lua require'avante.api'.ask({ question = \"%s\"})<cr>", template)
     end
 
-    keymaps.register("n", {
+    keymaps.register({ "n", "v" }, {
         ["<leader>ac"] = resolve_cmd(template_complete_code),
         ["<leader>ad"] = resolve_cmd(template_add_docstring),
         ["<leader>ae"] = resolve_cmd(template_explain_code),
