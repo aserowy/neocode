@@ -1,58 +1,52 @@
 local keymaps = require("nvim.keymaps")
 local mappings = {}
 
-local function tabs()
-    keymaps.register("n", {
-        ["<C-n>"] = [[<cmd>tabnext<cr>]],
-        ["<C-p>"] = [[<cmd>tabprevious<cr>]],
-    })
-end
+mappings.avante = {
+    suggestion = {
+        accept = "<C-l>",
+        next = "<C-j>",
+        prev = "<C-k>",
+    },
+}
 
-local function windows()
-    keymaps.register({ "n", "t" }, {
-        ["<C-h>"] = [[<C-\><C-n><C-w><C-h>]],
-        ["<C-j>"] = [[<C-\><C-n><C-w><C-j>]],
-        ["<C-k>"] = [[<C-\><C-n><C-w><C-k>]],
-        ["<C-l>"] = [[<C-\><C-n><C-w><C-l>]],
-        ["<C-i>"] = [[<C-\><C-n><C-i>]],
-        ["<C-o>"] = [[<C-\><C-n><C-o>]],
-    })
-    keymaps.register("n", {
-        ["<C-h>"] = [[<C-w><C-h>]],
-        ["<C-j>"] = [[<C-w><C-j>]],
-        ["<C-k>"] = [[<C-w><C-k>]],
-        ["<C-l>"] = [[<C-w><C-l>]],
-        ["<C-w>x"] = [[<C-w>s]],
-        ["<leader>n"] = [[<cmd>cn<cr>]],
-        ["<leader>p"] = [[<cmd>cp<cr>]],
-    })
-end
+local function avante_templates()
+    local template_add_docstring = "Add docstring to the following codes"
+    local template_add_tests = "Implement tests for the following code"
+    local template_code_readability_analysis = [[
+  You must identify any readability issues in the code snippet.
+  Some readability issues to consider:
+  - Unclear naming
+  - Unclear purpose
+  - Redundant or obvious comments
+  - Lack of comments
+  - Long or complex one liners
+  - Too much nesting
+  - Long variable names
+  - Inconsistent naming and code style.
+  - Code repetition
+  You may identify additional problems. The user submits a small section of code from a larger file.
+  Only list lines with readability issues, in the format <line_num>|<issue and proposed solution>
+  If there's no issues with code respond with only: <OK>
+]]
+    local template_complete_code = "Complete the following codes written in " .. vim.bo.filetype
+    local template_explain_code = "Explain the following code"
+    local template_fix_bugs = "Fix the bugs inside the following codes if any"
+    local template_optimize_code = "Optimize the following code"
+    local template_summarize = "Summarize the following text"
 
-local function navigations()
-    -- TODO: extend with telescope git pickers? C-?...
-    keymaps.register({ "n", "t" }, {
-        ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
-        ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
-        ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.diagnostics()<cr>]],
-        ["<C-f><C-f>"] = [[<cmd>lua require'nvim.search'.git_or_local()<cr>]],
-        ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
-        ["<C-f><C-q>"] = [[<cmd>lua require'telescope.builtin'.quickfixhistory()<cr>]],
-        ["<C-f><C-p>"] = [[<cmd>Telescope persisted<cr>]],
-        ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
-        ["<C-f>t"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
-        ["<C-f><C-u>"] = [[<cmd>Telescope undo<cr>]],
-        ["<C-f><C-w>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
-        ["<C-e><C-e>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('')<cr>]],
-        ["<C-e><C-t>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('tabnew')<cr>]],
-        ["<C-e><C-v>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('vsplit')<cr>]],
-        ["<C-e><C-x>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('split')<cr>]],
-    })
+    local function resolve_cmd(template)
+        return string.format("<cmd>lua require'avante.api'.ask({template})<cr>", template)
+    end
 
     keymaps.register("n", {
-        ["<leader>t"] = [[<cmd>TodoTrouble toggle<cr>]],
-        ["<leader>lw"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.WARN<cr>]],
-        ["<leader>le"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.ERROR<cr>]],
-        ["<leader>la"] = [[<cmd>Trouble diagnostics toggle<cr>]],
+        ["<leader>ac"] = resolve_cmd(template_complete_code),
+        ["<leader>ad"] = resolve_cmd(template_add_docstring),
+        ["<leader>ae"] = resolve_cmd(template_explain_code),
+        ["<leader>af"] = resolve_cmd(template_fix_bugs),
+        ["<leader>ao"] = resolve_cmd(template_optimize_code),
+        ["<leader>ar"] = resolve_cmd(template_code_readability_analysis),
+        ["<leader>as"] = resolve_cmd(template_summarize),
+        ["<leader>at"] = resolve_cmd(template_add_tests),
     })
 end
 
@@ -139,13 +133,39 @@ mappings.editor_completion = function(cmp, handle)
     }
 end
 
-mappings.avante = {
-    suggestion = {
-        accept = "<C-l>",
-        next = "<C-j>",
-        prev = "<C-k>",
-    },
-}
+local function navigations()
+    keymaps.register({ "n", "t" }, {
+        ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
+        ["<C-f><C-b>"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
+        ["<C-f><C-d>"] = [[<cmd>lua require'telescope.builtin'.diagnostics()<cr>]],
+        ["<C-f><C-f>"] = [[<cmd>lua require'nvim.search'.git_or_local()<cr>]],
+        ["<C-f><C-h>"] = [[<cmd>lua require'telescope.builtin'.oldfiles()<cr>]],
+        ["<C-f><C-q>"] = [[<cmd>lua require'telescope.builtin'.quickfixhistory()<cr>]],
+        ["<C-f><C-p>"] = [[<cmd>Telescope persisted<cr>]],
+        ["<C-f><C-s>"] = [[<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>]],
+        ["<C-f>t"] = [[<cmd>lua require'theming.theme_picker'.open_picker()<cr>]],
+        ["<C-f><C-u>"] = [[<cmd>Telescope undo<cr>]],
+        ["<C-f><C-w>"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],
+        ["<C-e><C-e>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('')<cr>]],
+        ["<C-e><C-t>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('tabnew')<cr>]],
+        ["<C-e><C-v>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('vsplit')<cr>]],
+        ["<C-e><C-x>"] = [[<cmd>lua require'nvim.terminal'.open_file_manager_tui('split')<cr>]],
+    })
+
+    keymaps.register("n", {
+        ["<leader>t"] = [[<cmd>TodoTrouble toggle<cr>]],
+        ["<leader>lw"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.WARN<cr>]],
+        ["<leader>le"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.ERROR<cr>]],
+        ["<leader>la"] = [[<cmd>Trouble diagnostics toggle<cr>]],
+    })
+end
+
+local function tabs()
+    keymaps.register("n", {
+        ["<C-n>"] = [[<cmd>tabnext<cr>]],
+        ["<C-p>"] = [[<cmd>tabprevious<cr>]],
+    })
+end
 
 mappings.telescope = function()
     local actions = require("telescope.actions")
@@ -175,14 +195,35 @@ mappings.undo = function()
     }
 end
 
+local function windows()
+    keymaps.register({ "n", "t" }, {
+        ["<C-h>"] = [[<C-\><C-n><C-w><C-h>]],
+        ["<C-j>"] = [[<C-\><C-n><C-w><C-j>]],
+        ["<C-k>"] = [[<C-\><C-n><C-w><C-k>]],
+        ["<C-l>"] = [[<C-\><C-n><C-w><C-l>]],
+        ["<C-i>"] = [[<C-\><C-n><C-i>]],
+        ["<C-o>"] = [[<C-\><C-n><C-o>]],
+    })
+    keymaps.register("n", {
+        ["<C-h>"] = [[<C-w><C-h>]],
+        ["<C-j>"] = [[<C-w><C-j>]],
+        ["<C-k>"] = [[<C-w><C-k>]],
+        ["<C-l>"] = [[<C-w><C-l>]],
+        ["<C-w>x"] = [[<C-w>s]],
+        ["<leader>n"] = [[<cmd>cn<cr>]],
+        ["<leader>p"] = [[<cmd>cp<cr>]],
+    })
+end
+
 mappings.setup = function()
-    tabs()
-    windows()
-    navigations()
+    avante_templates()
     buffer()
     editor_dap()
     editor_motion()
     editor_visual()
+    navigations()
+    tabs()
+    windows()
 end
 
 return mappings
