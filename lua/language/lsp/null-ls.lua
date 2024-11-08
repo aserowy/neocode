@@ -27,7 +27,6 @@ local function generate_sources(null_ls)
         null_ls.builtins.formatting.csharpier,
         null_ls.builtins.formatting.djlint,
         null_ls.builtins.formatting.gofmt,
-        null_ls.builtins.formatting.nixpkgs_fmt,
         null_ls.builtins.formatting.prettier.with({
             extra_filetypes = { "cshtml" },
         }),
