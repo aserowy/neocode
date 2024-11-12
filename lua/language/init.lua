@@ -24,7 +24,8 @@ local function on_attach(client, bufnr)
         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
         vim.api.nvim_create_autocmd("BufWritePost", {
             group = augroup,
-            buffer = bufnr, callback = function()
+            buffer = bufnr,
+            callback = function()
                 vim.lsp.buf.format({ async = false })
             end,
         })
