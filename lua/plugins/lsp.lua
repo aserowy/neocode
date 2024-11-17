@@ -11,6 +11,14 @@ return {
             "nvim-lua/plenary.nvim",
         },
     },
+    {
+        "seblj/roslyn.nvim",
+        ft = "cs",
+        opts = {
+            exe = "Microsoft.CodeAnalysis.LanguageServer",
+        },
+    },
+
     "ray-x/lsp_signature.nvim",
 
     {

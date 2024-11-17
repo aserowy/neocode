@@ -79,9 +79,6 @@ return {
         end,
         dependencies = {
             { "p00f/nvim-ts-rainbow" },
-
-            -- NOTE: additional parser
-            { "nushell/tree-sitter-nu" },
         },
         build = ":TSUpdate",
     },
@@ -89,7 +86,7 @@ return {
         "saghen/blink.cmp",
         version = "*",
         opts = {
-            keymap = 'enter',
+            keymap = "enter",
         },
         dependencies = {
             "rafamadriz/friendly-snippets",
