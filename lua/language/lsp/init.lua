@@ -7,6 +7,7 @@ local lsps = {
     require("language.lsp.json"),
     require("language.lsp.null-ls"),
     require("language.lsp.lua"),
+    require("language.lsp.markdown"),
     require("language.lsp.nix"),
     require("language.lsp.nu"),
     require("language.lsp.nx"),

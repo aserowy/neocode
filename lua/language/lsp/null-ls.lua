@@ -18,7 +18,6 @@
 local function generate_sources(null_ls)
     local sources = {
         null_ls.builtins.diagnostics.djlint,
-        null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.diagnostics.terraform_validate,
 
         -- FIX: nufmt is currently unuseable
