@@ -50,7 +50,7 @@ end
 
 local function zettelkasten()
     keymaps.register({ "n" }, {
-        ["<leader>zn"] = "<Cmd>ZkNew { title = vim.fn.input('Title: '), dir = 'zettel' }<CR>",
+        ["<leader>zz"] = "<Cmd>ZkNew { title = vim.fn.input('Title: '), dir = 'zettel' }<CR>",
         ["<leader>zd"] = "<Cmd>ZkNew { group = 'daily', dir = 'dailies' }<CR>",
         ["<leader>zo"] = "<Cmd>ZkNotes { sort = { 'modified' } }<CR>",
         ["<leader>zt"] = "<Cmd>ZkTags<CR>",
@@ -58,7 +58,7 @@ local function zettelkasten()
     })
 
     keymaps.register({ "n" }, {
-        ["<leader>zn"] = ":'<,'>ZkNewFromTitleSelection { dir = 'zettel' }<CR>",
+        ["<leader>zz"] = ":'<,'>ZkNewFromTitleSelection { dir = 'zettel' }<CR>",
         ["<leader>zc"] = ":'<,'>ZkNewFromContentSelection { dir = 'zettel', title = vim.fn.input('Title: ') }<CR>",
         ["<leader>zf"] = ":'<,'>ZkMatch<CR>",
     })
