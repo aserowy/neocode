@@ -48,6 +48,15 @@ local function avante_templates()
     })
 end
 
+local function zettelkasten()
+    keymaps.register({ "n" }, {
+        ["<leader>zn"] = "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>",
+        ["<leader>zo"] = "<Cmd>ZkNotes { sort = { 'modified' } }<CR>",
+        ["<leader>zt"] = "<Cmd>ZkTags<CR>",
+        ["<leader>zf"] = "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>",
+    })
+end
+
 local function buffer()
     keymaps.register("n", {
         ["+"] = [[<C-a>]],
@@ -222,6 +231,7 @@ mappings.setup = function()
     navigations()
     tabs()
     windows()
+    zettelkasten()
 end
 
 return mappings
