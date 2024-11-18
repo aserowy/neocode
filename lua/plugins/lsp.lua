@@ -18,6 +18,14 @@ return {
             exe = "Microsoft.CodeAnalysis.LanguageServer",
         },
     },
+    {
+        "zk-org/zk-nvim",
+        config = function()
+            require("zk").setup({
+                picker = "select",
+            })
+        end,
+    },
 
     "ray-x/lsp_signature.nvim",
 
