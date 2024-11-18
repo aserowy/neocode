@@ -50,6 +50,8 @@ end
 
 local function zettelkasten()
     keymaps.register({ "n" }, {
+        ["<leader>zb"] = "<cmd>ZkBacklinks<CR>",
+        ["<leader>zl"] = "<cmd>ZkLinks<CR>",
         ["<leader>zn"] = "<cmd>ZkNew { title = vim.fn.input('Title: '), dir = 'zettel' }<CR>",
         ["<leader>zd"] = "<cmd>ZkNew { dir = 'journal' }<CR>",
     })
