@@ -53,11 +53,20 @@ return {
     },
     {
         "folke/todo-comments.nvim",
-        config = function()
-            require("todo-comments").setup({})
-        end,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            keywords = {
+                WAITING = { icon = "󰥔 ", color = "warning" },
+            },
+            highlight = {
+                comments_only = false,
+                pattern = [[.*<(KEYWORDS)\s*]],
+            },
+            search = {
+                pattern = [[(- \[(KEYWORDS)\])|(\b(KEYWORDS):)]],
+            },
         },
     },
     {
