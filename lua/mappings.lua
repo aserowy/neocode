@@ -131,21 +131,6 @@ local function editor_dap()
     })
 end
 
-mappings.editor_completion = function(cmp, handle)
-    return {
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),
-        ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = false,
-        }),
-        ["<Tab>"] = cmp.mapping(handle.jump_next, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(handle.jump_previous, { "i", "s" }),
-    }
-end
-
 local function navigations()
     keymaps.register({ "n", "t" }, {
         ["<C-f><C-a>"] = [[<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>]],
@@ -166,10 +151,11 @@ local function navigations()
     })
 
     keymaps.register("n", {
-        ["<leader>t"] = [[<cmd>TodoTrouble toggle<cr>]],
+        ["<leader>tt"] = [[<cmd>TodoTrouble toggle<cr>]],
+        ["<leader>tf"] = [[<cmd>TodoTelescope<cr>]],
         ["<leader>lw"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.WARN<cr>]],
         ["<leader>le"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.ERROR<cr>]],
-        ["<leader>la"] = [[<cmd>Trouble diagnostics toggle<cr>]],
+        ["<leader>ll"] = [[<cmd>Trouble diagnostics toggle<cr>]],
     })
 end
 
