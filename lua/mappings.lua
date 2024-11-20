@@ -152,7 +152,7 @@ local function navigations()
 
     keymaps.register("n", {
         ["<leader>tt"] = [[<cmd>TodoTrouble toggle<cr>]],
-        ["<leader>tf"] = [[<cmd>TodoTelescope<cr>]],
+        ["<leader>tf"] = [[<cmd>TodoTelescope keywords=FIX,TODO,WAITING<cr>]],
         ["<leader>lw"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.WARN<cr>]],
         ["<leader>le"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.ERROR<cr>]],
         ["<leader>ll"] = [[<cmd>Trouble diagnostics toggle<cr>]],
