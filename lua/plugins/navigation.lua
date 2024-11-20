@@ -39,6 +39,18 @@ local function setup_telescope()
     require("telescope").load_extension("dap")
     require("telescope").load_extension("ui-select")
     require("telescope").load_extension("undo")
+
+    vim.api.nvim_create_autocmd("User", {
+        pattern = "TelescopePreviewerLoaded",
+        callback = function(args)
+            vim.wo.wrap = true
+            vim.wo.number = false
+
+            if args.data.bufname:match("*.csv") then
+                vim.wo.wrap = false
+            end
+        end,
+    })
 end
 
 return {
