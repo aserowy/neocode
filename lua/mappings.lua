@@ -54,6 +54,7 @@ local function zettelkasten()
         ["<leader>zl"] = "<cmd>ZkLinks<CR>",
         ["<leader>zn"] = "<cmd>ZkNew { title = vim.fn.input('Title: '), dir = 'zettel' }<CR>",
         ["<leader>zd"] = "<cmd>ZkNew { dir = 'journal' }<CR>",
+        ["<leader>zf"] = "/\\*\\*CF:\\*\\*<cr>W:lua require'telescope.builtin'.lsp_definitions()<cr>",
     })
 
     keymaps.register({ "v" }, {
