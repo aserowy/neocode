@@ -8,6 +8,9 @@ return {
                 char = {
                     enabled = false,
                 },
+                search = {
+                    enabled = true
+                },
             },
         },
     },
