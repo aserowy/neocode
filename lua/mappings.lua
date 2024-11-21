@@ -63,6 +63,16 @@ local function zettelkasten()
     })
 end
 
+local function todo()
+    keymaps.register({ "n" }, {
+        ["<leader>tt"] = [[<cmd>TodoTrouble toggle<cr>]],
+        ["<leader>tf"] = [[<cmd>TodoTelescope keywords=FIX,TODO,WAITING<cr>]],
+        ["<leader>tc"] = "<cmd>s/^- \\[.*\\]/- [x]/<cr>",
+        ["<leader>to"] = "<cmd>s/^- \\[.*\\]/- [TODO]/<cr>",
+        ["<leader>tw"] = "<cmd>s/^- \\[.*\\]/- [WAITING]/<cr>",
+    })
+end
+
 local function buffer()
     keymaps.register("n", {
         ["+"] = [[<C-a>]],
@@ -151,8 +161,6 @@ local function navigations()
     })
 
     keymaps.register("n", {
-        ["<leader>tt"] = [[<cmd>TodoTrouble toggle<cr>]],
-        ["<leader>tf"] = [[<cmd>TodoTelescope keywords=FIX,TODO,WAITING<cr>]],
         ["<leader>lw"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.WARN<cr>]],
         ["<leader>le"] = [[<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.ERROR<cr>]],
         ["<leader>ll"] = [[<cmd>Trouble diagnostics toggle<cr>]],
@@ -222,6 +230,7 @@ mappings.setup = function()
     editor_visual()
     navigations()
     tabs()
+    todo()
     windows()
     zettelkasten()
 end
