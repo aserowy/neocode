@@ -23,7 +23,7 @@ function M.open(split)
         current = vim.fn.getcwd()
     end
 
-    vim.cmd("term yeet --selection-to-file-on-open " .. M.tmp_selection_file .. " " .. current)
+    vim.cmd("term yeet --selection-to-file-on-open '" .. M.tmp_selection_file .. "' '" .. current .. "'")
 end
 
 function M.close()
