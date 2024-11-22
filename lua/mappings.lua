@@ -50,17 +50,21 @@ end
 
 local function zettelkasten()
     keymaps.register({ "n" }, {
-        ["<leader>zb"] = "<cmd>ZkBacklinks<CR>",
-        ["<leader>zl"] = "<cmd>ZkLinks<CR>",
-        ["<leader>zn"] = "<cmd>ZkNew { title = vim.fn.input('Title: '), dir = 'zettel' }<CR>",
-        ["<leader>zd"] = "<cmd>ZkNew { dir = 'journal' }<CR>",
+        ["<leader>zd"] = "/\\*\\*DD:\\*\\*<cr>W:lua require'telescope.builtin'.lsp_definitions()<cr>",
         ["<leader>zf"] = "/\\*\\*CF:\\*\\*<cr>W:lua require'telescope.builtin'.lsp_definitions()<cr>",
+        ["<leader>zr"] = "/\\*\\*R:\\*\\*<cr>W:lua require'telescope.builtin'.lsp_definitions()<cr>",
+
+        ["<leader>zj"] = "<cmd>ZkNew { dir = 'journal' }<CR>",
+        ["<leader>zl"] = "<cmd>ZkInsertLink<CR>",
+        ["<leader>zn"] = "<cmd>ZkNew { title = vim.fn.input('Title: '), dir = 'zettel' }<CR>",
+        ["<leader>zt"] = "<cmd>ZkTags<CR>",
     })
 
     keymaps.register({ "v" }, {
-        ["<leader>zn"] = ":'<,'>ZkNewFromTitleSelection { dir = 'zettel' }<CR>",
         ["<leader>zc"] = ":'<,'>ZkNewFromContentSelection { dir = 'zettel', title = vim.fn.input('Title: ') }<CR>",
         ["<leader>zd"] = ":'<,'>ZkNewFromContentSelection { dir = 'journal' }<CR>",
+        ["<leader>zl"] = ":'<,'>ZkInsertLinkAtSelection<CR>",
+        ["<leader>zn"] = ":'<,'>ZkNewFromTitleSelection { dir = 'zettel' }<CR>",
     })
 end
 
