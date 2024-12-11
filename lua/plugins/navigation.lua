@@ -9,14 +9,6 @@ local function setup_telescope()
 
     require("telescope").setup({
         defaults = {
-            extensions = {
-                fzf = {
-                    fuzzy = true,
-                    override_generic_sorter = true,
-                    override_file_sorter = true,
-                    case_mode = "smart_case",
-                },
-            },
             layout_strategy = "flex",
             mappings = mapping.telescope(),
             pickers = {
@@ -27,6 +19,12 @@ local function setup_telescope()
             vimgrep_arguments = grep_args,
         },
         extensions = {
+            fzf = {
+                fuzzy = true,
+                override_generic_sorter = true,
+                override_file_sorter = true,
+                case_mode = "smart_case",
+            },
             ["ui-select"] = {
                 require("telescope.themes").get_dropdown({}),
             },
@@ -37,18 +35,15 @@ local function setup_telescope()
     })
 
     require("telescope").load_extension("dap")
+    require("telescope").load_extension("fzf")
     require("telescope").load_extension("ui-select")
     require("telescope").load_extension("undo")
 
     vim.api.nvim_create_autocmd("User", {
         pattern = "TelescopePreviewerLoaded",
         callback = function(args)
-            vim.wo.wrap = true
+            vim.wo.wrap = not args.data.bufname:match("*.csv")
             vim.wo.number = false
-
-            if args.data.bufname:match("*.csv") then
-                vim.wo.wrap = false
-            end
         end,
     })
 end
@@ -89,6 +84,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-dap.nvim",
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make", },
             "nvim-telescope/telescope-ui-select.nvim",
             "debugloop/telescope-undo.nvim",
         },
