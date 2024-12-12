@@ -4,7 +4,6 @@ local finders = require("telescope.finders")
 local make_entry = require("telescope.make_entry")
 local pickers = require("telescope.pickers")
 
-
 local is_inside_work_tree = {}
 
 local M = {}
@@ -25,13 +24,6 @@ end
 function M.filtered_grep(opts)
     opts = opts or {}
     opts.cwd = opts.cwd and vim.fn.expand(opts.cwd) or vim.loop.cwd()
-    opts.shortcuts = opts.shortcuts
-        or {
-            ["l"] = "*.lua",
-            ["c"] = "*.c*",
-            ["r"] = "*.rs",
-            ["g"] = "*.go",
-        }
     opts.pattern = opts.pattern or "%s"
 
     local filtered_grep = finders.new_async_job({
@@ -40,7 +32,7 @@ function M.filtered_grep(opts)
                 return nil
             end
 
-            local prompt_split = vim.split(prompt, "  ")
+            local prompt_split = vim.split(prompt, " ---- ")
 
             local args = {
                 "rg",
@@ -51,24 +43,21 @@ function M.filtered_grep(opts)
                 "--column",
                 "--smart-case",
             }
+
             if prompt_split[1] then
                 table.insert(args, "-e")
                 table.insert(args, prompt_split[1])
             end
 
             if prompt_split[2] then
-                table.insert(args, "-g")
-
-                local pattern
-                if opts.shortcuts[prompt_split[2]] then
-                    pattern = opts.shortcuts[prompt_split[2]]
-                else
-                    pattern = prompt_split[2]
+                for _, value in ipairs(vim.split(prompt_split[2], " ")) do
+                    if value ~= "" then
+                        table.insert(args, value)
+                    end
                 end
-
-                table.insert(args, string.format(opts.pattern, pattern))
             end
 
+            vim.print(args)
             return args
         end,
         entry_maker = make_entry.gen_from_vimgrep(opts),
@@ -78,7 +67,7 @@ function M.filtered_grep(opts)
     pickers
         .new(opts, {
             debounce = 100,
-            prompt_title = "filtered grep with '  '",
+            prompt_title = "filtered grep -- params",
             finder = filtered_grep,
             previewer = conf.grep_previewer(opts),
             sorter = require("telescope.sorters").empty(),
