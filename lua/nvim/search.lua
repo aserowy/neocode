@@ -57,7 +57,6 @@ function M.filtered_grep(opts)
                 end
             end
 
-            vim.print(args)
             return args
         end,
         entry_maker = make_entry.gen_from_vimgrep(opts),
