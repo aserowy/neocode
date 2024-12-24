@@ -87,6 +87,15 @@ return {
         version = "*",
         opts = {
             keymap = { preset = "enter" },
+            completion = {
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 500,
+                },
+                list = {
+                    selection = 'manual',
+                },
+            }
         },
         dependencies = {
             "rafamadriz/friendly-snippets",
