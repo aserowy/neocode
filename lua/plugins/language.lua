@@ -61,16 +61,6 @@ local function setup_treesitter()
     })
 end
 
-local function setup_luasnip()
-    local luasnip = require("luasnip")
-
-    luasnip.config.set_config({
-        history = true,
-    })
-
-    require("luasnip/loaders/from_vscode").load()
-end
-
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -95,17 +85,11 @@ return {
                 list = {
                     selection = "auto_insert",
                 },
-            }
+            },
         },
         dependencies = {
             "rafamadriz/friendly-snippets",
         },
-    },
-    {
-        "L3MON4D3/LuaSnip",
-        config = function()
-            setup_luasnip()
-        end,
     },
     "onsails/lspkind-nvim",
 }
