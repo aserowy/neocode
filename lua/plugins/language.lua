@@ -86,14 +86,14 @@ return {
         "saghen/blink.cmp",
         version = "*",
         opts = {
-            keymap = { preset = "enter" },
+            keymap = { preset = "super-tab" },
             completion = {
                 documentation = {
                     auto_show = true,
                     auto_show_delay_ms = 500,
                 },
                 list = {
-                    selection = 'manual',
+                    selection = "auto_insert",
                 },
             }
         },
