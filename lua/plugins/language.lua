@@ -83,7 +83,10 @@ return {
                     auto_show_delay_ms = 500,
                 },
                 list = {
-                    selection = "auto_insert",
+                    selection = {
+                        preselect = false,
+                        auto_insert = true
+                    },
                 },
             },
         },
