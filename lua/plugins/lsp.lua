@@ -25,6 +25,9 @@ return {
         ft = "cs",
         opts = {
             exe = "Microsoft.CodeAnalysis.LanguageServer",
+            on_attach = function(client)
+                require("language").on_attach(client, 0)
+            end
         },
     },
     {

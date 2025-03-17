@@ -1,7 +1,8 @@
 local keymaps = require("nvim.keymaps")
 local mappings = require("mappings")
 
-local function on_attach(client, bufnr)
+local m = {}
+m.on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     if client.server_capabilities.documentSymbolProvider then
@@ -19,12 +20,11 @@ local function on_attach(client, bufnr)
     keymaps.register_bufnr(bufnr, "n", mappings.editor_on_text)
 end
 
-local m = {}
 m.setup = function()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    require("language.lsp").setup(capabilities, on_attach)
+    require("language.lsp").setup(capabilities, m.on_attach)
 end
 
 return m
