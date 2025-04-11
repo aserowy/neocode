@@ -53,11 +53,6 @@ local function setup_treesitter()
             end,
         },
         sync_install = false,
-
-        -- third party
-        rainbow = {
-            enable = true,
-        },
     })
 end
 
@@ -67,9 +62,6 @@ return {
         config = function()
             setup_treesitter()
         end,
-        dependencies = {
-            { "p00f/nvim-ts-rainbow" },
-        },
         build = ":TSUpdate",
     },
     {
