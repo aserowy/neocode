@@ -21,27 +21,6 @@ return {
         end,
     },
     {
-        "seblj/roslyn.nvim",
-        ft = "cs",
-        opts = {
-            exe = "Microsoft.CodeAnalysis.LanguageServer",
-            config = {
-                on_attach = function(client)
-                    require("language").on_attach(client, 0)
-                end,
-                settings = {
-                    ["csharp|background_analysis"] = {
-                        dotnet_analyzer_diagnostics_scope = "fullSolution",
-                        dotnet_compiler_diagnostics_scope = "fullSolution",
-                    },
-                    ["csharp|code_lens"] = {
-                        dotnet_enable_references_code_lens = true,
-                    },
-                }
-            }
-        },
-    },
-    {
         "zk-org/zk-nvim",
         config = function()
             require("zk").setup({
@@ -49,9 +28,10 @@ return {
             })
         end,
     },
-
-    "ray-x/lsp_signature.nvim",
-
+    {
+        "ray-x/lsp_signature.nvim",
+        opts = { bind = true }
+    },
     {
         "numToStr/Comment.nvim",
         config = function()

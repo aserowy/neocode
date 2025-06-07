@@ -99,8 +99,8 @@ mappings.editor_on_text = {
     ["gi"] = [[<cmd>lua require'telescope.builtin'.lsp_implementations()<cr>]],
     ["gr"] = [[<cmd>lua vim.lsp.buf.rename()<cr>]],
     ["gx"] = [[<cmd>lua vim.lsp.buf.code_action()<cr>]],
-    ["gn"] = [[<cmd>lua vim.diagnostic.goto_next()<cr>]],
-    ["gp"] = [[<cmd>lua vim.diagnostic.goto_prev()<cr>]],
+    ["gn"] = [[<cmd>lua vim.diagnostic.jump({ count = 1 })<cr>]],
+    ["gp"] = [[<cmd>lua vim.diagnostic.jump({ count = -1 })<cr>]],
     ["K"] = [[<cmd>lua vim.lsp.buf.hover()<cr>]],
 }
 

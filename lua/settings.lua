@@ -43,6 +43,14 @@ function M.setup()
         end,
     })
 
+    -- styling
+    vim.o.winborder = 'rounded'
+
+    -- diagnostics
+    vim.diagnostic.config({
+        virtual_lines = { current_line = true, }
+    })
+
     -- options
     vim.opt.clipboard = "unnamed,unnamedplus"
 
