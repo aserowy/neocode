@@ -45,7 +45,11 @@ local function setup_telescope()
     vim.api.nvim_create_autocmd("User", {
         pattern = "TelescopePreviewerLoaded",
         callback = function(args)
-            vim.wo.wrap = not args.data.bufname:match("*.csv")
+            vim.wo.wrap = true
+            if args.data.bufname then
+                vim.wo.wrap = not args.data.bufname:match("*.csv")
+            end
+
             vim.wo.number = false
         end,
     })

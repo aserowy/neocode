@@ -73,6 +73,7 @@ local function todo()
         ["<leader>tt"] = [[<cmd>TodoTrouble toggle<cr>]],
         ["<leader>tf"] = [[<cmd>TodoTelescope keywords=FIX,TODO,WAITING<cr>]],
         ["<leader>tc"] = "<cmd>s/^- \\[.*\\]/- [x]/<cr>",
+        ["<leader>tn"] = "o- [TODO] #",
         ["<leader>to"] = "<cmd>s/^- \\[.*\\]/- [TODO]/<cr>",
         ["<leader>tw"] = "<cmd>s/^- \\[.*\\]/- [WAITING]/<cr>",
     })

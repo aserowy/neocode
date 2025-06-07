@@ -14,7 +14,7 @@ return {
         -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
         build = "make",
         dependencies = {
-            "stevearc/dressing.nvim",
+            "nvim-treesitter/nvim-treesitter",
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
 
