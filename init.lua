@@ -15,9 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("settings").setup()
 
-local options = {
-    ui = { border = "rounded" },
-}
+local options = {}
 
 if require("nvim.os").is_windows then
     options.concurrency = 1
