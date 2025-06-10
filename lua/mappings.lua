@@ -102,7 +102,7 @@ mappings.editor_on_text = {
     ["gx"] = [[<cmd>lua vim.lsp.buf.code_action()<cr>]],
     ["gn"] = [[<cmd>lua vim.diagnostic.jump({ count = 1 })<cr>]],
     ["gp"] = [[<cmd>lua vim.diagnostic.jump({ count = -1 })<cr>]],
-    ["K"] = [[<cmd>lua vim.lsp.buf.hover()<cr>]],
+    ["K"] = [[<cmd>lua vim.lsp.buf.hover({border = "rounded"})<cr>]],
 }
 
 local function editor_motion()

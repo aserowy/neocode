@@ -44,7 +44,9 @@ function M.setup()
     })
 
     -- styling
-    vim.o.winborder = 'rounded'
+    -- FIX: https://github.com/nvim-telescope/telescope.nvim/issues/3436 must be closed to set
+    -- winborder = 'rounded'
+    vim.o.winborder = 'none'
 
     -- diagnostics
     vim.diagnostic.config({

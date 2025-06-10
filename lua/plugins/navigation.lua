@@ -9,9 +9,6 @@ local function setup_telescope()
 
     require("telescope").setup({
         defaults = {
-            -- FIX: borders are false till the following bug got fixed
-            -- https://github.com/nvim-telescope/telescope.nvim/issues/3436
-            border = false,
             layout_strategy = "flex",
             mappings = mapping.telescope(),
             pickers = {
