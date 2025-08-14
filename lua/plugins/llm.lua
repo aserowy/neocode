@@ -20,13 +20,15 @@ return {
 
             --- The below dependencies are optional,
             "nvim-tree/nvim-web-devicons",
-            "zbirenbaum/copilot.lua",
             {
-                "HakonHarnes/img-clip.nvim",
-                event = "VeryLazy",
+                "zbirenbaum/copilot.lua",
                 config = function()
                     require("copilot").setup({})
                 end,
+            },
+            {
+                "HakonHarnes/img-clip.nvim",
+                event = "VeryLazy",
                 opts = {
                     default = {
                         embed_image_as_base64 = false,
