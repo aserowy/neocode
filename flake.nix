@@ -16,7 +16,7 @@
 
       perSystem = { config, self', inputs', pkgs, system, ... }:
         let
-          package = (with pkgs; (makeOverridable callPackage self { }));
+          package = (with pkgs; (lib.makeOverridable callPackage self { }));
         in
         {
           overlayAttrs = {
@@ -36,7 +36,7 @@
               nodePackages.markdownlint-cli
               nodePackages.prettier
               stylua
-              sumneko-lua-language-server
+              lua-language-server
             ];
 
             shellHook = ''
