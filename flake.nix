@@ -32,7 +32,7 @@
               lua51Packages.luacheck
               nil
               nixfmt-rfc-style
-              nodejs_20
+              nodejs_24
               nodePackages.markdownlint-cli
               nodePackages.prettier
               stylua
