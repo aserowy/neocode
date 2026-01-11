@@ -31,7 +31,7 @@
               gh
               lua51Packages.luacheck
               nil
-              nixfmt-rfc-style
+              nixfmt
               nodejs_24
               nodePackages.markdownlint-cli
               nodePackages.prettier
