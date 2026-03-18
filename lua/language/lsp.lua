@@ -4,6 +4,7 @@ function M.setup()
     vim.lsp.enable({
         'angularls',
         'bashls',
+        'csharp_ls', -- nix: csharp-ls
         'clangd',
         'dockerls',
         'gopls',
