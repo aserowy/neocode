@@ -14,7 +14,6 @@ function M.setup()
         end
     end
 
-    require("dap.ext.vscode").load_launchjs(nil, {})
     dapui.setup()
 
     dap.listeners.after.event_initialized["dapui_config"] = function()
