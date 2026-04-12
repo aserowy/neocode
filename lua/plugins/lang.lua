@@ -20,7 +20,6 @@ return {
                     "javascript",
                     "json",
                     "json5",
-                    "jsonc",
                     "lua",
                     "markdown",
                     "nix",
