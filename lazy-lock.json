@@ -32,7 +32,6 @@
   "nvim-lspconfig": { "branch": "master", "commit": "cb5bc0b2b35a6d513e3298d285db81453e791f4f" },
   "nvim-navic": { "branch": "master", "commit": "f5eba192f39b453675d115351808bd51276d9de5" },
   "nvim-nio": { "branch": "master", "commit": "21f5324bfac14e22ba26553caf69ec76ae8a7662" },
-  "nvim-treesitter": { "branch": "master", "commit": "cf12346a3414fa1b06af75c79faebe7f76df080a" },
   "nvim-web-devicons": { "branch": "master", "commit": "c72328a5494b4502947a022fe69c0c47e53b6aa6" },
   "onedark.nvim": { "branch": "master", "commit": "213c23ae45a04797572242568d5d51937181792d" },
   "onenord.nvim": { "branch": "main", "commit": "b68f1e66736840e837c2a77ebff59c932fcb70c7" },
@@ -47,6 +46,7 @@
   "telescope.nvim": { "branch": "master", "commit": "f7c673b8e46e8f233ff581d3624a517d33a7e264" },
   "todo-comments.nvim": { "branch": "main", "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668" },
   "tokyonight.nvim": { "branch": "main", "commit": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6" },
+  "tree-sitter-manager.nvim": { "branch": "main", "commit": "3bcd05d99f9f2916ea6dbc23c8a2ac449fa4bb3c" },
   "trouble.nvim": { "branch": "main", "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a" },
   "undotree": { "branch": "master", "commit": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d" },
   "zk-nvim": { "branch": "main", "commit": "dea1ee6cd6d07568c92ea8353063d4d85c58a964" }

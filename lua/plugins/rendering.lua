@@ -34,6 +34,6 @@ return {
                 },
             },
         },
-        ft = { "markdown", "Avante" },
+        ft = { "markdown" },
     }
 }
