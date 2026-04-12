@@ -1,4 +1,4 @@
-{ stdenv, lib, theme ? "onedark", style ? "", transparent ? false, syncBuild ? false }:
+{ stdenv, lib, theme ? "onedark", style ? "", transparent ? false }:
 
 let
   boolToString = bool: if bool then "true" else "false";
@@ -16,8 +16,6 @@ stdenv.mkDerivation {
     sed -i 's/name = "\w*",/name = "${theme}",/' $out/lua/settings.lua
     sed -i 's/style = "\w*",/style = "${style}",/' $out/lua/settings.lua
     sed -i 's/transparent = \w*,/transparent = ${boolToString transparent},/' $out/lua/settings.lua
-
-    sed -i 's/sync_install = \w*/sync_install = ${boolToString syncBuild}/' $out/lua/plugins/lang.lua
   '';
 
   meta = with lib; {
