@@ -33,6 +33,7 @@ return {
                     },
                 },
             },
+            html = { comment = { conceal = false } },
         },
         ft = { "markdown" },
     }
