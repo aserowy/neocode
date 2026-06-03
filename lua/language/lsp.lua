@@ -14,12 +14,12 @@ function M.setup()
         'nixd',
         'nushell',
         'nxls',
-        'roslyn_ls', -- csharp, nix: roslyn-ls
+        'roslyn_ls',   -- csharp, nix: roslyn-ls
         'rust_analyzer',
-        'taplo',     -- toml
-        'terraformls',
+        'taplo',       -- toml
+        'terraformls', -- nix: terraform-ls
         'ts_ls',
-        'yamlls', -- nix: yaml-language-server
+        'yamlls',      -- nix: yaml-language-server
         'zls'
     })
 
@@ -60,6 +60,13 @@ function M.setup()
         end,
         settings = {
             Lua = {}
+        }
+    })
+
+    vim.lsp.config('terraformls', {
+        settings = {
+            validateOnSave = false,
+            validationDelay = 0,
         }
     })
 
