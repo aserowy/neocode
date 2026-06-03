@@ -65,9 +65,11 @@ function M.setup()
 
     vim.lsp.config('terraformls', {
         settings = {
-            validateOnSave = false,
-            validationDelay = 0,
-        }
+            terraform = {
+                validateOnSave = false,
+                validationDelay = 0,
+            },
+        },
     })
 
     vim.lsp.config('yamlls', {
